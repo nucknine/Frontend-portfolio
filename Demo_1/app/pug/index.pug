@@ -92,7 +92,7 @@ html
 					+e(id="test").buttons
 						+e.A(href="").btn._red Take a course
 						+e.A(id="js-watch-video-head").btn._blue Watch video
-		+b.SECTION.counters
+		+b(id="jq-counters-waypoint").SECTION.counters
 			+b.wrapper
 				+b.counter
 					+e.SPAN.digit 33562
@@ -106,13 +106,13 @@ html
 				+b.counter
 					+e.SPAN.digit 95847
 					+e.SPAN.title earning
-		+b.SECTION.features
+		+b(id="jq-features-waypoint-1").SECTION.features
 			+b.wrapper
 				+b.features-title
 					+e.H2.title Take A Course
 					+e.P.text Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts
-				+b.features-content
-					+e.image-preview
+				+b(id="jq-features-waypoint-content-1").features-content
+					+e(id="jq-features-waypoint-image-1").image-preview
 						+e.IMG(src="img/webapp-1.jpg").image-response
 					+e.description
 						+e.title We Want You To Learn English
@@ -128,8 +128,8 @@ html
 								+icon('check-mark')
 								|Separated they live in bookmarksgrove
 						+e.A(id="js-watch-video-content").btn._blue watch video
-				+b.features-content
-					+e.image-preview._revers
+				+b(id="jq-features-waypoint-content-2").features-content
+					+e(id="jq-features-waypoint-image-2").image-preview._revers
 						+e.IMG(src="img/webapp-2.jpg").image-response
 					+e.description._revers
 						+e.title-left
@@ -144,7 +144,7 @@ html
 							+icon('bookmark')
 							|Real Project For Real Solutions
 						+e.P.text Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.
-		+b.SECTION.showcase
+		+b(id="jq-showcase-waypoint").SECTION.showcase
 			+b.wrapper
 				+b.showcase-title
 					+e.H2.title Showcase of A Finish Projects
@@ -192,7 +192,7 @@ html
 						+e.P.text Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
 				+b.btn-holder
 					+e.A.btn._blue Create A Free Course
-				+b.startcourse-title
+				+b(id="jq-start-a-course-waypoint").startcourse-title
 					+e.H2.title Start A Course
 					+e.P.text Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.
 				+b.step-slider
@@ -216,7 +216,7 @@ html
 						+e.A(href="#").point
 						+e.progress._last-child
 						+e.description Start Making Money
-		+b.SECTION.Testimonials
+		+b(id="jq-testimonials-waypoint").SECTION.Testimonials
 			+b.wrapper
 				+b.testimonials-title
 					+e.H2.title Testimonials
@@ -236,7 +236,7 @@ html
 						+e.name Lee Doe, via
 							+e.A(href="#").link-twit  twitter
 						+e.BLOCKQUOTE.text Lorem ipsum dolor sit amet, onsectetur adipisicing elit, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non	proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Excepteur sint occaecat cupidatat non	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-		+b.SECTION.recent-post
+		+b(id="jq-recent-post-waypoint").SECTION.recent-post
 			+b.wrapper
 				+b.recent-post-title
 					+e.H2.title Recent Post
@@ -269,7 +269,7 @@ html
 								+e.comments 21
 							+e.text Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
 							+e.A.btn._red Read More
-		+b.SECTION.get-started
+		+b(id="jq-get-started-waypoint").SECTION.get-started
 			+e.overlay
 			+b.wrapper
 				+b.get-started-title

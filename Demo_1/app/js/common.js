@@ -27,14 +27,77 @@ $(document).ready(function(){
   		items: 1,
   		autoHeight:true
   		});
+//head
+	$('.page-title').css('opacity',0);
+	$('#jq-head-waypoint').waypoint(function() {
+      $('.page-title').addClass('animated fadeIn');
+  }, { offset: '50%' });
+//counters
+	$('.counter').css('opacity',0);
+	$('#jq-counters-waypoint').waypoint(function() {
+      $('.counter').addClass('animated fadeInUp');
+  }, { offset: '70%' });
 
-	// $('#jq-footer-waypoint').css('opacity', 0);
+//features
+	$('.features-title, .features-content, .features-content__image-preview').css('opacity',0);
+
+	$('#jq-features-waypoint-1').waypoint(function() {
+      $('.features-title, #jq-features-waypoint-content-1, #jq-features-waypoint-image-1').addClass('animated fadeInUp');
+  }, { offset: '60%' });
+
+	$('#jq-features-waypoint-content-2').waypoint(function() {
+      $('#jq-features-waypoint-content-2, #jq-features-waypoint-image-2').addClass('animated fadeInUp');
+  }, { offset: '70%' });
+//showcase
+
+	$('.showcase-title, .showcase-box, .description-box').css('opacity',0);
+	//delay function
+	var itemQueue = []
+  	var delay = 200
+  	var queueTimer
+
+	function processItemQueue () {
+    if (queueTimer) return // We're already processing the queue
+    queueTimer = window.setInterval(function () {
+      if (itemQueue.length) {
+        $(itemQueue.shift()).addClass('animated fadeInUp');
+        processItemQueue();
+      	} else {
+        window.clearInterval(queueTimer);
+        queueTimer = null;
+        	}
+		}, delay)
+  	}
+
+  	$(".description-box").waypoint(function () {
+    itemQueue.push(this.element);
+    processItemQueue();
+  	}, {
+    offset: '80%'
+  	})
+
+	$('#jq-showcase-waypoint').waypoint(function() {
+      $('.showcase-title').addClass('animated fadeInUp');
+  }, { offset: '80%' });
+
+$(".showcase-box").waypoint(function () {
+    itemQueue.push(this.element);
+    processItemQueue();
+  	}, {
+    offset: '80%'
+  	})
+
+//start-a-course
+	$('.startcourse-title, .step-slider, .btn-holder').css('opacity',0);
+
+	$('#jq-start-a-course-waypoint').waypoint(function() {
+      $('.startcourse-title, .btn-holder, .step-slider').addClass('animated fadeIn');
+  }, { offset: '70%' });
+
+//footer
+	$('.footer-menu__menu-block, .footer-menu__about').css('opacity',0);
 	$('#jq-footer-waypoint').waypoint(function() {
-      $('.footer-menu__menu-block, .footer-menu__about').addClass('animated fadeInUp');
+      $('.footer-menu__menu-block, .footer-menu__about').addClass('animated fadeIn');
   }, { offset: '50%' });
 
-// $('#test').addClass('fadeIn');
-	// $('#jq-footer-waypoint').waypoint(function() {
- //      $('#jq-footer-waypoint').fadeIn(3000);
-	// });
 });
