@@ -1,0 +1,808 @@
+@import "mixins"
+@import "sprite"
+@import "variables"
+
+//import fonts
+webfont('Roboto_regular', 'roboto-regular-webfont', true, 'normal')
+webfont('Roboto_light', 'roboto-light-webfont', true, 'normal')
+webfont('Roboto_medium', 'roboto-medium-webfont', true, 'normal')
+webfont('Roboto_black', 'Roboto-Black-webfont', true, 'normal')
+webfont('Exo_2_regular', 'Exo2-Regular-webfont', true, 'normal')
+webfont('Exo_2_semibold', 'Exo2-SemiBold-webfont', true, 'normal')
+webfont('Exo_2_thin', 'Exo2-Thin-webfont', true, 'normal')
+
+//mixins
+font_exo_regular()
+	font-family: 'Exo_2_regular', sans-serif;
+	font-size 16px
+	line-height 30px
+	color dark_clr
+
+font_exo_thin()
+	font-family: 'Exo_2_thin', sans-serif;
+	font-size 16px
+	line-height 30px
+	color dark_clr
+
+font_exo_semibold()
+	font-family: 'Exo_2_semibold', sans-serif;
+	font-size 16px
+	line-height 30px
+	color dark_clr
+
+font_roboto_regular()
+	font-family: 'Roboto_regular', sans-serif;
+	font-size 16px
+	line-height 30px
+	color dark_clr
+
+font_roboto_black()
+	font-family: 'Roboto_black', sans-serif;
+	font-size 16px
+	line-height 30px
+	color blue_clr
+
+font_roboto_medium()
+	font-family: 'Roboto_medium', sans-serif;
+	font-size 16px
+	line-height 30px
+	color dark_clr
+
+font_roboto_light()
+	font-family: 'Roboto_light', sans-serif;
+	font-size 16px
+	line-height 30px
+	color dark_clr
+
+inline()
+	display inline-block
+	vertical-align top
+
+shadow()
+	box-shadow 0 10px 10px rgba(0,0,0,0.2)
+
+btn()
+	font_roboto_medium()
+	position relative
+	inline()
+	cursor pointer
+	height 30px
+	line-height 30px
+	text-align left
+	width 150px
+	text-transform uppercase
+	// padding 10px
+	color dark_clr
+	transition color 0.3s ease-out
+	&::before
+		transition width 0.3s ease-out
+		content ''
+		top 35px
+		position absolute
+		width 50px
+		height 2px
+		background-color blue_clr
+	&:hover
+		width 150px
+		color blue_clr
+		&::before
+			width 150px
+	&_active
+		color blue_clr
+		&::before
+			width 150px
+
+triangle()
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 5px 5px 5px;
+	border-color: transparent transparent blue_clr transparent;
+
+//template styles
+body
+	position absolute
+	top 0
+	left 0
+
+*::selection
+	background blue_clr
+
+.wrapper
+	position relative
+	width max-width
+	margin 0 auto
+
+.wrapper-inner
+	width wrapper-inner
+	// margin 0 auto
+	margin-left 215px
+
+//left menu
+.left-menu
+	box-sizing border-box
+	position absolute
+	top 0
+	left 0
+	width 215px
+	height 7180px
+	background-color bggray_clr
+	border-right 1px solid textgray_clr
+	padding-left 30px
+	&__title
+		font_roboto_regular()
+		display block
+		width 100%
+		min-height 80px
+		margin-top 58px
+	&__name
+		font_exo_regular()
+		font-size 24px
+		color dark_clr
+		text-transform uppercase
+	&__spec
+		font_roboto_light()
+		margin-top 9px
+		margin-left -1px
+		color blue_clr
+	&__menu
+		font_exo_regular()
+		color textgray_clr
+		margin-top 9px
+	&__list
+		width 155px
+		height 56px
+		display block
+		border-bottom 1px solid textgray_clr
+		&:last-child
+			border-bottom none
+	&__link
+		position relative
+		cursor pointer
+		display block
+		text-decoration none
+		text-transform uppercase
+		padding-top 15px
+		padding-left 22px
+		color textgray_clr
+		transition padding 0.3s ease-out, color 0.3s ease-out
+		&::before
+			content ""
+			position absolute
+			top 30px
+			left 3px
+			width 12px
+			height 2px
+			background-color lblue_clr
+			transition width 0.6s ease-out, left 0.2s ease-out, background-color 0.2s ease-out
+		&:hover
+			padding-left 35px
+			color dark_clr
+			&::before
+				background-color blue_clr
+				width 24px
+				left 5px
+		&_active
+			padding-left 35px
+			color dark_clr
+			&::before
+				background-color blue_clr
+				width 24px
+				left 5px
+
+.slider
+	padding 1px 0px
+	position relative
+	// height 587px
+	background-image url(../img/slider-bg.jpg)
+	background-repeat no-repeat
+	background-size cover
+	background-color bdarkgray_clr
+
+.info-box
+	position absolute
+	top 107px
+	left 475px
+	display block
+	width 535px
+	&__title
+		font_exo_regular()
+		text-transform uppercase
+	&__hello
+		font-size 30px
+	&__name
+		margin-top 14px
+		line-height 30px
+		font-size 48px
+		&_blue
+			margin-left -3px
+			color blue_clr
+	&__spec
+		inline()
+		text-indent 1px
+		font_roboto_regular()
+		letter-spacing: 2px
+		vertical-align middle
+		height 40px
+		text-align center
+		width 200px
+		line-height 40px
+		box-sizing border-box
+		margin-top 25px
+		padding-left 1px
+		text-transform uppercase
+		color blue_clr
+		border-bottom 1px solid #232323
+		border-top 1px solid #232323
+	&__text
+		margin-top 42px
+		font_roboto_regular()
+		&_blue
+			color blue_clr
+	&__btn-holder
+		margin-top 33px
+	&__btn
+		btn()
+		margin-right 30px
+
+.profile-image
+	width 258px
+	height 301px
+	// position absolute
+	// top 148px
+	// left 89px
+	margin-top 148px
+	margin-left 89px
+	margin-bottom 136px
+	background-image url(../img/profile-image.png)
+
+//skills section
+
+.h2-title
+	margin-top 97px
+	margin-left 95px
+	&__title
+		font_exo_semibold()
+		text-transform uppercase
+		font-size 30px
+		color h2_clr
+	&_padding
+		margin-top 96px
+	&_padding-plus
+		margin-top 95px
+	&__line
+		sprite($s-line_h2)
+		margin-top 20px
+
+.pro-skills
+	padding 1px 0
+
+.skills-box
+	font-size 0
+	margin-top 93px
+	margin-left 95px
+	margin-bottom 56px
+	&__skill-bar
+		inline()
+		margin-bottom 42px
+		margin-right 30px
+	&__title
+		font_roboto_regular()
+		position relative
+		width 445px
+		line-height 27px
+		text-transform uppercase
+	&__digit
+		position absolute
+		top 0
+		right 0
+	&__bar
+		margin-top 17px
+	&__out-layer
+		width 445px
+		height 5px
+		background-color lblue_clr
+	&__inner-layer
+		width 445px
+		height 5px
+		background-image linear-gradient(135deg, blue_clr 90%, rgba(0,0,0,0) 90%)
+
+//education section
+.education
+	padding 1px 0px
+	background-color bggray_clr
+
+.xp-education
+	overflow auto
+	font-size 0
+	margin-top 92px
+	margin-left 95px
+	margin-bottom 6px
+	&__xp-box
+		inline()
+		position relative
+		font_roboto_regular()
+		width 435px
+		margin-right 40px
+		margin-bottom 87px
+	&__head
+		transition color 0.3s ease-out
+		cursor pointer
+		&_active
+			color blue_clr
+		&:hover
+			color blue_clr
+	&__digit
+		position absolute
+		top 3px
+		left -2px
+		font-size 30px
+	&__title
+		padding-left 60px
+	&__name
+		font-size 24px
+		text-transform uppercase
+		&_margin
+			margin-left 1px
+	&__spec
+		margin-left 1px
+		margin-top 9px
+		text-transform uppercase
+	&__text
+		margin-top 32px
+
+//experience section
+.experience
+	padding 1px 0px
+	background-color white
+
+.xp-experience
+	overflow auto
+	font-size 0
+	margin-top 92px
+	margin-left 95px
+	margin-bottom 6px
+	&__xp-box
+		inline()
+		position relative
+		font_roboto_regular()
+		width 435px
+		margin-right 40px
+		margin-bottom 87px
+	&__head
+		cursor pointer
+		transition color 0.3s ease-out
+		&_active
+			color blue_clr
+		&:hover
+			color blue_clr
+	&__digit
+		position absolute
+		top 3px
+		left -2px
+		font-size 30px
+	&__title
+		padding-left 60px
+	&__name
+		font-size 24px
+		text-transform uppercase
+	&__spec
+		margin-left 1px
+		margin-top 9px
+		text-transform uppercase
+	&__text
+		margin-top 32px
+
+//recent-project section
+.recent-project
+	padding 1px 0px
+	background-color bggray_clr
+
+.projects-box
+	padding 1px 0
+	font-size 0
+	margin-top 98px
+	margin-left 95px
+	&__project-item
+		margin-right 30px
+		margin-bottom 93px
+		inline()
+		width 445px
+	&__image
+		width 445px
+		height 300px
+		background-image url(../img/project-image.png)
+		background-repeat no-repeat
+	&__overlay
+		inline()
+		opacity 0
+		font_exo_thin()
+		vertical-align middle
+		text-align center
+		width 445px
+		height 300px
+		background-color rgba(243,243,243,0.95)
+		line-height 295px
+		font-size 142px
+		color blue_clr
+		transition opacity 0.4s ease-out
+		shadow()
+		cursor pointer
+		&_active
+			opacity 1
+		&:hover
+			opacity 1
+	&__title
+		font_roboto_regular()
+		font-size 24px
+		text-transform uppercase
+		margin-top 45px
+	&__text
+		font_roboto_regular()
+		margin-top 12px
+
+//section blog
+.blog
+	font-size 0
+	padding 1px 0px
+
+.blog-post-box
+	margin-left 95px
+	margin-top 90px
+	margin-bottom 100px
+	&__row
+		text-decoration none
+		font-size 0
+	&__container
+		position relative
+		padding-left 164px
+		width 905px
+		height 70px
+	&__item
+		inline()
+		position relative
+		font_roboto_regular()
+		text-align left
+		padding-left 22px
+		box-sizing border-box
+		height 52px
+		width 99px
+		border-bottom 2px solid dark_clr
+		&:first-child
+			padding-left 25px
+		&::after
+			display none
+			content ''
+			position absolute
+			triangle()
+			left 42px
+			top 46px
+		&:hover
+			color blue_clr
+			border-bottom 2px solid blue_clr
+			&::after
+				display block
+		&_active
+			color blue_clr
+			border-bottom 2px solid blue_clr
+			&::after
+				display block
+	&__link
+		display block
+		height 50px
+		width 99px
+		cursor pointer
+	&__line
+		position absolute
+		top 50px
+		left 125px
+		height 2px
+		width 670px
+		background-color dark_clr
+	&__arrow
+		cursor pointer
+		width 50px
+		height 50px
+		position absolute
+		&_left
+			top 26px
+			left 25px
+			sprite($s-left-arrow)
+			&:hover
+				sprite($s-left-arrow-hover)
+		&_right
+			top 29px
+			right 174px
+			sprite($s-right-arrow)
+			&:hover
+				sprite($s-right-arrow-hover)
+		&_active
+			sprite($s-right-arrow-hover)
+	&__post
+		margin-top 55px
+	&__image
+		inline()
+		width 350px
+		height 300px
+		background-image url(../img/project-image.png)
+		background-position -46px 2px
+	&__desc
+		inline()
+		font_roboto_regular()
+		width 530px
+		margin-left 30px
+	&__title
+		font-size 24px
+		text-transform uppercase
+		margin-top 14px
+	&__date
+		margin-top 13px
+	&__text
+		margin-top 32px
+	&__btn
+		btn()
+		margin-top 36px
+		text-transform none
+
+//section pricing-plan
+
+.pricing-plan
+	background-color bggray_clr
+	padding 1px 0px
+
+.pricing-container
+	font-size 0
+	margin-left 95px
+	margin-top 77px
+	margin-bottom 100px
+
+.pricing-box
+	inline()
+	width 445px
+	height 484px
+	font_roboto_regular()
+	background-color white
+	margin-right 30px
+	transition all 0.3s ease-out
+	cursor pointer
+	&:hover
+		shadow()
+	&_active
+		shadow()
+	&__title
+		font-size 24px
+		text-transform uppercase
+		margin-left 30px
+		margin-top 47px
+	&__desc
+		width 390px
+		margin-left 30px
+		margin-top 37px
+	&__price-table
+		margin-top 18px
+		text-transform uppercase
+		border-collapse collapse
+		width 100%
+	&__row
+		border-bottom 1px solid textgray_clr
+		&:last-child
+			border-bottom none
+	&__cell
+		// height 62px
+		line-height 62px
+		text-align middle
+		width 50%
+		padding-left 30px
+		&_right
+			text-align right
+			padding-right 30px
+	&__blue
+		position relative
+		top -1px
+		font_roboto_black()
+		font-size 24px
+	&__btn
+		btn()
+		text-transform none
+		color blue_clr
+		margin-top 17px
+		margin-left 174px
+
+//section feedback
+.client-feedback
+	padding 1px 0px
+	background-image url(../img/bg-feedback.png)
+	background-size contain
+	background-position 216px center
+
+.feedback-box
+	width 919px
+	font-size 0
+	margin-left 96px
+	margin-bottom 93px
+	&__user-images
+		inline()
+		text-align center
+		width 100%
+		height 130px
+		margin-top 99px
+	&__image
+		cursor pointer
+		inline()
+		vertical-align bottom
+		width 80px
+		height 80px
+		background-image url(../img/user-image.png)
+		background-size 135%
+		background-position -17px -12px
+		margin-right 30px
+		transition all 0.3s ease-out
+		&:last-child
+			margin-right 0px
+		&_active
+			background-position center center
+			background-size cover
+			width 110px
+			height 110px
+			shadow()
+		&:hover
+			width 110px
+			height 110px
+			shadow()
+	&__desc
+		font_roboto_regular()
+		text-align center
+		width 915px
+		margin 0 auto
+	&__name
+		margin-top 23px
+		text-transform uppercase
+		font-size 24px
+	&__spec
+		margin-top 10px
+	&__blue
+		color blue_clr
+	&__text
+		margin-top 36px
+
+//section contact
+.contact
+	padding 1px 0
+	background-color bggray_clr
+
+.feedback-container
+	margin-top 97px
+	margin-left 96px
+
+.contacts
+	inline()
+	font-size 0
+	&__contact-info
+		font_roboto_regular()
+		width 266px
+		margin-bottom 0px
+		&:first-child
+			margin-bottom 94px
+	&__title
+		position relative
+		box-sizing border-box
+		height 40px
+		position relative
+		text-transform uppercase
+		font-size 24px
+		padding-left 73px
+		padding-top 17px
+	&__image
+		position absolute
+		top 2px
+		left 3px
+		display block
+		width 40px
+		height 40px
+		cursor pointer
+		&_contact
+			top -2px
+			left 3px
+			sprite($s-mail)
+			&:hover
+				sprite($s-mail-hover)
+		&_location
+			display block
+			position absolute
+			sprite($s-location)
+			&:hover
+				sprite($s-location-hover)
+		&_location-active
+			top -2px
+			left 3px
+			sprite($s-mail-hover)
+	&__desc
+		margin-top 19px
+	&__social-icons
+		width 266px
+		margin-top 91px
+		margin-left -3px
+	&__icon
+		cursor pointer
+		inline()
+		margin-right 45px
+		&_facebook
+			sprite($s-facebook)
+			&:hover
+				sprite($s-facebook-hover)
+		&_dribble
+			margin-right 38px
+			margin-top 1px
+			sprite($s-dribble)
+			&:hover
+				sprite($s-dribble-hover)
+		&_twitter
+			margin-top 4px
+			margin-right 39px
+			sprite($s-twitter)
+			&:hover
+				sprite($s-twitter-hover)
+		&_twitter-active
+			sprite($s-twitter-hover)
+		&_linkedin
+			margin-top 1px
+			margin-right 0px
+			sprite($s-linked)
+			&:hover
+				sprite($s-linked-hover)
+
+.feedback-form
+	font-size 0
+	inline()
+	width 540px
+	margin-left 109px
+	margin-bottom 110px
+	&__text
+		text-decoration none
+		box-sizing border-box
+		height 40px
+		font_roboto_regular()
+		width 100%
+		border none
+		background-color bggray_clr
+		border-bottom 1px solid textgray_clr
+		&::placeholder
+			transform translateY(-11px)
+			color textgray_clr
+		&:focus
+			outline none
+			border-bottom 1px solid blue_clr
+			&::placeholder
+				color dark_clr
+		&_active
+			border-bottom 1px solid blue_clr
+			&::placeholder
+				color dark_clr
+		&_mail
+			margin-top 39px
+		&_interests
+			background-image url(../img/select-arrow.png)
+			background-repeat no-repeat
+			background-position 496px 11px
+			color textgray_clr
+			appearance: none
+			margin-top 41px
+			padding-bottom 15px
+			height 47px
+		&_message
+			resize none
+			margin-top 51px
+			height 114px
+			&::placeholder
+				transform translate(-2px,-11px)
+	&__option
+		color dark_clr
+		&_placeholder
+			display none
+		&:checked
+			display none
+	&__btn
+		margin-top 42px
+		btn()
+		text-transform none
+		color blue_clr

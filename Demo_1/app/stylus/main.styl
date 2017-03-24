@@ -1,77 +1,175 @@
 @import "mixins"
+@import "variables"
 @import "sprite"
 
 //import fonts
 @import "https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&subset=cyrillic,cyrillic-ext"
 
-//variables
-darkgraytext 				= #828282
-graytext 			  		= #ccc
-redcolor 			  		= #FF5656
-bluecolor 					= #6A7EFC
-graycolor 					= #EDF2F6
-darkcolor 					= #494953
-simplegray 					= #f9f9f9
-point_clr 					= #fbe8aa
-point_clr_active 		= #fbbd19
-point_inactive_clr 	= #f5f5f5
-
-
-wrapper-width 			= 1170px
-
-//mixins
-
-size(w=100%, h=auto)
-	width w
-	height h
-
-red(color=red)
-	background color
-
-font()
-	font-family 'Open Sans', sans-serif, Arial
-	font-size 14px
-	font-weight normal
-
-inline()
-	display inline-block
-	vertical-align top
-
-shadow-btn()
-	box-shadow 0 10px 15px rgba(0,0,0,0.4)
-
-btn()
-	inline()
-	box-sizing border-box
-	cursor pointer
-	height 60px
-	line-height 60px
-	text-align center
-	min-width 170px
-	background-color gray
-	padding-left 20px
-	padding-right 20px
-	font-size 18px
-	color white
-	border-radius 30px
-	transition box-shadow 0.3s ease-out
-	&:hover
-		shadow-btn()
-	&_red
-		background-color rgba(255,86,86,.8)
-	&_blue
-		background-color rgba(106,126,252,.8)
-
 //template styles
 
+.overflow
+	overflow-y hidden
+
 *::selection
-		background darkcolor
+	background darkcolor
+
+.page-overlay
+	position fixed
+	left 0
+	top 0
+	width 0
+	height 0
+	overflow-y hidden
+	background-color rgba(0, 0, 0, 0.7)
+	opacity 0
+	z-index 0
+	transition opacity 0.2s ease-out
+	&_visible
+		width 100%
+		height 100%
+		opacity 1
+		z-index 3
+
+.video
+	display none
+	position absolute
+	&__iframe
+		+adaptive(smart)
+			width 100%
+			height auto
+	top 50%
+	left 50%
+	transform translate(-50%,-50%)
+	+adaptive(smart)
+		width 100%
+		height auto
+	&_visible
+		display block
+
+.burger-menu
+	+adaptive(smart)
+		width 100%
+	position absolute
+	top 0
+	bottom 0
+	// width 0px
+	width 270px
+	right -270px
+	background-color black
+	opacity 0
+	z-index 999
+	transition right 0.4s ease-out
+	&_visible
+		right 0
+		opacity 1
+		// width 270px
+	&__menu
+		padding 75px 65px 0px 40px
+		font()
+		font-size 16px
+		+adaptive(smart)
+			font-size 32px
+		line-height 1.7
+	&__list
+		&_nest
+			position relative
+			&:hover::after
+				transform rotate(45deg)
+				color graycolor
+			&::after
+				transition all 0.3s ease-out
+				content ""
+				display block
+				size(7px,7px)
+				position absolute
+				top 0
+				right 0
+				border solid darkgraytext
+				border-width 0 2px 2px 0
+				transform rotate(135deg)
+			&:hover > ul
+				display block
+				max-height 500px
+				opacity 1
+	&__link
+		display inline-block
+		text-decoration none
+		color darkgraytext
+		transition color 0.2s ease-out
+		&_nest
+			position relative
+			display block
+		&:hover
+			color graycolor
+	&__row-blog
+		transition all 0.6s ease-out
+		overflow hidden
+		display block
+		max-height 0px
+		opacity 0
+		padding-left 20px
+
+.burger-icon
+	z-index 11
+	display none
+	+adaptive(smart)
+		display block
+	+adaptive(tablet)
+		display block
+	position absolute
+	width 26px
+	height 15px
+	top 75px
+	right 34px
+	&__line
+		transition all 0.1s ease-out
+		position absolute
+		top 0
+		left 0
+		height 2px
+		width 100%
+		background-color white
+		&_line1
+			transform rotate(0deg)
+			top 0%
+		&_line2
+			display block
+			top 50%
+		&_line3
+			transform rotate(0deg)
+			top 100%
+		&_line-open1
+			transform rotate(135deg)
+			top 50%
+		&_line-open2
+			display none
+			top 50%
+		&_line-open3
+			transform rotate(-135deg)
+			top 50%
+	&:hover .burger-icon__line_line1
+		top -3px
+	&:hover .burger-icon__line_line3
+		top 18px
+	&:hover .burger-icon__line_line-open3
+		top 50%
+		transform rotate(-135deg) scaleX(0.6)
+	&:hover .burger-icon__line_line-open1
+		top 50%
+		transform rotate(135deg) scaleX(0.6)
 
 .wrapper
 	width wrapper-width
 	margin 0 auto
+	+adaptive(smart)
+		width 100%
+	+adaptive(tablet)
+		width 100%
 
 .overlay
+	+adaptive(pc)
+		min-width wrapper-width
+	// height auto
 	z-index 0
 	position absolute
 	bottom 0
@@ -82,14 +180,17 @@ btn()
 
 //section head
 .head
+	position relative //for overlay fullheight
 	padding 1px 0
 	font-size 0
-	width 100%
+	min-width 100%
+	+adaptive(pc)
+		min-width wrapper-width
 	background-color lightgray
-	//background-image linear-gradient(to left, redcolor, bluecolor)
+	background-image linear-gradient(to left, redcolor, bluecolor)
 	background-image url(../img/cup-of-coffee.jpg)
 	background-size cover
-	background-attachment: fixed;
+	background-attachment: fixed
 	background-position center center
 	background-repeat no-repeat
 
@@ -101,15 +202,17 @@ btn()
 .social
 	position absolute
 	top 13px
-	right 10px
-	color graycolor
+	right 0px
+	color graytext
+	+adaptive(smart)
+		right 20px
 	&__tel
 		inline()
 		vertical-align middle
 		line-height 20px
 		width 150px
 		height 20px
-		border-right 1px solid graycolor
+		border-right 1px solid graytext
 		padding-right 10px
 	&__row
 		padding-left 10px
@@ -118,22 +221,21 @@ btn()
 		line-height 20px
 	&__list
 		inline()
+		vertical-align middle
 		width 20px
 		height 20px
+		margin-right 10px
+		&:last-child
+			margin-right 0px
 	&__link
 		display block
 		cursor pointer
 		width 20px
 		height 20px
-		background-size 80%
-		background-repeat no-repeat
-		background-position center
-		&_twitter
-			background-image url(../img/sprites/sprite_src/twitter-gray.png)
-		&_dribble
-			background-image url(../img/sprites/sprite_src/dribbble-gray.png)
-		&_github
-			background-image url(../img/sprites/sprite_src/github--gray.png)
+		color graytext
+		transition color 0.2s ease-out
+		&:hover
+			color graycolor
 
 .top-nav
 	position relative
@@ -141,6 +243,10 @@ btn()
 	display block
 	width 100%
 	&__menu
+		+adaptive(smart)
+			display none
+		+adaptive(tablet)
+			display none
 		position absolute
 		right 0
 		inline()
@@ -154,6 +260,10 @@ btn()
 			margin-right 20px
 		&_register
 			margin-right 0
+		&_nest
+			&:hover .top-nav__row-blog
+				top 40px
+				opacity 1
 	&__link
 		color graytext
 		text-decoration none
@@ -168,6 +278,41 @@ btn()
 				shadow-btn()
 		&:hover
 			color white
+		&:hover
+			color graycolor
+	&__row-blog
+		transition all 0.3s ease-out .1s
+		top 70px
+		left 250px
+		position absolute
+		background-color black
+		display block
+		opacity 0
+		width 130px
+		padding 20px
+		line-height 1.7
+		box-sizing border-box
+		border-radius 10px
+		&::before
+			position absolute
+			content ""
+			display block
+			top -20px
+			left 0px
+			width 100%
+			height 20px
+			background-color transparent
+		&::after
+			position absolute
+			content ""
+			display block
+			top -20px
+			width 0px
+			height 0px
+			border-bottom: 10px solid black
+			border-right: 10px solid transparent
+			border-top: 10px solid transparent
+			border-left: 10px solid transparent
 
 .main-logo
 	position absolute
@@ -177,6 +322,8 @@ btn()
 	width 100px
 	font-size 24px
 	font-weight bold
+	+adaptive(smart)
+		left 20px
 	&__link
 		text-decoration none
 		color white
@@ -185,30 +332,48 @@ btn()
 
 .page-title
 	position relative
-	z-index 1
+	z-index 2
 	font()
 	margin 0 auto
 	width 66%
 	margin-top 217px
 	margin-bottom 220px
+	+adaptive(smart)
+		margin-top 150px
+		margin-bottom 50px
+		width 90%
+	+adaptive(tablet)
+		width 90%
 	&__big-text
 		line-height 1.333em
 		color white
 		font-size 48px
 		text-align center
+		+adaptive(smart)
+			font-size 1.9rem
+		+adaptive(tablet)
+			font-size 1.9rem
 	&__small-text
 		margin-top 35px
 		color white
 		font-size 24px
 		text-align center
+		+adaptive(smart)
+			margin-top 20px
+			font-size 1.4rem
 	&__buttons
-		width 350px
+		text-align center
 		margin 0 auto
 		margin-top 35px
+		+adaptive(smart)
+			width 60%
 	&__btn
 		btn()
 		&:first-child
 			margin-right 10px
+			+adaptive(smart)
+				margin-right 0px
+				margin-bottom 5px
 
 //section counters
 .counters
@@ -222,6 +387,18 @@ btn()
 	width 25%
 	margin-top 57px
 	margin-bottom 80px
+	+adaptive(tablet)
+		width 100%
+		margin-top 50px
+		margin-bottom 0px
+		&:last-child
+			margin-bottom 50px
+	+adaptive(smart)
+		width 100%
+		margin-top 50px
+		margin-bottom 0px
+		&:last-child
+			margin-bottom 50px
 	&__digit
 		text-align center
 		display block
@@ -244,6 +421,14 @@ btn()
 	width 50%
 	margin 120px auto 100px auto
 	text-align center
+	+adaptive(smart)
+		margin-top 50px
+		margin-bottom 50px
+		width 90%
+	+adaptive(tablet)
+		margin-top 50px
+		margin-bottom 50px
+		width 90%
 	&__title
 		font-size 34px
 	&__text
@@ -259,15 +444,39 @@ btn()
 	position relative
 	margin-top 100px
 	margin-bottom 130px
+	+adaptive(smart)
+		width 90%
+		height auto
+		margin 0 auto
+		margin-top 50px
+		margin-bottom 50px
+	+adaptive(tablet)
+		width 90%
+		height auto
+		margin 0 auto
+		margin-top 50px
+		margin-bottom 50px
 	&:last-child
 		margin-bottom 115px
 	&__description
 		position absolute
 		left 0
-		inline()
 		width 35%
+		+adaptive(smart)
+			position static
+			width 90%
+		+adaptive(tablet)
+			width 90%
+			position static
 		&_revers
 			left 65%
+			+adaptive(smart)
+				width 90%
+				position static
+				left 0
+			+adaptive(tablet)
+				width 90%
+				position static
 	&__title
 		position relative
 		margin-top 70px
@@ -276,69 +485,62 @@ btn()
 		position relative
 		margin-top 40px
 		font-size 20px
+		padding-left 30px
 		&:first-child
 			margin-top 65px
-		&_icon-user
-			padding-left 25px
-			&::before
-				content ''
-				top 3px
-				left 0
-				position absolute
-				background-repeat no-repeat
-				sprite($s-user16)
-		&_icon-shield
-			padding-left 25px
-			&::before
-				content ''
-				left 0
-				top 3px
-				position absolute
-				background-repeat no-repeat
-				sprite($s-shield16)
-		&_icon-bookmark
-			padding-left 25px
-			&::before
-				content ''
-				top 3px
-				left 0
-				position absolute
-				background-repeat no-repeat
-				sprite($s-bookmark16)
 	&__text
 		color gray
 		margin-top 28px
 		font-size 16px
-		line-height 1.618em
+		line-height 1.7
 	&__list
 		color gray
-		margin-top 58px
+		margin-top 45px
 		font-size 16px
+		line-height 1.7
 	&__item
+		position relative
 		margin-top 21px
-		padding-left 25px
-		&::before
-			content ''
-			left 0
-			position absolute
-			sprite($s-check-mark-16)
-			background-repeat no-repeat
+		padding-left 30px
 	&__image-preview
 		position absolute
 		right 0
-		inline()
-		height 500px
-		width 55%
-		background-image url(../img/webapp-1.jpg)
-		background-size cover
-		background-repeat no-repeat
-		background-position center center
+		width 60%
 		&_revers
-			background-image url(../img/webapp-2.jpg)
 			left 0
+		+adaptive(smart)
+			position static
+			display block
+			width 100%
+		+adaptive(tablet)
+			position static
+			display block
+			width 100%
+	&__image-response
+		display block
+		max-width 100%
+		height auto
 	&__btn
 		btn()
 		margin-top 35px
+
+//icons of features section
+.icon-check-mark
+	position absolute
+	left 0
+	top 5px
+	font-size 16px
+	color bluecolor
+
+.icon-shield, .icon-user, .icon-bookmark
+	position absolute
+	top -1px
+	left 0
+	font-size 18px
+	color bluecolor
+
+.icon-user
+	top 3px
 
 //section showcase
 
@@ -350,6 +552,14 @@ btn()
 	width 60%
 	margin 120px auto 100px auto
 	text-align center
+	+adaptive(smart)
+		margin-top 50px
+		margin-bottom 50px
+		width 90%
+	+adaptive(tablet)
+		margin-top 50px
+		margin-bottom 50px
+		width 90%
 	&__title
 		font-size 34px
 	&__text
@@ -361,19 +571,28 @@ btn()
 .showcase-container
 	font-size 0
 	width 100%
+	// +adaptive(smart)
+	// 	width 96%
+	// // +adaptive(tablet)
+	// // 	width 100%
+	margin 0 auto
 	margin-top 100px
 
 .showcase-box
+	position relative
 	box-sizing border-box
 	font()
 	inline()
-	vertical-align middle
-	line-height 1px
+	text-align center
+	line-height 1px //чтобы не увеличивались по высоте при наведении
 	width 33%
-	min-height 1px
 	padding-right 15px
 	padding-left 15px
 	margin-bottom 30px
+	+adaptive(tablet)
+		width 50%
+	+adaptive(smart)
+		width 100%
 	&:hover
 		& .showcase-box__img
 			transform scale(1.1)
@@ -384,13 +603,13 @@ btn()
 		& .showcase-box__text
 			left 35px
 	&__showcase-link
-		box-sizing border-box
 		position relative
+		bottom 0
+		box-sizing border-box
 		color white
 		text-decoration none
 		display block
 		width 100%
-		height auto
 		overflow hidden
 		&::after
 			content ''
@@ -403,8 +622,10 @@ btn()
 			opacity 0
 			transition all 0.4s ease-out
 	&__img
-		transition all 300ms cubic-bezier(0.55, 0.085, 0.68, 0.53)
+		position relative
 		max-width 100%
+		height auto
+		transition all 300ms cubic-bezier(0.55, 0.085, 0.68, 0.53)
 	&__title
 		transition all 600ms cubic-bezier(0.55, 0.085, 0.68, 0.53)
 		font-size 30px
@@ -421,15 +642,28 @@ btn()
 	font-size 0
 	width 100%
 	margin-top 60px
+	+adaptive(smart)
+		width 75%
+		margin 0 auto
+		margin-top 0px
+	+adaptive(tablet)
+		margin-top 0px
+		width 75%
+		margin 0 auto
 
 .description-box
 	font()
 	inline()
-	width 33%
 	box-sizing border-box
-	min-height 1px
+	width 33%
 	padding-left 15px
 	padding-right 15px
+	+adaptive(smart)
+		margin-top 40px
+		width 100%
+	+adaptive(tablet)
+		margin-top 40px
+		width 100%
 	&__title
 		font-size 18px
 	&__text
@@ -456,6 +690,12 @@ btn()
 		line-height 1.5em
 		color gray
 		margin-top 20px
+	+adaptive(smart)
+		margin-bottom 50px
+		width 90%
+	+adaptive(tablet)
+		margin-bottom 50px
+		width 90%
 
 .step-slider
 	font-size 0
@@ -520,9 +760,13 @@ btn()
 	margin 100px auto
 	width 60%
 	height auto
+	+adaptive(smart)
+		width 90%
+	+adaptive(tablet)
+		width 90%
 	&__item
 		text-align center
-		size()
+		width 100%
 		background-color simplegray
 	&__image
 		margin 0 auto
@@ -566,21 +810,41 @@ btn()
 	text-align center
 	&__title
 		font-size 34px
+	&__text
+		width 60%
+		font-size 18px
+		line-height 1.5em
+		color gray
+		margin 0 auto
+		margin-top 20px
+		+adaptive(smart)
+			width 90%
+		+adaptive(tablet)
+			width 90%
 
 .post-container
 	margin-top 50px
-	// red()
+	+adaptive(smart)
+		width 80%
+		margin 0 auto
+		margin-top 50px
+	+adaptive(tablet)
+		margin 0 auto
+		width 80%
+		margin-top 50px
 
 .post-box
 	font()
 	box-sizing border-box
 	inline()
 	margin-right 20px
-	// width 31.75%
-	// width (100% / 3) - (1 - ((wrapper-width - @margin-right * 2) / wrapper-width))
-	width ((wrapper-width - @margin-right * 2) / 3)
-	&:last-child
-		margin-right 0px
+	margin-bottom 150px
+	cols(3, 35)
+	box-shadow 0 10px 20px -12px rgba(0,0,0,0.18)
+	+adaptive(smart)
+		width 100%
+	+adaptive(tablet)
+		width 100%
 	&__image
 		size(100%,auto)
 		max-width 100%
@@ -588,7 +852,7 @@ btn()
 		padding-left 30px
 		padding-right @padding-left
 	&__title
-		margin-top 20px
+		margin-top 30px
 		line-height 1.5
 		font-size 20px
 	&__date
@@ -608,4 +872,146 @@ btn()
 		line-height 1.7
 	&__btn
 		margin-top 20px
+		margin-bottom 20px
 		btn()
+		padding 8px 20px
+		min-width 0px
+		height auto
+		font-size 16px
+		height auto
+		line-height normal
+
+//SECTION.get-started
+.get-started
+	position relative
+	font-size 0
+	padding 1px 0
+	background-image url(../img/img_bg_2.jpg)
+	background-repeat no-repeat
+	background-size cover
+	&__overlay
+		position absolute
+		z-index 0
+		top 0
+		bottom 0
+		right 0
+		left 0
+		background-color rgba(0,0,0,0.7)
+
+.get-started-title
+	position relative
+	z-index 1
+	font()
+	color #fff
+	margin 120px auto 130px auto
+	text-align center
+	&__title
+		font-size 34px
+	&__text
+		width 60%
+		font-size 18px
+		line-height 1.5em
+		color gray
+		margin 0 auto
+		margin-top 30px
+	&__btn
+		margin-top 100px
+		btn()
+		font-size 16px
+		text-transform uppercase
+
+//footer
+
+.footer
+	font-size 0
+	padding 1px 0
+	background-color simplegray
+
+.footer-menu
+	font-size 0
+	margin-top 110px
+	line-height 1.7
+	+adaptive(smart)
+		width 80%
+		margin 0 auto
+		margin-top 110px
+	+adaptive(tablet)
+		width 100%
+		margin 0 auto
+		margin-top 110px
+	&__about
+		inline()
+		font()
+		size(33%)
+		padding-right 150px
+		box-sizing border-box
+		+adaptive(smart)
+			width 100%
+			padding-right 0px
+	&__title
+		font-size 16px
+	&__text
+		margin-top 20px
+		font-size 16px
+		color darkgraytext
+	&__items
+		inline()
+		size(67%)
+		+adaptive(smart)
+			width 100%
+	&__menu-block
+		font()
+		inline()
+		width 25%
+		+adaptive(smart)
+			margin-top 50px
+			width 50%
+	&__list
+		margin-top 20px
+	&__link
+		color darkgraytext
+		text-decoration none
+		&:hover
+			text-decoration underline
+
+.footer-info
+	font()
+	line-height 1.7
+	width 60%
+	margin 110px auto 120px auto
+	text-align center
+	color darkgraytext
+	&__image-holder
+		width 200px
+		margin 0 auto
+		margin-top 20px
+		text-align center
+	&__img
+		transition color 0.2s ease-out
+		inline()
+		margin-right 10px
+		margin-left 10px
+		color bluecolor
+		&:hover
+			color redcolor
+
+.icon-dribbble
+	font-size 19px
+	&.social-block
+		font-size 15px
+
+.icon-facebook
+	font-size 19px
+
+.icon-linkedin
+	font-size 19px
+
+.icon-twitter
+	font-size 19px
+	&.social-block
+		font-size 15px
+
+.icon-github
+	font-size 19px
+	&.social-block
+		font-size 15px

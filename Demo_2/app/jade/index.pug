@@ -1,0 +1,327 @@
+include ../../node_modules/bemto.pug/bemto.pug
+doctype html
+html
+	head
+		link(rel="stylesheet", href="css/libs.min.css")
+		link(rel="stylesheet", href="css/main.css")
+		title Haudi-ho
+	body
+		+b.HEADER.head
+			+b.wrapper
+				+b.wrapper-inner
+					+b.slider
+						+b.profile-image
+						+b.info-box
+							+e.title
+								+e.hello hello i'm
+								+e.name SHEKH AL
+									+e.SPAN.name._blue   RAYHAN
+							+e.spec UI & UX Designer
+							+e.P.text Hello, I’m a
+								+e.SPAN.__text_blue  UI/UX
+								|  Designer &nbsp;from
+								+e.SPAN.__text_blue  DeviserWeb
+								|, Bangladesh. I hold a master degree of Web Design from the World University. It has a survived not only five centuries, hello a also the leap into electronic typesetting, remaining essentially unchanged.
+							+e.btn-holder
+								+e.A.btn portfolio
+								+e.A.btn._active about me
+				+b.left-menu
+						+e.title
+							+e.name al-rayhan
+							+e.spec UI & UX Designer
+						+e.menu
+							+e.UL.row
+								+e.LI.list
+									+e.A(href="#").link._active skills
+								+e.LI.list
+									+e.A(href="#").link education
+								+e.LI.list
+									+e.A(href="#").link experience
+								+e.LI.list
+									+e.A(href="#").link portfolio
+								+e.LI.list
+									+e.A(href="#").link blog
+								+e.LI.list_register
+									+e.A(href="#").link pricing
+								+e.LI.list_register
+									+e.A(href="#").link contact
+		+b.SECTION.pro-skills
+			+b.wrapper
+				+b.wrapper-inner
+					+b.h2-title._padding-plus
+						+e.H2.title professional skills
+						+e.DIV.line
+					+b.skills-box
+						+e.skill-bar
+							+e.title adobe cc suite
+								+e.digit 90%
+							+e.bar
+								+e.out-layer
+									+e.inner-layer
+										+e.inner-layer
+						+e.skill-bar
+							+e.title sketch app
+								+e.digit 90%
+							+e.bar
+								+e.out-layer
+									+e.inner-layer
+										+e.inner-layer
+						+e.skill-bar
+							+e.title html5 / css3
+								+e.digit 90%
+							+e.bar
+								+e.out-layer
+									+e.inner-layer
+										+e.inner-layer
+						+e.skill-bar
+							+e.title wordpress
+								+e.digit 90%
+							+e.bar
+								+e.out-layer
+									+e.inner-layer
+										+e.inner-layer
+						+e.skill-bar
+							+e.title drupal
+								+e.digit 90%
+							+e.bar
+								+e.out-layer
+									+e.inner-layer
+										+e.inner-layer
+						+e.skill-bar
+							+e.title shopify
+								+e.digit 90%
+							+e.bar
+								+e.out-layer
+									+e.inner-layer
+										+e.inner-layer
+		+b.SECTION.education
+			+b.wrapper
+				+b.wrapper-inner
+					+b.h2-title._padding
+						+e.H2.title education
+						+e.DIV.line
+					+b.xp-education
+						+e.xp-box
+							+e.title
+								+e.head
+									+e.digit 01
+									+e.name university of design
+								+e.spec master degree of design
+									BR session: 2012 – 2013
+							+e.text Lorem Ipsum is simply dummy text of printing an typesetting dustry. Lorem Ipsum the industry's dummy.
+						+e.xp-box
+							+e.title
+								+e.head._active
+									+e.digit 02
+									+e.name degree of design
+								+e.spec master degree of design
+									BR session: 2012 – 2013
+							+e.text Lorem Ipsum is simply dummy text of printing an typesetting dustry. Lorem Ipsum the industry's dummy.
+						+e.xp-box
+							+e.title
+								+e.head
+									+e.digit 03
+									+e.name._margin visual art & design
+								+e.spec master degree of design
+									BR session: 2012 – 2013
+							+e.text Lorem Ipsum is simply dummy text of printing an typesetting dustry. Lorem Ipsum the industry's dummy.
+						+e.xp-box
+							+e.title
+								+e.head
+									+e.digit 04
+									+e.name._margin visual art & design
+								+e.spec master degree of design
+									BR session: 2012 – 2013
+							+e.text Lorem Ipsum is simply dummy text of printing an typesetting dustry. Lorem Ipsum the industry's dummy.
+		+b.SECTION.experience
+			+b.wrapper
+				+b.wrapper-inner
+					+b.h2-title._padding
+						+e.H2.title experience
+						+e.DIV.line
+					+b.xp-experience
+						+e.xp-box
+							+e.title
+								+e.head
+									+e.digit 01
+									+e.name basundhara group
+								+e.spec ui & ux designer
+									BR session: 2014 – present
+							+e.text Lorem Ipsum is simply dummy text of printing an typesetting dustry. Lorem Ipsum the industry's dummy.
+						+e.xp-box
+							+e.title
+								+e.head._active
+									+e.digit 02
+									+e.name deviserweb
+								+e.spec co-founder & coo
+									BR session: 2012 – present
+							+e.text Lorem Ipsum is simply dummy text of printing an typesetting dustry. Lorem Ipsum the industry's dummy.
+						+e.xp-box
+							+e.title
+								+e.head
+									+e.digit 03
+									+e.name envato studio
+								+e.spec exclusive author
+									BR session: 2011 – present
+							+e.text Lorem Ipsum is simply dummy text of printing an typesetting dustry. Lorem Ipsum the industry's dummy.
+						+e.xp-box
+							+e.title
+								+e.head
+									+e.digit 04
+									+e.name googldesign
+								+e.spec ui & ux designer
+									BR session: 2010 – 2013
+							+e.text Lorem Ipsum is simply dummy text of printing an typesetting dustry. Lorem Ipsum the industry's dummy.
+		+b.SECTION.recent-project
+			+b.wrapper
+				+b.wrapper-inner
+					+b.h2-title._padding
+						+e.H2.title recent project
+						+e.DIV.line
+					+b.projects-box
+						+e.project-item
+							+e.image
+								+e.overlay +
+							+e.title UX Designer Personal Card
+							+e.text Another card designed for designers. Another color variation attached , &nbsp;Have fun .
+						+e.project-item
+							+e.image
+								+e.overlay._active +
+							+e.title UX Designer Personal Card
+							+e.text Another card designed for designers. Another color variation attached , &nbsp;Have fun .
+						+e.project-item
+							+e.image
+								+e.overlay +
+							+e.title UX Designer Personal Card
+							+e.text Another card designed for designers. Another color variation attached , &nbsp;Have fun .
+						+e.project-item
+							+e.image
+								+e.overlay +
+							+e.title UX Designer Personal Card
+							+e.text Another card designed for designers. Another color variation attached , &nbsp;Have fun .
+		+b.SECTION.blog
+			+b.wrapper
+				+b.wrapper-inner
+					+b.h2-title._padding-plus
+						+e.H2.title recent post
+						+e.DIV.line
+					+b.blog-post-box
+						+e.date-slider
+							+e.container
+								+e.line
+								+e.arrow._left(id="arrow-left")
+								+e.arrow._right._active(id="arrow-right")
+								+e.UL.row
+									+e.LI.item
+										+e.A.link 20 Jan
+									+e.LI.item
+										+e.A.link 10 Feb
+									+e.LI.item._active
+										+e.A.link 20 Jun
+									+e.LI.item
+										+e.A.link 20 Nov
+									+e.LI.item
+										+e.A.link 19 Dec
+									+e.LI.item
+										+e.A.link 26 Dec
+						+e.post
+							+e.image
+							+e.desc
+								+e.title UX Designer personal card
+								+e.date Jun &nbsp;20th &nbsp;2016
+								+e.text Lorem Ipsum is simply dummy text of the the of theprinting and typ setting industry. lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+								+e.btn._active Read More
+		+b.SECTION.pricing-plan
+			+b.wrapper
+				+b.wrapper-inner
+					+b.h2-title._padding-plus
+						+e.H2.title pricing plan
+						+e.DIV.line
+					+b.pricing-container
+						+b.pricing-box
+							+e.title app design /
+								+e.SPAN.blue  $199
+							+e.desc Lorem Ipsum is simply dummy text of the the printing and typ setting industry.
+							+e.prices
+								+e.TABLE.price-table
+									+e.TR.row
+										+e.TD.cell project
+										+e.TD.cell._right 10
+									+e.TR.row
+										+e.TD.cell storage
+										+e.TD.cell._right 100gb
+									+e.TR.row
+										+e.TD.cell support
+										+e.TD.cell._right 1 month
+							+e.btn Register Now
+						+b.pricing-box._active
+							+e.title web design /
+								+e.SPAN.blue  $299
+							+e.desc Lorem Ipsum is simply dummy text of the the printing and typ setting industry.
+							+e.prices
+								+e.TABLE.price-table
+									+e.TR.row
+										+e.TD.cell project
+										+e.TD.cell._right 10
+									+e.TR.row
+										+e.TD.cell storage
+										+e.TD.cell._right 100gb
+									+e.TR.row
+										+e.TD.cell support
+										+e.TD.cell._right 1 month
+							+e.btn._active Register Now
+		+b.SECTION.client-feedback
+			+b.wrapper
+				+b.wrapper-inner
+					+b.h2-title._padding-plus
+						+e.H2.title client's feedback
+						+e.DIV.line
+					+b.feedback-box
+						+e.user-images
+							+e.image
+							+e.image._active
+							+e.image
+						+e.desc
+							+e.name Junaed Ahmed
+							+e.spec UI/UX Designer at
+								+e.SPAN.blue  DeviserWeb
+							+e.text Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type &nbsp;specimen book. It has survived not only five centuries, but also the leap
+								+e.BR
+							| into electronic typesetting, remaining essentially
+		+b.SECTION.contact
+			+b.wrapper
+				+b.wrapper-inner
+					+b.h2-title._padding-plus
+						+e.H2.title say hello
+						+e.DIV.line
+					+b.feedback-container
+						+b.contacts
+							+e.contact-info
+								+e.title location
+									+e.A.image._location
+								+e.desc 350 Fifth Avenue , 110th floor. 3100 New York.
+							+e.contact-info
+								+e.title contact
+									+e.A.image._contact._location-active
+								+e.desc arpon007das@gmail.com
+									+e.BR
+									| onlinearpon@gmail.com
+							+e.social-icons
+								+e.A.icon._facebook
+								+e.A.icon._dribble
+								+e.A.icon._twitter._twitter-active
+								+e.A.icon._linkedin
+						+b.feedback-form
+							+e.FORM.form
+								+e.INPUT.text._active(type="text" placeholder="Your Name")
+								+e.INPUT.text._mail(type="text" placeholder="Your Email")
+								+e.SELECT.text._interests(type="select")
+									+e.OPTION.option._placeholder(value="" disabled selected) What Are You Interested
+									+e.OPTION.option(value="1") 1
+									+e.OPTION.option(value="2") 2
+									+e.OPTION.option(value="3") 3
+								+e.TEXTAREA.text._message(type="text" placeholder="Type Your Message")
+								+e.A.btn Lets Talk To Me
+		script(type="text/javascript" src="js/libs.min.js")
+
+

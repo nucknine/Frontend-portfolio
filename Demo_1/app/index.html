@@ -6,23 +6,70 @@
     <title>Learn</title>
   </head>
   <body>
-    <section class="head">
+    <div class="page-overlay">
+      <div class="video">
+        <iframe class="video__iframe" width="640" height="360" src="https://www.youtube.com/embed/qzMQza8xZCc" frameborder="0" allowfullscreen="allowfullscreen">
+        </iframe>
+      </div>
+      <div class="burger-menu">
+        <div class="burger-menu__menu">
+          <ul class="burger-menu__row">
+            <li class="burger-menu__list"><a class="burger-menu__link" href="#">Home</a>
+            </li>
+            <li class="burger-menu__list"><a class="burger-menu__link" href="#">Courses</a>
+            </li>
+            <li class="burger-menu__list"><a class="burger-menu__link" href="#">Pricing</a>
+            </li>
+            <li class="burger-menu__list burger-menu__list_nest"><a class="burger-menu__link burger-menu__link_nest" href="#">Blog</a>
+              <ul class="burger-menu__row-blog">
+                <li class="burger-menu__list"><a class="burger-menu__link" href="#">Web Design</a>
+                </li>
+                <li class="burger-menu__list"><a class="burger-menu__link" href="#">Api</a>
+                </li>
+                <li class="burger-menu__list"><a class="burger-menu__link" href="#">eComerce</a>
+                </li>
+                <li class="burger-menu__list"><a class="burger-menu__link" href="#">Branding</a>
+                </li>
+              </ul>
+            </li>
+            <li class="burger-menu__list"><a class="burger-menu__link" href="#">Contact</a>
+            </li>
+            <li class="burger-menu__list"><a class="burger-menu__link" href="#">Login</a>
+            </li>
+            <li class="burger-menu__list"><a class="burger-menu__link" href="#">Create a Course</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="burger-icon"><span class="burger-icon__line burger-icon__line_line1"></span><span class="burger-icon__line burger-icon__line_line2"></span><span class="burger-icon__line burger-icon__line_line3"></span>
+    </div>
+    <header class="head" id="jq-head-waypoint">
       <div class="overlay">
       </div>
       <div class="wrapper">
-        <header class="header">
+        <div class="header">
           <div class="social"><span class="social__tel">Call: +01 123 456 7890</span>
             <ul class="social__row">
-              <li class="social__list"><a class="social__link social__link_twitter" href="#"></a>
+              <li class="social__list"><a class="social__link" href="#">
+                <svg class="icon icon-twitter social-block">
+                  <use xlink:href="img/icons/svg/sprite/sprite.svg#twitter"></use>
+                </svg></a>
               </li>
-              <li class="social__list"><a class="social__link social__link_dribble" href="#"></a>
+              <li class="social__list"><a class="social__link" href="#">
+                <svg class="icon icon-dribbble social-block">
+                  <use xlink:href="img/icons/svg/sprite/sprite.svg#dribbble"></use>
+                </svg></a>
               </li>
-              <li class="social__list"><a class="social__link social__link_github" href="#"></a>
+              <li class="social__list"><a class="social__link" href="#">
+                <svg class="icon icon-github social-block">
+                  <use xlink:href="img/icons/svg/sprite/sprite.svg#github"></use>
+                </svg></a>
               </li>
             </ul>
           </div>
           <nav class="top-nav">
-            <div class="main-logo"><a class="main-logo__link" href="#">EARN</a><span class="main-logo__dot">.</span>
+            <div class="main-logo"><a class="main-logo__link" href="#">LOGO</a><span class="main-logo__dot">!</span>
             </div>
             <div class="top-nav__menu">
               <ul class="top-nav__row">
@@ -32,7 +79,17 @@
                 </li>
                 <li class="top-nav__list"><a class="top-nav__link" href="#">Pricing</a>
                 </li>
-                <li class="top-nav__list"><a class="top-nav__link" href="#">Blog</a>
+                <li class="top-nav__list top-nav__list_nest"><a class="top-nav__link" href="#">Blog</a>
+                  <ul class="top-nav__row-blog">
+                    <li class="top-nav__list"><a class="top-nav__link" href="#">Web Design</a>
+                    </li>
+                    <li class="top-nav__list"><a class="top-nav__link" href="#">Api</a>
+                    </li>
+                    <li class="top-nav__list"><a class="top-nav__link" href="#">eComerce</a>
+                    </li>
+                    <li class="top-nav__list"><a class="top-nav__link" href="#">Branding</a>
+                    </li>
+                  </ul>
                 </li>
                 <li class="top-nav__list"><a class="top-nav__link" href="#">Contact</a>
                 </li>
@@ -43,17 +100,17 @@
               </ul>
             </div>
           </nav>
-        </header>
+        </div>
         <div class="page-title">
           <h1 class="page-title__big-text">The Art of Teaching is the Art of Assisting Discovery
           </h1>
           <p class="page-title__small-text">be brave
           </p>
-          <div class="page-title__buttons"><a class="page-title__btn page-title__btn_red">take a course</a><a class="page-title__btn page-title__btn_blue">watch video</a>
+          <div class="page-title__buttons" id="test"><a class="page-title__btn page-title__btn_red" href="">Take a course</a><a class="page-title__btn page-title__btn_blue" id="js-watch-video-head">Watch video</a>
           </div>
         </div>
       </div>
-    </section>
+    </header>
     <section class="counters">
       <div class="wrapper">
         <div class="counter"><span class="counter__digit">33562</span><span class="counter__title">students</span>
@@ -75,36 +132,54 @@
           </p>
         </div>
         <div class="features-content">
+          <div class="features-content__image-preview"><img class="features-content__image-response" src="img/webapp-1.jpg" alt="" role="presentation"/>
+          </div>
           <div class="features-content__description">
             <div class="features-content__title">We Want You To Learn English
             </div>
             <p class="features-content__text">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
             </p>
             <ul class="features-content__list">
-              <li class="features-content__item">Far far away, behind the word
+              <li class="features-content__item">
+                <svg class="icon icon-check-mark ">
+                  <use xlink:href="img/icons/svg/sprite/sprite.svg#check-mark"></use>
+                </svg>Far far away, behind the word
               </li>
-              <li class="features-content__item">There live the blind texts
+              <li class="features-content__item">
+                <svg class="icon icon-check-mark ">
+                  <use xlink:href="img/icons/svg/sprite/sprite.svg#check-mark"></use>
+                </svg>There live the blind texts
               </li>
-              <li class="features-content__item">Separated they live in bookmarksgrove
+              <li class="features-content__item">
+                <svg class="icon icon-check-mark ">
+                  <use xlink:href="img/icons/svg/sprite/sprite.svg#check-mark"></use>
+                </svg>Separated they live in bookmarksgrove
               </li>
-            </ul><a class="features-content__btn features-content__btn_blue">watch video</a>
-          </div>
-          <div class="features-content__image-preview">
+            </ul><a class="features-content__btn features-content__btn_blue" id="js-watch-video-content">watch video</a>
           </div>
         </div>
         <div class="features-content">
-          <div class="features-content__image-preview features-content__image-preview_revers">
+          <div class="features-content__image-preview features-content__image-preview_revers"><img class="features-content__image-response" src="img/webapp-2.jpg" alt="" role="presentation"/>
           </div>
           <div class="features-content__description features-content__description_revers">
-            <div class="features-content__title-left features-content__title-left_icon-user">Real Project For Real Solutions
+            <div class="features-content__title-left">
+              <svg class="icon icon-user ">
+                <use xlink:href="img/icons/svg/sprite/sprite.svg#user"></use>
+              </svg>Real Project For Real Solutions
             </div>
             <p class="features-content__text">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.
             </p>
-            <div class="features-content__title-left features-content__title-left_icon-shield">Real Project For Real Solutions
+            <div class="features-content__title-left">
+              <svg class="icon icon-shield ">
+                <use xlink:href="img/icons/svg/sprite/sprite.svg#shield"></use>
+              </svg>Real Project For Real Solutions
             </div>
             <p class="features-content__text">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
             </p>
-            <div class="features-content__title-left features-content__title-left_icon-bookmark">Real Project For Real Solutions
+            <div class="features-content__title-left">
+              <svg class="icon icon-bookmark ">
+                <use xlink:href="img/icons/svg/sprite/sprite.svg#bookmark"></use>
+              </svg>Real Project For Real Solutions
             </div>
             <p class="features-content__text">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.
             </p>
@@ -127,31 +202,31 @@
             <p class="showcase-box__text">View Course
             </p></a>
           </div>
-          <div class="showcase-box"><a class="showcase-box__showcase-link" href="#"><img class="showcase-box__img" src="img/project-1.jpg" alt="" role="presentation"/>
+          <div class="showcase-box"><a class="showcase-box__showcase-link" href="#"><img class="showcase-box__img" src="img/project-2.jpg" alt="" role="presentation"/>
             <h3 class="showcase-box__title">Virtual Assistant
             </h3>
             <p class="showcase-box__text">View Course
             </p></a>
           </div>
-          <div class="showcase-box"><a class="showcase-box__showcase-link" href="#"><img class="showcase-box__img" src="img/project-1.jpg" alt="" role="presentation"/>
+          <div class="showcase-box"><a class="showcase-box__showcase-link" href="#"><img class="showcase-box__img" src="img/project-3.jpg" alt="" role="presentation"/>
             <h3 class="showcase-box__title">Read Bible
             </h3>
             <p class="showcase-box__text">View Course
             </p></a>
           </div>
-          <div class="showcase-box"><a class="showcase-box__showcase-link" href="#"><img class="showcase-box__img" src="img/project-1.jpg" alt="" role="presentation"/>
+          <div class="showcase-box"><a class="showcase-box__showcase-link" href="#"><img class="showcase-box__img" src="img/project-4.jpg" alt="" role="presentation"/>
             <h3 class="showcase-box__title">Web Master
             </h3>
             <p class="showcase-box__text">View Course
             </p></a>
           </div>
-          <div class="showcase-box"><a class="showcase-box__showcase-link" href="#"><img class="showcase-box__img" src="img/project-1.jpg" alt="" role="presentation"/>
+          <div class="showcase-box"><a class="showcase-box__showcase-link" href="#"><img class="showcase-box__img" src="img/project-5.jpg" alt="" role="presentation"/>
             <h3 class="showcase-box__title">Virtual Assistant
             </h3>
             <p class="showcase-box__text">View Course
             </p></a>
           </div>
-          <div class="showcase-box"><a class="showcase-box__showcase-link" href="#"><img class="showcase-box__img" src="img/project-1.jpg" alt="" role="presentation"/>
+          <div class="showcase-box"><a class="showcase-box__showcase-link" href="#"><img class="showcase-box__img" src="img/project-6.jpg" alt="" role="presentation"/>
             <h3 class="showcase-box__title">Read Bible
             </h3>
             <p class="showcase-box__text">View Course
@@ -261,6 +336,8 @@
         <div class="recent-post-title">
           <h2 class="recent-post-title__title">Recent Post
           </h2>
+          <p class="recent-post-title__text">Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.
+          </p>
         </div>
         <div class="post-container">
           <div class="post-box"><a class="post-box__link" href="#"><img class="post-box__image" src="img/project-4.jpg" alt="" role="presentation"/></a>
@@ -302,8 +379,115 @@
         </div>
       </div>
     </section>
-    <script src="libs/jquery/dist/jquery.min.js"></script>
-    <script src="libs/owl.carousel/dist/owl.carousel.min.js"></script>
+    <section class="get-started">
+      <div class="get-started__overlay">
+      </div>
+      <div class="wrapper">
+        <div class="get-started-title">
+          <h2 class="get-started-title__title">Lets Get Started
+          </h2>
+          <p class="get-started-title__text">Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.
+          </p><a class="get-started-title__btn get-started-title__btn_red" href="#">Create a free course</a>
+        </div>
+      </div>
+    </section>
+    <footer class="footer" id="jq-footer-waypoint">
+      <div class="wrapper">
+        <div class="footer-menu">
+          <div class="footer-menu__about">
+            <h4 class="footer-menu__title">About Learning
+            </h4>
+            <div class="footer-menu__text">Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.
+            </div>
+          </div>
+          <div class="footer-menu__items">
+            <div class="footer-menu__menu-block">
+              <h4 class="footer-menu__title">Learning
+              </h4>
+              <ul class="footer-menu__list">
+                <li class="footer-menu__item"><a class="footer-menu__link" href="#">Course</a>
+                </li>
+                <li class="footer-menu__item"><a class="footer-menu__link" href="#">Blog</a>
+                </li>
+                <li class="footer-menu__item"><a class="footer-menu__link" href="#">Contact</a>
+                </li>
+                <li class="footer-menu__item"><a class="footer-menu__link" href="#">Terms</a>
+                </li>
+                <li class="footer-menu__item"><a class="footer-menu__link" href="#">Meetups</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer-menu__menu-block">
+              <h4 class="footer-menu__title">Learn & Grow
+              </h4>
+              <ul class="footer-menu__list">
+                <li class="footer-menu__item"><a class="footer-menu__link" href="#">Privacy</a>
+                </li>
+                <li class="footer-menu__item"><a class="footer-menu__link" href="#">Blog</a>
+                </li>
+                <li class="footer-menu__item"><a class="footer-menu__link" href="#">Testimonials</a>
+                </li>
+                <li class="footer-menu__item"><a class="footer-menu__link" href="#">Handbook</a>
+                </li>
+                <li class="footer-menu__item"><a class="footer-menu__link" href="#">Held Desk</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer-menu__menu-block">
+              <h4 class="footer-menu__title">Engage us
+              </h4>
+              <ul class="footer-menu__list">
+                <li class="footer-menu__item"><a class="footer-menu__link" href="#">Marketing</a>
+                </li>
+                <li class="footer-menu__item"><a class="footer-menu__link" href="#">Visual Assistant</a>
+                </li>
+                <li class="footer-menu__item"><a class="footer-menu__link" href="#">System Analysis</a>
+                </li>
+                <li class="footer-menu__item"><a class="footer-menu__link" href="#">Advertise</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer-menu__menu-block">
+              <h4 class="footer-menu__title">Legal
+              </h4>
+              <ul class="footer-menu__list">
+                <li class="footer-menu__item"><a class="footer-menu__link" href="#">Find Designers</a>
+                </li>
+                <li class="footer-menu__item"><a class="footer-menu__link" href="#">Find Developers</a>
+                </li>
+                <li class="footer-menu__item"><a class="footer-menu__link" href="#">Teams</a>
+                </li>
+                <li class="footer-menu__item"><a class="footer-menu__link" href="#">Advertise</a>
+                </li>
+                <li class="footer-menu__item"><a class="footer-menu__link" href="#">API</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-info">
+          <p class="footer-info__rights">&copy; 2016 Nucknine. All Rights Reserved.
+          </p>
+          <p class="footer-info__author">Made by Oleg Maximov
+          </p>
+          <div class="footer-info__image-holder"><a class="footer-info__img" href="#">
+            <svg class="icon icon-twitter ">
+              <use xlink:href="img/icons/svg/sprite/sprite.svg#twitter"></use>
+            </svg></a><a class="footer-info__img" href="#">
+            <svg class="icon icon-facebook ">
+              <use xlink:href="img/icons/svg/sprite/sprite.svg#facebook"></use>
+            </svg></a><a class="footer-info__img" href="#">
+            <svg class="icon icon-linkedin ">
+              <use xlink:href="img/icons/svg/sprite/sprite.svg#linkedin"></use>
+            </svg></a><a class="footer-info__img" href="#">
+            <svg class="icon icon-dribbble ">
+              <use xlink:href="img/icons/svg/sprite/sprite.svg#dribbble"></use>
+            </svg></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="js/libs.min.js"></script>
     <script src="js/common.js"></script>
   </body>
 </html>
