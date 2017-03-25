@@ -5,6 +5,59 @@
 //import fonts
 @import "https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&subset=cyrillic,cyrillic-ext"
 
+//preloader
+.preloader-page
+	position fixed
+	left 0
+	top 0
+	right 0
+	bottom 0
+	background #fff
+	z-index 999
+	&__preloader-dots
+		position absolute
+		top 50%
+		left 50%
+		height 50px
+		width 80px
+	&__dot
+		display inline-block
+		background #666
+		height 8px
+		width 8px
+		opacity 0.3
+		border-radius 50%
+		animation up-and-down 2s infinite
+		&:nth-child(2)
+			animation-delay .15s
+		&:nth-child(3)
+			animation-delay .3s
+		&:nth-child(4)
+			animation-delay .45s
+		&:nth-child(5)
+			animation-delay .6s
+
+@keyframes up-and-down {
+	0%{
+		transform: translateY(0px);
+	}
+	35%{
+		transform: translateY(0px);
+		opacity: 0.3;
+	}
+	50%{
+		transform: translateY(-20px);
+		opacity: 0.8;
+	}
+	70%{
+		transform: translateY(3px);
+		opacity: 0.8;
+	}
+	85%{
+		transform: translateY(-3px);
+	}
+}
+
 //template styles
 
 .overflow

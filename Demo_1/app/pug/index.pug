@@ -8,6 +8,13 @@ html
 		link(rel="stylesheet", href="css/main.min.css")
 		title Learn
 	body
+		+b(id="preloader-page").preloader-page
+			+e(id="preloader-dots").preloader-dots
+				+e.dot
+				+e.dot
+				+e.dot
+				+e.dot
+				+e.dot
 		+b.page-overlay
 			+b.video
 				+e.IFRAME.iframe(width="640" height="360" src="https://www.youtube.com/embed/qzMQza8xZCc" frameborder="0" allowfullscreen)

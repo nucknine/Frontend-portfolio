@@ -1,5 +1,26 @@
+
+
 $(document).ready(function(){
-	svg4everybody({});
+
+  //preloader
+  $(window).on('load', function () {
+    var $preloader = $('#preloader-page'),
+        $dots   = $preloader.find('.preloader-dots');
+    $dots.fadeOut();
+    $preloader.delay(350).fadeOut('slow');
+  });
+
+  // $(window).load(function(){
+  // $('#preloader-dots').fadeOut('slow',function(){
+  //   $(this).remove();
+  // });
+  // });
+
+
+  //svg
+  svg4everybody({});
+
+  //burger-menu
 	$('.burger-icon').click(function(){
 		$('.burger-icon__line_line1').toggleClass('burger-icon__line_line-open1');
 		$('.burger-icon__line_line2').toggleClass('burger-icon__line_line-open2');
@@ -53,8 +74,8 @@ $(document).ready(function(){
 	$('.showcase-title, .showcase-box, .description-box').css('opacity',0);
 	//delay function
 	var itemQueue = []
-  	var delay = 200
-  	var queueTimer
+  var delay = 200
+  var queueTimer
 
 	function processItemQueue () {
     if (queueTimer) return // We're already processing the queue
@@ -92,6 +113,34 @@ $(".showcase-box").waypoint(function () {
 
 	$('#jq-start-a-course-waypoint').waypoint(function() {
       $('.startcourse-title, .btn-holder, .step-slider').addClass('animated fadeIn');
+  }, { offset: '70%' });
+
+//testimonials
+  $('.testimonials-title, .testimonials-carousel').css('opacity',0);
+
+  $('#jq-testimonials-waypoint').waypoint(function() {
+      $('.testimonials-title, .testimonials-carousel').addClass('animated fadeInUp');
+  }, { offset: '70%' });
+
+//recent-post
+  $('.recent-post-title, .post-box').css('opacity',0);
+
+  $('#jq-recent-post-waypoint').waypoint(function() {
+      $('.recent-post-title').addClass('animated fadeInUp');
+  }, { offset: '70%' });
+
+  $(".post-box").waypoint(function () {
+    itemQueue.push(this.element);
+    processItemQueue();
+    }, {
+    offset: '80%'
+    })
+
+//get-started
+  $('.get-started-title').css('opacity',0);
+
+  $('#jq-get-started-waypoint').waypoint(function() {
+      $('.get-started-title').addClass('animated fadeIn');
   }, { offset: '70%' });
 
 //footer

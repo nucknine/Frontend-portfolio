@@ -1,4 +1,47 @@
 @import "https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&subset=cyrillic,cyrillic-ext";
+.preloader-page {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  z-index: 999;
+}
+.preloader-page__preloader-dots {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 50px;
+  width: 80px;
+}
+.preloader-page__dot {
+  display: inline-block;
+  background: #666;
+  height: 8px;
+  width: 8px;
+  opacity: 0.3;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  -webkit-animation: up-and-down 2s infinite;
+          animation: up-and-down 2s infinite;
+}
+.preloader-page__dot:nth-child(2) {
+  -webkit-animation-delay: 0.15s;
+          animation-delay: 0.15s;
+}
+.preloader-page__dot:nth-child(3) {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+.preloader-page__dot:nth-child(4) {
+  -webkit-animation-delay: 0.45s;
+          animation-delay: 0.45s;
+}
+.preloader-page__dot:nth-child(5) {
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+}
 .overflow {
   overflow-y: hidden;
 }
@@ -1559,4 +1602,54 @@
 }
 .icon-github.social-block {
   font-size: 15px;
+}
+@-webkit-keyframes up-and-down {
+  0% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  35% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 0.3;
+  }
+  50% {
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+    opacity: 0.8;
+  }
+  70% {
+    -webkit-transform: translateY(3px);
+            transform: translateY(3px);
+    opacity: 0.8;
+  }
+  85% {
+    -webkit-transform: translateY(-3px);
+            transform: translateY(-3px);
+  }
+}
+@keyframes up-and-down {
+  0% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  35% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 0.3;
+  }
+  50% {
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+    opacity: 0.8;
+  }
+  70% {
+    -webkit-transform: translateY(3px);
+            transform: translateY(3px);
+    opacity: 0.8;
+  }
+  85% {
+    -webkit-transform: translateY(-3px);
+            transform: translateY(-3px);
+  }
 }
