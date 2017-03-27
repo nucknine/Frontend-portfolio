@@ -57,6 +57,7 @@ $(document).ready(function(){
 	$('.counter').css('opacity',0);
 	$('#jq-counters-waypoint').waypoint(function() {
       $('.counter').addClass('animated fadeInUp');
+      $('.counter__digit').countTo(); //countTo
   }, { offset: '70%' });
 
 //features
@@ -74,8 +75,8 @@ $(document).ready(function(){
 	$('.showcase-title, .showcase-box, .description-box').css('opacity',0);
 	//delay function
 	var itemQueue = []
-  var delay = 200
-  var queueTimer
+  	var delay = 200
+  	var queueTimer
 
 	function processItemQueue () {
     if (queueTimer) return // We're already processing the queue
@@ -148,5 +149,27 @@ $(".showcase-box").waypoint(function () {
 	$('#jq-footer-waypoint').waypoint(function() {
       $('.footer-menu__menu-block, .footer-menu__about').addClass('animated fadeIn');
   }, { offset: '50%' });
+
+//counters
+ // 	var elems = [];
+ //  	elems = $(".counter__digit");
+
+ //  	function count(x) {
+ //  	var y = 0;
+ //  	countTimer = setInterval(function(){
+ //  		y+=10;
+ //  		if (y <= x){
+ //  			count(y);
+ //  		}
+ //  		else {
+ //  			countTimer = null;
+ //  		}
+ //  	}, 2);
+ //  	}
+
+ //  	for (var i = 0; i<elems.length; i++) {
+ //        var text = $(elems[i]).text();
+ //        count(text);
+ //  	}
 
 });
