@@ -241,12 +241,12 @@
 	+adaptive(pc)
 		min-width wrapper-width
 	background-color lightgray
-	background-image linear-gradient(to left, redcolor, bluecolor)
-	background-image url(../img/cup-of-coffee.jpg)
-	background-size cover
-	background-attachment: fixed
-	background-position center center
-	background-repeat no-repeat
+	// background-image linear-gradient(to left, redcolor, bluecolor)
+	// background-image url(../img/cup-of-coffee.jpg)
+	// background-size cover
+	// background-attachment: fixed
+	// background-position center center
+	// background-repeat no-repeat
 
 .header
 	padding 1px 0
@@ -625,28 +625,19 @@
 .showcase-container
 	font-size 0
 	width 100%
-	// +adaptive(smart)
-	// 	width 96%
-	// // +adaptive(tablet)
-	// // 	width 100%
 	margin 0 auto
 	margin-top 100px
 
 .showcase-box
 	position relative
-	box-sizing border-box
 	font()
-	inline()
 	text-align center
-	line-height 1px //чтобы не увеличивались по высоте при наведении
-	width 33%
-	padding-right 15px
-	padding-left 15px
+	grid-inline(3, 30, stick)
 	margin-bottom 30px
 	+adaptive(tablet)
-		width 50%
+		grid-inline(2, 30)
 	+adaptive(smart)
-		width 100%
+		grid-inline(1, 30)
 	&:hover
 		& .showcase-box__img
 			transform scale(1.1)
@@ -877,6 +868,7 @@
 			width 90%
 
 .post-container
+	font-size 0
 	margin-top 50px
 	+adaptive(smart)
 		width 80%
@@ -888,13 +880,10 @@
 		margin-top 50px
 
 .post-box
-	font()
-	box-sizing border-box
-	inline()
-	margin-right 20px
+	// box-shadow 0 10px 20px -12px rgba(0,0,0,0.18)
 	margin-bottom 150px
-	cols(3, 35)
-	box-shadow 0 10px 20px -12px rgba(0,0,0,0.18)
+	grid-inline(3, 30)
+	font()
 	+adaptive(smart)
 		width 100%
 	+adaptive(tablet)

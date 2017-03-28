@@ -150,6 +150,12 @@ $(".showcase-box").waypoint(function () {
       $('.footer-menu__menu-block, .footer-menu__about').addClass('animated fadeIn');
   }, { offset: '50%' });
 
+//stellar
+	var parallax = function() {
+		$(window).stellar();
+	};
+
+	parallax();
 //counters
  // 	var elems = [];
  //  	elems = $(".counter__digit");

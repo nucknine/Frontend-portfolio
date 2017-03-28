@@ -144,7 +144,8 @@ gulp.task('scripts', function() {
 		'app/libs/jquery.countTo.js',
 		'app/libs/jquery.waypoints.min.js',
 		'app/libs/owl.carousel.min.js',
-		'app/libs/svg4everybody.min.js',
+		'app/libs/jquery.stellar/src/jquery.stellar.js',
+		'app/libs/svg4everybody.min.js'
 		])
 		.pipe(concat('libs.min.js')) // Собираем их в кучу в новом файле libs.min.js
 		.pipe(uglify()) // Сжимаем JS файл

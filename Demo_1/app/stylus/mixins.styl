@@ -1,11 +1,50 @@
-//common mixins
-cols(n=3, m=10)
-  margin-right unit(m,px)
-  width ((100% - (((@margin-right * (n - 1))/ wrapper-width) * 100%)) / n)
-  &:nth-child(n)
-    margin-right unit(m,px)
-  &:nth-child({n}n)
+//grid mixin float
+grid-float(n=2, m=20, x=1)
+  if x == 'stick'
+    x = 0
+  m = unit(m,px)
+  box-sizing border-box
+  float left
+  if x
+    margin-right (m / 2)
+    // margin-left (m / 2)
+    width "calc((100% - %s * %s) / %s)" % (m n n)
+  else
+    margin-right m
+    width "calc((100% - %s * (%s - 1)) / %s)" % (m n n)
+  margin-left ((m * x) / 2)
+  &:nth-child({n}n+{n})
     margin-right 0px
+
+//clearfix
+clrf()
+  &::after
+    content ""
+    clear both
+    display table
+
+//grid mixin inline-block
+grid-inline(n=2, m=20, x=1)
+  if x == 'stick'
+    x = 0
+  m = unit(m,px)
+  display inline-block
+  vertical-align top
+  box-sizing border-box
+  if x
+    margin-right (m / 2)
+    width "calc((100% - %s * %s) / %s)" % (m n n)
+    &:nth-child(n)
+      margin-right (m / 2)
+  else
+    margin-right m
+    &:nth-child(n)
+      margin-right m
+    width "calc((100% - %s * (%s - 1)) / %s)" % (m n n)
+  margin-left ((m * x) / 2)
+  &:nth-child({n}n+{n})
+    margin-right 0px
+
 
 size(w=100%, h=auto)
   width w
