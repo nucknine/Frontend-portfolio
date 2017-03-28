@@ -140,11 +140,12 @@ gulp.task('browser-sync', function() { // Создаем таск browser-sync
 
 gulp.task('scripts', function() {
 	return gulp.src([ // Берем все необходимые библиотеки
-		'app/libs/jquery.min.js',
+		'app/libs/jquery-1.9.1.js',
+		//'app/libs/jquery.min.js',
 		'app/libs/jquery.countTo.js',
 		'app/libs/jquery.waypoints.min.js',
 		'app/libs/owl.carousel.min.js',
-		'app/libs/jquery.stellar/src/jquery.stellar.js',
+		'app/libs/jquery.stellar.js',
 		'app/libs/svg4everybody.min.js'
 		])
 		.pipe(concat('libs.min.js')) // Собираем их в кучу в новом файле libs.min.js

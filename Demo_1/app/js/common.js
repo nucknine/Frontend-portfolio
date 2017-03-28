@@ -152,7 +152,10 @@ $(".showcase-box").waypoint(function () {
 
 //stellar
 	var parallax = function() {
-		$(window).stellar();
+		$(window).stellar({
+      horizontalScrolling: false,
+      responsive: true
+    });
 	};
 
 	parallax();

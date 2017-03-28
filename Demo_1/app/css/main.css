@@ -295,6 +295,14 @@
   font-size: 0;
   min-width: 100%;
   background-color: #d3d3d3;
+  background-image: -webkit-gradient(linear, right top, left top, from(#ff5656), to(#6a7efc));
+  background-image: -webkit-linear-gradient(right, #ff5656, #6a7efc);
+  background-image: linear-gradient(to left, #ff5656, #6a7efc);
+  background-image: url("../img/cup-of-coffee.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 @media only screen and (min-width: 1025px) {
   .head {
