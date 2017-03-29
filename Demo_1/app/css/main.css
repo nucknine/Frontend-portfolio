@@ -200,6 +200,9 @@
     display: block;
   }
 }
+.burger-icon_hide {
+  opacity: 0;
+}
 .burger-icon__line {
   -webkit-transition: all 0.1s ease-out;
   transition: all 0.1s ease-out;
@@ -1635,6 +1638,9 @@
 }
 .icon-github.social-block {
   font-size: 15px;
+}
+.modern_no-cssanimations .animated {
+  opacity: 1 !important;
 }
 @-webkit-keyframes up-and-down {
   0% {
