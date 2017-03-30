@@ -1,3 +1,17 @@
+//triangle
+  triangle(w=20, color=black, nav=top)
+    w = unit(w, px)
+    display block
+    width 0px
+    height 0px
+    border-top: w solid transparent
+    border-right: w solid transparent
+    border-bottom: w solid transparent
+    border-left: w solid transparent
+    border-{nav}: w solid color
+
+
+
 //grid mixin float
 grid-float(n=2, m=20, x=1)
   if x == 'stick'

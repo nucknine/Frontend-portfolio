@@ -143,6 +143,7 @@ gulp.task('scripts', function() {
 		'app/libs/jquery-1.9.1.js',
 		//'app/libs/jquery.min.js',
 		'app/libs/jquery.countTo.js',
+		'app/libs/jquery.easing/js/jquery.easing.min.js',
 		'app/libs/jquery.waypoints.min.js',
 		'app/libs/owl.carousel.min.js',
 		'app/libs/jquery.stellar.js',
