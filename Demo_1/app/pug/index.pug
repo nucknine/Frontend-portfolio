@@ -51,9 +51,9 @@ html
 			+e.SPAN.line._line3
 		+b.js-top
 			+icon('angle-thin-up')
-		+b(id="jq-head-waypoint" data-stellar-background-ratio="0.5").HEADER.head
+		+b(data-stellar-background-ratio="0.5").HEADER.head
 			+b.overlay
-			+b.wrapper
+			+b.wrapper._header
 				+b.header
 					+b.social
 						+e.SPAN.tel Call: +01 123 456 7890
@@ -102,33 +102,33 @@ html
 					+e(id="test").buttons
 						+e.A(href="").btn._red Take a course
 						+e.A(id="js-watch-video-head").btn._blue Watch video
-		+b(id="jq-counters-waypoint").SECTION.counters
+		+b.SECTION.counters
 			+b.wrapper
-				+b.counter.animate-box
+				+b(data-animate-effect="fadeInLeft").counter.animate-box
 					+e(data-from="0" data-to="33562"
       data-speed="5000" data-refresh-interval="50").SPAN.digit 33562
 					+e.SPAN.title students
-				+b.counter
+				+b(data-animate-effect="fadeInLeft").counter.animate-box
 					+e(data-from="0" data-to="75964"
       data-speed="5000" data-refresh-interval="50").SPAN.digit 75964
 					+e.SPAN.title courses
-				+b.counter
+				+b(data-animate-effect="fadeInRight").counter.animate-box
 					+e(data-from="0" data-to="1456"
       data-speed="5000" data-refresh-interval="50").SPAN.digit 1456
 					+e.SPAN.title instructors
-				+b.counter
+				+b(data-animate-effect="fadeInRight").counter.animate-box
 					+e(data-from="0" data-to="95847"
       data-speed="5000" data-refresh-interval="50").SPAN.digit 95847
 					+e.SPAN.title earning
-		+b(id="jq-features-waypoint-1").SECTION.features
+		+b.SECTION.features
 			+b.wrapper
 				+b.features-title.animate-box
 					+e.H2.title Take A Course
 					+e.P.text Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts
-				+b(id="jq-features-waypoint-content-1").features-content
-					+e(id="jq-features-waypoint-image-1").image-preview
+				+b.features-content
+					+e.image-preview.animate-box
 						+e.IMG(src="img/webapp-1.jpg").image-response
-					+e.description
+					+e.description.animate-box
 						+e.title We Want You To Learn English
 						+e.P.text Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
 						+e.UL.list
@@ -142,10 +142,10 @@ html
 								+icon('check-mark')
 								|Separated they live in bookmarksgrove
 						+e.A(id="js-watch-video-content").btn._blue watch video
-				+b(id="jq-features-waypoint-content-2").features-content
-					+e(id="jq-features-waypoint-image-2").image-preview._revers
+				+b.features-content
+					+e.image-preview._revers.animate-box
 						+e.IMG(src="img/webapp-2.jpg").image-response
-					+e.description._revers
+					+e.description._revers.animate-box
 						+e.title-left
 							+icon('user')
 							|Real Project For Real Solutions
@@ -158,58 +158,58 @@ html
 							+icon('bookmark')
 							|Real Project For Real Solutions
 						+e.P.text Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.
-		+b(id="jq-showcase-waypoint").SECTION.showcase
+		+b.SECTION.showcase
 			+b.wrapper
-				+b.showcase-title
+				+b.showcase-title.animate-box
 					+e.H2.title Showcase of A Finish Projects
 					+e.P.text Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.
 				+b.showcase-container
-					+b.showcase-box
+					+b.showcase-box.animate-box
 						+e.A(href="#").showcase-link
 							+e.IMG(src="img/project-1.jpg").img
 							+e.H3.title Web Master
 							+e.P.text View Course
-					+b.showcase-box
+					+b.showcase-box.animate-box
 						+e.A(href="#").showcase-link
 							+e.IMG(src="img/project-2.jpg").img
 							+e.H3.title Virtual Assistant
 							+e.P.text View Course
-					+b.showcase-box
+					+b.showcase-box.animate-box
 						+e.A(href="#").showcase-link
 							+e.IMG(src="img/project-3.jpg").img
 							+e.H3.title Read Bible
 							+e.P.text View Course
-					+b.showcase-box
+					+b.showcase-box.animate-box
 						+e.A(href="#").showcase-link
 							+e.IMG(src="img/project-4.jpg").img
 							+e.H3.title Web Master
 							+e.P.text View Course
-					+b.showcase-box
+					+b.showcase-box.animate-box
 						+e.A(href="#").showcase-link
 							+e.IMG(src="img/project-5.jpg").img
 							+e.H3.title Virtual Assistant
 							+e.P.text View Course
-					+b.showcase-box
+					+b.showcase-box.animate-box
 						+e.A(href="#").showcase-link
 							+e.IMG(src="img/project-6.jpg").img
 							+e.H3.title Read Bible
 							+e.P.text View Course
 				+b.description-container
-					+b.description-box
+					+b.description-box.animate-box
 						+e.H4.title We have coolest features of this course
 						+e.P.text Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
-					+b.description-box
+					+b.description-box.animate-box
 						+e.H4.title Great teachers that we have
 						+e.P.text Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
-					+b.description-box
+					+b.description-box.animate-box
 						+e.H4.title Steps by steps turorial session
 						+e.P.text Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
-				+b.btn-holder
+				+b.btn-holder.animate-box
 					+e.A.btn._blue Create A Free Course
-				+b(id="jq-start-a-course-waypoint").startcourse-title
+				+b.startcourse-title.animate-box
 					+e.H2.title Start A Course
 					+e.P.text Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.
-				+b.step-slider
+				+b.step-slider.animate-box
 					+e.step
 						+e.title Step 1
 						+e.A(href="#").point._active
@@ -230,11 +230,11 @@ html
 						+e.A(href="#").point
 						+e.progress._last-child
 						+e.description Start Making Money
-		+b(id="jq-testimonials-waypoint").SECTION.Testimonials
+		+b.SECTION.Testimonials
 			+b.wrapper
-				+b.testimonials-title
+				+b.testimonials-title.animate-box
 					+e.H2.title Testimonials
-				+b.owl-carousel.owl-theme.testimonials-carousel__
+				+b.owl-carousel.owl-theme.testimonials-carousel__.animate-box
 					+e.item
 						+e.image._first
 						+e.name Jennifer Clarx, via
@@ -250,13 +250,31 @@ html
 						+e.name Lee Doe, via
 							+e.A(href="#").link-twit  twitter
 						+e.BLOCKQUOTE.text Lorem ipsum dolor sit amet, onsectetur adipisicing elit, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non	proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Excepteur sint occaecat cupidatat non	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-		+b(id="jq-recent-post-waypoint").SECTION.recent-post
+		+b.SECTION.recent-post
 			+b.wrapper
-				+b.recent-post-title
+				+b.recent-post-title.animate-box
 					+e.H2.title Recent Post
 					+e.P.text Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.
 				+b.post-container
-					+b.post-box
+					+b.post-box.animate-box
+						+e.A(href="#").link
+							+e.IMG(src="img/project-3.jpg").image
+						+e.text-container
+							+e.H3.title 45 Minimal Workspace Rooms for Web Savvys
+							+e.date Nov. 15th
+								+e.comments 21
+							+e.text Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
+							+e.A.btn._red Read More
+					+b.post-box.animate-box
+						+e.A(href="#").link
+							+e.IMG(src="img/project-2.jpg").image
+						+e.text-container
+							+e.H3.title 45 Minimal Workspace Rooms for Web Savvys
+							+e.date Nov. 15th
+								+e.comments 21
+							+e.text Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
+							+e.A.btn._red Read More
+					+b.post-box.animate-box
 						+e.A(href="#").link
 							+e.IMG(src="img/project-4.jpg").image
 						+e.text-container
@@ -265,39 +283,21 @@ html
 								+e.comments 21
 							+e.text Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
 							+e.A.btn._red Read More
-					+b.post-box
-						+e.A(href="#").link
-							+e.IMG(src="img/project-4.jpg").image
-						+e.text-container
-							+e.H3.title 45 Minimal Workspace Rooms for Web Savvys
-							+e.date Nov. 15th
-								+e.comments 21
-							+e.text Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
-							+e.A.btn._red Read More
-					+b.post-box
-						+e.A(href="#").link
-							+e.IMG(src="img/project-4.jpg").image
-						+e.text-container
-							+e.H3.title 45 Minimal Workspace Rooms for Web Savvys
-							+e.date Nov. 15th
-								+e.comments 21
-							+e.text Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
-							+e.A.btn._red Read More
-		+b(id="jq-get-started-waypoint").SECTION.get-started
+		+b.SECTION.get-started
 			+e.overlay
 			+b.wrapper
-				+b.get-started-title
+				+b.get-started-title.animate-box
 					+e.H2.title Lets Get Started
 					+e.P.text Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.
 					+e.A(href="#").btn._red Create a free course
-		+b(id="jq-footer-waypoint").FOOTER.footer
+		+b.FOOTER.footer
 			+b.wrapper
 				+b.footer-menu
-					+e.about
+					+e.about.animate-box
 						+e.H4.title About Learning
 						+e.text Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.
 					+e.items
-						+e.menu-block
+						+e.menu-block.animate-box
 							+e.H4.title Learning
 							+e.UL.list
 								+e.LI.item
@@ -310,7 +310,7 @@ html
 									+e.A(href="#").link Terms
 								+e.LI.item
 									+e.A(href="#").link Meetups
-						+e.menu-block
+						+e.menu-block.animate-box
 							+e.H4.title Learn & Grow
 							+e.UL.list
 								+e.LI.item
@@ -323,7 +323,7 @@ html
 									+e.A(href="#").link Handbook
 								+e.LI.item
 									+e.A(href="#").link Held Desk
-						+e.menu-block
+						+e.menu-block.animate-box
 							+e.H4.title Engage us
 							+e.UL.list
 								+e.LI.item
@@ -334,7 +334,7 @@ html
 									+e.A(href="#").link System Analysis
 								+e.LI.item
 									+e.A(href="#").link Advertise
-						+e.menu-block
+						+e.menu-block.animate-box
 							+e.H4.title Legal
 							+e.UL.list
 								+e.LI.item
@@ -347,7 +347,7 @@ html
 									+e.A(href="#").link Advertise
 								+e.LI.item
 									+e.A(href="#").link API
-				+b.footer-info
+				+b.footer-info.animate-box
 					+e.P.rights &copy; 2016 Nucknine. All Rights Reserved.
 					+e.P.author Made by Oleg Maximov
 					+e.image-holder

@@ -146,7 +146,7 @@ gulp.task('scripts', function() {
 		'app/libs/jquery.easing/js/jquery.easing.min.js',
 		'app/libs/jquery.waypoints.min.js',
 		'app/libs/owl.carousel.min.js',
-		'app/libs/jquery.stellar.js',
+		'app/libs/jquery.stellar/src/jquery.stellar.min.js',
 		'app/libs/svg4everybody.min.js',
 		'app/libs/modernizr-custom.js'
 		])

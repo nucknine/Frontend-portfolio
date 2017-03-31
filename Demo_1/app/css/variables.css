@@ -1,0 +1,6 @@
+.modern_no-cssanimations .animated {
+  opacity: 1 !important;
+}
+.animate-box {
+  opacity: 0;
+}

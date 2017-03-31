@@ -242,8 +242,6 @@
 			top 5px
 			left 5px
 
-
-
 .wrapper
 	width wrapper-width
 	margin 0 auto
@@ -251,6 +249,13 @@
 		width 100%
 	+adaptive(tablet)
 		width 100%
+	&_header
+		position relative
+		height 800px
+		+adaptive(smart)
+			height 600px
+		+adaptive(tablet)
+			height 600px
 
 .overlay
 	+adaptive(pc)
@@ -266,7 +271,6 @@
 
 //section head
 .head
-	height 100vh
 	position relative //for overlay fullheight
 	padding 1px 0
 	font-size 0
@@ -274,12 +278,11 @@
 	+adaptive(pc)
 		min-width wrapper-width
 	background-color lightgray
-	background-image linear-gradient(to left, redcolor, bluecolor)
 	background-image url(../img/cup-of-coffee.jpg)
-	background-size cover
-	background-attachment: fixed
-	background-position center center
 	background-repeat no-repeat
+	background-size cover
+	// background-image linear-gradient(to left, redcolor, bluecolor)
+	// background-attachment fixed
 
 .header
 	padding 1px 0
@@ -421,15 +424,15 @@
 	position relative
 	z-index 2
 	font()
-	margin 0 auto
-	width 66%
-	margin-top 217px
-	margin-bottom 220px
+	width 60%
+	top 50%
+	left 50%
+	transform translate(-50%, -50%)
 	+adaptive(smart)
-		margin-top 150px
-		margin-bottom 50px
+		font-size 48px
 		width 90%
 	+adaptive(tablet)
+		font-size 48px
 		width 90%
 	&__big-text
 		line-height 1.333em
@@ -1091,6 +1094,3 @@
 	font-size 19px
 	&.social-block
 		font-size 15px
-
-.modern_no-cssanimations .animated
-	opacity 1 !important
