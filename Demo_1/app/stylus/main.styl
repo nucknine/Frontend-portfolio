@@ -64,7 +64,16 @@
 	overflow-y hidden
 
 *::selection
-	background darkcolor
+	background redcolor
+
+::-webkit-scrollbar-track
+	background-color white
+
+::-webkit-scrollbar
+	width 5px
+
+::-webkit-scrollbar-thumb
+	background-color redcolor
 
 .page-overlay
 	position fixed
@@ -251,11 +260,14 @@
 		width 100%
 	&_header
 		position relative
-		height 800px
+		height 100vh
+		min-height 800px
 		+adaptive(smart)
-			height 600px
+			height 100vh
+			min-height 600px
 		+adaptive(tablet)
-			height 600px
+			height 100vh
+			min-height 600px
 
 .overlay
 	+adaptive(pc)

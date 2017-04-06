@@ -1,3 +1,6 @@
+.modern_no-cssanimations .animated {
+  opacity: 1 !important;
+}
 .animate-box {
   opacity: 0;
 }
@@ -45,11 +48,23 @@
   -webkit-animation-delay: 0.6s;
           animation-delay: 0.6s;
 }
+.overflow {
+  overflow-y: hidden;
+}
 *::-moz-selection {
-  background: #494953;
+  background: #ff5656;
 }
 *::selection {
-  background: #494953;
+  background: #ff5656;
+}
+::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #ff5656;
 }
 .page-overlay {
   position: fixed;
@@ -63,6 +78,12 @@
   z-index: 0;
   -webkit-transition: opacity 0.2s ease-out;
   transition: opacity 0.2s ease-out;
+}
+.page-overlay_visible {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  z-index: 3;
 }
 .video {
   display: none;
@@ -85,6 +106,9 @@
     height: auto;
   }
 }
+.video_visible {
+  display: block;
+}
 .burger-menu {
   position: absolute;
   top: 0;
@@ -101,6 +125,10 @@
   .burger-menu {
     width: 100%;
   }
+}
+.burger-menu_visible {
+  right: 0;
+  opacity: 1;
 }
 .burger-menu__menu {
   padding: 75px 65px 0px 40px;
@@ -187,6 +215,9 @@
     display: block;
   }
 }
+.burger-icon_hide {
+  opacity: 0;
+}
 .burger-icon__line {
   -webkit-transition: all 0.1s ease-out;
   transition: all 0.1s ease-out;
@@ -213,11 +244,39 @@
           transform: rotate(0deg);
   top: 100%;
 }
+.burger-icon__line_line-open1 {
+  -webkit-transform: rotate(135deg);
+      -ms-transform: rotate(135deg);
+          transform: rotate(135deg);
+  top: 50%;
+}
+.burger-icon__line_line-open2 {
+  display: none;
+  top: 50%;
+}
+.burger-icon__line_line-open3 {
+  -webkit-transform: rotate(-135deg);
+      -ms-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+  top: 50%;
+}
 .burger-icon:hover .burger-icon__line_line1 {
   top: -3px;
 }
 .burger-icon:hover .burger-icon__line_line3 {
   top: 18px;
+}
+.burger-icon:hover .burger-icon__line_line-open3 {
+  top: 50%;
+  -webkit-transform: rotate(-135deg) scaleX(0.6);
+      -ms-transform: rotate(-135deg) scaleX(0.6);
+          transform: rotate(-135deg) scaleX(0.6);
+}
+.burger-icon:hover .burger-icon__line_line-open1 {
+  top: 50%;
+  -webkit-transform: rotate(135deg) scaleX(0.6);
+      -ms-transform: rotate(135deg) scaleX(0.6);
+          transform: rotate(135deg) scaleX(0.6);
 }
 .js-top {
   font-family: 'Open Sans', sans-serif, Arial;
@@ -234,6 +293,11 @@
   cursor: pointer;
   -webkit-border-radius: 10px;
           border-radius: 10px;
+}
+.js-top_active {
+  z-index: 998;
+  opacity: 1;
+  display: block;
 }
 .js-top .icon-angle-thin-up {
   position: absolute;
@@ -265,16 +329,19 @@
 }
 .wrapper_header {
   position: relative;
-  height: 800px;
+  height: 100vh;
+  min-height: 800px;
 }
 @media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
   .wrapper_header {
-    height: 600px;
+    height: 100vh;
+    min-height: 600px;
   }
 }
 @media only screen and (min-width: 481px) and (max-width: 1024px) {
   .wrapper_header {
-    height: 600px;
+    height: 100vh;
+    min-height: 600px;
   }
 }
 .overlay {
@@ -829,6 +896,9 @@
   -webkit-box-shadow: 0 10px 15px rgba(0,0,0,0.4);
           box-shadow: 0 10px 15px rgba(0,0,0,0.4);
 }
+.features-content__btn_red {
+  background-color: rgba(255,86,86,0.8);
+}
 .features-content__btn_blue {
   background-color: rgba(106,126,252,0.8);
 }
@@ -1091,6 +1161,9 @@
 .btn-holder__btn:hover {
   -webkit-box-shadow: 0 10px 15px rgba(0,0,0,0.4);
           box-shadow: 0 10px 15px rgba(0,0,0,0.4);
+}
+.btn-holder__btn_red {
+  background-color: rgba(255,86,86,0.8);
 }
 .btn-holder__btn_blue {
   background-color: rgba(106,126,252,0.8);
@@ -1415,6 +1488,9 @@
 .post-box__btn_red {
   background-color: rgba(255,86,86,0.8);
 }
+.post-box__btn_blue {
+  background-color: rgba(106,126,252,0.8);
+}
 .get-started {
   position: relative;
   font-size: 0;
@@ -1485,6 +1561,9 @@
 }
 .get-started-title__btn_red {
   background-color: rgba(255,86,86,0.8);
+}
+.get-started-title__btn_blue {
+  background-color: rgba(106,126,252,0.8);
 }
 .footer {
   font-size: 0;
