@@ -142,12 +142,12 @@ gulp.task('scripts', function() {
 	return gulp.src([ // Берем все необходимые библиотеки
 		'app/libs/jquery-1.9.1.js',
 		//'app/libs/jquery.min.js',
+		'app/libs/svg4everybody.min.js',
 		'app/libs/jquery.countTo.js',
 		'app/libs/jquery.easing/js/jquery.easing.min.js',
 		'app/libs/jquery.waypoints.min.js',
 		'app/libs/owl.carousel.min.js',
 		'app/libs/jquery.stellar/src/jquery.stellar.min.js',
-		'app/libs/svg4everybody.min.js',
 		'app/libs/modernizr-custom.js'
 		])
 		.pipe(concat('libs.min.js')) // Собираем их в кучу в новом файле libs.min.js
@@ -182,26 +182,6 @@ gulp.task('img', function() {
 		.pipe(gulp.dest('dist/img')); // Выгружаем на продакшен
 });
 
-//build
-gulp.task('build', ['clean', 'img', 'stylus', 'uncss', 'scripts'], function() {
-
-	var buildCss = gulp.src([ // Переносим библиотеки в продакшен
-		'app/css/main.css',
-		'app/css/libs.min.css'
-		])
-	.pipe(gulp.dest('dist/css'))
-
-	var buildFonts = gulp.src('app/fonts/**/*') // Переносим шрифты в продакшен
-	.pipe(gulp.dest('dist/fonts'))
-
-	var buildJs = gulp.src('app/js/**/*') // Переносим скрипты в продакшен
-	.pipe(gulp.dest('dist/js'))
-
-	var buildHtml = gulp.src('app/*.html') // Переносим HTML в продакшен
-	.pipe(gulp.dest('dist'));
-
-});
-
 //clear cache
 gulp.task('clear', function (callback) {
 	return cache.clearAll();
@@ -216,3 +196,27 @@ gulp.task('watch', ['browser-sync'], function() {
 
 //default
 gulp.task('default', ['svgSprite', 'sprite', 'scripts', 'watch', 'browser-sync']);
+
+//build
+gulp.task('build', ['clean', 'scripts', 'svgSprite', 'css-libs', 'img', 'stylus', 'uncss'], function() {
+
+	var buildCss = gulp.src([ // Переносим библиотеки в продакшен
+		'app/css/main.css',
+		'app/css/main.min.css',
+		'app/css/libs.min.css'
+		])
+	.pipe(gulp.dest('dist/css'))
+
+	var buildFonts = gulp.src('app/fonts/**/*') // Переносим шрифты в продакшен
+	.pipe(gulp.dest('dist/fonts'))
+
+	var buildJs = gulp.src('app/js/**/*') // Переносим скрипты в продакшен
+	.pipe(gulp.dest('dist/js'))
+
+	var buildHtml = gulp.src('app/*.html') // Переносим HTML в продакшен
+	.pipe(gulp.dest('dist'))
+
+	var buildSvg = gulp.src('app/img/icons/**/*') // Переносим скрипты в продакшен
+	.pipe(gulp.dest('dist/img/icons'));
+
+});
