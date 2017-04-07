@@ -3,7 +3,44 @@
 @import "sprite"
 
 //import fonts
-@import "https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&subset=cyrillic,cyrillic-ext"
+webfont('Opensans_regular', 'opensans', true, 'normal')
+webfont('Opensans_bold', 'opensansbold', true, 'normal')
+
+
+font_h4_opensans_bold()
+	font-family: 'Opensans_bold', sans-serif;
+	font-size 26px
+	line-height 1.618
+
+font_p_opensans_regular()
+	font-family: 'Opensans_regular', sans-serif;
+	font-size 16px
+	line-height 1.618
+
+font_p_opensans_bold()
+	font-family: 'Opensans_bold', sans-serif;
+	font-size 16px
+	line-height 1.618
+
+font_h4_opensans_regular()
+	font-family: 'Opensans_regular', sans-serif;
+	font-size 26px
+	line-height 1.618
+
+font_h3_opensans_regular()
+	font-family: 'Opensans_regular', sans-serif;
+	font-size 42px
+	line-height 1.618
+
+font_h2_opensans_regular()
+	font-family: 'Opensans_regular', sans-serif;
+	font-size 68px
+	line-height 1.618
+
+font_h1_opensans_regular()
+	font-family: 'Opensans_regular', sans-serif;
+	font-size 110px
+	line-height 1.618
 
 //preloader
 .preloader-page
@@ -12,19 +49,20 @@
 	top 0
 	right 0
 	bottom 0
-	background #fff
+	background linear-gradient(45deg, white, bluecolor)
+	background white
 	z-index 999
 	&__preloader-dots
 		position absolute
 		top 50%
 		left 50%
-		height 50px
-		width 80px
+		height 52px
+		width 120px
 	&__dot
 		display inline-block
-		background #666
-		height 8px
-		width 8px
+		background bluecolor
+		height 20px
+		width 20px
 		opacity 0.3
 		border-radius 50%
 		animation up-and-down 2s infinite
@@ -127,10 +165,9 @@
 		// width 270px
 	&__menu
 		padding 75px 65px 0px 40px
-		font()
-		font-size 16px
+		font_p_opensans_regular()
 		+adaptive(smart)
-			font-size 32px
+			font_h3_opensans_regular()
 		line-height 1.7
 	&__list
 		&_nest
@@ -223,14 +260,14 @@
 		transform rotate(135deg) scaleX(0.6)
 
 .js-top
-	font()
-	width 50px
-	height 50px
+	font_p_opensans_regular()
+	width 52px
+	height 52px
 	background-color rgba(255,56,56, 0.5)
 	display none
 	position fixed
-	bottom 50px
-	right 50px
+	bottom 52px
+	right 52px
 	opacity 0
 	cursor pointer
 	border-radius 10px
@@ -241,8 +278,8 @@
 
 	.icon-angle-thin-up
 		position absolute
-		top 10px
-		left 10px
+		top 11px
+		left 11px
 		color white
 		font-size 30px
 		transition all .2s ease
@@ -255,8 +292,10 @@
 	width wrapper-width
 	margin 0 auto
 	+adaptive(smart)
+		overflow-x hidden
 		width 100%
 	+adaptive(tablet)
+		overflow-x hidden
 		width 100%
 	&_header
 		position relative
@@ -298,7 +337,7 @@
 
 .header
 	padding 1px 0
-	font()
+	font_p_opensans_regular()
 	position relative
 
 .social
@@ -307,33 +346,34 @@
 	right 0px
 	color graytext
 	+adaptive(smart)
-		right 20px
+		right 26px
 	&__tel
 		inline()
 		vertical-align middle
-		line-height 20px
-		width 150px
-		height 20px
+		line-height 26px
+		width 170px
+		height 26px
+		text-align right
 		border-right 1px solid graytext
-		padding-right 10px
+		padding-right 13px
 	&__row
-		padding-left 10px
 		inline()
-		height 20px
-		line-height 20px
+		padding-left 13px
+		height 26px
+		line-height 26px
 	&__list
 		inline()
 		vertical-align middle
-		width 20px
-		height 20px
-		margin-right 10px
+		width 26px
+		height 26px
+		margin-right 13px
 		&:last-child
 			margin-right 0px
 	&__link
 		display block
 		cursor pointer
-		width 20px
-		height 20px
+		width 26px
+		height 26px
 		color graytext
 		transition color 0.2s ease-out
 		&:hover
@@ -341,25 +381,25 @@
 
 .top-nav
 	position relative
-	margin-top 81px
+	margin-top 78px
 	display block
 	width 100%
 	&__menu
+		position absolute
+		right 0
+		inline()
 		+adaptive(smart)
 			display none
 		+adaptive(tablet)
 			display none
-		position absolute
-		right 0
-		inline()
 	&__row
-		font-size 14px
+		font_p_opensans_regular()
 		inline()
 	&__list
-		margin-right 40px
+		margin-right 52px
 		inline()
 		&:nth-child(5)
-			margin-right 20px
+			margin-right 26px
 		&_register
 			margin-right 0
 		&_nest
@@ -373,7 +413,7 @@
 		&_register
 			color graycolor
 			background-color rgba(255,255,255,0.4)
-			padding 8px 10px
+			padding 7px 13px
 			border-radius 20px
 			transition box-shadow ease-out 0.3s
 			&:hover
@@ -385,14 +425,14 @@
 	&__row-blog
 		transition all 0.3s ease-out .1s
 		top 70px
-		left 250px
+		left 300px
 		position absolute
 		background-color black
 		display block
 		opacity 0
-		width 130px
-		padding 20px
-		line-height 1.7
+		width 170px
+		padding 13px
+		line-height 1.618
 		box-sizing border-box
 		border-radius 10px
 		&::before
@@ -422,8 +462,7 @@
 	left 34px
 	inline()
 	width 100px
-	font-size 24px
-	font-weight bold
+	font_h4_opensans_bold()
 	+adaptive(smart)
 		left 20px
 	&__link
@@ -435,47 +474,46 @@
 .page-title
 	position relative
 	z-index 2
-	font()
+	font_p_opensans_regular()
 	width 60%
 	top 50%
 	left 50%
 	transform translate(-50%, -50%)
 	+adaptive(smart)
-		font-size 48px
+		font_h3_opensans_regular()
 		width 90%
 	+adaptive(tablet)
-		font-size 48px
+		font_h3_opensans_regular()
 		width 90%
 	&__big-text
-		line-height 1.333em
+		font_h3_opensans_regular()
 		color white
-		font-size 48px
 		text-align center
 		+adaptive(smart)
-			font-size 1.9rem
+			font_h4_opensans_regular()
 		+adaptive(tablet)
-			font-size 1.9rem
+			font_h3_opensans_regular()
 	&__small-text
-		margin-top 35px
+		margin-top 26px
 		color white
-		font-size 24px
+		font-size 26px
 		text-align center
 		+adaptive(smart)
-			margin-top 20px
-			font-size 1.4rem
+			margin-top 26px
+			font-size 16px
 	&__buttons
 		text-align center
 		margin 0 auto
-		margin-top 35px
+		margin-top 39px
 		+adaptive(smart)
 			width 60%
 	&__btn
 		btn()
 		&:first-child
-			margin-right 10px
+			margin-right 13px
 			+adaptive(smart)
 				margin-right 0px
-				margin-bottom 5px
+				margin-bottom 7px
 
 //section counters
 .counters
@@ -484,33 +522,33 @@
 	color darkcolor
 
 .counter
-	font()
+	font_p_opensans_regular()
 	inline()
 	width 25%
-	margin-top 57px
-	margin-bottom 80px
+	margin-top 52px
+	margin-bottom 78px
 	+adaptive(tablet)
 		width 100%
-		margin-top 50px
+		margin-top 52px
 		margin-bottom 0px
 		&:last-child
-			margin-bottom 50px
+			margin-bottom 52px
 	+adaptive(smart)
 		width 100%
-		margin-top 50px
+		margin-top 52px
 		margin-bottom 0px
 		&:last-child
-			margin-bottom 50px
+			margin-bottom 52px
 	&__digit
 		text-align center
 		display block
-		font-size 44px
+		font_h3_opensans_regular()
 	&__title
 		text-transform uppercase
 		text-align center
-		margin-top 35px
+		margin-top 39px
 		display block
-		letter-spacing: 5px
+		letter-spacing: 3px
 
 //section features
 
@@ -520,46 +558,45 @@
 	padding 1px 0
 
 .features-title
-	width 50%
-	margin 120px auto 100px auto
+	width 60%
+	margin 130px auto 104px auto
 	text-align center
 	+adaptive(smart)
-		margin-top 50px
-		margin-bottom 50px
+		margin-top 52px
+		margin-bottom 52px
 		width 90%
 	+adaptive(tablet)
-		margin-top 50px
-		margin-bottom 50px
+		margin-top 52px
+		margin-bottom 52px
 		width 90%
 	&__title
-		font-size 34px
+		font_h3_opensans_regular()
 	&__text
-		font-size 18px
-		line-height 1.5em
+		font_p_opensans_regular()
 		color gray
-		margin-top 20px
+		margin-top 26px
 
 .features-content
 	display block
-	height 500px
+	min-height 500px
 	width 100%
 	position relative
-	margin-top 100px
+	margin-top 104px
 	margin-bottom 130px
 	+adaptive(smart)
 		width 90%
 		height auto
 		margin 0 auto
-		margin-top 50px
-		margin-bottom 50px
+		margin-top 52px
+		margin-bottom 52px
 	+adaptive(tablet)
 		width 90%
 		height auto
 		margin 0 auto
-		margin-top 50px
-		margin-bottom 50px
+		margin-top 52px
+		margin-bottom 52px
 	&:last-child
-		margin-bottom 115px
+		margin-bottom 117px
 	&__description
 		position absolute
 		left 0
@@ -581,29 +618,27 @@
 				position static
 	&__title
 		position relative
-		margin-top 70px
-		font-size 24px
+		margin-top 26px
+		font_h4_opensans_regular()
 	&__title-left
 		position relative
-		margin-top 40px
-		font-size 20px
-		padding-left 30px
+		margin-top 26px
+		font_h4_opensans_regular()
+		padding-left 26px
 		&:first-child
-			margin-top 65px
+			margin-top 26px
 	&__text
 		color gray
-		margin-top 28px
-		font-size 16px
-		line-height 1.7
+		margin-top 26px
+		font_p_opensans_regular()
 	&__list
 		color gray
 		margin-top 45px
-		font-size 16px
-		line-height 1.7
+		font_p_opensans_regular()
 	&__item
 		position relative
-		margin-top 21px
-		padding-left 30px
+		margin-top 26px
+		padding-left 26px
 	&__image-preview
 		position absolute
 		right 0
@@ -624,7 +659,7 @@
 		height auto
 	&__btn
 		btn()
-		margin-top 35px
+		margin-top 36px
 
 //icons of features section
 .icon-check-mark
@@ -636,13 +671,13 @@
 
 .icon-shield, .icon-user, .icon-bookmark
 	position absolute
-	top -1px
+	top 13px
 	left 0
 	font-size 18px
 	color bluecolor
 
 .icon-user
-	top 3px
+	top 14px
 
 //section showcase
 
@@ -652,49 +687,48 @@
 
 .showcase-title
 	width 60%
-	margin 120px auto 100px auto
+	margin 130px auto 104px auto
 	text-align center
 	+adaptive(smart)
-		margin-top 50px
-		margin-bottom 50px
+		margin-top 52px
+		margin-bottom 52px
 		width 90%
 	+adaptive(tablet)
-		margin-top 50px
-		margin-bottom 50px
+		margin-top 52px
+		margin-bottom 52px
 		width 90%
 	&__title
-		font-size 34px
+		font_h3_opensans_regular()
 	&__text
-		font-size 18px
-		line-height 1.5em
+		font_p_opensans_regular()
 		color gray
-		margin-top 20px
+		margin-top 26px
 
 .showcase-container
 	font-size 0
 	width 100%
 	margin 0 auto
-	margin-top 100px
+	margin-top 104px
 
 .showcase-box
 	position relative
 	font()
 	text-align center
-	grid-inline(3, 30, stick)
+	grid-inline(3, 26, stick)
 	margin-bottom 30px
 	+adaptive(tablet)
-		grid-inline(2, 30)
+		grid-inline(2, 26)
 	+adaptive(smart)
-		grid-inline(1, 30)
+		grid-inline(1, 26)
 	&:hover
 		& .showcase-box__img
 			transform scale(1.1)
 		& .showcase-box__showcase-link::after
 			opacity 1
 		& .showcase-box__title
-			left 35px
+			left 52px
 		& .showcase-box__text
-			left 35px
+			left 52px
 	&__showcase-link
 		position relative
 		bottom 0
@@ -721,20 +755,20 @@
 		transition all 300ms cubic-bezier(0.55, 0.085, 0.68, 0.53)
 	&__title
 		transition all 600ms cubic-bezier(0.55, 0.085, 0.68, 0.53)
-		font-size 30px
+		font_h4_opensans_regular()
 		position absolute
-		bottom 50px
-		left 20px
+		bottom 52px
+		left 26px
 	&__text
 		transition all 300ms cubic-bezier(0.55, 0.085, 0.68, 0.53)
 		position absolute
-		left 20px
-		bottom 20px
+		left 26px
+		bottom 26px
 
 .description-container
 	font-size 0
 	width 100%
-	margin-top 60px
+	margin-top 52px
 	+adaptive(smart)
 		width 75%
 		margin 0 auto
@@ -748,61 +782,56 @@
 	font()
 	inline()
 	box-sizing border-box
-	width 33%
-	padding-left 15px
-	padding-right 15px
+	grid-inline(3, 26, stick)
 	+adaptive(smart)
-		margin-top 40px
+		margin-top 39px
 		width 100%
 	+adaptive(tablet)
-		margin-top 40px
+		margin-top 39px
 		width 100%
 	&__title
-		font-size 18px
+		font_h4_opensans_regular()
 	&__text
-		margin-top 20px
-		font-size 16px
+		margin-top 26px
+		font_p_opensans_regular()
 		color gray
-		line-height 1.7
 
 .btn-holder
-	margin-top 60px
+	margin-top 52px
 	text-align center
 	&__btn
 		btn()
 
 .startcourse-title
-	font()
 	width 60%
-	margin 150px auto 100px auto
+	margin 130px auto 104px auto
 	text-align center
 	&__title
-		font-size 34px
+		font_h3_opensans_regular()
 	&__text
-		font-size 18px
-		line-height 1.5em
+		font_p_opensans_regular()
 		color gray
-		margin-top 20px
+		margin-top 26px
 	+adaptive(smart)
-		margin-bottom 50px
+		margin-bottom 52px
 		width 90%
 	+adaptive(tablet)
-		margin-bottom 50px
+		margin-bottom 52px
 		width 90%
 
 .step-slider
 	font-size 0
 	text-align center
 	margin-bottom 120px
-	margin-top 150px
+	margin-top 156px
 	&__step
-		font()
+		font_p_opensans_regular()
 		box-sizing border-box
 		inline()
 		min-height 100px
 		width 25%
 	&__title
-		font-size 18px
+		font_h4_opensans_regular()
 	&__progress
 		z-index 1
 		position relative
@@ -816,7 +845,7 @@
 			background-color point_clr
 	&__point
 		z-index 3
-		margin-top 10px
+		margin-top 13px
 		position relative
 		inline()
 		width 30px
@@ -834,8 +863,8 @@
 				border-radius 50%
 				background-color point_clr_active
 	&__description
-		margin-top 35px
-		font-size 14px
+		margin-top 26px
+		font_p_opensans_regular()
 
 //SECTION.Testimonials
 .Testimonials
@@ -843,14 +872,14 @@
 	padding 1px 0
 
 .testimonials-title
-	font()
-	margin 150px auto 0px auto
+	font_h3_opensans_regular()
+	margin 130px auto 0px auto
 	text-align center
 	&__title
-		font-size 34px
+		font_h3_opensans_regular()
 
 .testimonials-carousel
-	margin 100px auto
+	margin 52px auto 104px auto
 	width 60%
 	height auto
 	+adaptive(smart)
@@ -875,20 +904,16 @@
 		&_third
 			background-image url(../img/person_3.jpg)
 	&__name
-		margin-top 20px
-		font()
-		font-size 12px
-		font-weight 700
+		margin-top 26px
+		font_p_opensans_bold()
 		text-transform uppercase
 		color darkgraytext
 	&__link-twit
 		text-decoration none
 		color bluecolor
 	&__text
-		font()
-		margin-top 40px
-		font-size 16px
-		line-height 1.7
+		font_p_opensans_regular()
+		margin-top 26px
 		color darkgraytext
 
 
@@ -898,15 +923,14 @@
 	padding 1px 0
 
 .recent-post-title
-	font()
-	margin 150px auto 0px auto
+	font_h3_opensans_regular()
+	margin 130px auto 0px auto
 	text-align center
 	&__title
-		font-size 34px
+		font_h3_opensans_regular()
 	&__text
 		width 60%
-		font-size 18px
-		line-height 1.5em
+		font_p_opensans_regular()
 		color gray
 		margin 0 auto
 		margin-top 20px
@@ -917,19 +941,19 @@
 
 .post-container
 	font-size 0
-	margin-top 50px
+	margin-top 52px
 	+adaptive(smart)
 		width 80%
 		margin 0 auto
-		margin-top 50px
+		margin-top 52px
 	+adaptive(tablet)
 		margin 0 auto
 		width 80%
-		margin-top 50px
+		margin-top 52px
 
 .post-box
 	// box-shadow 0 10px 20px -12px rgba(0,0,0,0.18)
-	margin-bottom 150px
+	margin-bottom 130px
 	grid-inline(3, 30)
 	font()
 	+adaptive(smart)
@@ -940,37 +964,34 @@
 		size(100%,auto)
 		max-width 100%
 	&__text-container
-		padding-left 30px
+		padding-left 26px
 		padding-right @padding-left
 	&__title
-		margin-top 30px
-		line-height 1.5
-		font-size 20px
+		margin-top 26px
+		font_h4_opensans_regular()
 	&__date
-		margin-top 20px
+		margin-top 26px
 		position relative
 		color darkgraytext
-		font-size 16px
-		line-height 1.7
+		font_p_opensans_regular()
 	&__comments
 		position absolute
 		top 0
 		right 30px
 	&__text
-		margin-top 20px
+		min-height 150px
+		margin-top 26px
 		color darkgraytext
-		font-size 16px
-		line-height 1.7
+		font_p_opensans_regular()
 	&__btn
-		margin-top 20px
-		margin-bottom 20px
+		margin-top 26px
+		margin-bottom 26px
 		btn()
-		padding 8px 20px
+		padding 13px 26px
 		min-width 0px
 		height auto
-		font-size 16px
+		font_p_opensans_regular()
 		height auto
-		line-height normal
 
 //SECTION.get-started
 .get-started
@@ -992,23 +1013,20 @@
 .get-started-title
 	position relative
 	z-index 1
-	font()
-	color #fff
-	margin 120px auto 130px auto
+	margin 130px auto 104px auto
 	text-align center
 	&__title
-		font-size 34px
+		font_h3_opensans_regular()
+		color #fff
 	&__text
 		width 60%
-		font-size 18px
-		line-height 1.5em
+		font_p_opensans_regular()
 		color gray
 		margin 0 auto
-		margin-top 30px
+		margin-top 26px
 	&__btn
-		margin-top 100px
+		margin-top 104px
 		btn()
-		font-size 16px
 		text-transform uppercase
 
 //footer
@@ -1020,30 +1038,29 @@
 
 .footer-menu
 	font-size 0
-	margin-top 110px
-	line-height 1.7
+	margin-top 130px
 	+adaptive(smart)
 		width 80%
 		margin 0 auto
-		margin-top 110px
+		margin-top 104px
 	+adaptive(tablet)
 		width 100%
 		margin 0 auto
-		margin-top 110px
+		margin-top 104px
 	&__about
 		inline()
-		font()
+		font_p_opensans_regular()
 		size(33%)
-		padding-right 150px
+		padding-right 26px
 		box-sizing border-box
 		+adaptive(smart)
 			width 100%
 			padding-right 0px
 	&__title
-		font-size 16px
+		font_p_opensans_regular()
 	&__text
-		margin-top 20px
-		font-size 16px
+		margin-top 26px
+		font_p_opensans_regular()
 		color darkgraytext
 	&__items
 		inline()
@@ -1051,14 +1068,15 @@
 		+adaptive(smart)
 			width 100%
 	&__menu-block
-		font()
-		inline()
-		width 25%
+		font_p_opensans_regular()
+		grid-inline(4,26)
+		// inline()
+		// width 25%
 		+adaptive(smart)
-			margin-top 50px
+			margin-top 52px
 			width 50%
 	&__list
-		margin-top 20px
+		margin-top 26px
 	&__link
 		color darkgraytext
 		text-decoration none
@@ -1066,22 +1084,21 @@
 			text-decoration underline
 
 .footer-info
-	font()
-	line-height 1.7
+	font_p_opensans_regular()
 	width 60%
-	margin 110px auto 120px auto
+	margin 104px auto 130px auto
 	text-align center
 	color darkgraytext
 	&__image-holder
 		width 200px
 		margin 0 auto
-		margin-top 20px
+		margin-top 26px
 		text-align center
 	&__img
 		transition color 0.2s ease-out
 		inline()
-		margin-right 10px
-		margin-left 10px
+		margin-right 13px
+		margin-left 13px
 		color bluecolor
 		&:hover
 			color redcolor
