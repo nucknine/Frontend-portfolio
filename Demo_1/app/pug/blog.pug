@@ -1,0 +1,208 @@
+include ../../node_modules/bemto.pug/bemto.pug
+include mixins/svgmixin.pug
+
+doctype html
+html
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		meta(name="description" content="Website Template by Nucknine")
+		meta(name="author" content="nucknine.com")
+		meta(name="keywords" content="website templates, template, html5, css3, mobile first, responsive")
+		link(rel="stylesheet", href="css/libs.min.css")
+		link(rel="stylesheet", href="css/main.css")
+		title Создай свой курс
+	body
+		include ../templates/preloader.pug
+		+b.page-overlay
+			+b.burger-menu
+				+e.menu
+					+e.UL.row
+						+e.LI.list
+							+e.A(href="index.html").link Домой
+						+e.LI.list
+							+e.A(href="courses.html").link Курсы
+						+e.LI.list
+							+e.A(href="prices.html").link Цены
+						+e.LI.list._nest
+							+e.A(href="blog.html").link._nest Блог
+							+e.UL.row-blog
+								+e.LI.list
+									+e.A(href="#").link Веб дизайн
+								+e.LI.list
+									+e.A(href="#").link API
+								+e.LI.list
+									+e.A(href="#").link Электронная коммерция
+								+e.LI.list
+									+e.A(href="#").link Продвижение
+						+e.LI.list
+							+e.A(href="contacts.html").link Контакты
+						+e.LI.list
+							+e.A(href="#").link Вход
+						+e.LI.list
+							+e.A(href="#").link Создать курс
+		+b.burger-icon
+			+e.SPAN.line._line1
+			+e.SPAN.line._line2
+			+e.SPAN.line._line3
+		+b.js-top
+			+icon('angle-thin-up')
+		+b(data-stellar-background-ratio="0.5").HEADER.head
+			+b.overlay
+			+b.wrapper
+				+b.header
+					+b.social
+						+e.SPAN.tel Тел: +01 123 456 7890
+						+e.UL.row
+							+e.LI.list
+								+e.A(href="#").link
+									+icon('twitter', 'social-block')
+							+e.LI.list
+								+e.A(href="#").link
+									+icon('dribbble', 'social-block')
+							+e.LI.list
+								+e.A(href="#").link
+									+icon('github', 'social-block')
+					+b.NAV.top-nav
+						+b.main-logo
+							+e.A(href="#").link LOGO
+							+e.SPAN.dot !
+						+e.menu
+							+e.UL.row
+								+e.LI.list
+									+e.A(href="index.html").link Домой
+								+e.LI.list
+									+e.A(href="courses.html").link Курсы
+								+e.LI.list
+									+e.A(href="prices.html").link Цены
+								+e.LI.list._nest
+									+e.A(href="blog.html").link Блог
+									+e.UL.row-blog
+										+e.LI.list
+											+e.A(href="#").link._white Веб дизайн
+										+e.LI.list._white
+											+e.A(href="#").link._white Api
+										+e.LI.list
+											+e.A(href="#").link._white eКоммерция
+										+e.LI.list
+											+e.A(href="#").link._white Branding
+								+e.LI.list
+									+e.A(href="contacts.html").link Контакты
+								+e.LI.list_register
+									+e.A(href="#").link_register Вход
+								+e.LI.list_register
+									+e.A(href="#").link_register Создать аккаунт
+				+b.page-title
+					+e.H1.big-text._large Блог
+		+b.SECTION.recent-post
+			+b.wrapper
+				+b.recent-post-title.animate-box
+					+e.H2.title Последние публикации
+					+e.P.text Задача организации, в особенности же реализация намеченных плановых заданий представляет собой интересный эксперимент проверки форм развития.
+				+b.post-container
+					+b.post-box.animate-box
+						+e.A(href="#").link
+							+e.IMG(src="img/project-3.jpg").image
+						+e.text-container
+							+e.H3.title 27 Появление нового крупного обновления
+							+e.date Фев. 15th
+								+e.comments 21
+							+e.text Новая модель организационной деятельности представляет собой интересный эксперимент проверки систем массового участия.
+							+e.A.btn._red Читать далее
+					+b.post-box.animate-box
+						+e.A(href="#").link
+							+e.IMG(src="img/project-2.jpg").image
+						+e.text-container
+							+e.H3.title 35 Cервисы для функционирования
+							+e.date Нояб. 15
+								+e.comments 28
+							+e.text Таким образом постоянный количественный рост и сфера нашей активности обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия.
+							+e.A.btn._red Читать далее
+					+b.post-box.animate-box
+						+e.A(href="#").link
+							+e.IMG(src="img/project-4.jpg").image
+						+e.text-container
+							+e.H3.title 45 Минимальное рабочее место
+							+e.date Март 15th
+								+e.comments 21
+							+e.text Разнообразный и богатый опыт, сложившаяся структура организации позволяет выполнять важные задания по разработке системы обучения кадров.
+							+e.A.btn._red Читать далее
+		+b.SECTION.get-started
+			+e.overlay
+			+b.wrapper
+				+b.get-started-title.animate-box
+					+e.H2.title Давайте приступим
+					+e.P.text новая модель организационной деятельности представляет собой интересный эксперимент проверки систем массового участия.
+					+e.A(href="#").btn._red Создать курс бесплатно
+		+b.FOOTER.footer
+			+b.wrapper
+				+b.footer-menu
+					+e.about.animate-box
+						+e.H4.title Об обучении
+						+e.text Новая модель организационной деятельности представляет собой интересный эксперимент проверки систем массового участия.
+					+e.items
+						+e.menu-block.animate-box
+							+e.H4.title Обучение
+							+e.UL.list
+								+e.LI.item
+									+e.A(href="courses.html").link Курсы
+								+e.LI.item
+									+e.A(href="blog.html").link Блог
+								+e.LI.item
+									+e.A(href="contacts.html").link Контакты
+								+e.LI.item
+									+e.A(href="#").link Условия
+								+e.LI.item
+									+e.A(href="#").link Встречи
+						+e.menu-block.animate-box
+							+e.H4.title Учись и расти
+							+e.UL.list
+								+e.LI.item
+									+e.A(href="#").link Конфиденциальность
+								+e.LI.item
+									+e.A(href="blog.html").link Блог
+								+e.LI.item
+									+e.A(href="#").link Отзывы
+								+e.LI.item
+									+e.A(href="#").link Книги
+								+e.LI.item
+									+e.A(href="#").link Стол помощи
+						+e.menu-block.animate-box
+							+e.H4.title Присоединяйся
+							+e.UL.list
+								+e.LI.item
+									+e.A(href="#").link Маркетинг
+								+e.LI.item
+									+e.A(href="#").link Визуальный помощник
+								+e.LI.item
+									+e.A(href="#").link Системный аналитик
+								+e.LI.item
+									+e.A(href="#").link Реклама
+						+e.menu-block.animate-box
+							+e.H4.title Права
+							+e.UL.list
+								+e.LI.item
+									+e.A(href="#").link Найти дизайнер
+								+e.LI.item
+									+e.A(href="#").link Найти разработчика
+								+e.LI.item
+									+e.A(href="#").link Команды
+								+e.LI.item
+									+e.A(href="#").link Реклама
+								+e.LI.item
+									+e.A(href="#").link API
+				+b.footer-info.animate-box
+					+e.P.rights &copy; 2016 Nucknine. All Rights Reserved.
+					+e.P.author Made by Oleg Maximov
+					+e.image-holder
+						+e.A(href="#").img
+							+icon('twitter')
+						+e.A(href="#").img
+							+icon('facebook')
+						+e.A(href="#").img
+							+icon('linkedin')
+						+e.A(href="#").img
+							+icon('dribbble')
+		script(src="js/libs.min.js")
+		script(src="js/common.js")

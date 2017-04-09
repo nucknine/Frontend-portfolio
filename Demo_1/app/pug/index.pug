@@ -4,17 +4,17 @@ include mixins/svgmixin.pug
 doctype html
 html
 	head
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		meta(name="description" content="Website Template by Nucknine")
+		meta(name="author" content="nucknine.com")
+		meta(name="keywords" content="website templates, template, html5, css3, mobile first, responsive")
 		link(rel="stylesheet", href="css/libs.min.css")
 		link(rel="stylesheet", href="css/main.css")
-		title Learn
+		title Создай свой курс
 	body
-		+b(id="preloader-page").preloader-page
-			+e(id="preloader-dots").preloader-dots
-				+e.dot
-				+e.dot
-				+e.dot
-				+e.dot
-				+e.dot
+		include ../templates/preloader.pug
 		+b.page-overlay
 			+b.video
 				+e.IFRAME.iframe(width="640" height="360" src="https://www.youtube.com/embed/qzMQza8xZCc" frameborder="0" allowfullscreen)
@@ -22,13 +22,13 @@ html
 				+e.menu
 					+e.UL.row
 						+e.LI.list
-							+e.A(href="#").link Домой
+							+e.A(href="index.html").link Домой
 						+e.LI.list
-							+e.A(href="#").link Курсы
+							+e.A(href="courses.html").link Курсы
 						+e.LI.list
-							+e.A(href="#").link Цены
+							+e.A(href="prices.html").link Цены
 						+e.LI.list._nest
-							+e.A(href="#").link._nest Блог
+							+e.A(href="blog.html").link._nest Блог
 							+e.UL.row-blog
 								+e.LI.list
 									+e.A(href="#").link Веб дизайн
@@ -39,7 +39,7 @@ html
 								+e.LI.list
 									+e.A(href="#").link Продвижение
 						+e.LI.list
-							+e.A(href="#").link Контакты
+							+e.A(href="contacts.html").link Контакты
 						+e.LI.list
 							+e.A(href="#").link Вход
 						+e.LI.list
@@ -73,30 +73,30 @@ html
 						+e.menu
 							+e.UL.row
 								+e.LI.list
-									+e.A(href="#").link Домой
+									+e.A(href="index.html").link Домой
 								+e.LI.list
-									+e.A(href="#").link Курсы
+									+e.A(href="courses.html").link Курсы
 								+e.LI.list
-									+e.A(href="#").link Цены
+									+e.A(href="prices.html").link Цены
 								+e.LI.list._nest
-									+e.A(href="#").link Блог
+									+e.A(href="blog.html").link Блог
 									+e.UL.row-blog
 										+e.LI.list
-											+e.A(href="#").link Веб дизайн
+											+e.A(href="#").link._white Веб дизайн
+										+e.LI.list._white
+											+e.A(href="#").link._white Api
 										+e.LI.list
-											+e.A(href="#").link Api
+											+e.A(href="#").link._white eКоммерция
 										+e.LI.list
-											+e.A(href="#").link eкоммерция
-										+e.LI.list
-											+e.A(href="#").link Branding
+											+e.A(href="#").link._white Branding
 								+e.LI.list
-									+e.A(href="#").link Контакты
+									+e.A(href="contacts.html").link Контакты
 								+e.LI.list_register
 									+e.A(href="#").link_register Вход
 								+e.LI.list_register
 									+e.A(href="#").link_register Создать аккаунт
 				+b.page-title
-					+e.H1.big-text Искусство обучения - искусство помощи открытий
+					+e.H1.big-text Искусство обучения - помощь открытий
 					+e.P.small-text не падайте духом
 					+e(id="test").buttons
 						+e.A(href="").btn._red Выбрать курс
@@ -300,11 +300,11 @@ html
 							+e.H4.title Обучение
 							+e.UL.list
 								+e.LI.item
-									+e.A(href="#").link Курсы
+									+e.A(href="courses.html").link Курсы
 								+e.LI.item
-									+e.A(href="#").link Блог
+									+e.A(href="blog.html").link Блог
 								+e.LI.item
-									+e.A(href="#").link Контакты
+									+e.A(href="contacts.html").link Контакты
 								+e.LI.item
 									+e.A(href="#").link Условия
 								+e.LI.item
@@ -315,7 +315,7 @@ html
 								+e.LI.item
 									+e.A(href="#").link Конфиденциальность
 								+e.LI.item
-									+e.A(href="#").link Блог
+									+e.A(href="blog.html").link Блог
 								+e.LI.item
 									+e.A(href="#").link Отзывы
 								+e.LI.item

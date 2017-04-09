@@ -5,41 +5,72 @@
 //import fonts
 webfont('Opensans_regular', 'opensans', true, 'normal')
 webfont('Opensans_bold', 'opensansbold', true, 'normal')
-
+webfont('Solena', 'Solena', true, 'normal')
 
 font_h4_opensans_bold()
-	font-family: 'Opensans_bold', sans-serif;
+	font-family 'Opensans_bold', sans-serif
 	font-size 26px
 	line-height 1.618
 
-font_p_opensans_regular()
-	font-family: 'Opensans_regular', sans-serif;
-	font-size 16px
+font_h2_opensans_bold()
+	font-family 'Opensans_bold', sans-serif
+	font-size 68px
 	line-height 1.618
 
 font_p_opensans_bold()
-	font-family: 'Opensans_bold', sans-serif;
+	font-family 'Opensans_bold', sans-serif
 	font-size 16px
 	line-height 1.618
 
+font_p_opensans_regular()
+	font-family 'Opensans_regular', sans-serif
+	font-size 16px
+	line-height 1.618
+
+
 font_h4_opensans_regular()
-	font-family: 'Opensans_regular', sans-serif;
+	font-family 'Opensans_regular', sans-serif
 	font-size 26px
 	line-height 1.618
 
 font_h3_opensans_regular()
-	font-family: 'Opensans_regular', sans-serif;
+	font-family 'Opensans_regular', sans-serif
 	font-size 42px
 	line-height 1.618
 
 font_h2_opensans_regular()
-	font-family: 'Opensans_regular', sans-serif;
+	font-family 'Opensans_regular', sans-serif
 	font-size 68px
 	line-height 1.618
 
 font_h1_opensans_regular()
-	font-family: 'Opensans_regular', sans-serif;
+	font-family 'Opensans_regular', sans-serif
 	font-size 110px
+	line-height 1.618
+
+font_h3_solena_regular()
+	font-family 'Solena'
+	font-size 52px
+	line-height 1.618
+
+font_h1_solena_regular()
+	font-family 'Solena'
+	font-size 110px
+	line-height 1.618
+
+font_h2_solena_regular()
+	font-family 'Solena'
+	font-size 68px
+	line-height 1.618
+
+font_h4_solena_regular()
+	font-family 'Solena'
+	font-size 26px
+	line-height 1.618
+
+font_p_solena_regular()
+	font-family 'Solena'
+	font-size 16px
 	line-height 1.618
 
 //preloader
@@ -120,6 +151,7 @@ font_h1_opensans_regular()
 	width 0
 	height 0
 	overflow-y hidden
+	overflow hidden
 	background-color rgba(0, 0, 0, 0.7)
 	opacity 0
 	z-index 0
@@ -318,6 +350,7 @@ font_h1_opensans_regular()
 	top 0
 	left 0
 	right 0
+	background rgba(0, 0, 0, 0.1)
 	background rgba(255, 255, 255, 0.1)
 
 //section head
@@ -332,6 +365,7 @@ font_h1_opensans_regular()
 	background-image url(../img/cup-of-coffee.jpg)
 	background-repeat no-repeat
 	background-size cover
+
 	// background-image linear-gradient(to left, redcolor, bluecolor)
 	// background-attachment fixed
 
@@ -410,9 +444,12 @@ font_h1_opensans_regular()
 		color graytext
 		text-decoration none
 		transition color ease-out 0.2s
+		&_white
+			color graycolor
 		&_register
 			color graycolor
 			background-color rgba(255,255,255,0.4)
+			background-color rgba(0,0,0,0.4)
 			padding 7px 13px
 			border-radius 20px
 			transition box-shadow ease-out 0.3s
@@ -474,33 +511,36 @@ font_h1_opensans_regular()
 .page-title
 	position relative
 	z-index 2
-	font_p_opensans_regular()
 	width 60%
+	min-height 100px
 	top 50%
 	left 50%
 	transform translate(-50%, -50%)
 	+adaptive(smart)
-		font_h3_opensans_regular()
 		width 90%
 	+adaptive(tablet)
-		font_h3_opensans_regular()
 		width 90%
 	&__big-text
-		font_h3_opensans_regular()
-		color white
+		font_h2_solena_regular()
+		color black
 		text-align center
+		&_large
+			font_h1_solena_regular()
+			margin-top 130px
+			+adaptive(smart)
+				font_h2_solena_regular()
 		+adaptive(smart)
-			font_h4_opensans_regular()
+			font_h3_solena_regular()
 		+adaptive(tablet)
-			font_h3_opensans_regular()
+			font_h3_solena_regular()
 	&__small-text
+		font_h4_solena_regular()
 		margin-top 26px
-		color white
-		font-size 26px
+		color black
 		text-align center
 		+adaptive(smart)
+			font_h4_solena_regular()
 			margin-top 26px
-			font-size 16px
 	&__buttons
 		text-align center
 		margin 0 auto
@@ -1123,3 +1163,50 @@ font_h1_opensans_regular()
 	font-size 19px
 	&.social-block
 		font-size 15px
+
+//SECTION.prices
+.prices
+	font-size 0
+	padding 1px 0
+
+.prices-container
+	margin 130px auto 104px auto
+	+adaptive(smart)
+		width 100%
+	+adaptive(tablet)
+		width 100%
+	&__price-box
+		text-align center
+		padding 30px
+		grid-inline(4,26)
+		+adaptive(smart)
+			width 100%
+		+adaptive(tablet)
+			grid-inline(1,104)
+		font_p_opensans_regular()
+		background-color simplegray
+		margin-bottom 52px
+	&__title
+		font_p_opensans_bold()
+		text-transform uppercase
+		color darkgraytext
+	&__price
+		font_h2_opensans_regular()
+	&__period
+		color darkgraytext
+	&__row
+		margin-top 26px
+	&__item
+		padding 13px
+		color darkgraytext
+		&:nth-child(2n)
+			background-color graycolor
+	&__btn
+		margin-top 26px
+		btn()
+
+
+.map
+	height 500px
+
+
