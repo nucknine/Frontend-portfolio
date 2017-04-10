@@ -12,7 +12,8 @@ html
 		meta(name="keywords" content="website templates, template, html5, css3, mobile first, responsive")
 		link(rel="stylesheet", href="css/libs.min.css")
 		link(rel="stylesheet", href="css/main.css")
-		script(src="https://maps.googleapis.com/maps/api/js?sensor=true" async defer)
+		script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlOwPZ9wX7DrA5C_QxS7PQ-5vzFXTHmlE"
+  type="text/javascript")
 		script(src="js/myLoc.js")
 		title Создай свой курс
 	body
@@ -97,10 +98,12 @@ html
 									+e.A(href="#").link_register Создать аккаунт
 				+b.page-title
 					+e.H1.big-text._large Контакты
-
 		+b.SECTION.ourlocation
 			div(id="location").div Your location
 			div(id="distance").div Distance from
+			+e.INPUT(type="button" id="watch" value="Отследить мое место положение")
+			+e.INPUT(type="button" id="clearWatch" value="Остановить отслеживание")
+			+e.INPUT(type="button" id="getRoute" value="Проложить маршрут")
 			div(id="map").map
 		+b.SECTION.get-started
 			+e.overlay
