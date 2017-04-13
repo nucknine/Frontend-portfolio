@@ -304,6 +304,14 @@ table {
   font-size: 2.4rem;
   width: 1em; }
 
+.icon-earth {
+  font-size: 3.2rem;
+  width: 1em; }
+
+.icon-envelop {
+  font-size: 3.2rem;
+  width: 1em; }
+
 .icon-facebook {
   font-size: 1.6rem;
   width: 1em; }
@@ -314,6 +322,14 @@ table {
 
 .icon-linkedin {
   font-size: 1.6rem;
+  width: 1em; }
+
+.icon-location {
+  font-size: 3.2rem;
+  width: 1em; }
+
+.icon-phone {
+  font-size: 3.2rem;
   width: 1em; }
 
 .icon-shield {

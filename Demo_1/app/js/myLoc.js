@@ -1,3 +1,4 @@
+
 //функция округления числа до нужного количества знаков
 function roundPlus(x, n) { //x - число, n - количество знаков
   if(isNaN(x) || isNaN(n)) return false;
@@ -11,15 +12,12 @@ var options = {
     timeout: 100,
     maximumAge: 0
 };
-
-var watchId = null; //переменная для сброса отслеживания
-var map;
-var prevCoords; //координаты для вычисления предыдущей части пути
+var map = null;
 
 //координаты компании
 var ourCoords = {
-    lat: 61.778344,
-    lng: 34.407477
+    lat: 61.792935,
+    lng: 34.394327
 };
 
 window.onload = getMyLocation;
@@ -28,55 +26,29 @@ function getMyLocation() {
     if(navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(displayLocation, displayError, options);
 
-        var watchButton = document.getElementById("watch");
-        watchButton.onclick = watchLocation;
-
-        var clearWatchButton = document.getElementById("clearWatch");
-        clearWatch.onclick = clearWatch;
-
         var getRoute = document.getElementById("getRoute");
         getRoute.onclick = route;
-        // var getRoute = document.getElementById("getRoute");
-        // getRoute.onclick = navigator.geolocation.getCurrentPosition(route, displayError, options);
 
-    } else {
-        alert("no support geolocation");
-    }
-}
+        var myLoc = document.getElementById("myLoc");
+        myLoc.onclick = showMyLoc;
 
-function watchLocation () {
-    watchId = navigator.geolocation.watchPosition(displayLocation, displayError, options);
-}
+        var companyLoc = document.getElementById("companyLoc");
+        companyLoc.onclick = showCompanyLoc;
 
-function clearWatch() {
-    if(watchId) {
-        navigator.geolocation.clearWatch(watchId);
-        watchId = null;
-    }
+  } else {
+    alert("no support geolocation");
+  }
 }
 
 function displayLocation(position) {
     var latitude = position.coords.latitude;
     var longitude = position.coords.longitude;
 
-    var location = document.getElementById("location");
-    location.innerHTML = "Ваша широта: " + latitude + ", долгота: " + longitude;
-    location.innerHTML += " (определено за " + options.timeout + " миллисекунд)";
-
     var km = computeDistance(position.coords, ourCoords);
     var distance = document.getElementById("distance");
-    distance.innerHTML = "Вы в " + km + " км от нашей компании";
-    distance.innerHTML += " (c " + position.coords.accuracy + " точностью метров)"
-    if (map == null) {
-        showMap(position.coords);
-        prevCoords = position.coords;
-    } else {
-        var meters = computeDistance(position.coords, prevCoords) * 1000;
-        if (meters > 0) {
-            scrollMapToPosition(position.coords);
-            position.coords = null;
-        }
-    }
+    distance.innerHTML = 'Вы в <span class="location__distance_red">' + km + ' км</span> от нашей компании';
+    distance.innerHTML += " (" + position.coords.accuracy + "м погрешность)"
+    if (map == null) showMap(position.coords);
 }
 
 function displayError(error) {
@@ -90,7 +62,7 @@ function displayError(error) {
     if (error.code == 0 || error.code == 2) {
         errorMessage = errorMessage + " " + error.message;
     }
-    var div = document.getElementById("location");
+    var div = document.getElementById("distance");
     div.innerHTML = errorMessage;
     options.timeout +=100;
     navigator.geolocation.getCurrentPosition(
@@ -123,8 +95,8 @@ function showMap(coords) {
 
     var mapOptions = {
         scrollwheel: false,
-        zoom: 13,
-        center: googleLatAndLong,
+        zoom: 15,
+        center: ourCoords,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
 
@@ -136,25 +108,76 @@ function showMap(coords) {
     addMarker(map, googleLatAndLong, title, content);
 }
 
+//showCompanyLoc////////////////////////////////////////////////////////
+function showCompanyLoc() {
+    if(navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(displayLoc, displayError, options);
+        }
+
+        function displayLoc(position) {
+        var coords = {
+    lat: position.coords.latitude,
+    lng: position.coords.longitude
+        };
+
+        var mapOptions = {
+        scrollwheel: false,
+        zoom: 15,
+        center: ourCoords,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+
+    var mapDiv = document.getElementById("map");
+    map = new google.maps.Map(mapDiv, mapOptions);
+
+        var title = "Ваше местоположение";
+    var content = "Вы находитесь здесь: " + coords.lat + ", " + coords.lng;
+
+        addMarker(map, coords, title, content);
+    }
+}
+//showMyLoc////////////////////////////////////////////////////////
+
+function showMyLoc() {
+    if(navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(displayLoc, displayError, options);
+        }
+
+        function displayLoc(position) {
+        var coords = {
+    lat: position.coords.latitude,
+    lng: position.coords.longitude
+        };
+
+        var mapOptions = {
+        scrollwheel: false,
+        zoom: 15,
+        center: coords,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+
+    var mapDiv = document.getElementById("map");
+    map = new google.maps.Map(mapDiv, mapOptions);
+
+        var title = "Ваше местоположение";
+    var content = "Вы находитесь здесь: " + coords.lat + ", " + coords.lng;
+
+        addMarker(map, coords, title, content);
+    }
+}
 //////////////////////////////////////////////////////////
 
 function addMarker(map, latlong, title, content) {
     //маркер для компании
     var companyImage = new google.maps.MarkerImage(
-        '../img/map-marker/marker-images/image.png',
-        new google.maps.Size(90,29),
+        '../img/icons/png/star-full.png',
+        new google.maps.Size(32,32),
         new google.maps.Point(0,0),
-        new google.maps.Point(45,29)
+        new google.maps.Point(16,16)
     );
-
-    var companyShape = {
-        coord: [89,0,89,1,89,2,89,3,89,4,89,5,89,6,89,7,89,8,89,9,89,10,89,11,89,12,89,13,89,14,89,15,89,16,89,17,89,18,89,19,89,20,89,21,89,22,89,23,89,24,89,25,89,26,89,27,89,28,0,28,0,27,0,26,0,25,0,24,0,23,0,22,0,21,0,20,0,19,0,18,0,17,0,16,0,15,0,14,0,13,0,12,0,11,0,10,0,9,0,8,0,7,0,6,0,5,0,4,0,3,0,2,0,1,0,0,89,0],
-        type: 'poly'
-    };
 
     var markerCompanyOptions = {
         icon: companyImage,
-        shape: companyShape,
         position: ourCoords,
         map: map,
         title: "Наша компания",
@@ -185,36 +208,43 @@ function addMarker(map, latlong, title, content) {
         });
 }
 
-function scrollMapToPosition(coords) {
-    var latitude = coords.latitude;
-    var longitude = coords.longitude;
-    var latlong = new google.maps.LatLng(latitude, longitude);
-
-    map.panTo(latlong);
-
-    addMarker(map, latlong, "Ваше новое положение ", "Вы переместились: " + latitude + ", " + longitude);
-}
-
+//////////////////////////////////////////////////////////////////////////////////////
 function route() {
-    // var latitude = position.coords.latitude;
-    // var longitude = position.coords.longitude;
+        if(navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(displayLoc, displayError, options);
+        }
 
-    // console.log(latitude, longitude);
+        function displayLoc(position) {
+    var latitude = position.coords.latitude;
+    var longitude = position.coords.longitude;
 
-    var directionsService = new google.maps.DirectionsService;
+        var directionsService = new google.maps.DirectionsService;
     var directionsDisplay = new google.maps.DirectionsRenderer;
 
-    var request = {
-        origin: new google.maps.LatLng(33, 44), //точка старта
-        destination: new google.maps.LatLng(44,61), //точка финиша
-        travelMode: google.maps.DirectionsTravelMode.DRIVING //режим прокладки маршрута
+        var mapOptions = {
+        scrollwheel: false,
+        zoom: 15,
+        center: {lat:position.latitude, lng:position.longitude},
+        mapTypeId: google.maps.MapTypeId.ROADMAP
     };
 
-    directionsService.route(request, function(response, status) {
-        if (status == google.maps.DirectionsStatus.OK) {
-            directionsDisplay.setDirections(response);
-        }
-    });
+    var mapDiv = document.getElementById("map");
 
-    directionsDisplay.setMap(map);
+    map = new google.maps.Map(mapDiv, mapOptions);
+
+        directionsDisplay.setMap(map);
+
+    directionsService.route({
+          origin: new google.maps.LatLng(latitude, longitude),
+          destination: new google.maps.LatLng(ourCoords),
+          travelMode: 'DRIVING'
+        }, function(response, status) {
+          if (status === 'OK') {
+            directionsDisplay.setDirections(response);
+          } else {
+            window.alert('Directions request failed due to ' + status);
+          }
+        });
+
+        }
 }

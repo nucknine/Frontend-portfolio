@@ -95,13 +95,14 @@ btn()
   font-size 16px
   color white
   border-radius 30px
-  transition box-shadow 0.3s ease-out
+  transition all 0.3s ease-out
+  &_red
+    background-color redcolor
+  &_blue
+    background-color bluecolor
   &:hover
     shadow-btn()
-  &_red
-    background-color rgba(255,86,86,.8)
-  &_blue
-    background-color rgba(106,126,252,.8)
+    background-color redcolor
 
 //adaptive media
 adaptive(media)

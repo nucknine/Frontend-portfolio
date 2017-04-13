@@ -1205,8 +1205,137 @@ font_p_solena_regular()
 		margin-top 26px
 		btn()
 
+//SECTION.Contacts
 
-.map
-	height 500px
+.contacts-container
+	width 90%
+	margin 0 auto
+	font-size 0
+	margin-top 104px
+	margin-bottom 104px
+
+.contacts
+	width 40%
+	inline()
+	font-size 0
+	+adaptive(tablet)
+		width 100%
+		margin-bottom 52px
+	+adaptive(smart)
+		width 100%
+		margin-bottom 52px
+	&__contact-info
+		font_p_opensans_regular()
+	&__title
+		font_h4_opensans_regular()
+	&__icon
+		position absolute
+		top -5px
+		left 0
+	&__desc
+		position relative
+		padding-left 39px
+		margin-top 26px
+		&_gray
+			margin-top 26px
+			color graytext
+		&_red
+			color redcolor
+
+.icon-location
+	font-size 26px
+	color redcolor
+
+.icon-phone
+	font-size 26px
+	color redcolor
+
+.icon-envelop
+	font-size 26px
+	color redcolor
+
+.icon-earth
+	font-size 26px
+	color redcolor
+
+.feedback-form
+	font-size 0
+	inline()
+	width 60%
+	+adaptive(tablet)
+		width 100%
+	+adaptive(smart)
+		width 100%
+	&__title
+		font_h4_opensans_regular()
+	&__form
+		margin-top 26px
+	&__text
+		inline()
+		border-radius 13px
+		margin 7px 0 7px 0
+		padding-left 13px
+		font_p_opensans_regular()
+		text-decoration none
+		box-sizing border-box
+		height 52px
+		width 100%
+		border 2px solid rgba(0,0,0,0.1)
+		background-color transparent
+		&::placeholder
+			color #999
+		&:focus
+			outline none
+			border 2px solid redcolor
+		&_active
+			border 2px solid redcolor
+		&_message
+			resize none
+			height 114px
+		&_name
+			grid-inline(2, 13, stick)
+			+adaptive(smart)
+				grid-inline(1, 13, stick)
+	&__name-box
+		width 100%
+		display block
+		font-size 0
+	&__btn
+		margin-top 26px
+		btn()
+		text-transform none
+
+//SECTION.ourlocation
+.location
+	width 90%
+	margin 0 auto
+	&__distance
+		margin 26px auto 104px auto
+		font_h4_opensans_regular()
+		text-align center
+		&_red
+			color redcolor
+
+.map-box
+	&__map
+		height 500px
+
+.btn-holder
+	margin-top 52px
+	+adaptive(tablet)
+		margin-top 0
+	+adaptive(smart)
+		margin-top 0
+	&__btn
+		margin 26px 0 26px 0
+		grid-inline(3, 52)
+		+adaptive(tablet)
+			grid-inline(3,26)
+		+adaptive(smart)
+			margin 13px 0 13px 0
+			grid-inline(1,52)
+		font_p_opensans_regular()
+		btn()
+		outline none
 
 

@@ -12,8 +12,7 @@ html
 		meta(name="keywords" content="website templates, template, html5, css3, mobile first, responsive")
 		link(rel="stylesheet", href="css/libs.min.css")
 		link(rel="stylesheet", href="css/main.css")
-		script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlOwPZ9wX7DrA5C_QxS7PQ-5vzFXTHmlE"
-  type="text/javascript")
+		script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlOwPZ9wX7DrA5C_QxS7PQ-5vzFXTHmlE&" async defer type="text/javascript")
 		script(src="js/myLoc.js")
 		title Создай свой курс
 	body
@@ -98,13 +97,45 @@ html
 									+e.A(href="#").link_register Создать аккаунт
 				+b.page-title
 					+e.H1.big-text._large Контакты
+		+b.SECTION.Contacts
+			+b.wrapper
+				+b.contacts-container
+					+b.contacts
+						+e.contact-info.animate-box
+							+e.title Контактная информация
+							+e.desc._gray 185005 ул. Ригачина д. 150 Петрозаводск
+								+e.icon
+									+icon('location')
+							+e.desc._red + 7 123 456 7891
+								+e.icon
+									+icon('phone')
+							+e.desc._red nucknine@yandex.ru
+								+e.icon
+									+icon('envelop')
+							+e.desc._red nucknine.com
+								+e.icon
+									+icon('earth')
+					+b.feedback-form.animate-box
+							+e.title Свяжись с нами
+							+e.FORM.form
+								+e.name-box
+									+e.INPUT.text._name(type="text" placeholder="Ваше имя")
+									+e.INPUT.text._name(type="text" placeholder="Ваша фамилия")
+								+e.INPUT.text(type="text" placeholder="Ваш почтовый адрес")
+								+e.INPUT.text(type="text" placeholder="Тема сообщения")
+								+e.TEXTAREA.text._message(type="text" placeholder="Оставить отзыв")
+								+e.A.btn._red отправить сообщение
 		+b.SECTION.ourlocation
-			div(id="location").div Your location
-			div(id="distance").div Distance from
-			+e.INPUT(type="button" id="watch" value="Отследить мое место положение")
-			+e.INPUT(type="button" id="clearWatch" value="Остановить отслеживание")
-			+e.INPUT(type="button" id="getRoute" value="Проложить маршрут")
-			div(id="map").map
+			+b.wrapper
+			+b.map-box
+				+e(id="map").map
+			+b.wrapper
+				+b.btn-holder
+					+e.A(id="getRoute").btn._blue.animate-box Проложить маршрут
+					+e.A(id="myLoc").btn._blue.animate-box Где я?
+					+e.A(id="companyLoc").btn._blue.animate-box Где мы находимся
+				+b.location.animate-box
+					+e(id="distance").distance Расстояние до нас
 		+b.SECTION.get-started
 			+e.overlay
 			+b.wrapper

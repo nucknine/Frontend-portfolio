@@ -9,7 +9,7 @@
     <meta name="keywords" content="website templates, template, html5, css3, mobile first, responsive">
     <link rel="stylesheet" href="css/libs.min.css">
     <link rel="stylesheet" href="css/main.css">
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlOwPZ9wX7DrA5C_QxS7PQ-5vzFXTHmlE" type="text/javascript"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlOwPZ9wX7DrA5C_QxS7PQ-5vzFXTHmlE&amp;" async defer type="text/javascript"></script>
     <script src="js/myLoc.js"></script>
     <title>Создай свой курс</title>
   </head>
@@ -130,10 +130,69 @@
         </div>
       </div>
     </header>
+    <section class="Contacts">
+      <div class="wrapper">
+        <div class="contacts-container">
+          <div class="contacts">
+            <div class="contacts__contact-info animate-box">
+              <div class="contacts__title">Контактная информация
+              </div>
+              <div class="contacts__desc contacts__desc_gray">185005 ул. Ригачина д. 150 Петрозаводск
+                <div class="contacts__icon">
+                  <svg class="icon icon-location ">
+                    <use xlink:href="img/icons/svg/sprite/sprite.svg#location"></use>
+                  </svg>
+                </div>
+              </div>
+              <div class="contacts__desc contacts__desc_red">+ 7 123 456 7891
+                <div class="contacts__icon">
+                  <svg class="icon icon-phone ">
+                    <use xlink:href="img/icons/svg/sprite/sprite.svg#phone"></use>
+                  </svg>
+                </div>
+              </div>
+              <div class="contacts__desc contacts__desc_red">nucknine@yandex.ru
+                <div class="contacts__icon">
+                  <svg class="icon icon-envelop ">
+                    <use xlink:href="img/icons/svg/sprite/sprite.svg#envelop"></use>
+                  </svg>
+                </div>
+              </div>
+              <div class="contacts__desc contacts__desc_red">nucknine.com
+                <div class="contacts__icon">
+                  <svg class="icon icon-earth ">
+                    <use xlink:href="img/icons/svg/sprite/sprite.svg#earth"></use>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="feedback-form animate-box">
+            <div class="feedback-form__title">Свяжись с нами
+            </div>
+            <form class="feedback-form__form">
+              <div class="feedback-form__name-box"><input class="feedback-form__text feedback-form__text_name" type="text" placeholder="Ваше имя"/><input class="feedback-form__text feedback-form__text_name" type="text" placeholder="Ваша фамилия"/>
+              </div><input class="feedback-form__text" type="text" placeholder="Ваш почтовый адрес"/><input class="feedback-form__text" type="text" placeholder="Тема сообщения"/><textarea class="feedback-form__text feedback-form__text_message" type="text" placeholder="Оставить отзыв"></textarea><a class="feedback-form__btn feedback-form__btn_red">отправить сообщение</a>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="ourlocation">
-      <div class="div" id="location">Your location</div>
-      <div class="div" id="distance">Distance from</div><input type="button" id="watch" value="Отследить мое место положение"/><input type="button" id="clearWatch" value="Остановить отслеживание"/><input type="button" id="getRoute" value="Проложить маршрут"/>
-      <div class="map" id="map"></div>
+      <div class="wrapper">
+      </div>
+      <div class="map-box">
+        <div class="map-box__map" id="map">
+        </div>
+      </div>
+      <div class="wrapper">
+        <div class="btn-holder"><a class="btn-holder__btn btn-holder__btn_blue animate-box" id="getRoute">Проложить маршрут</a><a class="btn-holder__btn btn-holder__btn_blue animate-box" id="myLoc">Где я?</a><a class="btn-holder__btn btn-holder__btn_blue animate-box" id="companyLoc">Где мы находимся</a>
+        </div>
+        <div class="location animate-box">
+          <div class="location__distance" id="distance">Расстояние до нас
+          </div>
+        </div>
+      </div>
     </section>
     <section class="get-started">
       <div class="get-started__overlay">
