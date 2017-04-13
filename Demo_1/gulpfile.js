@@ -200,23 +200,23 @@ gulp.task('default', ['svgSprite', 'sprite', 'scripts', 'watch', 'browser-sync']
 //build
 gulp.task('build', ['clean', 'scripts', 'svgSprite', 'css-libs', 'img', 'stylus', 'uncss'], function() {
 
-	var buildCss = gulp.src([ // Переносим библиотеки в продакшен
+	var buildCss = gulp.src([
 		'app/css/main.css',
 		'app/css/main.min.css',
 		'app/css/libs.min.css'
 		])
-	.pipe(gulp.dest('dist/css'))
+	.pipe(gulp.dest('dist/css'));
 
 	var buildFonts = gulp.src('app/fonts/**/*') // Переносим шрифты в продакшен
-	.pipe(gulp.dest('dist/fonts'))
+	.pipe(gulp.dest('dist/fonts'));
 
 	var buildJs = gulp.src('app/js/**/*') // Переносим скрипты в продакшен
-	.pipe(gulp.dest('dist/js'))
+	.pipe(gulp.dest('dist/js'));
 
 	var buildHtml = gulp.src('app/*.html') // Переносим HTML в продакшен
-	.pipe(gulp.dest('dist'))
+	.pipe(gulp.dest('dist'));
 
-	var buildSvg = gulp.src('app/img/icons/**/*') // Переносим скрипты в продакшен
-	.pipe(gulp.dest('dist/img/icons'));
+	var buildSvg = gulp.src('app/img/**/*')
+	.pipe(gulp.dest('dist/img'));
 
 });

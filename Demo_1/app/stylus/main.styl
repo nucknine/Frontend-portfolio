@@ -73,6 +73,7 @@ font_p_solena_regular()
 	font-size 16px
 	line-height 1.45
 
+
 //preloader
 .preloader-page
 	position fixed
@@ -127,6 +128,9 @@ font_p_solena_regular()
 	}
 }
 
+body
+	overflow-x hidden
+
 //template styles
 
 .overflow
@@ -179,13 +183,13 @@ font_p_solena_regular()
 		display block
 
 .burger-menu
-	+adaptive(smart)
-		width 100%
+	// +adaptive(smart)
+	// 	width 100%
 	position absolute
 	top 0
 	bottom 0
-	// width 0px
 	width 270px
+	visibility hidden
 	right -270px
 	background-color black
 	opacity 0
@@ -194,6 +198,7 @@ font_p_solena_regular()
 	&_visible
 		right 0
 		opacity 1
+		visibility visible
 		// width 270px
 	&__menu
 		padding 75px 65px 0px 40px
@@ -516,6 +521,7 @@ font_p_solena_regular()
 	top 50%
 	left 50%
 	transform translate(-50%, -50%)
+	user-select none
 	+adaptive(smart)
 		width 90%
 	+adaptive(tablet)
