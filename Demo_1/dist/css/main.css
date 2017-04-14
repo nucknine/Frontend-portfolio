@@ -353,7 +353,7 @@ body {
   font-size: 0;
   min-width: 100%;
   background-color: #d3d3d3;
-  background-image: url("../img/cup-of-coffee.jpg");
+  background-image: url("../css/img/cup-of-coffee.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -1348,13 +1348,13 @@ body {
   background-color: #6a7efc;
 }
 .testimonials-carousel__image_first {
-  background-image: url("../img/person_1.jpg");
+  background-image: url("../css/img/person_1.jpg");
 }
 .testimonials-carousel__image_second {
-  background-image: url("../img/person_2.jpg");
+  background-image: url("../css/img/person_2.jpg");
 }
 .testimonials-carousel__image_third {
-  background-image: url("../img/person_3.jpg");
+  background-image: url("../css/img/person_3.jpg");
 }
 .testimonials-carousel__name {
   margin-top: 26px;
@@ -1539,7 +1539,7 @@ body {
   position: relative;
   font-size: 0;
   padding: 1px 0;
-  background-image: url("../img/img_bg_2.jpg");
+  background-image: url("../css/img/img_bg_2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }

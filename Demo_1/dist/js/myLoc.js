@@ -170,7 +170,7 @@ function showMyLoc() {
 function addMarker(map, latlong, title, content) {
     //маркер для компании
     var companyImage = new google.maps.MarkerImage(
-        '../img/icons/png/star-full.png',
+        '../css/img/icons/png/star-full.png',
         new google.maps.Size(32,32),
         new google.maps.Point(0,0),
         new google.maps.Point(16,16)

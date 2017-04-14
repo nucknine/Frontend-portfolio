@@ -24,7 +24,7 @@ var gulp         = require('gulp'), // Подключаем Gulp
 
 //SVG cook a sprite
 gulp.task('svgSpriteBuild', function () {
-	return gulp.src('app/img/icons/svg/*.svg')
+	return gulp.src('app/css/img/icons/svg/*.svg')
 	// minify svg
 		.pipe(svgmin({
 			js2svg: {
@@ -56,7 +56,7 @@ gulp.task('svgSpriteBuild', function () {
 				}
 			}
 		}))
-		.pipe(gulp.dest('app/img/icons/svg/sprite/'));
+		.pipe(gulp.dest('app/css/img/icons/svg/sprite/'));
 });
 
 //sass
@@ -87,10 +87,10 @@ gulp.task('uncss', function () {
 
 gulp.task('sprite', function() {
     var spriteData =
-        gulp.src('app/img/icons/png/sprites/sprite_src/*.*') // путь, откуда берем картинки для спрайта
+        gulp.src('app/css/img/icons/png/sprites/sprite_src/*.*') // путь, откуда берем картинки для спрайта
             .pipe(spritesmith({
                 imgName: 'sprite.png',
-                imgPath: '../img/icons/png/sprites/sprite_dest/sprite.png',
+                imgPath: '../css/img/icons/png/sprites/sprite_dest/sprite.png',
                 cssName: 'sprite.styl',
                 cssFormat: 'stylus',
                 algorithm: 'binary-tree',
@@ -100,7 +100,7 @@ gulp.task('sprite', function() {
                 }
             }));
 
-    spriteData.img.pipe(gulp.dest('app/img/icons/png/sprites/sprite_dest/')); // путь, куда сохраняем картинку
+    spriteData.img.pipe(gulp.dest('app/css/img/icons/png/sprites/sprite_dest/')); // путь, куда сохраняем картинку
     spriteData.css.pipe(gulp.dest('app/stylus/')); // путь, куда сохраняем стили
 });
 
@@ -172,7 +172,7 @@ gulp.task('clean', function() {
 
 //img
 gulp.task('img', function() {
-	return gulp.src('app/img/**/*') // Берем все изображения из app
+	return gulp.src('app/css/img/**/*') // Берем все изображения из app
 		.pipe(cache(imagemin({  // Сжимаем их с наилучшими настройками с учетом кеширования
 			interlaced: true,
 			progressive: true,
@@ -216,7 +216,7 @@ gulp.task('build', ['clean', 'scripts', 'svgSprite', 'css-libs', 'img', 'stylus'
 	var buildHtml = gulp.src('app/*.html') // Переносим HTML в продакшен
 	.pipe(gulp.dest('dist'));
 
-	var buildSvg = gulp.src('app/img/**/*')
+	var buildSvg = gulp.src('app/css/img/**/*')
 	.pipe(gulp.dest('dist/img'));
 
 });
