@@ -1,0 +1,24 @@
+include ../../node_modules/bemto.pug/bemto.pug
+include svgmixin.pug
+
+doctype html
+html
+	head
+		link(rel="stylesheet", href="css/libs.min.css")
+		link(rel="stylesheet", href="css/main.min.css")
+		title Irregular verbs
+	body
+		+b.pattern
+		+b.wrapper
+			+b.SECTION.content
+				+b.
+				+b.FORM.form
+					+e.INPUT(type="text" placeholder="Введите глагол").input-text
+					+e.INPUT(type="submit" value="поиск").input-submit
+	//-
+		+icon('dribbble')
+		script(src="libs/jquery/dist/jquery.min.js")
+		script(src="libs/owl.carousel/dist/owl.carousel.min.js")
+		script(src="libs/svg4everybody/dist/svg4everybody.min.js")
+		script(src="js/common.js")
+	-//
