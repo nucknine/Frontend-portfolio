@@ -1,0 +1,93 @@
+//common mixins
+cols(n=3, m=10)
+  margin-right m px
+  width ((100% - (((@margin-right * n) / wrapper-width) * 100%)) / n)
+  &:last-child
+    margin-right 0px
+
+size(w=100%, h=auto)
+  width w
+  height h
+
+red(color=red)
+  background color
+
+inline()
+  display inline-block
+  vertical-align top
+
+shadow()
+  box-shadow 0 10px 15px rgba(0,0,0,0.4)
+
+btn()
+  inline()
+  box-sizing border-box
+  cursor pointer
+  height 60px
+  line-height 60px
+  text-align center
+  text-decoration none
+  min-width 170px
+  background-color gray
+  padding-left 20px
+  padding-right 20px
+  font-size 18px
+  color white
+  border-radius 30px
+  transition box-shadow 0.3s ease-out
+  &:hover
+    shadow-btn()
+  &_red
+    background-color rgba(255,86,86,.8)
+  &_blue
+    background-color rgba(106,126,252,.8)
+
+//adaptive media
+adaptive(media)
+  if media == smart
+    @media only screen and (max-width: 480px) {block}
+  else if media == tablet
+    @media only screen and (min-width: 481px) and (max-width: 1024px) {block}
+  else if media == pc
+    @media only screen and (min-width: 1025px) {block}
+
+// Fonts mixin
+font-url(file)
+  return '../fonts/' + file
+
+webfont(family, file, hack-chrome-windows = false, weight = 'normal')
+  @font-face
+    font-family family
+    src url(font-url(file + '.eot'))
+    src url(font-url(file + '.eot?#iefix')) format('embedded-opentype'),
+        url(font-url(file + '.woff')) format('woff'),
+        url(font-url(file + '.ttf')) format('truetype'),
+        url(font-url(file + '.svg#'+ family)) format('svg')
+    font-weight weight
+    font-style normal
+  if hack-chrome-windows
+    @media screen and (-webkit-min-device-pixel-ratio:0)
+      @font-face
+        font-family family
+        src url(font-url(file + '.svg#'+ family)) format('svg')
+
+//pngsprites
+
+spriteWidth($sprite)
+    width $sprite[4]
+
+spriteHeight($sprite)
+    height $sprite[5]
+
+spritePosition($sprite)
+    background-position $sprite[2] $sprite[3]
+
+spriteImage($sprite)
+    background-image url($sprite[8])
+
+sprite($sprite)
+    if !match('hover', selector()) && !match('active', selector())
+        spriteImage($sprite)
+    spritePosition($sprite)
+    spriteWidth($sprite)
+    spriteHeight($sprite)
