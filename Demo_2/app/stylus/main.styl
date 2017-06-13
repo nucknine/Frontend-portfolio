@@ -194,7 +194,7 @@ body
 	padding 1px 0px
 	position relative
 	// height 587px
-	background-image url(../img/slider-bg.jpg)
+	background-image url(../img/slider-bg1.jpg)
 	background-repeat no-repeat
 	background-size cover
 	background-color bdarkgray_clr
@@ -248,13 +248,15 @@ body
 .profile-image
 	width 258px
 	height 301px
+	// border-radius 5px
 	// position absolute
 	// top 148px
 	// left 89px
 	margin-top 148px
 	margin-left 89px
 	margin-bottom 136px
-	background-image url(../img/profile-image.png)
+	background-size cover
+	background-image url(../img/profile-image1.jpg)
 
 //skills section
 
@@ -411,8 +413,15 @@ body
 	&__image
 		width 445px
 		height 300px
-		background-image url(../img/project-image.png)
+		background-size cover
+		background-image url(../img/project-image1-mini.jpg)
 		background-repeat no-repeat
+		&_two
+			background-image url(../img/project-image2-mini.jpg)
+		&_three
+			background-image url(../img/project-image3-mini.jpg)
+		&_four
+			background-image url(../img/project-image4-mini.jpg)
 	&__overlay
 		inline()
 		opacity 0
@@ -524,7 +533,7 @@ body
 		inline()
 		width 350px
 		height 300px
-		background-image url(../img/project-image.png)
+		background-image url(../img/project-image1-mini.jpg)
 		background-position -46px 2px
 	&__desc
 		inline()
@@ -806,3 +815,45 @@ body
 		btn()
 		text-transform none
 		color blue_clr
+
+
+.mfp-with-zoom .mfp-container
+	opacity 0
+	-webkit-backface-visibility hidden
+	transition all 0.3s ease-out
+
+.mfp-with-zoom.mfp-bg
+	opacity 0
+	-webkit-backface-visibility hidden
+	transition all 0.3s ease-out
+
+.mfp-with-zoom.mfp-ready
+	& .mfp-container
+		opacity 1
+
+.mfp-with-zoom.mfp-ready.mfp-bg
+	opacity 0.8
+
+.mfp-with-zoom.mfp-removing
+	& .mfp-container
+		opacity 0
+
+.mfp-with-zoom.mfp-removing.mfp-bg
+	opacity 0
+
+
+/* padding-bottom and top for image */
+.mfp-no-margins
+	& img.mfp-img
+		padding 0
+
+/* position of shadow behind the image */
+.mfp-no-margins
+	& .mfp-figure:after
+		top 0
+		bottom 0
+
+/* padding for main container */
+.mfp-no-margins
+	& .mfp-container
+		padding 0

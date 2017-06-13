@@ -32,6 +32,7 @@ $(document).ready(function(){
 //---------------------------------------------------------
 //burger-menu
 //---------------------------------------------------------
+var overlay = $('.page-overlay');
 
 	$('.burger-icon').click(function(){
 		$('.burger-icon__line_line1').toggleClass('burger-icon__line_line-open1');
@@ -40,10 +41,17 @@ $(document).ready(function(){
 		$('.burger-menu').toggleClass('burger-menu_visible');
 		$('.page-overlay').toggleClass('page-overlay_visible');
 		$('body').toggleClass('overflow');
+		if(overlay.hasClass('page-overlay_visible')) {
+			// console.log('overlay is visible');
+			$(document).bind('touchmove', false);
+		}
 	});
 
 	$('.page-overlay').click(function(){
 		$('.burger-icon__line_line1, .burger-icon__line_line2, .burger-icon__line_line3, .burger-menu, .page-overlay, body, .burger-icon, .video').removeClass('burger-icon__line_line-open1 burger-icon__line_line-open2 burger-icon__line_line-open3 burger-menu_visible page-overlay_visible overflow burger-icon_hide video_visible');
+		// console.log('overlay is not visible');
+		$(document).bind('touchmove', true);
+
 	});
 
 	$('#js-watch-video-head, #js-watch-video-content').click(function(){

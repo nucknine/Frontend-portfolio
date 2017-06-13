@@ -181,22 +181,22 @@ html
 					+b.projects-box
 						+e.project-item
 							+e.image
-								+e.overlay +
+								+e(id="popup-image").overlay +
 							+e.title UX Designer Personal Card
 							+e.text Another card designed for designers. Another color variation attached , &nbsp;Have fun .
 						+e.project-item
-							+e.image
-								+e.overlay._active +
+							+e.image._two
+								+e(id="popup-image").overlay._active +
 							+e.title UX Designer Personal Card
 							+e.text Another card designed for designers. Another color variation attached , &nbsp;Have fun .
 						+e.project-item
-							+e.image
-								+e.overlay +
+							+e.image._three
+								+e(id="popup-image").overlay +
 							+e.title UX Designer Personal Card
 							+e.text Another card designed for designers. Another color variation attached , &nbsp;Have fun .
 						+e.project-item
-							+e.image
-								+e.overlay +
+							+e.image._four
+								+e(id="popup-image").overlay +
 							+e.title UX Designer Personal Card
 							+e.text Another card designed for designers. Another color variation attached , &nbsp;Have fun .
 		+b.SECTION.blog
@@ -323,5 +323,6 @@ html
 								+e.TEXTAREA.text._message(type="text" placeholder="Type Your Message")
 								+e.A.btn Lets Talk To Me
 		script(type="text/javascript" src="js/libs.min.js")
+		script(type="text/javascript" src="js/common.js")
 
 

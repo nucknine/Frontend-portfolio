@@ -32,7 +32,7 @@ $(document).ready(function(){
 //---------------------------------------------------------
 //burger-menu
 //---------------------------------------------------------
-
+var overlay = $('.page-overlay');
 	$('.burger-icon').click(function(){
 		$('.burger-icon__line_line1').toggleClass('burger-icon__line_line-open1');
 		$('.burger-icon__line_line2').toggleClass('burger-icon__line_line-open2');
@@ -40,6 +40,13 @@ $(document).ready(function(){
 		$('.burger-menu').toggleClass('burger-menu_visible');
 		$('.page-overlay').toggleClass('page-overlay_visible');
 		$('body').toggleClass('overflow');
+
+		if(overlay.hasClass('page-overlay_visible')) {
+			console.log('overlay is visible');
+			$(document).bind('touchmove', false);
+		} else {
+			$(document).bind('touchmove', true);
+		}
 	});
 
 	$('.page-overlay').click(function(){

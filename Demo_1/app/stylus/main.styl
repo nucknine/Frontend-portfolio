@@ -88,6 +88,7 @@ font_p_solena_regular()
 		position absolute
 		top 50%
 		left 50%
+		transform translate(-50%, -50%)
 		height 52px
 		width 120px
 	&__dot
@@ -99,12 +100,16 @@ font_p_solena_regular()
 		border-radius 50%
 		animation up-and-down 2s infinite
 		&:nth-child(2)
+			background redcolor
 			animation-delay .15s
 		&:nth-child(3)
+			background bluecolor
 			animation-delay .3s
 		&:nth-child(4)
+			background redcolor
 			animation-delay .45s
 		&:nth-child(5)
+			background bluecolor
 			animation-delay .6s
 
 @keyframes up-and-down {
@@ -128,6 +133,15 @@ font_p_solena_regular()
 	}
 }
 
+::-webkit-scrollbar-track
+	background-color white
+
+::-webkit-scrollbar
+	width 5px
+
+::-webkit-scrollbar-thumb
+	background-color redcolor
+
 body
 	overflow-x hidden
 
@@ -138,15 +152,6 @@ body
 
 *::selection
 	background redcolor
-
-::-webkit-scrollbar-track
-	background-color white
-
-::-webkit-scrollbar
-	width 5px
-
-::-webkit-scrollbar-thumb
-	background-color redcolor
 
 .page-overlay
 	position fixed
@@ -185,26 +190,27 @@ body
 .burger-menu
 	// +adaptive(smart)
 	// 	width 100%
+	display none
 	position absolute
 	top 0
 	bottom 0
-	width 270px
+	width 310px
 	visibility hidden
-	right -270px
+	right -310px
 	background-color black
 	opacity 0
 	z-index 999
 	transition right 0.4s ease-out
+	text-overflow ellipsis
 	&_visible
 		right 0
 		opacity 1
 		visibility visible
+		display block
 		// width 270px
 	&__menu
 		padding 75px 65px 0px 40px
-		font_p_opensans_regular()
-		+adaptive(smart)
-			font_h3_opensans_regular()
+		font_h4_opensans_regular()
 		line-height 1.7
 	&__list
 		&_nest
@@ -231,13 +237,16 @@ body
 		display inline-block
 		text-decoration none
 		color darkgraytext
+		text-overflow ellipsis
 		transition color 0.2s ease-out
 		&_nest
+			text-overflow ellipsis
 			position relative
 			display block
 		&:hover
 			color graycolor
 	&__row-blog
+		text-overflow ellipsis
 		transition all 0.6s ease-out
 		overflow hidden
 		display block

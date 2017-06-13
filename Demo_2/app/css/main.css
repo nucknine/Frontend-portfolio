@@ -210,7 +210,7 @@ body {
 .slider {
   padding: 1px 0px;
   position: relative;
-  background-image: url("../img/slider-bg.jpg");
+  background-image: url("../img/slider-bg1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-color: #eaebed;
@@ -325,7 +325,8 @@ body {
   margin-top: 148px;
   margin-left: 89px;
   margin-bottom: 136px;
-  background-image: url("../img/profile-image.png");
+  background-size: cover;
+  background-image: url("../img/profile-image1.jpg");
 }
 .h2-title {
   margin-top: 97px;
@@ -530,8 +531,18 @@ body {
 .projects-box__image {
   width: 445px;
   height: 300px;
-  background-image: url("../img/project-image.png");
+  background-size: cover;
+  background-image: url("../img/project-image1-mini.jpg");
   background-repeat: no-repeat;
+}
+.projects-box__image_two {
+  background-image: url("../img/project-image2-mini.jpg");
+}
+.projects-box__image_three {
+  background-image: url("../img/project-image3-mini.jpg");
+}
+.projects-box__image_four {
+  background-image: url("../img/project-image4-mini.jpg");
 }
 .projects-box__overlay {
   display: inline-block;
@@ -700,7 +711,7 @@ body {
   vertical-align: top;
   width: 350px;
   height: 300px;
-  background-image: url("../img/project-image.png");
+  background-image: url("../img/project-image1-mini.jpg");
   background-position: -46px 2px;
 }
 .blog-post-box__desc {
@@ -1268,4 +1279,41 @@ body {
 }
 .feedback-form__btn_active::before {
   width: 150px;
+}
+.mfp-with-zoom .mfp-container {
+  opacity: 0;
+  -webkit-backface-visibility: hidden;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.mfp-with-zoom.mfp-bg {
+  opacity: 0;
+  -webkit-backface-visibility: hidden;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.mfp-with-zoom.mfp-ready .mfp-container {
+  opacity: 1;
+}
+.mfp-with-zoom.mfp-ready.mfp-bg {
+  opacity: 0.8;
+}
+.mfp-with-zoom.mfp-removing .mfp-container {
+  opacity: 0;
+}
+.mfp-with-zoom.mfp-removing.mfp-bg {
+  opacity: 0;
+}
+/* padding-bottom and top for image */
+.mfp-no-margins img.mfp-img {
+  padding: 0;
+}
+/* position of shadow behind the image */
+.mfp-no-margins .mfp-figure:after {
+  top: 0;
+  bottom: 0;
+}
+/* padding for main container */
+.mfp-no-margins .mfp-container {
+  padding: 0;
 }

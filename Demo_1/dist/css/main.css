@@ -55,6 +55,9 @@
   position: absolute;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   height: 52px;
   width: 120px;
 }
@@ -70,29 +73,24 @@
           animation: up-and-down 2s infinite;
 }
 .preloader-page__dot:nth-child(2) {
+  background: #ff5656;
   -webkit-animation-delay: 0.15s;
           animation-delay: 0.15s;
 }
 .preloader-page__dot:nth-child(3) {
+  background: #6a7efc;
   -webkit-animation-delay: 0.3s;
           animation-delay: 0.3s;
 }
 .preloader-page__dot:nth-child(4) {
+  background: #ff5656;
   -webkit-animation-delay: 0.45s;
           animation-delay: 0.45s;
 }
 .preloader-page__dot:nth-child(5) {
+  background: #6a7efc;
   -webkit-animation-delay: 0.6s;
           animation-delay: 0.6s;
-}
-body {
-  overflow-x: hidden;
-}
-*::-moz-selection {
-  background: #ff5656;
-}
-*::selection {
-  background: #ff5656;
 }
 ::-webkit-scrollbar-track {
   background-color: #fff;
@@ -102,6 +100,15 @@ body {
 }
 ::-webkit-scrollbar-thumb {
   background-color: #ff5656;
+}
+body {
+  overflow-x: hidden;
+}
+*::-moz-selection {
+  background: #ff5656;
+}
+*::selection {
+  background: #ff5656;
 }
 .page-overlay {
   position: fixed;
@@ -139,31 +146,26 @@ body {
   }
 }
 .burger-menu {
+  display: none;
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 270px;
+  width: 310px;
   visibility: hidden;
-  right: -270px;
+  right: -310px;
   background-color: #000;
   opacity: 0;
   z-index: 999;
   -webkit-transition: right 0.4s ease-out;
   transition: right 0.4s ease-out;
+  text-overflow: ellipsis;
 }
 .burger-menu__menu {
   padding: 75px 65px 0px 40px;
   font-family: 'Opensans_regular', sans-serif;
-  font-size: 16px;
-  line-height: 1.45;
+  font-size: 26px;
+  line-height: 1.2;
   line-height: 1.7;
-}
-@media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
-  .burger-menu__menu {
-    font-family: 'Opensans_regular', sans-serif;
-    font-size: 42px;
-    line-height: 1.2;
-  }
 }
 .burger-menu__list_nest {
   position: relative;
@@ -199,10 +201,12 @@ body {
   display: inline-block;
   text-decoration: none;
   color: #828282;
+  text-overflow: ellipsis;
   -webkit-transition: color 0.2s ease-out;
   transition: color 0.2s ease-out;
 }
 .burger-menu__link_nest {
+  text-overflow: ellipsis;
   position: relative;
   display: block;
 }
@@ -210,6 +214,7 @@ body {
   color: #edf2f6;
 }
 .burger-menu__row-blog {
+  text-overflow: ellipsis;
   -webkit-transition: all 0.6s ease-out;
   transition: all 0.6s ease-out;
   overflow: hidden;
@@ -631,6 +636,7 @@ body {
   }
 }
 .page-title__btn {
+  overflow: hidden;
   display: inline-block;
   vertical-align: top;
   font-family: 'Opensans_regular', sans-serif;
@@ -888,6 +894,7 @@ body {
   height: auto;
 }
 .features-content__btn {
+  overflow: hidden;
   display: inline-block;
   vertical-align: top;
   font-family: 'Opensans_regular', sans-serif;
@@ -1172,6 +1179,7 @@ body {
   text-align: center;
 }
 .btn-holder__btn {
+  overflow: hidden;
   display: inline-block;
   vertical-align: top;
   font-family: 'Opensans_regular', sans-serif;
@@ -1497,6 +1505,7 @@ body {
 .post-box__btn {
   margin-top: 26px;
   margin-bottom: 26px;
+  overflow: hidden;
   display: inline-block;
   vertical-align: top;
   font-family: 'Opensans_regular', sans-serif;
@@ -1575,6 +1584,7 @@ body {
 }
 .get-started-title__btn {
   margin-top: 104px;
+  overflow: hidden;
   display: inline-block;
   vertical-align: top;
   font-family: 'Opensans_regular', sans-serif;
@@ -1786,6 +1796,7 @@ body {
   font-family: 'Opensans_regular', sans-serif;
   font-size: 16px;
   line-height: 1.45;
+  overflow: hidden;
   display: inline-block;
   vertical-align: top;
   font-family: 'Opensans_regular', sans-serif;
