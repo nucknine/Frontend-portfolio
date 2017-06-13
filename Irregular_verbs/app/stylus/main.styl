@@ -2,6 +2,53 @@
 @import "sprite"
 @import "variables"
 
+//fonts
+webfont('Opensans_regular', 'opensans', true, 'normal')
+webfont('Opensans_bold', 'opensansbold', true, 'normal')
+
+font_h4_opensans_bold()
+	font-family 'Opensans_bold', sans-serif
+	font-size 26px
+	line-height 1.2
+
+font_h2_opensans_bold()
+	font-family 'Opensans_bold', sans-serif
+	font-size 68px
+	line-height 1.2
+
+font_p_opensans_bold()
+	font-family 'Opensans_bold', sans-serif
+	font-size 16px
+	line-height 1.45
+
+font_p_opensans_regular()
+	font-family 'Opensans_regular', sans-serif
+	font-size 16px
+	line-height 1.45
+
+
+font_h4_opensans_regular()
+	font-family 'Opensans_regular', sans-serif
+	font-size 26px
+	line-height 1.2
+
+font_h3_opensans_regular()
+	font-family 'Opensans_regular', sans-serif
+	font-size 42px
+	line-height 1.2
+
+font_h2_opensans_regular()
+	font-family 'Opensans_regular', sans-serif
+	font-size 68px
+	line-height 1.2
+
+font_h1_opensans_regular()
+	font-family 'Opensans_regular', sans-serif
+	font-size 110px
+	line-height 1.2
+
+//document css
+
 html
 	height 100%
 
@@ -10,14 +57,87 @@ body
 	background linear-gradient(to right, main_one, main_two)
 
 .pattern
-	height 100%
+	position absolute
+	top 0
+	bottom 0
+	left 0
+	right 0
 	opacity 0.4
 	background url('../img/england-pattern-white.png')
 
 .wrapper
-	width 1170px
-	margin 0 auto
+	// width 1170px
+	// margin 0 auto
 
 .content
-	width 500px
-	margin 0 auto
+	position absolute
+	top 50%
+	left 50%
+	width 600px
+	min-height 250px
+	margin -125px 0 0 -250px
+	background rgba(main_one, .7)
+	border-radius 10px
+	box-shadow 0px 8px 5px -5px rgba(0, 0, 0, 0.4)
+	padding 20px
+
+.form
+	// border 5px solid main_two
+	padding 0
+	margin 0
+	font-size 0
+	// font_p_opensans_regular()
+	box-sizing border-box
+	width 100%
+	&__input-text
+		display inline-block
+		vertical-align top
+		box-sizing border-box
+		width 80%
+		margin 0
+		padding 7px
+		height 48px
+		border 5px solid transparent
+		font_p_opensans_regular()
+		&:focus
+			outline none
+			border 5px solid main_two
+	&__input-submit
+		display inline-block
+		vertical-align top
+		padding 7px
+		margin 0
+		box-sizing border-box
+		font_p_opensans_regular()
+		color rgba(white, 1)
+		cursor pointer
+		height 48px
+		box-sizing border-box
+		width 20%
+		border none
+		outline none
+		background rgba(main_two, 1)
+
+.result-table
+	font_p_opensans_regular()
+	color white
+	margin-top 20px
+	width 100%
+	border-collapse collapse
+	&__row
+		text-align center
+		// &_head
+		// 	font_p_opensans_bold()
+		// text-transform uppercase
+	&__field
+		padding 12px
+		border 1px solid rgba(white, .9)
+
+.result
+	width 100%
+	margin-top 20px
+	font_h4_opensans_regular()
+	color white
+	text-align left
+
+

@@ -9,12 +9,32 @@ html
 		title Irregular verbs
 	body
 		+b.pattern
-		+b.wrapper
-			+b.SECTION.content
-				+b.
-				+b.FORM.form
-					+e.INPUT(type="text" placeholder="Введите глагол").input-text
-					+e.INPUT(type="submit" value="поиск").input-submit
+		+b.SECTION.content
+			+b.FORM.form
+				+e.INPUT(type="text" placeholder="Введите глагол").input-text
+				+e.INPUT(type="submit" value="поиск").input-submit
+			+b.TABLE.result-table
+				+e.TR.row._head
+					+e.TD.field infinitive
+						+e.BR
+						|(первая форма глагола)
+					+e.TD.field past
+						+e.BR
+						|(вторая форма глагола)
+					+e.TD.field past participle
+						+e.BR
+						|(третья форма глагола)
+					+e.TD.field перевод
+				+e.TR.row
+					+e.TD.field write
+					+e.TD.field wrote
+					+e.TD.field written
+					+e.TD.field писать
+			+b.result
+				+e.UL.row нет совпадений
+					+e.LI.list проверьте написание
+					+e.LI.list глагол правильный
+
 	//-
 		+icon('dribbble')
 		script(src="libs/jquery/dist/jquery.min.js")

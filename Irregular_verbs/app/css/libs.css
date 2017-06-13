@@ -454,14 +454,6 @@ template {
   height: 1em;
   fill: currentColor; }
 
-.icon-bookmark {
-  font-size: 2.4rem;
-  width: 1em; }
-
-.icon-check-mark {
-  font-size: 2.4rem;
-  width: 1em; }
-
 .icon-dribbble {
   font-size: 2.4rem;
   width: 1em; }
@@ -478,15 +470,7 @@ template {
   font-size: 1.6rem;
   width: 1em; }
 
-.icon-shield {
-  font-size: 2.4rem;
-  width: 1em; }
-
 .icon-twitter {
-  font-size: 2.4rem;
-  width: 1em; }
-
-.icon-user {
   font-size: 2.4rem;
   width: 1em; }
 
