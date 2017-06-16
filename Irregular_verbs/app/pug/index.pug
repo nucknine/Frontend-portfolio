@@ -14,26 +14,39 @@ html
 				+e.INPUT(type="text" placeholder="Введите глагол").input-text
 				+e.INPUT(type="submit" value="поиск").input-submit
 			+b.TABLE.result-table
-				+e.TR.row._head
-					+e.TD.field infinitive
-						+e.BR
-						|(первая форма глагола)
-					+e.TD.field past
-						+e.BR
-						|(вторая форма глагола)
-					+e.TD.field past participle
-						+e.BR
-						|(третья форма глагола)
-					+e.TD.field перевод
-				+e.TR.row
-					+e.TD.field write
-					+e.TD.field wrote
-					+e.TD.field written
-					+e.TD.field писать
-			+b.result
-				+e.UL.row нет совпадений
-					+e.LI.list проверьте написание
-					+e.LI.list глагол правильный
+				+e.THEAD.row-head
+					+e.TR.th-row
+						+e.TH.th-field Infinitive
+							+e.BR
+							|(первая форма глагола)
+						+e.TH.th-field Past
+							+e.BR
+							|(вторая форма глагола)
+						+e.TH.th-field Past participle
+							+e.BR
+							|(третья форма глагола)
+						+e.TH.th-field Перевод
+				+e.TBODY.row-body
+					+e.TR.tb-row
+						+e.TD.tb-field write
+						+e.TD.tb-field wrote
+						+e.TD.tb-field written
+						+e.TD.tb-field писать
+					+e.TR.tb-row
+						+e.TD.tb-field brite
+						+e.TD.tb-field wrote
+						+e.TD.tb-field written
+						+e.TD.tb-field писать
+					+e.TR.tb-row
+						+e.TD.tb-field hrite
+						+e.TD.tb-field writtenwritten
+						+e.TD.tb-field writtenwritten
+						+e.TD.tb-field written
+			+b.result._hide
+				+e.no-matches Нет совпадений:
+				+e.UL.row
+					+e.LI.list 1. Глагол правильный
+					+e.LI.list 2. Проверьте написание
 
 	//-
 		+icon('dribbble')

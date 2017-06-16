@@ -44,17 +44,25 @@ body {
 }
 .content {
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 50%;
-  width: 600px;
+  width: 770px;
   min-height: 250px;
-  margin: -125px 0 0 -250px;
+  margin: -125px 0 0 -385px;
   background: rgba(255,78,80,0.7);
-  -webkit-border-radius: 10px;
-          border-radius: 10px;
   -webkit-box-shadow: 0px 8px 5px -5px rgba(0,0,0,0.4);
           box-shadow: 0px 8px 5px -5px rgba(0,0,0,0.4);
   padding: 20px;
+}
+@media only screen and (min-device-width: 480px) and (max-device-width: 1024px) {
+  .content {
+    width: 100%;
+    position: absolute;
+    top: 10%;
+    left: 0;
+    margin: 0;
+    padding: 0;
+  }
 }
 .form {
   padding: 0;
@@ -92,7 +100,7 @@ body {
   font-family: 'Opensans_regular', sans-serif;
   font-size: 16px;
   line-height: 1.45;
-  color: #fff;
+  color: #fbf5f3;
   cursor: pointer;
   height: 48px;
   box-sizing: border-box;
@@ -102,27 +110,123 @@ body {
   background: #f9d423;
 }
 .result-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
   font-family: 'Opensans_regular', sans-serif;
   font-size: 16px;
   line-height: 1.45;
-  color: #fff;
-  margin-top: 20px;
-  width: 100%;
-  border-collapse: collapse;
 }
-.result-table__row {
+@media only screen and (min-device-width: 480px) and (max-device-width: 1024px) {
+  .result-table {
+    display: block;
+  }
+}
+.result-table_hide {
+  display: none;
+}
+.result-table__row-head {
+  border-bottom: 2px solid #ff4e50;
+}
+@media only screen and (min-device-width: 480px) and (max-device-width: 1024px) {
+  .result-table__row-head {
+    display: block;
+  }
+}
+@media only screen and (min-device-width: 480px) and (max-device-width: 1024px) {
+  .result-table__row-body {
+    display: block;
+  }
+}
+.result-table__tb-row {
+  word-wrap: break-word;
+  background: rgba(251,245,243,0.4);
+}
+.result-table__tb-row:nth-of-type(odd) {
+  background: rgba(251,245,243,0.8);
+}
+.result-table__tb-row:hover {
+  background: rgba(249,212,35,0.9);
+}
+@media only screen and (min-device-width: 480px) and (max-device-width: 1024px) {
+  .result-table__tb-row {
+    display: block;
+    border: 2px solid #ff4e50;
+  }
+}
+@media only screen and (min-device-width: 480px) and (max-device-width: 1024px) {
+  .result-table__th-row {
+    display: block;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+}
+.result-table__tb-field {
   text-align: center;
+  padding: 6px;
+  color: #240115;
 }
-.result-table__field {
-  padding: 12px;
-  border: 1px solid rgba(255,255,255,0.9);
+@media only screen and (min-device-width: 480px) and (max-device-width: 1024px) {
+  .result-table__tb-field {
+    display: block;
+    border: none;
+    border-bottom: 2px solid #ff4e50;
+    position: relative;
+    padding-left: 50%;
+  }
+  .result-table__tb-field:before {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+  .result-table__tb-field:nth-of-type(1):before {
+    content: "Infinitive";
+  }
+  .result-table__tb-field:nth-of-type(2):before {
+    content: "Past";
+  }
+  .result-table__tb-field:nth-of-type(3):before {
+    content: "Past participle";
+  }
+  .result-table__tb-field:nth-of-type(4):before {
+    content: "Перевод";
+  }
+}
+.result-table__th-field {
+  color: #240115;
+  font-weight: normal;
+  text-align: center;
+  padding: 6px;
+  text-align: center;
+  background: rgba(251,245,243,0.9);
+}
+@media only screen and (min-device-width: 480px) and (max-device-width: 1024px) {
+  .result-table__th-field {
+    display: block;
+  }
 }
 .result {
   width: 100%;
   margin-top: 20px;
   font-family: 'Opensans_regular', sans-serif;
-  font-size: 26px;
-  line-height: 1.2;
-  color: #fff;
+  font-size: 16px;
+  line-height: 1.45;
+  color: #fbf5f3;
   text-align: left;
+}
+.result_hide {
+  display: none;
+}
+.result__no-matches {
+  text-align: center;
+}
+.result__list {
+  list-style-type: none;
+  font-family: 'Opensans_regular', sans-serif;
+  font-size: 16px;
+  line-height: 1.45;
 }

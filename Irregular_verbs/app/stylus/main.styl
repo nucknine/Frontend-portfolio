@@ -71,15 +71,22 @@ body
 
 .content
 	position absolute
-	top 50%
+	top 30%
 	left 50%
-	width 600px
+	width 770px
 	min-height 250px
-	margin -125px 0 0 -250px
+	margin -125px 0 0 -385px
 	background rgba(main_one, .7)
-	border-radius 10px
+	// border-radius 10px
 	box-shadow 0px 8px 5px -5px rgba(0, 0, 0, 0.4)
 	padding 20px
+	+adaptive(tablet)
+		width 100%
+		position absolute
+		top 10%
+		left 0
+		margin 0
+		padding 0
 
 .form
 	// border 5px solid main_two
@@ -99,6 +106,8 @@ body
 		height 48px
 		border 5px solid transparent
 		font_p_opensans_regular()
+		+adaptive(smart)
+			width 100%
 		&:focus
 			outline none
 			border 5px solid main_two
@@ -109,7 +118,7 @@ body
 		margin 0
 		box-sizing border-box
 		font_p_opensans_regular()
-		color rgba(white, 1)
+		color rgba(light, 1)
 		cursor pointer
 		height 48px
 		box-sizing border-box
@@ -117,27 +126,90 @@ body
 		border none
 		outline none
 		background rgba(main_two, 1)
+		+adaptive(smart)
+			width 100%
 
 .result-table
-	font_p_opensans_regular()
-	color white
-	margin-top 20px
 	width 100%
 	border-collapse collapse
-	&__row
+	margin-top 20px
+	font_p_opensans_regular()
+	+adaptive(tablet)
+		display block
+	&_hide
+		display none
+	&__row-head
+		border-bottom 2px solid main_one
+		+adaptive(tablet)
+			display block
+	&__row-body
+		+adaptive(tablet)
+			display block
+	&__tb-row
+		word-wrap: break-word
+		background rgba(light, .4)
+		&:nth-of-type(odd)
+			background rgba(light, .8)
+		&:hover
+			background rgba(main_two, .9)
+		+adaptive(tablet)
+			display block
+			border 2px solid main_one
+	&__th-row
+		+adaptive(tablet)
+			display block
+			position absolute
+			top -9999px
+			left -9999px
+	&__tb-field
 		text-align center
-		// &_head
-		// 	font_p_opensans_bold()
-		// text-transform uppercase
-	&__field
-		padding 12px
-		border 1px solid rgba(white, .9)
+		padding 6px
+		color dark
+		+adaptive(tablet)
+			display block
+			border none
+			border-bottom 2px solid main_one
+			position relative
+			padding-left 50%
+			&:before
+				position absolute
+				top 6px
+				left 6px
+				width 45%
+				padding-right 10px
+				white-space nowrap
+			&:nth-of-type(1):before
+				content "Infinitive"
+			&:nth-of-type(2):before
+				content "Past"
+			&:nth-of-type(3):before
+				content "Past participle"
+			&:nth-of-type(4):before
+				content "Перевод"
+	&__th-field
+		color dark
+		font-weight normal
+		text-align center
+		padding 6px
+		text-align center
+		background rgba(light, .9)
+		+adaptive(tablet)
+			display block
+
 
 .result
+	&_hide
+		display none
 	width 100%
 	margin-top 20px
-	font_h4_opensans_regular()
-	color white
+	font_p_opensans_regular()
+	color light
 	text-align left
+	&__no-matches
+		text-align center
+	&__list
+		list-style-type none
+		font_p_opensans_regular()
+
 
 

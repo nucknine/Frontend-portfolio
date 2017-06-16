@@ -12,32 +12,58 @@
       <form class="form"><input class="form__input-text" type="text" placeholder="Введите глагол"/><input class="form__input-submit" type="submit" value="поиск"/>
       </form>
       <table class="result-table">
-        <tr class="result-table__row result-table__row_head">
-          <td class="result-table__field">infinitive<br/>(первая форма глагола)
-          </td>
-          <td class="result-table__field">past<br/>(вторая форма глагола)
-          </td>
-          <td class="result-table__field">past participle<br/>(третья форма глагола)
-          </td>
-          <td class="result-table__field">перевод
-          </td>
-        </tr>
-        <tr class="result-table__row">
-          <td class="result-table__field">write
-          </td>
-          <td class="result-table__field">wrote
-          </td>
-          <td class="result-table__field">written
-          </td>
-          <td class="result-table__field">писать
-          </td>
-        </tr>
+        <thead class="result-table__row-head">
+          <tr class="result-table__th-row">
+            <th class="result-table__th-field">Infinitive<br/>(первая форма глагола)
+            </th>
+            <th class="result-table__th-field">Past<br/>(вторая форма глагола)
+            </th>
+            <th class="result-table__th-field">Past participle<br/>(третья форма глагола)
+            </th>
+            <th class="result-table__th-field">Перевод
+            </th>
+          </tr>
+        </thead>
+        <tbody class="result-table__row-body">
+          <tr class="result-table__tb-row">
+            <td class="result-table__tb-field">write
+            </td>
+            <td class="result-table__tb-field">wrote
+            </td>
+            <td class="result-table__tb-field">written
+            </td>
+            <td class="result-table__tb-field">писать
+            </td>
+          </tr>
+          <tr class="result-table__tb-row">
+            <td class="result-table__tb-field">brite
+            </td>
+            <td class="result-table__tb-field">wrote
+            </td>
+            <td class="result-table__tb-field">written
+            </td>
+            <td class="result-table__tb-field">писать
+            </td>
+          </tr>
+          <tr class="result-table__tb-row">
+            <td class="result-table__tb-field">hrite
+            </td>
+            <td class="result-table__tb-field">writtenwritten
+            </td>
+            <td class="result-table__tb-field">writtenwritten
+            </td>
+            <td class="result-table__tb-field">written
+            </td>
+          </tr>
+        </tbody>
       </table>
-      <div class="result">
-        <ul class="result__row">нет совпадений
-          <li class="result__list">проверьте написание
+      <div class="result result_hide">
+        <div class="result__no-matches">Нет совпадений:
+        </div>
+        <ul class="result__row">
+          <li class="result__list">1. Глагол правильный
           </li>
-          <li class="result__list">глагол правильный
+          <li class="result__list">2. Проверьте написание
           </li>
         </ul>
       </div>

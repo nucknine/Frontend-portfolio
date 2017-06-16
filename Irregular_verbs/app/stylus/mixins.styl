@@ -42,14 +42,11 @@ btn()
   &_blue
     background-color rgba(106,126,252,.8)
 
-//adaptive media
+//adaptive media for irregular verbs This query will take effect for any screen smaller than 760px
+//and also iPads specifically
 adaptive(media)
-  if media == smart
-    @media only screen and (max-width: 480px) {block}
-  else if media == tablet
-    @media only screen and (min-width: 481px) and (max-width: 1024px) {block}
-  else if media == pc
-    @media only screen and (min-width: 1025px) {block}
+  if media == tablet
+    @media only screen and (min-device-width: 480px) and (max-device-width: 1024px) {block}
 
 // Fonts mixin
 font-url(file)
