@@ -54,7 +54,7 @@ body {
           box-shadow: 0px 8px 5px -5px rgba(0,0,0,0.4);
   padding: 20px;
 }
-@media only screen and (min-device-width: 480px) and (max-device-width: 1024px) {
+@media only screen and (max-width: 1024px) {
   .content {
     width: 100%;
     position: absolute;
@@ -117,7 +117,7 @@ body {
   font-size: 16px;
   line-height: 1.45;
 }
-@media only screen and (min-device-width: 480px) and (max-device-width: 1024px) {
+@media only screen and (max-width: 1024px) {
   .result-table {
     display: block;
   }
@@ -126,14 +126,15 @@ body {
   display: none;
 }
 .result-table__row-head {
+  cursor: pointer;
   border-bottom: 2px solid #ff4e50;
 }
-@media only screen and (min-device-width: 480px) and (max-device-width: 1024px) {
+@media only screen and (max-width: 1024px) {
   .result-table__row-head {
     display: block;
   }
 }
-@media only screen and (min-device-width: 480px) and (max-device-width: 1024px) {
+@media only screen and (max-width: 1024px) {
   .result-table__row-body {
     display: block;
   }
@@ -148,13 +149,17 @@ body {
 .result-table__tb-row:hover {
   background: rgba(249,212,35,0.9);
 }
-@media only screen and (min-device-width: 480px) and (max-device-width: 1024px) {
+@media only screen and (max-width: 1024px) {
   .result-table__tb-row {
     display: block;
-    border: 2px solid #ff4e50;
+    background: none;
+    border-bottom: 4px solid #ff4e50;
+  }
+  .result-table__tb-row:nth-of-type(odd) {
+    background: none;
   }
 }
-@media only screen and (min-device-width: 480px) and (max-device-width: 1024px) {
+@media only screen and (max-width: 1024px) {
   .result-table__th-row {
     display: block;
     position: absolute;
@@ -167,20 +172,27 @@ body {
   padding: 6px;
   color: #240115;
 }
-@media only screen and (min-device-width: 480px) and (max-device-width: 1024px) {
+@media only screen and (max-width: 1024px) {
   .result-table__tb-field {
     display: block;
     border: none;
     border-bottom: 2px solid #ff4e50;
     position: relative;
     padding-left: 50%;
+    background: rgba(251,245,243,0.4);
+  }
+  .result-table__tb-field:last-child {
+    border-bottom: none;
   }
   .result-table__tb-field:before {
+    background: #fbf5f3;
+    border-right: 6px solid #ff4e50;
     position: absolute;
-    top: 6px;
-    left: 6px;
+    top: 0px;
+    left: 0px;
     width: 45%;
     padding-right: 10px;
+    height: 100%;
     white-space: nowrap;
   }
   .result-table__tb-field:nth-of-type(1):before {
@@ -195,6 +207,9 @@ body {
   .result-table__tb-field:nth-of-type(4):before {
     content: "Перевод";
   }
+  .result-table__tb-field:nth-of-type(odd) {
+    background: rgba(251,245,243,0.8);
+  }
 }
 .result-table__th-field {
   color: #240115;
@@ -204,7 +219,7 @@ body {
   text-align: center;
   background: rgba(251,245,243,0.9);
 }
-@media only screen and (min-device-width: 480px) and (max-device-width: 1024px) {
+@media only screen and (max-width: 1024px) {
   .result-table__th-field {
     display: block;
   }

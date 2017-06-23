@@ -55,6 +55,8 @@ html
 body
 	height 100%
 	background linear-gradient(to right, main_one, main_two)
+	adaptive(tablet)
+		background black
 
 .pattern
 	position absolute
@@ -139,6 +141,7 @@ body
 	&_hide
 		display none
 	&__row-head
+		cursor pointer
 		border-bottom 2px solid main_one
 		+adaptive(tablet)
 			display block
@@ -154,7 +157,10 @@ body
 			background rgba(main_two, .9)
 		+adaptive(tablet)
 			display block
-			border 2px solid main_one
+			background none
+			&:nth-of-type(odd)
+				background none
+			border-bottom 4px solid main_one
 	&__th-row
 		+adaptive(tablet)
 			display block
@@ -171,12 +177,19 @@ body
 			border-bottom 2px solid main_one
 			position relative
 			padding-left 50%
+			&:last-child
+				border-bottom none
 			&:before
+				// display inline-block
+				// vertical-align middle
+				background light
+				border-right 6px solid main_one
 				position absolute
-				top 6px
-				left 6px
+				top 0px
+				left 0px
 				width 45%
 				padding-right 10px
+				height 100%
 				white-space nowrap
 			&:nth-of-type(1):before
 				content "Infinitive"
@@ -186,6 +199,9 @@ body
 				content "Past participle"
 			&:nth-of-type(4):before
 				content "Перевод"
+			background rgba(light, .4)
+			&:nth-of-type(odd)
+				background rgba(light, .8)
 	&__th-field
 		color dark
 		font-weight normal
