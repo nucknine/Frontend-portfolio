@@ -56,15 +56,19 @@ body {
 }
 @media only screen and (max-width: 1024px) {
   .content {
-    width: 100%;
+    width: 95%;
     position: absolute;
     top: 10%;
-    left: 0;
+    left: 50%;
     margin: 0;
-    padding: 0;
+    padding: 10px 10px 10px 10px;
+    -webkit-transform: translate(-50%, 0%);
+        -ms-transform: translate(-50%, 0%);
+            transform: translate(-50%, 0%);
   }
 }
 .form {
+  outline: none;
   padding: 0;
   margin: 0;
   font-size: 0;
@@ -109,6 +113,14 @@ body {
   outline: none;
   background: #f9d423;
 }
+.form__input-submit:hover {
+  background: #fada44;
+}
+.form__input-submit:active {
+  background: #fada44;
+  -webkit-box-shadow: inset 3px 3px 10px 1px rgba(36,1,21,0.3);
+          box-shadow: inset 3px 3px 10px 1px rgba(36,1,21,0.3);
+}
 .result-table {
   width: 100%;
   border-collapse: collapse;
@@ -119,6 +131,7 @@ body {
 }
 @media only screen and (max-width: 1024px) {
   .result-table {
+    margin-top: 6px;
     display: block;
   }
 }
@@ -132,6 +145,7 @@ body {
 @media only screen and (max-width: 1024px) {
   .result-table__row-head {
     display: block;
+    border-bottom: 0px solid #f9d423;
   }
 }
 @media only screen and (max-width: 1024px) {
@@ -153,10 +167,16 @@ body {
   .result-table__tb-row {
     display: block;
     background: none;
-    border-bottom: 4px solid #ff4e50;
+    border-bottom: 6px solid rgba(255,78,80,0.8);
+  }
+  .result-table__tb-row:nth-last-child(1) {
+    border-bottom: none;
   }
   .result-table__tb-row:nth-of-type(odd) {
-    background: none;
+    background: transparent;
+  }
+  .result-table__tb-row:hover {
+    background: transparent;
   }
 }
 @media only screen and (max-width: 1024px) {
@@ -176,7 +196,6 @@ body {
   .result-table__tb-field {
     display: block;
     border: none;
-    border-bottom: 2px solid #ff4e50;
     position: relative;
     padding-left: 50%;
     background: rgba(251,245,243,0.4);
@@ -184,31 +203,42 @@ body {
   .result-table__tb-field:last-child {
     border-bottom: none;
   }
+  .result-table__tb-field:hover {
+    background: rgba(249,212,35,0.9);
+  }
   .result-table__tb-field:before {
-    background: #fbf5f3;
-    border-right: 6px solid #ff4e50;
+    line-height: 35px;
+    border-right: 2px solid #ff4e50;
     position: absolute;
     top: 0px;
     left: 0px;
     width: 45%;
     padding-right: 10px;
     height: 100%;
-    white-space: nowrap;
+    white-space: normal;
+    background: rgba(251,245,243,0.4);
+    cursor: pointer;
+  }
+  .result-table__tb-field:hover:before {
+    background: rgba(249,212,35,0.9);
   }
   .result-table__tb-field:nth-of-type(1):before {
-    content: "Infinitive";
+    content: "Infinitive (I)";
   }
   .result-table__tb-field:nth-of-type(2):before {
-    content: "Past";
+    content: "Past (II)";
   }
   .result-table__tb-field:nth-of-type(3):before {
-    content: "Past participle";
+    content: "Past participle (III)";
   }
   .result-table__tb-field:nth-of-type(4):before {
     content: "Перевод";
   }
   .result-table__tb-field:nth-of-type(odd) {
     background: rgba(251,245,243,0.8);
+  }
+  .result-table__tb-field:nth-of-type(odd):hover {
+    background: rgba(249,212,35,0.9);
   }
 }
 .result-table__th-field {
