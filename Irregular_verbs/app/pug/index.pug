@@ -10,44 +10,70 @@ html
 		title Irregular verbs
 	body
 		+b.pattern
-		+b.SECTION.content
-			+b.FORM.form
-				+e.INPUT(type="text" placeholder="Введите глагол").input-text
-				+e.INPUT(type="submit" value="поиск").input-submit
-			+b.TABLE.result-table
-				+e.THEAD.row-head
-					+e.TR.th-row
-						+e.TH.th-field Infinitive
-							+e.BR
-							|(первая форма глагола)
-						+e.TH.th-field Past
-							+e.BR
-							|(вторая форма глагола)
-						+e.TH.th-field Past participle
-							+e.BR
-							|(третья форма глагола)
-						+e.TH.th-field Перевод
-				+e.TBODY.row-body
-					+e.TR.tb-row
-						+e.TD.tb-field write
-						+e.TD.tb-field wrote
-						+e.TD.tb-field written
-						+e.TD.tb-field писать
-					+e.TR.tb-row
-						+e.TD.tb-field brite
-						+e.TD.tb-field wrote
-						+e.TD.tb-field written
-						+e.TD.tb-field писать
-					+e.TR.tb-row
-						+e.TD.tb-field hrite
-						+e.TD.tb-field writtenwritten
-						+e.TD.tb-field writtenwritten
-						+e.TD.tb-field written
-			+b.result._hide
-				+e.no-matches Нет совпадений:
-				+e.UL.row
-					+e.LI.list 1. Глагол правильный
-					+e.LI.list 2. Проверьте написание
+		+b.HEADER.header
+			+b.NAV.nav
+				+e.UL.nav-row
+					+e.LI.nav-list
+						+e.A(href="#").nav-link другие проекты
+					+e.LI.nav-list
+						+e.A(href="#").nav-link контакты
+					+e.LI.nav-list
+						+e.A(href="#").nav-link еще
+		+b.SECTION.content-section
+			+b.content
+				+b.FORM.form
+					+e.INPUT(type="text" placeholder="Введите глагол").input-text
+					+e.BUTTON(type="submit" value="поиск").input-submit Поиск
+				+b.TABLE.result-table
+					+e.THEAD.row-head
+						+e.TR.th-row
+							+e.TH.th-field Infinitive
+								+e.BR
+								|(первая форма глагола)
+							+e.TH.th-field Past
+								+e.BR
+								|(вторая форма глагола)
+							+e.TH.th-field Past participle
+								+e.BR
+								|(третья форма глагола)
+							+e.TH.th-field Перевод
+					+e.TBODY.row-body
+						+e.TR.tb-row
+							+e.TD.tb-field write
+							+e.TD.tb-field wrote
+							+e.TD.tb-field written
+							+e.TD.tb-field писать
+						+e.TR.tb-row
+							+e.TD.tb-field brite
+							+e.TD.tb-field wrote
+							+e.TD.tb-field written
+							+e.TD.tb-field писать
+						+e.TR.tb-row
+							+e.TD.tb-field hrite
+							+e.TD.tb-field writtenwritten
+							+e.TD.tb-field writtenwritten
+							+e.TD.tb-field written
+				+b.result
+					+e.no-matches Нет совпадений:
+					+e.UL.row
+						+e.LI.list 1. Глагол правильный
+						+e.LI.list 2. Проверьте написание
+		+b.FOOTER.footer
+			+b.footer-copy
+				+e.P made by
+					+e.A(href="#").link
+						|  nucknine
+					|  2017
+			+b.social-icons
+				+e.icon._fb
+					+e.A(href="#").link
+						+icon('facebook')
+				+e.icon._vk
+					+e.A(href="#").link
+						+icon('vk')
+				+e.icon._git
+					+e.A(href="#").link
+						+icon('github')
 
 	//-
 		+icon('dribbble')

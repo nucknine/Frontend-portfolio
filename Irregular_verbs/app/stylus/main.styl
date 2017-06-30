@@ -49,16 +49,17 @@ font_h1_opensans_regular()
 
 //document css
 
-html
-	height 100%
+// html
+	// height 100%
 
 body
-	height 100%
+	overflow hidden
 	background linear-gradient(to right, main_one, main_two)
-	adaptive(tablet)
-		background black
+	+adaptive(tablet)
+		overflow-y auto
 
 .pattern
+	z-index -1
 	position absolute
 	top 0
 	bottom 0
@@ -67,31 +68,102 @@ body
 	opacity 0.4
 	background url('../img/england-pattern-white.png')
 
-.wrapper
-	// width 1170px
-	// margin 0 auto
+/*Header*/
+.header
+	width 100%
+	margin-bottom 50px
+	font_p_opensans_regular()
+	text-align center
+	+adaptive(tablet)
+		margin-bottom 0px
+
+.nav
+	display inline-block
+	color light
+	&__nav-row
+		display block
+	&__nav-list
+		margin-right 20px
+		display inline-block
+		list-style none
+		&:last-child
+			margin-right 0
+	&__nav-link
+		transition-cubic()
+		transition all 0.3s
+		color lighten(light, 30%)
+		text-decoration none
+		// text-shadow 1px 1px 2px rgba(dark, 0.4);
+		&:hover
+			// text-shadow none
+			color dark
+
+/*Footer*/
+.footer
+	z-index 1
+	position absolute
+	bottom 12px
+	left 0
+	width 100%
+	text-align center
+	+adaptive(tablet)
+		position relative
+
+.footer-copy
+	font_p_opensans_regular()
+	color light
+	position relative
+	&__link
+		color light
+		transition-cubic()
+		transition color 0.3s
+		color lighten(light, 30%)
+		text-decoration none
+		&:hover
+			color dark
+
+.social-icons
+	display inline-block
+	&__icon
+		display inline-block
+		margin-right 12px
+		&:last-child
+			margin-right 0
+	&__link
+		transition-cubic()
+		transition color 0.3s
+		text-decoration none
+		color light
+		&:hover
+			color dark
+
+.icon
+	font-size 24px
+
+/*Main Content*/
+.content-section
+	position relative
+	display block
+	height auto
+	width 1170px
+	margin 0 auto
+	margin-bottom 50px
+	+adaptive(tablet)
+		width 100%
 
 .content
-	position absolute
-	top 30%
-	left 50%
 	width 770px
 	min-height 250px
-	margin -125px 0 0 -385px
+	margin 0 auto
 	background rgba(main_one, .7)
-	// border-radius 10px
 	box-shadow 0px 8px 5px -5px rgba(0, 0, 0, 0.4)
 	padding 20px
 	+adaptive(tablet)
 		width 95%
-		position absolute
-		top 10%
-		left 50%
-		margin 0
 		padding 10px 10px 10px 10px
-		transform: translate(-50%, 0%);
 
 .form
+	position relative
 	outline none
 	padding 0
 	margin 0
@@ -114,38 +186,28 @@ body
 		+adaptive(smart)
 			width 100%
 	&__input-submit
+		text-transform uppercase
+		font_p_opensans_bold()
+		z-index 1
+		position relative
+		overflow hidden
 		display inline-block
+		box-sizing border-box
 		vertical-align top
 		padding 7px
 		margin 0
 		box-sizing border-box
-		font_p_opensans_regular()
-		color rgba(light, 1)
+		color rgba(main_one, 0.8)
 		cursor pointer
 		height 48px
-		box-sizing border-box
 		width 20%
 		border none
-		// outline none
 		background rgba(main_two, 1)
-		&:hover
-			color dark
-			&::before
-				opacity 1
-				background-color main_one
-				transform rotate3d(0, 0, 1, 0deg)
-				transition-timing-function cubic-bezier(0.2, 1, 0.3, 1)
-		&:active
-			background lighten(main_two, 15%)
-			// box-shadow inset 3px 3px 10px 1px rgba(dark,0.3)
-		+adaptive(smart)
-			width 100%
-		position relative
-		overflow hidden
-		transition-timing-function cubic-bezier(0.2, 1, 0.3, 1)
+		transition-cubic()
 		transition border-color 0.3s, color 0.3s
+		border 6px solid main_two
 		&::before
-			content ''
+			content ""
 			position absolute
 			top 0
 			left 0
@@ -156,6 +218,19 @@ body
 			transform rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0)
 			transform-origin 0% 100%
 			transition transform 0.3s, opacity 0.3s, background-color 0.3s
+		&:hover
+			color main_two
+			&::before
+				border-color main_two
+				opacity 1
+				background-color rgba(main_one, .8)
+				transform rotate3d(0, 0, 1, 0deg)
+				transition-timing-function cubic-bezier(0.2, 1, 0.3, 1)
+		&:active
+			background lighten(main_two, 15%)
+		+adaptive(smart)
+			width 100%
+
 
 .result-table
 	width 100%
@@ -214,7 +289,6 @@ body
 			&:hover
 				background rgba(main_two, .9)
 			&:before
-				// display inline-block
 				line-height 35px
 				border-right 2px solid main_one
 				position absolute
@@ -265,6 +339,3 @@ body
 	&__list
 		list-style-type none
 		font_p_opensans_regular()
-
-
-

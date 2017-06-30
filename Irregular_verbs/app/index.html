@@ -9,65 +9,104 @@
   <body>
     <div class="pattern">
     </div>
-    <section class="content">
-      <form class="form"><input class="form__input-text" type="text" placeholder="Введите глагол"/><input class="form__input-submit" type="submit" value="поиск"/>
-      </form>
-      <table class="result-table">
-        <thead class="result-table__row-head">
-          <tr class="result-table__th-row">
-            <th class="result-table__th-field">Infinitive<br/>(первая форма глагола)
-            </th>
-            <th class="result-table__th-field">Past<br/>(вторая форма глагола)
-            </th>
-            <th class="result-table__th-field">Past participle<br/>(третья форма глагола)
-            </th>
-            <th class="result-table__th-field">Перевод
-            </th>
-          </tr>
-        </thead>
-        <tbody class="result-table__row-body">
-          <tr class="result-table__tb-row">
-            <td class="result-table__tb-field">write
-            </td>
-            <td class="result-table__tb-field">wrote
-            </td>
-            <td class="result-table__tb-field">written
-            </td>
-            <td class="result-table__tb-field">писать
-            </td>
-          </tr>
-          <tr class="result-table__tb-row">
-            <td class="result-table__tb-field">brite
-            </td>
-            <td class="result-table__tb-field">wrote
-            </td>
-            <td class="result-table__tb-field">written
-            </td>
-            <td class="result-table__tb-field">писать
-            </td>
-          </tr>
-          <tr class="result-table__tb-row">
-            <td class="result-table__tb-field">hrite
-            </td>
-            <td class="result-table__tb-field">writtenwritten
-            </td>
-            <td class="result-table__tb-field">writtenwritten
-            </td>
-            <td class="result-table__tb-field">written
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="result result_hide">
-        <div class="result__no-matches">Нет совпадений:
-        </div>
-        <ul class="result__row">
-          <li class="result__list">1. Глагол правильный
+    <header class="header">
+      <nav class="nav">
+        <ul class="nav__nav-row">
+          <li class="nav__nav-list"><a class="nav__nav-link" href="#">другие проекты</a>
           </li>
-          <li class="result__list">2. Проверьте написание
+          <li class="nav__nav-list"><a class="nav__nav-link" href="#">контакты</a>
+          </li>
+          <li class="nav__nav-list"><a class="nav__nav-link" href="#">еще</a>
           </li>
         </ul>
+      </nav>
+    </header>
+    <section class="content-section">
+      <div class="content">
+        <form class="form"><input class="form__input-text" type="text" placeholder="Введите глагол"/>
+          <button class="form__input-submit" type="submit" value="поиск">Поиск
+          </button>
+        </form>
+        <table class="result-table">
+          <thead class="result-table__row-head">
+            <tr class="result-table__th-row">
+              <th class="result-table__th-field">Infinitive<br/>(первая форма глагола)
+              </th>
+              <th class="result-table__th-field">Past<br/>(вторая форма глагола)
+              </th>
+              <th class="result-table__th-field">Past participle<br/>(третья форма глагола)
+              </th>
+              <th class="result-table__th-field">Перевод
+              </th>
+            </tr>
+          </thead>
+          <tbody class="result-table__row-body">
+            <tr class="result-table__tb-row">
+              <td class="result-table__tb-field">write
+              </td>
+              <td class="result-table__tb-field">wrote
+              </td>
+              <td class="result-table__tb-field">written
+              </td>
+              <td class="result-table__tb-field">писать
+              </td>
+            </tr>
+            <tr class="result-table__tb-row">
+              <td class="result-table__tb-field">brite
+              </td>
+              <td class="result-table__tb-field">wrote
+              </td>
+              <td class="result-table__tb-field">written
+              </td>
+              <td class="result-table__tb-field">писать
+              </td>
+            </tr>
+            <tr class="result-table__tb-row">
+              <td class="result-table__tb-field">hrite
+              </td>
+              <td class="result-table__tb-field">writtenwritten
+              </td>
+              <td class="result-table__tb-field">writtenwritten
+              </td>
+              <td class="result-table__tb-field">written
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="result">
+          <div class="result__no-matches">Нет совпадений:
+          </div>
+          <ul class="result__row">
+            <li class="result__list">1. Глагол правильный
+            </li>
+            <li class="result__list">2. Проверьте написание
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
+    <footer class="footer">
+      <div class="footer-copy">
+        <p>made by<a class="footer-copy__link" href="#"> nucknine</a> 2017
+        </p>
+      </div>
+      <div class="social-icons">
+        <div class="social-icons__icon social-icons__icon_fb"><a class="social-icons__link" href="#">
+          <svg class="icon icon-facebook ">
+            <use xlink:href="img/icons/svg/sprite/sprite.svg#facebook"></use>
+          </svg></a>
+        </div>
+        <div class="social-icons__icon social-icons__icon_vk"><a class="social-icons__link" href="#">
+          <svg class="icon icon-vk ">
+            <use xlink:href="img/icons/svg/sprite/sprite.svg#vk"></use>
+          </svg></a>
+        </div>
+        <div class="social-icons__icon social-icons__icon_git"><a class="social-icons__link" href="#">
+          <svg class="icon icon-github ">
+            <use xlink:href="img/icons/svg/sprite/sprite.svg#github"></use>
+          </svg></a>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
