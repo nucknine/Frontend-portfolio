@@ -49,12 +49,14 @@ font_h1_opensans_regular()
 
 //document css
 
-// html
-	// height 100%
+html
+	height 100%
 
 body
 	overflow hidden
 	background linear-gradient(to right, main_one, main_two)
+	// border 2px solid black
+	height 100%
 	+adaptive(tablet)
 		overflow-y auto
 
@@ -101,7 +103,7 @@ body
 /*Footer*/
 .footer
 	z-index 1
-	position absolute
+	position relative
 	bottom 12px
 	left 0
 	width 100%
@@ -143,6 +145,7 @@ body
 /*Main Content*/
 .content-section
 	position relative
+	z-index 999
 	display block
 	height auto
 	width 1170px
@@ -152,6 +155,7 @@ body
 		width 100%
 
 .content
+	position relative
 	width 770px
 	min-height 250px
 	margin 0 auto
@@ -174,7 +178,7 @@ body
 		display inline-block
 		vertical-align top
 		box-sizing border-box
-		width 80%
+		width 75%
 		margin 0
 		padding 7px
 		height 48px
@@ -200,7 +204,7 @@ body
 		color rgba(main_one, 0.8)
 		cursor pointer
 		height 48px
-		width 20%
+		width 25%
 		border none
 		background rgba(main_two, 1)
 		transition-cubic()
@@ -252,12 +256,15 @@ body
 		+adaptive(tablet)
 			display block
 	&__tb-row
+		position relative
 		word-wrap: break-word
 		background rgba(light, .4)
 		&:nth-of-type(odd)
 			background rgba(light, .8)
 		&:hover
 			background rgba(main_two, .9)
+			background gradient-row
+			box-shadow 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 5px rgba(0, 0, 0, 0.1) inset
 		+adaptive(tablet)
 			display block
 			background none
@@ -288,6 +295,7 @@ body
 				border-bottom none
 			&:hover
 				background rgba(main_two, .9)
+				background gradient-row
 			&:before
 				line-height 35px
 				border-right 2px solid main_one
@@ -303,6 +311,7 @@ body
 			&:hover
 				&:before
 					background rgba(main_two, .9)
+					background gradient-row
 			&:nth-of-type(1):before
 				content "Infinitive (I)"
 			&:nth-of-type(2):before
@@ -315,6 +324,7 @@ body
 				background rgba(light, .8)
 				&:hover
 					background rgba(main_two, .9)
+					background gradient-row
 	&__th-field
 		color dark
 		font-weight normal
@@ -324,7 +334,6 @@ body
 		background rgba(light, .9)
 		+adaptive(tablet)
 			display block
-
 
 .result
 	&_hide
