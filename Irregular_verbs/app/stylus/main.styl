@@ -53,22 +53,12 @@ html
 	height 100%
 
 body
-	overflow hidden
-	background linear-gradient(to right, main_one, main_two)
-	// border 2px solid black
+	overflow-x hidden
+	background-color light2
 	height 100%
+	background-image url('../img/eng1.svg')
 	+adaptive(tablet)
 		overflow-y auto
-
-.pattern
-	z-index -1
-	position absolute
-	top 0
-	bottom 0
-	left 0
-	right 0
-	opacity 0.4
-	background url('../img/england-pattern-white.png')
 
 /*Header*/
 .header
@@ -81,7 +71,8 @@ body
 
 .nav
 	display inline-block
-	color light
+	color dark
+	font_p_opensans_bold()
 	&__nav-row
 		display block
 	&__nav-list
@@ -93,12 +84,12 @@ body
 	&__nav-link
 		transition-cubic()
 		transition all 0.3s
-		color lighten(light, 30%)
+		color dark
 		text-decoration none
 		// text-shadow 1px 1px 2px rgba(dark, 0.4);
 		&:hover
 			// text-shadow none
-			color dark
+			color main_two
 
 /*Footer*/
 .footer
@@ -113,13 +104,14 @@ body
 
 .footer-copy
 	font_p_opensans_regular()
-	color light
+	font_p_opensans_bold()
+	color main_one
 	position relative
 	&__link
-		color light
+		color main_one
 		transition-cubic()
 		transition color 0.3s
-		color lighten(light, 30%)
+		color lighten(dark, 30%)
 		text-decoration none
 		&:hover
 			color dark
@@ -135,9 +127,9 @@ body
 		transition-cubic()
 		transition color 0.3s
 		text-decoration none
-		color light
+		color main_one
 		&:hover
-			color dark
+			color main_two
 
 .icon
 	font-size 24px
@@ -159,7 +151,7 @@ body
 	width 770px
 	min-height 250px
 	margin 0 auto
-	background rgba(main_one, .7)
+	background rgba(main_one, .9)
 	box-shadow 0px 8px 5px -5px rgba(0, 0, 0, 0.4)
 	padding 20px
 	+adaptive(tablet)
