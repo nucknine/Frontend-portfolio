@@ -28,26 +28,15 @@ html {
   height: 100%;
 }
 body {
-  overflow: hidden;
-  background: -webkit-gradient(linear, left top, right top, from(#ff4e50), to(#f9d423));
-  background: -webkit-linear-gradient(left, #ff4e50, #f9d423);
-  background: linear-gradient(to right, #ff4e50, #f9d423);
+  overflow-x: hidden;
+  background-color: #eee oe2db;
   height: 100%;
+  background-image: url("../img/eng1.svg");
 }
 @media only screen and (max-width: 1024px) {
   body {
     overflow-y: auto;
   }
-}
-.pattern {
-  z-index: -1;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  opacity: 0.4;
-  background: url("../img/england-pattern-white.png");
 }
 /*Header*/
 .header {
@@ -65,7 +54,10 @@ body {
 }
 .nav {
   display: inline-block;
-  color: #fbf5f3;
+  color: #240115;
+  font-family: 'Opensans_bold', sans-serif;
+  font-size: 16px;
+  line-height: 1.45;
 }
 .nav__nav-row {
   display: block;
@@ -83,11 +75,11 @@ body {
           transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-  color: #fcf8f7;
+  color: #240115;
   text-decoration: none;
 }
 .nav__nav-link:hover {
-  color: #240115;
+  color: #f9d423;
 }
 /*Footer*/
 .footer {
@@ -107,16 +99,19 @@ body {
   font-family: 'Opensans_regular', sans-serif;
   font-size: 16px;
   line-height: 1.45;
-  color: #fbf5f3;
+  font-family: 'Opensans_bold', sans-serif;
+  font-size: 16px;
+  line-height: 1.45;
+  color: #ff4e50;
   position: relative;
 }
 .footer-copy__link {
-  color: #fbf5f3;
+  color: #ff4e50;
   -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
           transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
-  color: #fcf8f7;
+  color: #ae0566;
   text-decoration: none;
 }
 .footer-copy__link:hover {
@@ -138,10 +133,10 @@ body {
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
   text-decoration: none;
-  color: #fbf5f3;
+  color: #ff4e50;
 }
 .social-icons__link:hover {
-  color: #240115;
+  color: #f9d423;
 }
 .icon {
   font-size: 24px;
@@ -166,7 +161,7 @@ body {
   width: 770px;
   min-height: 250px;
   margin: 0 auto;
-  background: rgba(255,78,80,0.7);
+  background: rgba(255,78,80,0.9);
   -webkit-box-shadow: 0px 8px 5px -5px rgba(0,0,0,0.4);
           box-shadow: 0px 8px 5px -5px rgba(0,0,0,0.4);
   padding: 20px;
