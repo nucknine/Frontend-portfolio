@@ -4,4 +4,13 @@ block variables
   - var title = 'Home page'
 
 block content
-  include ../common/_greating
+  +b.wrapper
+    +b.SECTION.section.hero
+      +b.UL.socials
+        each item in ['vk', 'gh', 'in']
+          +e.LI.item
+            a(href="#" class=`socials__link socials__link_${item}`)
+      +b.A(href="#").hamburger
+      +b.A(href="#").down-arrow
+    +b.SECTION.section.about
+    +b.SECTION.section.map
