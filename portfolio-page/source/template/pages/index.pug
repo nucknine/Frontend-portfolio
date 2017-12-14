@@ -5,12 +5,34 @@ block variables
 
 block content
   +b.wrapper
-    +b.SECTION.section.hero
+    +b.SECTION.section.hero__
       +b.UL.socials
         each item in ['vk', 'gh', 'in']
           +e.LI.item
             a(href="#" class=`socials__link socials__link_${item}`)
       +b.A(href="#").hamburger
       +b.A(href="#").down-arrow
-    +b.SECTION.section.about
+      +e.title
+        +b.IMG(src="#").section-title
+        //миксин hero__user-block на блоке user (примесь добавляет особенности блоку в зависимости от местонахождения: section hero в данном случае)
+        +b.user.hero__user-block
+          +e.photo
+          +e.name
+          +e.description
+    +b.SECTION.section.about__
+      +e.left
+        +b.SVG.triangle._fill_white
+        //миксин about__section-title
+        +b.title.about__section-title
+          | Обо мне
+        +b.user-about
+          +e.picture
+          //позиционирование и отступы на классе user-about__title, а стиль оформления на .subtitle (переиспользуемый стиль)
+          +e.title.subtitle
+            | Кто я
+          +e.text
+            p Я разработчик из Петрозаводска
+            p Я разработчик
+      +e.right
+        +b.SVG.triangle._fill_beige
     +b.SECTION.section.map
