@@ -1,0 +1,98 @@
+@charset "UTF-8";
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Elements
+# Forms
+# Navigation
+  ## Links
+  ## Menus
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Content
+  ## Posts and pages
+  ## Comments
+# Infinite scroll
+# Media
+  ## Captions
+  ## Galleries
+--------------------------------------------------------------*/
+/*шаблон по которому формирются стили для svg иконок*/
+@import url("https://fonts.googleapis.com/css?family=Roboto&subset=cyrillic");
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  fill: currentColor; }
+
+.icon-Codeopen_Color {
+  font-size: 6rem;
+  width: 1em; }
+
+.icon-Coub_Color {
+  font-size: 6rem;
+  width: 1em; }
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+@font-face {
+  font-family: 'bernier';
+  src: url("../../fonts/BERNIERRegular-Regular.otf");
+  font-weight: normal;
+  font-style: normal; }
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Setup
+--------------------------------------------------------------*/
+html {
+  height: 100%; }
+
+body {
+  height: 100%;
+  margin: 0;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42;
+  -webkit-font-smoothing: antialiased; }
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+h1, h2, h3, h4, h5 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: normal; }
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none; }
+
+p {
+  margin: 0; }
+
+/*--------------------------------------------------------------
+## Layout
+--------------------------------------------------------------*/
+.wrapper {
+  min-height: 100%;
+  position: relative;
+  overflow: hidden; }
+
+/*--------------------------------------------------------------
+## Header
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Footer
+--------------------------------------------------------------*/
+
+/*# sourceMappingURL=maps/style.css.map */
