@@ -9,7 +9,7 @@
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
     <link rel="stylesheet" href="/assets/css/foundation.css">
-    <link rel="stylesheet" href="/assets/css/app.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
     <script src="/assets/js/foundation.js" defer></script>
     <script src="/assets/js/app.js" defer></script><!--[if lt IE 9]>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
@@ -17,6 +17,8 @@
   <body>
     <div class="wrapper">
       <section class="section hero">
+        <div class="hero__bg"><img class="hero__img-bg" src="assets/img/portfolio.jpg" alt="" role="presentation"/>
+        </div>
         <ul class="socials">
           <li class="socials__item"><a class="socials__link socials__link_vk" href="#"></a>
           </li>
@@ -24,21 +26,25 @@
           </li>
           <li class="socials__item"><a class="socials__link socials__link_in" href="#"></a>
           </li>
-        </ul><a class="hamburger" href="#"></a><a class="down-arrow" href="#"></a>
-        <div class="hero__title"><img class="section-title" src="#" alt="" role="presentation"/>
+        </ul><a class="hamburger" href="#"></a><a class="down-arrow" href="#"><img src="assets/img/icons/arrow_down.svg" alt="" role="presentation"/>
+        <!--+icon('arrow_down')--></a>
+        <div class="hero__title"><img class="section-title" src="assets/img/decor/porfolio-word.png" alt="" role="presentation"/>
           <div class="user hero__user-block">
             <div class="user__photo">
+              <div class="user__photo-avatar"><img class="user__photo-img" src="assets/img/user.png" alt="" role="presentation"/>
+              </div>
             </div>
-            <div class="user__name">
+            <div class="user__name">Oleg Maximov
             </div>
-            <div class="user__description">
+            <div class="user__description">Личный сайт разработчика
             </div>
           </div>
         </div>
       </section>
       <section class="section about">
         <div class="about__left">
-          <svg class="triangle triangle_fill_white">
+          <svg class="triangle triangle_fill_white about__triangles" viewbox="0 0 1000 100" preserveAspectRatio="none">
+            <polygon points="0,0 0,100 1000,100"></polygon>
           </svg>
           <div class="title about__section-title">Обо мне
           </div>
@@ -48,12 +54,15 @@
             <div class="user-about__title subtitle">Кто я
             </div>
             <div class="user-about__text">
-              <p>Я разработчик из Петрозаводска</p>
+              <p>Я разработчик</p>
               <p>Я разработчик</p>
             </div>
           </div>
         </div>
         <div class="about__right">
+          <svg class="triangle triangle_fill_beige about__triangles" viewbox="0 0 1000 100" preserveAspectRatio="none">
+            <polygon points="0,100 1000,0 1000,100"></polygon>
+          </svg>
           <div class="about-data about-user-info">
             <div class="about-user-info__description">
               <div class="about-user-info__title">

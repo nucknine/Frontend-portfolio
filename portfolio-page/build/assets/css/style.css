@@ -21,6 +21,63 @@
   ## Captions
   ## Galleries
 --------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Global imports
+--------------------------------------------------------------*/
+/*
+clearfix миксин плейсхолдер
+*/
+/*
+center element
+*/
+/*
+Fill element
+*/
+/*
+Sizes for element
+*/
+/*
+inline-block
+*/
+/*
+shadow
+*/
+/*
+adaptive media
+*/
+/*
+font-size
+*/
+/*
+bernier font
+*/
+/*
+cols(n=3, m=10)
+margin-right m px
+width ((100% - (((@margin-right * n) / wrapper-width) * 100%)) / n)
+&:last-child
+margin-right 0px
+
+// Fonts mixin
+font-url(file)
+return '../fonts/' + file
+
+webfont(family, file, hack-chrome-windows = false, weight = 'normal')
+@font-face
+font-family family
+src url(font-url(file + '.eot'))
+src url(font-url(file + '.eot?#iefix')) format('embedded-opentype'),
+url(font-url(file + '.woff')) format('woff'),
+url(font-url(file + '.ttf')) format('truetype'),
+url(font-url(file + '.svg#'+ family)) format('svg')
+font-weight weight
+font-style normal
+if hack-chrome-windows
+@media screen and (-webkit-min-device-pixel-ratio:0)
+@font-face
+font-family family
+src url(font-url(file + '.svg#'+ family)) format('svg')
+*/
 /*шаблон по которому формирются стили для svg иконок*/
 @import url("https://fonts.googleapis.com/css?family=Roboto&subset=cyrillic");
 .icon {
@@ -29,13 +86,145 @@
   height: 1em;
   fill: currentColor; }
 
-.icon-Codeopen_Color {
-  font-size: 6rem;
+.icon-about_bg_left {
+  font-size: 101.3986rem;
+  width: 0.88759em; }
+
+.icon-about_bg_right {
+  font-size: 100.9986rem;
+  width: 0.89143em; }
+
+.icon-about_header {
+  font-size: 17.544rem;
+  width: 2.83949em; }
+
+.icon-arrow_down {
+  font-size: 1.6164rem;
+  width: 1.55778em; }
+
+.icon-bg {
+  font-size: 35.469rem;
+  width: 5.63873em; }
+
+.icon-blog_header {
+  font-size: 20.8012rem;
+  width: 1.45277em; }
+
+.icon-check {
+  font-size: 1.3922rem;
+  width: 1.3047em; }
+
+.icon-envelope {
+  font-size: 1.7295rem;
+  width: 1.27274em; }
+
+.icon-envelope2 {
+  font-size: 1.6391rem;
+  width: 1.40321em; }
+
+.icon-envelope_n {
+  font-size: 4.5rem;
   width: 1em; }
 
-.icon-Coub_Color {
-  font-size: 6rem;
+.icon-github {
+  font-size: 2.2rem;
+  width: 1.18182em; }
+
+.icon-github_round {
+  font-size: 5rem;
   width: 1em; }
+
+.icon-hamburger {
+  font-size: 3.5rem;
+  width: 1.14286em; }
+
+.icon-in {
+  font-size: 2.2938rem;
+  width: 1.0463em; }
+
+.icon-in_round {
+  font-size: 5rem;
+  width: 1em; }
+
+.icon-link {
+  font-size: 1.9125rem;
+  width: 1em; }
+
+.icon-login {
+  font-size: 1.5422rem;
+  width: 0.91668em; }
+
+.icon-map_marker {
+  font-size: 2.1654rem;
+  width: 0.69969em; }
+
+.icon-map_n {
+  font-size: 4.5rem;
+  width: 1em; }
+
+.icon-password {
+  font-size: 1.5984rem;
+  width: 1.05712em; }
+
+.icon-phone {
+  font-size: 1.8863rem;
+  width: 1.00005em; }
+
+.icon-phone2 {
+  font-size: 2.0947rem;
+  width: 0.78732em; }
+
+.icon-phone_n {
+  font-size: 4.5rem;
+  width: 1em; }
+
+.icon-portf_arrow_down {
+  font-size: 2.7435rem;
+  width: 1.55772em; }
+
+.icon-portf_arrow_up {
+  font-size: 2.7435rem;
+  width: 1.55772em; }
+
+.icon-portfolio_header {
+  font-size: 31.3961rem;
+  width: 3.74408em; }
+
+.icon-skype {
+  font-size: 2.4rem;
+  width: 1em; }
+
+.icon-skype_n {
+  font-size: 60rem;
+  width: 1em; }
+
+.icon-stars1 {
+  font-size: 11.0966rem;
+  width: 1.68395em; }
+
+.icon-stars2 {
+  font-size: 13.25rem;
+  width: 1.29434em; }
+
+.icon-stars3 {
+  font-size: 12.403rem;
+  width: 0.83069em; }
+
+.icon-telegram_logo {
+  font-size: 23.8892rem;
+  width: 1em; }
+
+.icon-vk {
+  font-size: 1.7123rem;
+  width: 1.75267em; }
+
+.icon-vk_round {
+  font-size: 5rem;
+  width: 1em; }
+
+.icon-works_header {
+  font-size: 16.5036rem;
+  width: 3.06055em; }
 
 /*--------------------------------------------------------------
 # Typography
@@ -45,6 +234,53 @@
   src: url("../../fonts/BERNIERRegular-Regular.otf");
   font-weight: normal;
   font-style: normal; }
+
+body {
+  -webkit-font-smoothing: antialiased; }
+
+body,
+button,
+input,
+select,
+textarea {
+  color: #373e42;
+  font-family: "Roboto", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.6; }
+  @media only screen and (max-width: 480px) {
+    body,
+    button,
+    input,
+    select,
+    textarea {
+      font-size: 20px;
+      font-size: 1.25rem; } }
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: .75em;
+  font-family: "Roboto", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+  margin-bottom: .25em;
+  clear: both;
+  font-weight: normal; }
+
+h1 {
+  font-size: 3em; }
+
+h2 {
+  font-size: 2.6em; }
+
+h3 {
+  font-size: 2.2em; }
+
+h4 {
+  font-size: 2em; }
+
+h5 {
+  font-size: 1.8em; }
+
+h6 {
+  font-size: 1.6em; }
 
 /*--------------------------------------------------------------
 # Content
@@ -57,11 +293,7 @@ html {
 
 body {
   height: 100%;
-  margin: 0;
-  font-family: "Roboto", Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.42;
-  -webkit-font-smoothing: antialiased; }
+  margin: 0; }
 
 * {
   -webkit-box-sizing: border-box;
@@ -69,8 +301,7 @@ body {
 
 h1, h2, h3, h4, h5 {
   margin-top: 0;
-  margin-bottom: 0;
-  font-weight: normal; }
+  margin-bottom: 0; }
 
 ul {
   padding: 0;
@@ -89,8 +320,71 @@ p {
   overflow: hidden; }
 
 /*--------------------------------------------------------------
-## Header
+## Hero
 --------------------------------------------------------------*/
+.hero {
+  height: 600px;
+  overflow: hidden;
+  position: relative; }
+  .hero__title {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+    text-align: center;
+    width: 100%; }
+  .hero__user-block {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); }
+
+.section-title {
+  display: inline-block; }
+
+.down-arrow {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 40px; }
+
+/*--------------------------------------------------------------
+## About
+--------------------------------------------------------------*/
+.about__left, .about__right {
+  position: relative;
+  float: left;
+  width: 50%; }
+
+.about__left {
+  background: #efeee9; }
+
+.about__right {
+  background: #eeebdf; }
+
+.about__triangles {
+  position: absolute;
+  bottom: 100%; }
+
+.triangle {
+  width: 100%;
+  height: 100px; }
+  .triangle_fill_white {
+    fill: #efeee9; }
+  .triangle_fill_beige {
+    fill: #eeebdf; }
+
+.title {
+  color: #373e42;
+  font-family: 'bernier';
+  font-size: 60px;
+  font-size: 3.75rem; }
+
 /*--------------------------------------------------------------
 ## Footer
 --------------------------------------------------------------*/
