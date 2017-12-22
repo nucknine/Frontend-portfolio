@@ -46,12 +46,6 @@ shadow
 adaptive media
 */
 /*
-font-size
-*/
-/*
-bernier font
-*/
-/*
 cols(n=3, m=10)
 margin-right m px
 width ((100% - (((@margin-right * n) / wrapper-width) * 100%)) / n)
@@ -77,6 +71,12 @@ if hack-chrome-windows
 @font-face
 font-family family
 src url(font-url(file + '.svg#'+ family)) format('svg')
+*/
+/*
+font-size
+*/
+/*
+bernier font
 */
 /*шаблон по которому формирются стили для svg иконок*/
 @import url("https://fonts.googleapis.com/css?family=Roboto&subset=cyrillic");
@@ -383,7 +383,28 @@ p {
   color: #373e42;
   font-family: 'bernier';
   font-size: 60px;
-  font-size: 3.75rem; }
+  font-size: 3.75rem;
+  padding: .75em 1.333em;
+  display: inline-block;
+  position: relative;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat; }
+  .title:after, .title:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+    background-color: rgba(55, 62, 66, 0.2);
+    width: 22px;
+    height: 5px; }
+  .title:after {
+    right: 0.667em; }
+  .title:before {
+    left: 0.667em; }
 
 /*--------------------------------------------------------------
 ## Footer

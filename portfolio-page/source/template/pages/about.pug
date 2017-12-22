@@ -48,9 +48,9 @@ block content
       preserveAspectRatio="none"
       ).triangle._fill_white.about__triangles
         polygon(points="0,0 0,100 1000,100")
-      //-миксин about__section-title
-      +b.title.about__section-title
-        | Обо мне
+      //-миксин title реализующий инлайновые стили background-image
+      //-дополнительный класс миксин about__section-title
+      +title('Обо мне', 'about-header.png', '.about__section-title')
       +b.user-about
         +e.picture
         //-позиционирование и отступы на классе user-about__title, а стиль оформления на .subtitle (переиспользуемый стиль)
