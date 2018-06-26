@@ -19,19 +19,19 @@ block content
   +b.SECTION.section.hero__
     +e.bg
       +e.IMG(src="assets/img/portfolio.jpg" alt="").img-bg
-
     +b.UL.socials
+      //-повторяющиеся элементы блока
       each item in ['vk', 'gh', 'in']
         +e.LI.item
           a(href="#" class=`socials__link socials__link_${item}`)
     +b.A(href="#").hamburger
     +b.A(href="#").down-arrow
       +e.IMG(src="assets/img/icons/arrow_down.svg")
-      //+icon('arrow_down')
-
+      //-+icon('arrow_down')
     +e.title
       +b.IMG(src="assets/img/decor/porfolio-word.png" alt="").section-title
       //-миксин hero__user-block на блоке user (примесь добавляет особенности блоку в зависимости от местонахождения: section hero в данном случае)
+      //-блок user остается переиспользуемым, а класс .hero__user-block добавляет абсолютное позиционирование
       +b.user.hero__user-block
         +e.photo
           +e.photo-avatar
@@ -53,7 +53,8 @@ block content
       +title('Обо мне', 'about-header.png', '.about__section-title')
       +b.user-about
         +e.picture
-        //-позиционирование и отступы на классе user-about__title, а стиль оформления на .subtitle (переиспользуемый стиль)
+        //-позиционирование и отступы на классе user-about__title,
+        //-а стиль оформления на .subtitle (переиспользуемый стиль)
         +e.title.subtitle
           | Кто я
         +e.text

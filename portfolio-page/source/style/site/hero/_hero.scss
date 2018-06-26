@@ -2,6 +2,11 @@
   height: 600px;
   overflow: hidden;
   position: relative;
+  &__img-bg{
+    width: 100%;
+    min-height: 880px;
+    min-width: 1800px;
+  }
   &__title{
     @include centered('y');
     text-align: center;
