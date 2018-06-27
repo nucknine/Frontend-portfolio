@@ -2,12 +2,19 @@
   color: $main-font-color;
   @include bernier();
   @include font-size(3);
+  /*
+  font-size 3*20px = 60px
+  => 1em == 60px
+  */
   padding: .75em 1.333em;
   display: inline-block;
   position: relative;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+  @include adaptive(smart) {
+    @include font-size(1.6);
+  }
 
   $margin: .667em;
 

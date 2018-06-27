@@ -19,6 +19,7 @@ textarea {
   color: $main-font-color;
   font-family: $main-font-roboto;
   @include font-size(0.8);
+  /*20*0.8 = 16px*/
   line-height: $font__line-height-body;
 
   @include adaptive(smart) {
