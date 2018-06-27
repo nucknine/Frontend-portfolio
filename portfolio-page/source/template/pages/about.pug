@@ -5,7 +5,7 @@ block variables
   -
     var skills = [
     {
-    "Frontend" : [1, 2, 3]
+    "Frontend" : ['HTML5', 'CSS3', 'JS']
     },
     {
     "Backend" : [4, 5, 6]
@@ -16,85 +16,79 @@ block variables
     ]
 
 block content
-  +b.SECTION.section.hero__
-    +e.bg
-      +e.IMG(src="assets/img/portfolio.jpg" alt="").img-bg
-    +b.UL.socials
-      //-повторяющиеся элементы блока
+  section.section.hero
+    .hero__bg
+      img(src="assets/img/portfolio.jpg" alt="").hero__img-bg
+    ul.socials
       each item in ['vk', 'gh', 'in']
-        +e.LI.item
-          a(href="#" class=`socials__link socials__link_${item}`)
-    +b.A(href="#").hamburger
-    +b.A(href="#").down-arrow
-      +e.IMG(src="assets/img/icons/arrow_down.svg")
+          li.socials__item
+            a(href="#" class=`socials__link socials__link_${item}`)
+    a(href="#").hamburger
+    a(href="#").down-arrow
+      img(src="assets/img/icons/arrow_down.svg")
       //-+icon('arrow_down')
-    +e.title
-      +b.IMG(src="assets/img/decor/porfolio-word.png" alt="").section-title
+      //-подложка portfolio
+    .hero__title
+      img(src="assets/img/decor/porfolio-word.png" alt="").section-title
       //-миксин hero__user-block на блоке user (примесь добавляет особенности блоку в зависимости от местонахождения: section hero в данном случае)
       //-блок user остается переиспользуемым, а класс .hero__user-block добавляет абсолютное позиционирование
-      +b.user.hero__user-block
-        +e.photo
-          +e.photo-avatar
-            +e.IMG(src="assets/img/user.png" alt="").photo-img
-        +e.name
+      .user.hero__user-block
+        .user__photo
+          .user__photo-avatar
+            img(src="assets/img/user.png" alt="").user__photo-img
+        .user__name
           | Oleg Maximov
-        +e.description
-          | Личный сайт разработчика
-
-  +b.SECTION.section.about__
-    +e.left
-      +b.SVG(
-      viewbox="0 0 1000 100"
-      preserveAspectRatio="none"
-      ).triangle._fill_white.about__triangles
+        .user__description
+          | личный сайт разработчика
+  section.section.about
+    .about__left
+      svg(
+        viewbox="0 0 1000 100"
+        preserveAspectRatio="none"
+      ).triangle.triangle_fill_white.about__triangles
         polygon(points="0,0 0,100 1000,100")
       //-миксин title реализующий инлайновые стили background-image
       //-дополнительный класс миксин about__section-title
       +title('Обо мне', 'about-header.png', '.about__section-title')
-      +b.user-about
-        +e.picture
+      .user-about
+        .user-about__picture
         //-позиционирование и отступы на классе user-about__title,
         //-а стиль оформления на .subtitle (переиспользуемый стиль)
-        +e.title.subtitle
+        .user-about__title.subtitle
           | Кто я
-        +e.text
-          p Я разработчик
-          p Я разработчик
-    +e.right
-      +b.SVG(
-      viewbox="0 0 1000 100"
-      preserveAspectRatio="none"
-      ).triangle._fill_beige.about__triangles
+        .user-about__text
+          p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, facilis.
+          p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, ullam.
+    .about__right
+      svg(
+        viewbox="0 0 1000 100"
+        preserveAspectRatio="none"
+      ).triangle.triangle_fill_beige.about__triangles
         polygon(points="0,100 1000,0 1000,100")
-      +b.about-data.about-user-info__
-        +e.description
-          +e.title
-            +b.subtitle
+      .about-data
+        //-позиционирование и отступы на классе .about-data__description,
+        //-а стиль оформления на .about-user-info (переиспользуемый стиль)
+        .about-data__description.about-user-info
+          .about-user-info__title
+            .subtitle
               | Чем я могу быть вам полезен
-          +e.text
-            p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, sapiente?
-        +b.about-data__content
-          +b.UL.skills
+          .about-user-info__text
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, asperiores?
+        //-блок скиллов
+        .about-data__content
+          ul.skills
+            //-Frontend, Backend, Workflow
             each skill in skills
+              //-скиллы отдельной категории
               each skillArr, skillName in skill
-                +e.item
-                  +b.skill-section
-                    +e.title= skillName
-                    +e.UL.list
+                .skills__item
+                  .skill-section
+                    .skill-section__title= skillName
+                    UL.skill-section__list
                       each skillTitle in skillArr
-                        +e.LI.item
-                          +b.skill
-                            +e.SVG.circle
-                            +e.SVG.name= skillTitle
-          //-each skill in ['Frontend', 'Backend', 'Workflow']
-          //-  +e.item
-          //-    +b.skill-section
-          //-      +e.title= skill
-          //-      +e.UL.list
-          //-        each skillName in ['HTML5', 'CSS3', 'JavaScript and Jquery']
-          //-          +e.LI.item
-          //-            +b.skill
-          //-              +e.SVG.circle
-          //-              +e.SVG.name= skillName
-      +b.SVG.triangle._fill_beige
-  +b.SECTION.section.map
+                        li.skill-section__item
+                          .skill
+                            svg.skill__circle
+                            .skill__name= skillTitle
+      svg.triangle.triangle_fill_beige
+  section.section.map
