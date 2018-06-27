@@ -30,7 +30,8 @@ block content
       //-подложка portfolio
     .hero__title
       img(src="assets/img/decor/porfolio-word.png" alt="").section-title
-      //-миксин hero__user-block на блоке user (примесь добавляет особенности блоку в зависимости от местонахождения: section hero в данном случае)
+      //-миксин hero__user-block на блоке user (примесь добавляет особенности блоку в зависимости от
+      //-местонахождения: section hero в данном случае)
       //-блок user остается переиспользуемым, а класс .hero__user-block добавляет абсолютное позиционирование
       .user.hero__user-block
         .user__photo
@@ -47,13 +48,15 @@ block content
         preserveAspectRatio="none"
       ).triangle.triangle_fill_white.about__triangles
         polygon(points="0,0 0,100 1000,100")
-      //-миксин title реализующий инлайновые стили background-image
-      //-дополнительный класс миксин about__section-title
-      +title('Обо мне', 'about-header.png', '.about__section-title')
+      //-миксин title задает класс .title инлайновый стиль
+      //-background-image (для сменной подложки, например: "about" - about-heder.png)
+      //-и дополнительный класс-миксин about__section-title
+      //-для дополнительной стилизации .title
+      +title('Обо мне', 'about-header.png', 'about__section-title')
       .user-about
         .user-about__picture
         //-позиционирование и отступы на классе user-about__title,
-        //-а стиль оформления на .subtitle (переиспользуемый стиль)
+        //-а оформление на .subtitle (переиспользуемый класс)
         .user-about__title.subtitle
           | Кто я
         .user-about__text
@@ -66,7 +69,7 @@ block content
       ).triangle.triangle_fill_beige.about__triangles
         polygon(points="0,100 1000,0 1000,100")
       .about-data
-        //-позиционирование и отступы на классе .about-data__description,
+        //-позиционирование и отступы на доп классе .about-data__description,
         //-а стиль оформления на .about-user-info (переиспользуемый стиль)
         .about-data__description.about-user-info
           .about-user-info__title
