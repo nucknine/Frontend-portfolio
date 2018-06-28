@@ -1,11 +1,12 @@
 .title {
   color: $main-font-color;
-  @include bernier();
-  @include font-size(3);
+  @include sansus();
+  @include font-size(3.15);
   /*
   font-size 3*20px = 60px
   => 1em == 60px
   */
+  line-height: 1;
   padding: .75em 1.333em;
   display: inline-block;
   position: relative;
@@ -22,9 +23,9 @@
     content:"";
     display: block;
     @include centered('y');
-    background-color: rgba($main-font-color, 0.2);
-    width: 22px;
-    height: 5px;
+    background-color: rgba($main-font-color, 0.3);
+    width: 0.367em;
+    height: 0.083em;
   }
   &:after {
     right: $margin;

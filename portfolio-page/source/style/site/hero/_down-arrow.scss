@@ -1,4 +1,18 @@
 .down-arrow {
   @include centered('x');
-  bottom: 40px;
+  bottom: 60px;
+  font-size: 18px;
+  color: rgba(255,255,255,.8);
+  transition: all .5s ease-in-out;
+  z-index: 1;
+  &:active,
+    :hover {
+      color: rgba(255,255,255,1);
+    }
+}
+
+.icon {
+  &-arrow_down {
+      font-size: 18px;
+  }
 }

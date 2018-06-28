@@ -8,10 +8,10 @@ font-size
   font-size: $sizeValue * 1.25rem;
 }
 
-/*
-bernier font
-*/
-
 @mixin bernier() {
   font-family: 'bernier';
+}
+
+@mixin sansus() {
+  font-family: 'Sansus Webissimo Regular';
 }

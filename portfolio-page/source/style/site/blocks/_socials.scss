@@ -1,0 +1,30 @@
+.socials {
+    @include font-size(.8);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    &__item {
+        display: inline-block;
+        margin-right: 1.750em;
+    }
+    &__link {
+        color: rgba(255,255,255,.8);
+        &:active,
+         :hover {
+            color: rgba(255,255,255,1);
+         }
+    }
+}
+
+.icon {
+    transition: color .3s ease-out;
+    &-vk {
+        font-size: 18px;
+    }
+    &-github {
+        font-size: 22px;
+    }
+    &-in {
+        font-size: 20px;
+    }
+}

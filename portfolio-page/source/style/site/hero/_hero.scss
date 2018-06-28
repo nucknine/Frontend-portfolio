@@ -7,8 +7,14 @@
     min-height: 880px;
     min-width: 1800px;
   }
+  &__socials{
+    position: absolute;
+    top: 2.063em;
+    left: 1.875em;
+  }
   &__title{
     @include centered('y');
+    top: 45%;
     text-align: center;
     width: 100%;
   }

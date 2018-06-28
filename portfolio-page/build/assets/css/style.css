@@ -29,7 +29,7 @@ clearfix миксин-плейсхолдер
 (scss-placeholder'ы используются вместо миксинов
 когда нет параметров (занимают меньше места чем миксины в коде))
 */
-@import url("https://fonts.googleapis.com/css?family=Roboto&subset=cyrillic");
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500&amp;subset=cyrillic" rel="stylesheet"');
 .about:after {
   content: "";
   display: block;
@@ -84,9 +84,6 @@ src url(font-url(file + '.svg#'+ family)) format('svg')
 font-size
 задает размер шрифта в rem или px если нет поддержки.
 для body задан - 0.8 т.е. 16px и 1rem
-*/
-/*
-bernier font
 */
 /*шаблон по которому формирются стили для svg иконок*/
 .icon {
@@ -244,6 +241,13 @@ bernier font
   font-weight: normal;
   font-style: normal; }
 
+@font-face {
+  font-family: 'Sansus Webissimo Regular';
+  src: url("../../fonts/SansusWebissimo.eot");
+  src: url("../../fonts/SansusWebissimo.eot?#iefix") format("embedded-opentype"), url("../../fonts/SansusWebissimo.woff") format("woff"), url("../../fonts/SansusWebissimo.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
 body {
   -webkit-font-smoothing: antialiased; }
 
@@ -254,6 +258,7 @@ select,
 textarea {
   color: #373e42;
   font-family: "Roboto", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+  font-weight: 400;
   font-size: 16px;
   font-size: 1rem;
   /*20*0.8 = 16px*/
@@ -272,7 +277,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Roboto", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
   margin-bottom: .25em;
   clear: both;
-  font-weight: normal; }
+  font-weight: 400; }
 
 h1 {
   font-size: 3em; }
@@ -333,6 +338,37 @@ p {
 /*--------------------------------------------------------------
 ## Blocks
 --------------------------------------------------------------*/
+.socials {
+  font-size: 16px;
+  font-size: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+  .socials__item {
+    display: inline-block;
+    margin-right: 1.750em; }
+  .socials__link {
+    color: rgba(255, 255, 255, 0.8); }
+    .socials__link:active,
+    .socials__link :hover {
+      color: white; }
+
+.icon {
+  -webkit-transition: color .3s ease-out;
+  -o-transition: color .3s ease-out;
+  transition: color .3s ease-out; }
+  .icon-vk {
+    font-size: 18px; }
+  .icon-github {
+    font-size: 22px; }
+  .icon-in {
+    font-size: 20px; }
+
 .triangle {
   width: 100%;
   height: 100px; }
@@ -343,13 +379,14 @@ p {
 
 .title {
   color: #373e42;
-  font-family: 'bernier';
-  font-size: 60px;
-  font-size: 3.75rem;
+  font-family: 'Sansus Webissimo Regular';
+  font-size: 63px;
+  font-size: 3.9375rem;
   /*
   font-size 3*20px = 60px
   => 1em == 60px
   */
+  line-height: 1;
   padding: .75em 1.333em;
   display: inline-block;
   position: relative;
@@ -368,13 +405,91 @@ p {
     -webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
             transform: translateY(-50%);
-    background-color: rgba(55, 62, 66, 0.2);
-    width: 22px;
-    height: 5px; }
+    background-color: rgba(55, 62, 66, 0.3);
+    width: 0.367em;
+    height: 0.083em; }
   .title:after {
     right: 0.667em; }
   .title:before {
     left: 0.667em; }
+
+.subtitle {
+  color: #373e42;
+  font-family: 'Sansus Webissimo Regular';
+  font-size: 35px;
+  font-size: 2.1875rem;
+  line-height: 1;
+  padding: .75em 1.333em;
+  display: inline-block;
+  position: relative;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat; }
+  @media only screen and (max-width: 480px) {
+    .subtitle {
+      font-size: 32px;
+      font-size: 2rem; } }
+  .subtitle:after, .subtitle:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+    background-color: rgba(55, 62, 66, 0.3);
+    width: 0.367em;
+    height: 0.083em; }
+  .subtitle:after {
+    right: 0.667em; }
+  .subtitle:before {
+    left: 0.667em; }
+
+.user {
+  color: #efeee9; }
+  .user__photo {
+    margin-bottom: 10px; }
+  .user__name {
+    font-size: 35px;
+    font-size: 2.1875rem;
+    line-height: 1;
+    font-weight: 500;
+    margin-bottom: 10px; }
+  .user__description {
+    line-height: 1;
+    font-weight: 400; }
+
+.hamburger {
+  color: rgba(239, 238, 233, 0.8);
+  position: absolute;
+  top: 2.063em;
+  right: 1.875em; }
+  .hamburger:active,
+  .hamburger :hover {
+    color: white; }
+
+.icon-hamburger {
+  font-size: 35px; }
+
+.user-about {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  position: relative; }
+  .user-about__picture {
+    max-width: 100%; }
+  .user-about__text {
+    max-width: 445px; }
 
 /*--------------------------------------------------------------
 ## Hero
@@ -387,12 +502,17 @@ p {
     width: 100%;
     min-height: 880px;
     min-width: 1800px; }
+  .hero__socials {
+    position: absolute;
+    top: 2.063em;
+    left: 1.875em; }
   .hero__title {
     position: absolute;
     top: 50%;
     -webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
             transform: translateY(-50%);
+    top: 45%;
     text-align: center;
     width: 100%; }
   .hero__user-block {
@@ -412,7 +532,19 @@ p {
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
-  bottom: 40px; }
+  bottom: 60px;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+  -webkit-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  z-index: 1; }
+  .down-arrow:active,
+  .down-arrow :hover {
+    color: white; }
+
+.icon-arrow_down {
+  font-size: 18px; }
 
 /*--------------------------------------------------------------
 ## About
@@ -424,6 +556,14 @@ p {
 
 .about__left {
   background: #efeee9; }
+
+.about__section-title {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  position: relative; }
 
 .about__right {
   background: #eeebdf; }

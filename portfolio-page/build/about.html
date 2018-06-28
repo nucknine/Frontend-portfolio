@@ -11,24 +11,39 @@
     <link rel="stylesheet" href="/assets/css/foundation.css">
     <link rel="stylesheet" href="/assets/css/style.css">
     <script src="/assets/js/foundation.js" defer></script>
-    <script src="/assets/js/app.js" defer></script><!--[if lt IE 9]>
+    <script src="/assets/js/app.min.js" defer></script><!--[if lt IE 9]>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
   </head>
   <body>
     <div class="wrapper">
       <section class="section hero">
         <div class="hero__bg"><img class="hero__img-bg" src="assets/img/portfolio.jpg" alt=""></div>
-        <ul class="socials">
-          <li class="socials__item"><a class="socials__link socials__link_vk" href="#"></a></li>
-          <li class="socials__item"><a class="socials__link socials__link_gh" href="#"></a></li>
-          <li class="socials__item"><a class="socials__link socials__link_in" href="#"></a></li>
-        </ul><a class="hamburger" href="#"></a><a class="down-arrow" href="#"><img src="assets/img/icons/arrow_down.svg"></a>
+        <ul class="socials hero__socials">
+          <li class="socials__item"><a class="socials__link socials__link_vk" href="#">
+              <svg class="icon icon-vk ">
+                <use xlink:href="assets/img/sprites/sprite.svg#vk"></use>
+              </svg></a></li>
+          <li class="socials__item"><a class="socials__link socials__link_github" href="#">
+              <svg class="icon icon-github ">
+                <use xlink:href="assets/img/sprites/sprite.svg#github"></use>
+              </svg></a></li>
+          <li class="socials__item"><a class="socials__link socials__link_in" href="#">
+              <svg class="icon icon-in ">
+                <use xlink:href="assets/img/sprites/sprite.svg#in"></use>
+              </svg></a></li>
+        </ul><a class="hamburger" href="#">
+          <svg class="icon icon-hamburger ">
+            <use xlink:href="assets/img/sprites/sprite.svg#hamburger"></use>
+          </svg></a><a class="down-arrow" href="#">
+          <svg class="icon icon-arrow_down ">
+            <use xlink:href="assets/img/sprites/sprite.svg#arrow_down"></use>
+          </svg></a>
         <div class="hero__title"><img class="section-title" src="assets/img/decor/porfolio-word.png" alt="">
           <div class="user hero__user-block">
             <div class="user__photo">
               <div class="user__photo-avatar"><img class="user__photo-img" src="assets/img/user.png" alt=""></div>
             </div>
-            <div class="user__name">Oleg Maximov</div>
+            <div class="user__name">Олег Максимов</div>
             <div class="user__description">личный сайт разработчика</div>
           </div>
         </div>
@@ -40,7 +55,7 @@
           </svg>
           <div class="title about__section-title" style="background-image: url('assets/img/decor/about-header.png')">Обо мне</div>
           <div class="user-about">
-            <div class="user-about__picture"></div>
+            <div class="user-about__picture"><img class="user-about__photo-img" src="assets/img/user.png" alt=""></div>
             <div class="user-about__title subtitle">Кто я</div>
             <div class="user-about__text">
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, facilis.</p>

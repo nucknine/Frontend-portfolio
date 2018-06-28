@@ -11,6 +11,11 @@
     background: $white;
   }
 
+  &__section-title {
+    @include centered('x');
+    position: relative;
+  }
+
   &__right {
     background: $beige;
   }

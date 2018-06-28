@@ -19,14 +19,16 @@ block content
   section.section.hero
     .hero__bg
       img(src="assets/img/portfolio.jpg" alt="").hero__img-bg
-    ul.socials
-      each item in ['vk', 'gh', 'in']
+    ul.socials.hero__socials
+      each item in ['vk', 'github', 'in']
           li.socials__item
             a(href="#" class=`socials__link socials__link_${item}`)
+              +icon(item)
     a(href="#").hamburger
+      +icon('hamburger')
     a(href="#").down-arrow
-      img(src="assets/img/icons/arrow_down.svg")
-      //-+icon('arrow_down')
+      //- img(src="assets/img/icons/arrow_down.svg")
+      +icon('arrow_down')
       //-подложка portfolio
     .hero__title
       img(src="assets/img/decor/porfolio-word.png" alt="").section-title
@@ -38,7 +40,7 @@ block content
           .user__photo-avatar
             img(src="assets/img/user.png" alt="").user__photo-img
         .user__name
-          | Oleg Maximov
+          | Олег Максимов
         .user__description
           | личный сайт разработчика
   section.section.about
@@ -55,6 +57,7 @@ block content
       +title('Обо мне', 'about-header.png', 'about__section-title')
       .user-about
         .user-about__picture
+          img(src="assets/img/user.png" alt="").user-about__photo-img
         //-позиционирование и отступы на классе user-about__title,
         //-а оформление на .subtitle (переиспользуемый класс)
         .user-about__title.subtitle

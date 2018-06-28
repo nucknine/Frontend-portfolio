@@ -1,0 +1,16 @@
+.user {
+    color: $white;
+    &__photo {
+        margin-bottom: 10px;
+    }
+    &__name {
+        @include font-size(1.75);
+        line-height: 1;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+    &__description {
+        line-height: 1;
+        font-weight: 400;
+    }
+}
