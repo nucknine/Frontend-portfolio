@@ -487,7 +487,21 @@ p {
       flex-wrap: wrap;
   position: relative; }
   .user-about__picture {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+  .user-about__photo-img {
     max-width: 100%; }
+  .user-about__title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
   .user-about__text {
     max-width: 445px; }
 
