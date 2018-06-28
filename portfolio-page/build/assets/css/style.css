@@ -492,9 +492,16 @@ p {
     display: flex;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
-            justify-content: center; }
+            justify-content: center;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    width: 445px;
+    max-height: 461px;
+    overflow: hidden; }
   .user-about__photo-img {
-    max-width: 100%; }
+    display: block;
+    width: 459px;
+    height: 461px; }
   .user-about__title {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -503,7 +510,8 @@ p {
         -ms-flex-pack: center;
             justify-content: center; }
   .user-about__text {
-    max-width: 445px; }
+    margin: 0 auto;
+    width: 445px; }
 
 /*--------------------------------------------------------------
 ## Hero

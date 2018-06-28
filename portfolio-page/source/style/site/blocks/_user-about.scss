@@ -7,15 +7,23 @@
     &__picture {
         display: flex;
         justify-content: center;
+        flex-basis: 100%;
+        width: 445px;
+        max-height: 461px;
+        overflow: hidden;
     }
     &__photo-img {
-        max-width: 100%;
+        display: block;
+        width: 459px;
+        height: 461px;
+        // max-width: 100%;
     }
     &__title {
         display: flex;
         justify-content: center;
     }
     &__text {
-        max-width: 445px;
+        margin: 0 auto;
+        width: 445px;
     }
 }
