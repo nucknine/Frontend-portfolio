@@ -1,0 +1,10 @@
+.skills {
+
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    &__item {
+        margin-bottom: 40px;
+    }
+
+}

@@ -1,0 +1,24 @@
+.skill {
+    &__circle {
+        position: relative;
+    }
+    &__name {
+        position: absolute;
+        @include centered('both');
+    }
+    &__layer {
+        fill: none;
+        stroke: $green;
+        stroke-width: 14;
+    }
+    &__sector {
+        transform-origin: center;
+        transform: rotate(-90deg);
+        transition: all 1s;
+        fill: none;
+        stroke: $white;
+        stroke-dasharray: 20 301;
+        stroke-width: 16;
+    }
+
+}

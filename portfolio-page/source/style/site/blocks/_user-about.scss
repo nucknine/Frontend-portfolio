@@ -2,21 +2,20 @@
     @include centered('x');
     display: flex;
     justify-content: center;
+    flex-direction: column;
     flex-wrap: wrap;
     position: relative;
+    margin-bottom: 30px;
     &__picture {
         display: flex;
         justify-content: center;
-        flex-basis: 100%;
-        width: 445px;
-        max-height: 461px;
+        max-height: 460px;
         overflow: hidden;
     }
     &__photo-img {
         display: block;
         width: 459px;
-        height: 461px;
-        // max-width: 100%;
+        height: 460px;
     }
     &__title {
         display: flex;

@@ -1,11 +1,8 @@
 .title {
   color: $main-font-color;
   @include sansus();
-  @include font-size(3.15);
-  /*
-  font-size 3*20px = 60px
-  => 1em == 60px
-  */
+  @include font-size(3.15); //60px
+  text-transform: uppercase;
   line-height: 1;
   padding: .75em 1.333em;
   display: inline-block;

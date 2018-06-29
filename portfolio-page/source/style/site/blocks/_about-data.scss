@@ -1,0 +1,13 @@
+.about-data {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    &__description {
+        margin-bottom: 40px;
+        width: 90%;
+    }
+    &__content {
+        width: 90%;
+    }
+}

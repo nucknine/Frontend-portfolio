@@ -8,10 +8,10 @@ block variables
     "Frontend" : ['HTML5', 'CSS3', 'JS']
     },
     {
-    "Backend" : [4, 5, 6]
+    "Backend" : [4, 5, 6, 7]
     },
     {
-    "Workflow" : [7, 8, 10]
+    "Workflow" : [7, 8, 10, 11]
     }
     ]
 
@@ -60,11 +60,13 @@ block content
           img(src="assets/img/user-photo.jpg" alt="").user-about__photo-img
         //-позиционирование и отступы на классе user-about__title,
         //-а оформление на .subtitle (переиспользуемый класс)
-        .user-about__title.subtitle
-          | Кто я
+        .user-about__title
+          .subtitle
+            | Кто я
         .user-about__text
-          p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, facilis.
-          p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, ullam.
+          p Я веб разработчик из Петрозаводска.
+          | Занимаюсь разработкой современных, отзывчивых веб-сайтов и приложений.
+          | Интересуюсь новыми технологиями и стандартами, постоянно совершенствую свои навыки.
     .about__right
       svg(
         viewbox="0 0 1000 100"
@@ -79,7 +81,9 @@ block content
             .subtitle
               | Чем я могу быть вам полезен
           .about-user-info__text
-            p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, asperiores?
+            p Больше всего меня привлекает Frontend разработка,
+            | но я так же могу решать задачи и на Backend.
+            | Но давайте по порядку.
         //-блок скиллов
         .about-data__content
           ul.skills
@@ -94,7 +98,11 @@ block content
                       each skillTitle in skillArr
                         li.skill-section__item
                           .skill
-                            svg.skill__circle
+                            svg(
+                              viewBox="0 0 110 110"
+                            ).skill__circle
+                              circle(cx="55" cy="55" r="48" class="skill__layer")
+                              circle(cx="55" cy="55" r="48" class="skill__sector")
                             .skill__name= skillTitle
-      svg.triangle.triangle_fill_beige
+      //- svg.triangle.triangle_fill_beige
   section.section.map

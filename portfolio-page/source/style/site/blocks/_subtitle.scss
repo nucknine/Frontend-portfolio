@@ -1,10 +1,10 @@
 .subtitle {
     color: $main-font-color;
     @include sansus();
-    @include font-size(1.75);
-    // font-size 35px
+    @include font-size(1.75); //35
+    text-transform: uppercase;
     line-height: 1;
-    padding: .75em 1.333em;
+    padding: .5em 1.333em;
     display: inline-block;
     position: relative;
     background-size: contain;

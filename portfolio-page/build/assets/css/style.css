@@ -382,10 +382,7 @@ p {
   font-family: 'Sansus Webissimo Regular';
   font-size: 63px;
   font-size: 3.9375rem;
-  /*
-  font-size 3*20px = 60px
-  => 1em == 60px
-  */
+  text-transform: uppercase;
   line-height: 1;
   padding: .75em 1.333em;
   display: inline-block;
@@ -418,8 +415,9 @@ p {
   font-family: 'Sansus Webissimo Regular';
   font-size: 35px;
   font-size: 2.1875rem;
+  text-transform: uppercase;
   line-height: 1;
-  padding: .75em 1.333em;
+  padding: .5em 1.333em;
   display: inline-block;
   position: relative;
   background-size: contain;
@@ -483,9 +481,14 @@ p {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  position: relative; }
+  position: relative;
+  margin-bottom: 30px; }
   .user-about__picture {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -493,15 +496,12 @@ p {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
-    width: 445px;
-    max-height: 461px;
+    max-height: 460px;
     overflow: hidden; }
   .user-about__photo-img {
     display: block;
     width: 459px;
-    height: 461px; }
+    height: 460px; }
   .user-about__title {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -512,6 +512,102 @@ p {
   .user-about__text {
     margin: 0 auto;
     width: 445px; }
+
+.about-user-info__title {
+  text-align: center;
+  width: 350px;
+  margin: 0 auto; }
+
+.about-user-info__text {
+  margin-top: 40px; }
+
+.about-data {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row; }
+  .about-data__description {
+    margin-bottom: 40px;
+    width: 90%; }
+  .about-data__content {
+    width: 90%; }
+
+.skills {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+  .skills__item {
+    margin-bottom: 40px; }
+
+.skill-section__list {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap; }
+
+.skill-section__item {
+  margin-right: 40px;
+  position: relative;
+  width: 110px;
+  height: 110px; }
+
+.skill-section__title {
+  font-size: 28px;
+  font-size: 1.75rem;
+  font-weight: 500; }
+
+.skill__circle {
+  position: relative; }
+
+.skill__name {
+  position: absolute;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%); }
+
+.skill__layer {
+  fill: none;
+  stroke: #74a163;
+  stroke-width: 14; }
+
+.skill__sector {
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
+  -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+  fill: none;
+  stroke: #efeee9;
+  stroke-dasharray: 20 301;
+  stroke-width: 16; }
 
 /*--------------------------------------------------------------
 ## Hero
@@ -585,7 +681,8 @@ p {
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
-  position: relative; }
+  position: relative;
+  top: -35px; }
 
 .about__right {
   background: #eeebdf; }
