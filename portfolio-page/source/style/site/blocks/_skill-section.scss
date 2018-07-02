@@ -1,19 +1,22 @@
 .skill-section {
     &__list {
-        margin-top: 10px;
         display: flex;
         flex-direction: row;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
     }
     &__item {
-        margin-right: 40px;
+        margin-top: 20px;
+        margin-left: 35px;
         position: relative;
         width: 110px;
         height: 110px;
-
+        &:nth-child(4n-3) {
+            margin-left: 0px;
+        }
     }
     &__title {
         @include font-size(1.4);
         font-weight: 500;
+        line-height: 1;
     }
 }
