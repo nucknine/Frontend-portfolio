@@ -1,4 +1,5 @@
 .about {
+  background: $white;
   @extend %clearfix;
 
   &__left, &__right{

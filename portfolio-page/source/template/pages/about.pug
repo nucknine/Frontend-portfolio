@@ -21,9 +21,9 @@ block content
       img(src="assets/img/portfolio.jpg" alt="").hero__img-bg
     ul.socials.hero__socials
       each item in ['vk', 'github', 'in']
-          li.socials__item
-            a(href="#" class=`socials__link socials__link_${item}`)
-              +icon(item)
+        li.socials__item
+          a(href="#" class=`socials__link socials__link_${item}`)
+            +icon(item)
     a(href="#").hamburger
       +icon('hamburger')
     a(href="#").down-arrow
@@ -104,4 +104,48 @@ block content
                               circle(cx="55" cy="55" r="45" class="skill__layer")
                               circle(cx="55" cy="55" r="45" class="skill__sector")
                             .skill__name= skillTitle
-  section(id="map").section.map
+
+  section.section.map
+    .map__box(id="map")
+    .contacts.map__contacts
+      .subtitle
+        | контакты
+      .contacts__item
+        | skype kaptan4eg
+      .contacts__item
+        | email nucknine@gmail.com
+      .contacts__item
+        | город Петрозаводск
+  footer.section.footer
+    .footer__top
+      .footer__block
+        | Сайт портфолио
+      .footer__block
+        nav.navigation
+          .navigation__item
+            a.navigation__link(href="#")
+              | Мои работы
+          .navigation__item
+            a.navigation__link(href="#")
+              | Обо мне
+          .navigation__item
+            a.navigation__link(href="#")
+              | Блог
+          .navigation__item
+            a.navigation__link(href="#")
+              | Авторизация
+        ul.socials.footer__socials
+          each item in ['vk', 'github', 'in']
+            li.socials__item
+              a(href="#" class=`socials__link socials__link_${item}`)
+                +icon(item)
+      .footer__block
+        blockquote.quote
+          | Пишите код так, как будто сопровождать его
+          | будет склонный к насилию психопат,
+          | который знает, где вы живёте
+          br
+          span.quote_style_bold
+              | - Martin Golding
+    .footer__bottom
+      | Oleg Maximov | nucknine | 2018

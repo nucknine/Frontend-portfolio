@@ -3,5 +3,13 @@
 }
 
 .map {
-    height: 960px;
+    position: relative;
+    &__contacts {
+        z-index: 999;
+        position: absolute;
+        @include centered('both');
+    }
+    &__box{
+        height: 960px;
+    }
 }

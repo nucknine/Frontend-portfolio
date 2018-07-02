@@ -1,0 +1,15 @@
+.contacts {
+    padding: 0px 40px 35px 35px;
+    text-align: center;
+    // display: flex;
+    // flex-wrap: wrap;
+    // justify-content: center;
+    background-color: rgba($white, .85);
+    width: 380px;
+    height: 310px;
+    border-radius: 10px;
+    &__item {
+        text-align: left;
+        // flex-basis: 100%;
+    }
+}

@@ -9,12 +9,13 @@
     &__picture {
         display: flex;
         justify-content: center;
-        max-height: 460px;
+        max-height: 390px;
         overflow: hidden;
+        margin-bottom: 40px;
     }
     &__photo-img {
         display: block;
-        width: 459px;
+        width: 445px;
         height: 460px;
     }
     &__title {
@@ -23,6 +24,6 @@
     }
     &__text {
         margin: 0 auto;
-        width: 445px;
+        max-width: 445px;
     }
 }

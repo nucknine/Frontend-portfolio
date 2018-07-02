@@ -1,0 +1,8 @@
+.quote {
+    font-style: italic;
+    padding: 0;
+    margin: 0;
+    &_style_bold {
+        font-weight: 500;
+    }
+}
