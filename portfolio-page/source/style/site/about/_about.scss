@@ -1,15 +1,24 @@
 .about {
+  @include sgs-change('debug', true);
+  @include background-grid($color: blue);
+  @include add-gutter-style('fixed');
   background: $white;
   @extend %clearfix;
-
-  &__left, &__right{
+  &__left {
     position: relative;
-    float: left;
-    width: 50%;
+    // float: left;
+    // width: 50%;
+    @include grid-span(6, 1);
+  }
+
+  &__right{
+    position: relative;
+    @include grid-span(6, 7);
   }
 
   &__left {
     background: $white;
+
   }
 
   &__section-title {
