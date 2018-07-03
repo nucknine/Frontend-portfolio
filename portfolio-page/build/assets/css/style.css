@@ -58,7 +58,7 @@ cols(n=3, m=10)
 margin-right m px
 width ((100% - (((@margin-right * n) / wrapper-width) * 100%)) / n)
 &:last-child
-margin-right 0px
+margin-right 0rem
 
 // Fonts mixin
 font-url(file)
@@ -83,7 +83,7 @@ src url(font-url(file + '.svg#'+ family)) format('svg')
 /*
 font-size
 задает размер шрифта в rem или px если нет поддержки.
-для body задан - 0.8 т.е. 16px и 1rem
+для body задан - 0.8 т.е. 1rem и 1rem
 */
 /*шаблон по которому формирются стили для svg иконок*/
 .icon {
@@ -259,17 +259,17 @@ textarea {
   color: #373e42;
   font-family: "Roboto", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
   font-weight: 400;
-  font-size: 16px;
   font-size: 1rem;
-  /*20*0.8 = 16px*/
+  font-size: 1rem;
+  /*20*0.8 = 1rem*/
   line-height: 1.6; }
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 30rem) {
     body,
     button,
     input,
     select,
     textarea {
-      font-size: 20px;
+      font-size: 1.25rem;
       font-size: 1.25rem; } }
 
 h1, h2, h3, h4, h5, h6 {
@@ -339,7 +339,7 @@ p {
 ## Blocks
 --------------------------------------------------------------*/
 .socials {
-  font-size: 16px;
+  font-size: 1rem;
   font-size: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -363,15 +363,15 @@ p {
   -o-transition: color .3s ease-out;
   transition: color .3s ease-out; }
   .icon-vk {
-    font-size: 18px; }
+    font-size: 1.125rem; }
   .icon-github {
-    font-size: 22px; }
+    font-size: 1.375rem; }
   .icon-in {
-    font-size: 20px; }
+    font-size: 1.25rem; }
 
 .triangle {
   width: 100%;
-  height: 100px; }
+  height: 6.25rem; }
   .triangle_fill_white {
     fill: #efeee9; }
   .triangle_fill_beige {
@@ -380,7 +380,7 @@ p {
 .title {
   color: #373e42;
   font-family: 'Sansus Webissimo Regular';
-  font-size: 63px;
+  font-size: 3.9375rem;
   font-size: 3.9375rem;
   text-transform: uppercase;
   line-height: 1;
@@ -390,9 +390,9 @@ p {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat; }
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 30rem) {
     .title {
-      font-size: 32px;
+      font-size: 2rem;
       font-size: 2rem; } }
   .title:after, .title:before {
     content: "";
@@ -413,7 +413,7 @@ p {
 .subtitle {
   color: #373e42;
   font-family: 'Sansus Webissimo Regular';
-  font-size: 35px;
+  font-size: 2.1875rem;
   font-size: 2.1875rem;
   text-transform: uppercase;
   line-height: 1;
@@ -423,9 +423,9 @@ p {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat; }
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 30rem) {
     .subtitle {
-      font-size: 32px;
+      font-size: 2rem;
       font-size: 2rem; } }
   .subtitle:after, .subtitle:before {
     content: "";
@@ -446,13 +446,13 @@ p {
 .user {
   color: #efeee9; }
   .user__photo {
-    margin-bottom: 10px; }
+    margin-bottom: 0.625rem; }
   .user__name {
-    font-size: 35px;
+    font-size: 2.1875rem;
     font-size: 2.1875rem;
     line-height: 1;
     font-weight: 500;
-    margin-bottom: 10px; }
+    margin-bottom: 0.625rem; }
   .user__description {
     line-height: 1;
     font-weight: 400; }
@@ -467,7 +467,7 @@ p {
     color: white; }
 
 .icon-hamburger {
-  font-size: 35px; }
+  font-size: 2.1875rem; }
 
 .user-about {
   position: absolute;
@@ -488,7 +488,7 @@ p {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   position: relative;
-  margin-bottom: 30px; }
+  margin-bottom: 1.875rem; }
   .user-about__picture {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -496,13 +496,13 @@ p {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    max-height: 390px;
+    max-height: 24.375rem;
     overflow: hidden;
-    margin-bottom: 40px; }
+    margin-bottom: 2.5rem; }
   .user-about__photo-img {
     display: block;
-    width: 445px;
-    height: 460px; }
+    width: 27.8125rem;
+    height: 28.75rem; }
   .user-about__title {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -512,15 +512,15 @@ p {
             justify-content: center; }
   .user-about__text {
     margin: 0 auto;
-    max-width: 445px; }
+    max-width: 27.8125rem; }
 
 .about-user-info__title {
   text-align: center;
-  width: 350px;
+  width: 21.875rem;
   margin: 0 auto; }
 
 .about-user-info__text {
-  margin-top: 40px; }
+  margin-top: 2.5rem; }
 
 .about-data {
   display: -webkit-box;
@@ -536,7 +536,7 @@ p {
       -ms-flex-direction: row;
           flex-direction: row; }
   .about-data__description {
-    margin-bottom: 40px;
+    margin-bottom: 2.5rem;
     width: 90%; }
   .about-data__content {
     width: 90%; }
@@ -553,7 +553,7 @@ p {
       -ms-flex-direction: column;
           flex-direction: column; }
   .skills__item {
-    margin-bottom: 40px; }
+    margin-bottom: 2.5rem; }
 
 .skill-section__list {
   display: -webkit-box;
@@ -567,16 +567,16 @@ p {
       flex-wrap: wrap; }
 
 .skill-section__item {
-  margin-top: 20px;
-  margin-left: 35px;
+  margin-top: 1.25rem;
+  margin-left: 2.1875rem;
   position: relative;
-  width: 110px;
-  height: 110px; }
+  width: 6.875rem;
+  height: 6.875rem; }
   .skill-section__item:nth-child(4n-3) {
-    margin-left: 0px; }
+    margin-left: 0rem; }
 
 .skill-section__title {
-  font-size: 28px;
+  font-size: 1.75rem;
   font-size: 1.75rem;
   font-weight: 500;
   line-height: 1; }
@@ -630,9 +630,9 @@ p {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap; }
   .navigation__item {
-    margin-right: 20px; }
+    margin-right: 1.25rem; }
     .navigation__item:last-child {
-      margin-right: 0px; }
+      margin-right: 0rem; }
   .navigation__link {
     color: #efeee9;
     font-weight: 400;
@@ -642,26 +642,52 @@ p {
       color: #efeee9; }
 
 .contacts {
-  padding: 0px 40px 35px 35px;
+  padding: 0.625rem 2.5rem 2.1875rem 2.1875rem;
   text-align: center;
   background-color: rgba(239, 238, 233, 0.85);
-  width: 380px;
-  height: 310px;
-  border-radius: 10px; }
+  width: 23.75rem;
+  height: 19.375rem;
+  border-radius: 0.625rem; }
+  .contacts__title {
+    margin-bottom: 1.25rem; }
   .contacts__item {
+    position: relative;
+    margin: 1.25rem 0; }
+  .contacts__text {
+    font-weight: 500;
+    padding-left: 2.1875rem;
     text-align: left; }
+  .contacts__icon {
+    color: #74a163;
+    position: absolute;
+    top: 0.0625rem;
+    left: 0;
+    width: 1.875rem;
+    height: 1.875rem; }
+
+.icon-skype {
+  font-size: 1.5625rem; }
+
+.icon-envelope {
+  font-size: 1.25rem; }
+
+.icon-phone {
+  font-size: 1.25rem; }
+
+.icon-map_marker {
+  font-size: 1.3125rem; }
 
 /*--------------------------------------------------------------
 ## Hero
 --------------------------------------------------------------*/
 .hero {
-  height: 600px;
+  height: 37.5rem;
   overflow: hidden;
   position: relative; }
   .hero__img-bg {
     width: 100%;
-    min-height: 880px;
-    min-width: 1800px; }
+    min-height: 55rem;
+    min-width: 112.5rem; }
   .hero__socials {
     position: absolute;
     top: 2.063em;
@@ -692,8 +718,8 @@ p {
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
-  bottom: 60px;
-  font-size: 18px;
+  bottom: 3.75rem;
+  font-size: 1.125rem;
   color: rgba(255, 255, 255, 0.8);
   -webkit-transition: all .5s ease-in-out;
   -o-transition: all .5s ease-in-out;
@@ -704,7 +730,7 @@ p {
     color: white; }
 
 .icon-arrow_down {
-  font-size: 18px; }
+  font-size: 1.125rem; }
 
 /*--------------------------------------------------------------
 ## About
@@ -724,7 +750,7 @@ p {
         -ms-transform: translateX(-50%);
             transform: translateX(-50%);
     position: relative;
-    top: -35px; }
+    top: -2.1875rem; }
   .about__right {
     background: #eeebdf; }
   .about__triangles {
@@ -739,14 +765,13 @@ p {
   .map__contacts {
     z-index: 999;
     position: absolute;
-    position: absolute;
-    top: 50%;
+    top: 39%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%); }
   .map__box {
-    height: 960px; }
+    height: 60rem; }
 
 /*--------------------------------------------------------------
 ## Footer
@@ -757,7 +782,7 @@ p {
   color: #aaadaf;
   font-weight: 300; }
   .footer__top {
-    min-height: 150px;
+    min-height: 9.375rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -772,36 +797,36 @@ p {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     position: relative;
-    padding: 28px 28px;
+    padding: 1.75rem 1.75rem;
     width: 33.33%; }
     .footer__block:nth-child(2):after {
       position: absolute;
-      top: 25px;
+      top: 1.5625rem;
       left: 0;
       content: "";
       display: block;
-      width: 1px;
-      height: 100px;
+      width: 0.0625rem;
+      height: 6.25rem;
       background-color: rgba(170, 173, 175, 0.85); }
     .footer__block:nth-child(2):before {
       position: absolute;
-      top: 25px;
+      top: 1.5625rem;
       right: 0;
       content: "";
       display: block;
-      width: 1px;
-      height: 100px;
+      width: 0.0625rem;
+      height: 6.25rem;
       background-color: rgba(170, 173, 175, 0.85); }
   .footer__socials {
     color: #aaadaf;
-    margin-top: 25px; }
+    margin-top: 1.5625rem; }
   .footer__bottom {
     color: #efeee9;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     line-height: 1;
-    padding: 10px 0;
+    padding: 0.625rem 0;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;

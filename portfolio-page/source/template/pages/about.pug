@@ -108,14 +108,29 @@ block content
   section.section.map
     .map__box(id="map")
     .contacts.map__contacts
-      .subtitle
+      .subtitle.contacts__title
         | контакты
-      .contacts__item
-        | skype kaptan4eg
-      .contacts__item
-        | email nucknine@gmail.com
-      .contacts__item
-        | город Петрозаводск
+      .contacts__list
+        .contacts__item
+          .contacts__icon
+            +icon('skype')
+          .contacts__text
+            | kaptan4eg
+        .contacts__item
+          .contacts__icon
+            +icon('envelope')
+          .contacts__text
+            | nucknine@gmail.com
+        .contacts__item
+          .contacts__icon
+            +icon('phone')
+          .contacts__text
+            | +7 999 504 5814
+        .contacts__item
+          .contacts__icon
+            +icon('map_marker')
+          .contacts__text
+            | Петрозаводск
   footer.section.footer
     .footer__top
       .footer__block

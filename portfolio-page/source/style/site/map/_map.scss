@@ -7,7 +7,9 @@
     &__contacts {
         z-index: 999;
         position: absolute;
-        @include centered('both');
+        top: 39%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
     &__box{
         height: 960px;
