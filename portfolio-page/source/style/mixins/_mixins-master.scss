@@ -5,8 +5,10 @@ clearfix миксин-плейсхолдер
 */
 %clearfix {
   &:after{
-    content: "";
+    content: ".";
+    visibility: hidden;
     display: block;
+    height: 0;
     clear: both;
   }
 }

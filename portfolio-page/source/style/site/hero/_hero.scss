@@ -9,8 +9,13 @@
   }
   &__socials{
     position: absolute;
-    top: 2.063em;
-    left: 1.875em;
+    top: 35px;
+    left: 30px;
+  &__hamburger {
+    position: absolute;
+    top: 35px;
+    right: 30px;
+  }
   }
   &__title{
     @include centered('y');

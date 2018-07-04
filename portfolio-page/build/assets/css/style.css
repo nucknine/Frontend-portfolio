@@ -31,8 +31,10 @@ clearfix миксин-плейсхолдер
 */
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,500,500i&amp;subset=cyrillic" rel="stylesheet"');
 .about:after {
-  content: "";
+  content: ".";
+  visibility: hidden;
   display: block;
+  height: 0;
   clear: both; }
 
 /*
@@ -332,6 +334,7 @@ p {
 ## Layout
 --------------------------------------------------------------*/
 .wrapper {
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww%2Ew3%2Eorg%2F2000%2Fsvg%22%3E%3Crect%20x%3D%220%25%22%20fill%3D%22gray%22%20width%3D%226%2E38298%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%226%2E38298%25%22%20fill%3D%22%23a0a0a0%22%20width%3D%222%2E12766%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%228%2E51064%25%22%20fill%3D%22gray%22%20width%3D%226%2E38298%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2214%2E89362%25%22%20fill%3D%22%23a0a0a0%22%20width%3D%222%2E12766%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2217%2E02128%25%22%20fill%3D%22gray%22%20width%3D%226%2E38298%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2223%2E40426%25%22%20fill%3D%22%23a0a0a0%22%20width%3D%222%2E12766%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2225%2E53191%25%22%20fill%3D%22gray%22%20width%3D%226%2E38298%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2231%2E91489%25%22%20fill%3D%22%23a0a0a0%22%20width%3D%222%2E12766%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2234%2E04255%25%22%20fill%3D%22gray%22%20width%3D%226%2E38298%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2240%2E42553%25%22%20fill%3D%22%23a0a0a0%22%20width%3D%222%2E12766%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2242%2E55319%25%22%20fill%3D%22gray%22%20width%3D%226%2E38298%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2248%2E93617%25%22%20fill%3D%22%23a0a0a0%22%20width%3D%222%2E12766%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2251%2E06383%25%22%20fill%3D%22gray%22%20width%3D%226%2E38298%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2257%2E44681%25%22%20fill%3D%22%23a0a0a0%22%20width%3D%222%2E12766%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2259%2E57447%25%22%20fill%3D%22gray%22%20width%3D%226%2E38298%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2265%2E95745%25%22%20fill%3D%22%23a0a0a0%22%20width%3D%222%2E12766%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2268%2E08511%25%22%20fill%3D%22gray%22%20width%3D%226%2E38298%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2274%2E46809%25%22%20fill%3D%22%23a0a0a0%22%20width%3D%222%2E12766%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2276%2E59574%25%22%20fill%3D%22gray%22%20width%3D%226%2E38298%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2282%2E97872%25%22%20fill%3D%22%23a0a0a0%22%20width%3D%222%2E12766%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2285%2E10638%25%22%20fill%3D%22gray%22%20width%3D%226%2E38298%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2291%2E48936%25%22%20fill%3D%22%23a0a0a0%22%20width%3D%222%2E12766%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2293%2E61702%25%22%20fill%3D%22gray%22%20width%3D%226%2E38298%25%22%20height%3D%22100%25%22%2F%3E%3C%2Fsvg%3E");
   min-height: 100%;
   position: relative;
   overflow: hidden; }
@@ -459,10 +462,7 @@ p {
     font-weight: 400; }
 
 .hamburger {
-  color: rgba(239, 238, 233, 0.8);
-  position: absolute;
-  top: 2.063em;
-  right: 1.875em; }
+  color: rgba(239, 238, 233, 0.8); }
   .hamburger:active,
   .hamburger :hover {
     color: white; }
@@ -471,39 +471,14 @@ p {
   font-size: 2.1875rem; }
 
 .user-about {
-  position: absolute;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  position: relative;
-  margin-bottom: 1.875rem; }
+  width: 27.8125rem;
+  margin-bottom: 1.875rem;
+  margin-top: 8.125rem; }
   .user-about__picture {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    max-height: 24.375rem;
-    overflow: hidden;
     margin-bottom: 2.5rem; }
   .user-about__photo-img {
     display: block;
-    width: 27.8125rem;
-    height: 28.75rem; }
+    max-width: 100%; }
   .user-about__title {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -511,9 +486,6 @@ p {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center; }
-  .user-about__text {
-    margin: 0 auto;
-    max-width: 27.8125rem; }
 
 .about-user-info__title {
   text-align: center;
@@ -690,8 +662,12 @@ p {
     min-width: 112.5rem; }
   .hero__socials {
     position: absolute;
-    top: 2.063em;
-    left: 1.875em; }
+    top: 2.1875rem;
+    left: 1.875rem; }
+    .hero__socials__hamburger {
+      position: absolute;
+      top: 2.1875rem;
+      right: 1.875rem; }
   .hero__title {
     position: absolute;
     top: 50%;
@@ -719,7 +695,6 @@ p {
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
   bottom: 3.75rem;
-  font-size: 1.125rem;
   color: rgba(255, 255, 255, 0.8);
   -webkit-transition: all .5s ease-in-out;
   -o-transition: all .5s ease-in-out;
@@ -736,27 +711,20 @@ p {
 ## About
 --------------------------------------------------------------*/
 .about {
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww%2Ew3%2Eorg%2F2000%2Fsvg%22%3E%3Crect%20x%3D%220%25%22%20fill%3D%22%234040ff%22%20width%3D%221%2E04167%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%221%2E04167%25%22%20fill%3D%22blue%22%20width%3D%226%2E25%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%227%2E29167%25%22%20fill%3D%22%234040ff%22%20width%3D%222%2E08333%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%229%2E375%25%22%20fill%3D%22blue%22%20width%3D%226%2E25%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2215%2E625%25%22%20fill%3D%22%234040ff%22%20width%3D%222%2E08333%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2217%2E70833%25%22%20fill%3D%22blue%22%20width%3D%226%2E25%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2223%2E95833%25%22%20fill%3D%22%234040ff%22%20width%3D%222%2E08333%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2226%2E04167%25%22%20fill%3D%22blue%22%20width%3D%226%2E25%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2232%2E29167%25%22%20fill%3D%22%234040ff%22%20width%3D%222%2E08333%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2234%2E375%25%22%20fill%3D%22blue%22%20width%3D%226%2E25%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2240%2E625%25%22%20fill%3D%22%234040ff%22%20width%3D%222%2E08333%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2242%2E70833%25%22%20fill%3D%22blue%22%20width%3D%226%2E25%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2248%2E95833%25%22%20fill%3D%22%234040ff%22%20width%3D%222%2E08333%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2251%2E04167%25%22%20fill%3D%22blue%22%20width%3D%226%2E25%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2257%2E29167%25%22%20fill%3D%22%234040ff%22%20width%3D%222%2E08333%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2259%2E375%25%22%20fill%3D%22blue%22%20width%3D%226%2E25%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2265%2E625%25%22%20fill%3D%22%234040ff%22%20width%3D%222%2E08333%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2267%2E70833%25%22%20fill%3D%22blue%22%20width%3D%226%2E25%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2273%2E95833%25%22%20fill%3D%22%234040ff%22%20width%3D%222%2E08333%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2276%2E04167%25%22%20fill%3D%22blue%22%20width%3D%226%2E25%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2282%2E29167%25%22%20fill%3D%22%234040ff%22%20width%3D%222%2E08333%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2284%2E375%25%22%20fill%3D%22blue%22%20width%3D%226%2E25%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2290%2E625%25%22%20fill%3D%22%234040ff%22%20width%3D%222%2E08333%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2292%2E70833%25%22%20fill%3D%22blue%22%20width%3D%226%2E25%25%22%20height%3D%22100%25%22%2F%3E%3Crect%20x%3D%2298%2E95833%25%22%20fill%3D%22%234040ff%22%20width%3D%221%2E04167%25%22%20height%3D%22100%25%22%2F%3E%3C%2Fsvg%3E");
   background: #efeee9; }
-  .about__left {
+  .about__left, .about__right {
     position: relative;
-    -sgs-span-settings: ("span": 6, "location": 1, "grid": 12, "gutter": 0.33333, "style": "fixed", "start row": true, "end row": false, "fixed gutter": true, "split gutter": null, "gutter property": "padding", "options": (null: null));
-    width: 50%;
     float: left;
-    margin-right: -100%;
-    clear: none;
-    padding-right: 0.33333; }
-  .about__right {
-    position: relative;
-    -sgs-span-settings: ("span": 6, "location": 7, "grid": 12, "gutter": 0.33333, "style": "fixed", "start row": false, "end row": true, "fixed gutter": true, "split gutter": null, "gutter property": "padding", "options": (null: null));
-    width: 50%;
-    float: right;
-    margin-left: 0;
-    margin-right: 0;
-    clear: none;
-    padding-right: 0; }
+    width: 50%; }
   .about__left {
-    background: #efeee9; }
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
   .about__section-title {
     position: absolute;
     left: 50%;

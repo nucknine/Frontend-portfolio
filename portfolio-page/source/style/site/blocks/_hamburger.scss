@@ -1,8 +1,5 @@
 .hamburger {
     color: rgba($white, .8);
-    position: absolute;
-    top: 2.063em;
-    right: 1.875em;
     &:active,
          :hover {
             color: rgba(255,255,255,1);
