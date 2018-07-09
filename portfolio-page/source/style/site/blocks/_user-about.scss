@@ -1,18 +1,31 @@
 .user-about {
-    width: 445px;
-    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 80%;
+    @include adaptive('tablet') {
+        width: 90%;
+    }
+    margin-bottom: 26px;
     margin-top: 130px;
     &__picture {
-        margin-bottom: 40px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        overflow: hidden;
+        margin-bottom: 13px;
     }
     &__photo-img {
         display: block;
-        max-width: 100%;
+        // max-width: 100%;
     }
     &__title {
         display: flex;
         justify-content: center;
+        margin-bottom: 13px;
+        width: 100%;
     }
     &__text {
+        margin-bottom: 26px;
     }
 }

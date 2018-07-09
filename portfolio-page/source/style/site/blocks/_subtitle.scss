@@ -1,28 +1,25 @@
 .subtitle {
     color: $main-font-color;
     @include sansus();
-    @include font-size(1.75); //35
+    font-size: 33px;
     text-transform: uppercase;
-    line-height: 1;
-    padding: .5em 1.333em;
+    line-height: 1.25;
+    padding: 13px 39px;
     display: inline-block;
     position: relative;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    @include adaptive(smart) {
-        @include font-size(1.6);
-    }
 
-    $margin: .667em;
+    $margin: 7px;
 
     &:after, &:before {
         content:"";
         display: block;
         @include centered('y');
         background-color: rgba($main-font-color, 0.3);
-        width: 0.367em;
-        height: 0.083em;
+        width: 19px;
+        height: 4px;
     }
     &:after {
         right: $margin;

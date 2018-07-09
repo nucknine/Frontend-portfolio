@@ -1,15 +1,10 @@
-[class*="ymaps-2"][class*="-ground-pane"] {
-    // filter: hue-rotate(109deg);
-}
-
 .map {
     position: relative;
+    background: $green;
     &__contacts {
         z-index: 999;
-        position: absolute;
-        top: 39%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        @include centered('both');
+        top: 40%;
     }
     &__box{
         height: 960px;

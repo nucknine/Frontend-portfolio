@@ -29,14 +29,6 @@ clearfix миксин-плейсхолдер
 (scss-placeholder'ы используются вместо миксинов
 когда нет параметров (занимают меньше места чем миксины в коде))
 */
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,500,500i&amp;subset=cyrillic" rel="stylesheet"');
-.about:after {
-  content: ".";
-  visibility: hidden;
-  display: block;
-  height: 0;
-  clear: both; }
-
 /*
 center element
 */
@@ -88,6 +80,7 @@ font-size
 для body задан - 0.8 т.е. 1rem и 1rem
 */
 /*шаблон по которому формирются стили для svg иконок*/
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,500,500i&amp;subset=cyrillic" rel="stylesheet"');
 .icon {
   display: inline-block;
   width: 1em;
@@ -380,24 +373,23 @@ p {
     fill: #efeee9; }
   .triangle_fill_beige {
     fill: #eeebdf; }
+    @media only screen and (max-width: 48rem) {
+      .triangle_fill_beige {
+        fill: #efeee9; } }
 
 .title {
+  z-index: 2;
   color: #373e42;
   font-family: 'Sansus Webissimo Regular';
-  font-size: 3.9375rem;
-  font-size: 3.9375rem;
+  font-size: 3.6875rem;
   text-transform: uppercase;
-  line-height: 1;
-  padding: .75em 1.333em;
+  line-height: 1.25;
+  padding: 3.25rem 2.4375rem;
   display: inline-block;
   position: relative;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat; }
-  @media only screen and (max-width: 30rem) {
-    .title {
-      font-size: 2rem;
-      font-size: 2rem; } }
   .title:after, .title:before {
     content: "";
     display: block;
@@ -407,30 +399,25 @@ p {
         -ms-transform: translateY(-50%);
             transform: translateY(-50%);
     background-color: rgba(55, 62, 66, 0.3);
-    width: 0.367em;
-    height: 0.083em; }
+    width: 1.1875rem;
+    height: 0.25rem; }
   .title:after {
-    right: 0.667em; }
+    right: 0.4375rem; }
   .title:before {
-    left: 0.667em; }
+    left: 0.4375rem; }
 
 .subtitle {
   color: #373e42;
   font-family: 'Sansus Webissimo Regular';
-  font-size: 2.1875rem;
-  font-size: 2.1875rem;
+  font-size: 2.0625rem;
   text-transform: uppercase;
-  line-height: 1;
-  padding: .5em 1.333em;
+  line-height: 1.25;
+  padding: 0.8125rem 2.4375rem;
   display: inline-block;
   position: relative;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat; }
-  @media only screen and (max-width: 30rem) {
-    .subtitle {
-      font-size: 2rem;
-      font-size: 2rem; } }
   .subtitle:after, .subtitle:before {
     content: "";
     display: block;
@@ -440,12 +427,12 @@ p {
         -ms-transform: translateY(-50%);
             transform: translateY(-50%);
     background-color: rgba(55, 62, 66, 0.3);
-    width: 0.367em;
-    height: 0.083em; }
+    width: 1.1875rem;
+    height: 0.25rem; }
   .subtitle:after {
-    right: 0.667em; }
+    right: 0.4375rem; }
   .subtitle:before {
-    left: 0.667em; }
+    left: 0.4375rem; }
 
 .user {
   color: #efeee9; }
@@ -471,21 +458,43 @@ p {
   font-size: 2.1875rem; }
 
 .user-about {
-  width: 27.8125rem;
-  margin-bottom: 1.875rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 80%;
+  margin-bottom: 1.625rem;
   margin-top: 8.125rem; }
+  @media only screen and (max-width: 48rem) {
+    .user-about {
+      width: 90%; } }
   .user-about__picture {
-    margin-bottom: 2.5rem; }
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 0.8125rem; }
   .user-about__photo-img {
-    display: block;
-    max-width: 100%; }
+    display: block; }
   .user-about__title {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
-            justify-content: center; }
+            justify-content: center;
+    margin-bottom: 0.8125rem;
+    width: 100%; }
+  .user-about__text {
+    margin-bottom: 1.625rem; }
 
 .about-user-info__title {
   text-align: center;
@@ -493,7 +502,7 @@ p {
   margin: 0 auto; }
 
 .about-user-info__text {
-  margin-top: 2.5rem; }
+  margin-top: 0.8125rem; }
 
 .about-data {
   display: -webkit-box;
@@ -509,7 +518,7 @@ p {
       -ms-flex-direction: row;
           flex-direction: row; }
   .about-data__description {
-    margin-bottom: 2.5rem;
+    margin-bottom: 3.25rem;
     width: 90%; }
   .about-data__content {
     width: 90%; }
@@ -526,10 +535,10 @@ p {
       -ms-flex-direction: column;
           flex-direction: column; }
   .skills__item {
-    margin-bottom: 2.5rem; }
+    margin-bottom: 2.4375rem; }
 
 .skill-section__list {
-  margin-left: -2.1875rem;
+  margin-left: -1.625rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -539,10 +548,15 @@ p {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap; }
+  @media only screen and (max-width: 48rem) {
+    .skill-section__list {
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center; } }
 
 .skill-section__item {
-  margin-top: 1.25rem;
-  margin-left: 2.1875rem;
+  margin-top: 0.8125rem;
+  margin-left: 1.625rem;
   position: relative;
   width: 6.875rem;
   height: 6.875rem; }
@@ -552,6 +566,9 @@ p {
   font-size: 1.75rem;
   font-weight: 500;
   line-height: 1; }
+  @media only screen and (max-width: 48rem) {
+    .skill-section__title {
+      text-align: center; } }
 
 .skill__circle {
   position: relative; }
@@ -600,10 +617,14 @@ p {
       -ms-flex-pack: center;
           justify-content: center;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap; }
+      flex-wrap: wrap;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  line-height: 1; }
   .navigation__item {
-    margin-right: 1.25rem; }
-    .navigation__item:last-child {
+    margin-right: 0.8125rem; }
+    .navigation__item:last-child() {
       margin-right: 0rem; }
   .navigation__link {
     color: #efeee9;
@@ -614,20 +635,21 @@ p {
       color: #efeee9; }
 
 .contacts {
-  padding: 0.625rem 2.5rem 2.1875rem 2.1875rem;
+  padding: 0.8125rem 3rem 3rem 3rem;
   text-align: center;
   background-color: rgba(239, 238, 233, 0.85);
   width: 23.75rem;
-  height: 19.375rem;
-  border-radius: 0.625rem; }
+  border-radius: 0.4375rem; }
   .contacts__title {
-    margin-bottom: 1.25rem; }
+    margin-bottom: 0.8125rem; }
   .contacts__item {
     position: relative;
-    margin: 1.25rem 0; }
+    margin-bottom: 1.1875rem; }
+    .contacts__item:last-child {
+      margin-bottom: 0; }
   .contacts__text {
     font-weight: 500;
-    padding-left: 2.1875rem;
+    padding-left: 2.4375rem;
     text-align: left; }
   .contacts__icon {
     color: #74a163;
@@ -711,12 +733,18 @@ p {
 ## About
 --------------------------------------------------------------*/
 .about {
-  background: #efeee9; }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #efeee9;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+  @media only screen and (max-width: 48rem) {
+    .about {
+      position: relative; } }
   .about__left, .about__right {
     position: relative;
-    float: left;
-    width: 50%; }
-  .about__left {
+    width: 50%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -725,16 +753,24 @@ p {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center; }
+    @media only screen and (max-width: 48rem) {
+      .about__left, .about__right {
+        width: 100%; } }
+    @media only screen and (max-width: 30rem) {
+      .about__left, .about__right {
+        width: 100%; } }
   .about__section-title {
     position: absolute;
     left: 50%;
     -webkit-transform: translateX(-50%);
         -ms-transform: translateX(-50%);
             transform: translateX(-50%);
-    position: relative;
-    top: -2.1875rem; }
+    top: -3rem; }
   .about__right {
     background: #eeebdf; }
+    @media only screen and (max-width: 48rem) {
+      .about__right {
+        position: unset; } }
   .about__triangles {
     position: absolute;
     bottom: 100%; }
@@ -743,15 +779,17 @@ p {
 ## Map
 --------------------------------------------------------------*/
 .map {
-  position: relative; }
+  position: relative;
+  background: #74a163; }
   .map__contacts {
     z-index: 999;
     position: absolute;
-    top: 39%;
+    top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%); }
+            transform: translate(-50%, -50%);
+    top: 40%; }
   .map__box {
     height: 60rem; }
 
@@ -762,12 +800,14 @@ p {
   position: absolute;
   bottom: 0;
   color: #aaadaf;
-  font-weight: 300; }
+  font-weight: 300;
+  width: 100%; }
   .footer__top {
-    min-height: 9.375rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -779,36 +819,33 @@ p {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     position: relative;
-    padding: 1.75rem 1.75rem;
+    padding: 1.625rem 1.625rem;
     width: 33.33%; }
-    .footer__block:nth-child(2):after {
+    @media only screen and (max-width: 48rem) {
+      .footer__block {
+        width: 50%; } }
+    @media only screen and (max-width: 48rem) {
+      .footer__block:last-child {
+        width: 100%; } }
+    .footer__block:nth-child(2):after, .footer__block :nth-child(2):before {
       position: absolute;
       top: 1.5625rem;
       left: 0;
       content: "";
       display: block;
       width: 0.0625rem;
-      height: 6.25rem;
-      background-color: rgba(170, 173, 175, 0.85); }
-    .footer__block:nth-child(2):before {
-      position: absolute;
-      top: 1.5625rem;
-      right: 0;
-      content: "";
-      display: block;
-      width: 0.0625rem;
-      height: 6.25rem;
+      height: 5.625rem;
       background-color: rgba(170, 173, 175, 0.85); }
   .footer__socials {
-    color: #aaadaf;
-    margin-top: 1.5625rem; }
+    margin-top: 1.625rem;
+    color: #aaadaf; }
   .footer__bottom {
     color: #efeee9;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     line-height: 1;
-    padding: 0.625rem 0;
+    padding: 0.4375rem 0;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;

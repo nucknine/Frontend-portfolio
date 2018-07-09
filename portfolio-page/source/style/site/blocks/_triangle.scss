@@ -7,6 +7,9 @@
     }
     &_beige{
       fill: $beige;
+      @include adaptive('tablet') {
+        fill: $white;
+      }
     }
   }
 }

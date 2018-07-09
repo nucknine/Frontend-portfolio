@@ -3,9 +3,10 @@
     bottom: 0;
     color: $gray;
     font-weight: 300;
+    width: 100%;
     &__top {
-        min-height: 150px;
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
         background-color: rgba($black, .85);
     }
@@ -13,38 +14,36 @@
         display: flex;
         flex-wrap: wrap;
         position: relative;
-        padding: 28px 28px;
+        padding: 26px 26px;
         width: 33.33%;
-        &:nth-child(2):after {
+        @include adaptive('tablet') {
+            width: 50%;
+        }
+        &:last-child {
+            @include adaptive('tablet') {
+                width: 100%;
+            }
+        }
+        &:nth-child(2):after, :nth-child(2):before {
             position: absolute;
             top: 25px;
             left: 0;
             content: "";
             display: block;
             width: 1px;
-            height: 100px;
-            background-color: rgba($gray, .85);
-        }
-        &:nth-child(2):before {
-            position: absolute;
-            top: 25px;
-            right: 0;
-            content: "";
-            display: block;
-            width: 1px;
-            height: 100px;
+            height: 90px;
             background-color: rgba($gray, .85);
         }
     }
     &__socials {
+        margin-top: 26px;
         color: $gray;
-        margin-top: 25px;
     }
     &__bottom {
         color: $white;
         display: flex;
         line-height: 1;
-        padding: 10px 0;
+        padding: 7px 0;
         justify-content: center;
         background-color: rgba($green, .85);
     }

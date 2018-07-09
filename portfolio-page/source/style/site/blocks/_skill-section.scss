@@ -1,13 +1,16 @@
 .skill-section {
     &__list {
-        margin-left: -35px;
+        margin-left: -26px;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        @include adaptive('tablet') {
+            justify-content: center;
+        }
     }
     &__item {
-        margin-top: 20px;
-        margin-left: 35px;
+        margin-top: 13px;
+        margin-left: 26px;
         position: relative;
         width: 110px;
         height: 110px;
@@ -16,5 +19,8 @@
         @include font-size(1.4);
         font-weight: 500;
         line-height: 1;
+        @include adaptive('tablet') {
+            text-align: center;
+        }
     }
 }
