@@ -6,18 +6,34 @@
     &__item {
         display: inline-block;
         margin-right: 1.750em;
+        &:last-child {
+            margin-right: 0;
+        }
     }
     &__link {
         color: rgba(255,255,255,.8);
         &:active,
          :hover {
             color: rgba(255,255,255,1);
-         }
+        }
+        &_fill {
+            &_gray {
+                color: $gray;
+            }
+        }
+        &_hover {
+            &_green {
+                &:active,
+                :hover {
+                    color: $green;
+                }
+            }
+        }
     }
 }
 
 .icon {
-    transition: color .3s ease-out;
+    transition: color .1s ease-in;
     &-vk {
         font-size: 18px;
     }

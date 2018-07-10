@@ -1,0 +1,33 @@
+.greet-box {
+    text-align: center;
+    width: 380px;
+    border-radius: 7px;
+    background: rgba(0,0,0, .4);
+    &__top {
+        padding: 48px 48px 26px 48px;
+    }
+    &__socials {
+        margin-top: 26px;
+    }
+    &__bottom {
+        background-color: $green;
+        height: 50px;
+    }
+    &__navigation {
+        height: 100%;
+    }
+    &__item {
+        width: 33.33%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        border-right: 1px solid $white;
+        &:last-child {
+            border-right: none;
+        }
+        &:hover {
+            background-color: darken($green, 10%);
+        }
+    }
+}

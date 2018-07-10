@@ -1,0 +1,13 @@
+.blog{
+    background-color: $white;
+    display: flex;
+    padding: 48px;
+    width: 100%;
+    justify-content: center;
+    &__left {
+        width: 40%;
+    }
+    &__right {
+        width: 60%;
+    }
+}

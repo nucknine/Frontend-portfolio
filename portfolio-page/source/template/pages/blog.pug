@@ -1,0 +1,45 @@
+extends ../_main-template
+
+block variables
+  - var title = 'blog'
+
+block content
+    section.section.hero
+        .hero__bg
+            //- img(src="assets/img/decor/blog-header.png" alt="").hero__img-bg
+        ul.socials.hero__socials
+            each item in ['vk', 'github', 'in']
+                li.socials__item
+                    a(href="#" class=`socials__link socials__link_${item}`)
+                        +icon(item)
+        a(href="#").hamburger.hero__hamburger
+            +icon('hamburger')
+        .hero__title
+            //- подложка portfolio
+            img(src="assets/img/decor/blog-header.png" alt="").section-title
+            //- миксин hero__user-block на блоке user (примесь добавляет особенности блоку в зависимости от
+            //- местонахождения: section hero в данном случае)
+            //- блок user остается переиспользуемым, а класс .hero__user-block добавляет абсолютное позиционирование
+            .user.hero__user-block
+                .user__photo
+                .user__photo-avatar
+                    img(src="assets/img/user.png" alt="").user__photo-img
+                +title('Блог', 'blog-header.png', 'hero__blog-title')
+    section.section.tria
+        .tria__left
+            svg(
+                viewbox="0 0 1000 100"
+                preserveAspectRatio="none"
+                ).triangle.triangle_fill_white.tria__triangles
+                polygon(points="0,0 0,100 1000,100")
+        .tria__right
+            svg(
+                viewbox="0 0 1000 100"
+                preserveAspectRatio="none"
+                ).triangle.triangle_fill_white.tria__triangles
+                polygon(points="0,100 1000,0 1000,100")
+    section.section.blog
+        .blog__left
+            | Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias fugiat tempore fuga beatae suscipit nostrum consectetur a labore ipsam? Dignissimos?
+        .blog__right
+            | Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore doloremque expedita, fugit, quos facere enim quo praesentium amet aut modi esse velit laudantium ipsum labore! Nisi soluta iste quae labore blanditiis sint tempora beatae. Numquam amet similique maxime vel, quas sunt mollitia ducimus quam neque, quis molestias, optio tempore veniam.

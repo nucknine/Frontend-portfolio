@@ -2,7 +2,15 @@
   height: 600px;
   overflow: hidden;
   position: relative;
-  &__img-bg{
+  &__bg {
+    background-image: url("/assets/img/portfolio.jpg");
+    height: 100%;
+    background-position-x: center;
+    background-position-y: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  &__img-bg {
     width: 100%;
     min-height: 880px;
     min-width: 1800px;
@@ -11,19 +19,22 @@
     position: absolute;
     top: 35px;
     left: 30px;
+  }
   &__hamburger {
     position: absolute;
     top: 35px;
     right: 30px;
   }
-  }
-  &__title{
+  &__title {
     @include centered('y');
     top: 45%;
     text-align: center;
     width: 100%;
   }
-  &__user-block{
+  &__user-block {
     @include centered('both');
+  }
+  &__blog-title {
+    color: $white;
   }
 }

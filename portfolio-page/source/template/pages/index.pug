@@ -1,1 +1,39 @@
 extends ../_main-template
+
+block variables
+  - var title = 'Welcome'
+
+block content
+    section.section.welcome
+        .welcome__bg
+            button.btn-authorize.welcome__btn-authorize
+                | Авторизоваться
+            .greet-box.welcome__greet-box
+                .greet-box__top
+                    .user.greet-box__user-block
+                        .user__photo
+                            .user__photo-avatar
+                                img(src="assets/img/user.png" alt="").user__photo-img
+                        .user__name
+                            | Олег Максимов
+                        .user__description
+                            | личный сайт разработчика
+                    ul.socials.greet-box__socials
+                        each item in ['vk', 'github', 'in']
+                            li.socials__item
+                                a(href="#" class=`socials__link socials__link_hover_green socials__link_fill_gray socials__link_${item}`)
+                                    +icon(item)
+                .greet-box__bottom
+                    nav.navigation.greet-box__navigation
+                        .navigation__item.greet-box__item
+                            a.navigation__link(href="#")
+                                | Мои работы
+                        .navigation__item.greet-box__item
+                            a.navigation__link(href="./about.html")
+                                | Обо мне
+                        .navigation__item.greet-box__item
+                            a.navigation__link(href="./blog.html")
+                                | Блог
+    footer.section.footer
+        .footer__bottom.footer__bottom_fill_transparent
+            | Oleg Maximov | nucknine | 2018

@@ -1,0 +1,16 @@
+.btn-authorize {
+    cursor: pointer;
+    outline: none;
+    color: $white;
+    border-radius: 26px;
+    background-color: transparent;
+    border: 1px solid $white;
+    padding: 7px 13px;
+    transition: all .1s ease-in;
+    &:hover,
+    :active {
+        background-color: $white;
+        border: 1px solid transparent;
+        color: $black;
+    }
+}

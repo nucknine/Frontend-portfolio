@@ -46,5 +46,10 @@
         padding: 7px 0;
         justify-content: center;
         background-color: rgba($green, .85);
+        &_fill {
+            &_transparent {
+                background-color: transparent;
+            }
+        }
     }
 }

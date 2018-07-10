@@ -1,0 +1,12 @@
+.tria {
+    display: flex;
+    background: $white;
+    &__left, &__right {
+      position: relative;
+      width: 50%;
+    }
+    &__triangles {
+      position: absolute;
+      bottom: 100%;
+    }
+  }
