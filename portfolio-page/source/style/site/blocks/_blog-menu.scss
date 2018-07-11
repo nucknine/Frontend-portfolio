@@ -1,0 +1,19 @@
+.blog-menu {
+    &__item {
+    }
+    &__link {
+        color: $main-font-color;
+        text-decoration: none;
+        padding: 13px;
+        cursor: pointer;
+        display: block;
+        transition: color .2s ease-out;
+        transition: border .2s ease-out;
+        border-right: 2px solid transparent;
+        &:hover,
+        :active {
+            color: $green;
+            border-right: 2px solid $green;
+        }
+    }
+}

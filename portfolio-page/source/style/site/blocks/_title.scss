@@ -2,10 +2,10 @@
   z-index: 2;
   color: $main-font-color;
   @include sansus();
-  font-size: 59px;
+  font-size: 65px;
   text-transform: uppercase;
   line-height: 1.25;
-  padding: 52px 39px;
+  padding: 52px 32px;
   display: inline-block;
   position: relative;
   background-size: contain;
@@ -18,7 +18,7 @@
     content:"";
     display: block;
     @include centered('y');
-    background-color: rgba($main-font-color, 0.3);
+    background-color: rgba($main-font-color, 0.2);
     width: 19px;
     height: 4px;
   }

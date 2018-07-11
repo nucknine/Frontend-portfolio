@@ -1,6 +1,8 @@
 .footer {
-    position: absolute;
-    bottom: 0;
+    &_absolute {
+        position: absolute;
+        bottom: 0;
+    }
     color: $gray;
     font-weight: 300;
     width: 100%;

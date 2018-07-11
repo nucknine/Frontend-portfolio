@@ -1,0 +1,13 @@
+.article {
+    padding-bottom: 52px;
+    margin-bottom: 52px;
+    border-bottom: 4px solid $gray;
+    &__title {
+        font-weight: 500;
+        margin-bottom: 13px;
+    }
+    &__date {
+        color: $green;
+        margin-bottom: 13px;
+    }
+}

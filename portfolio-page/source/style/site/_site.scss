@@ -11,30 +11,32 @@
 /*--------------------------------------------------------------
 ## Blocks
 --------------------------------------------------------------*/
-@import "blocks/_socials";
-@import "blocks/_triangle";
-@import "blocks/_title";
-@import "blocks/_subtitle";
-@import "blocks/_user";
-@import "blocks/_hamburger";
-@import "blocks/_user-about";
-@import "blocks/_about-user-info";
-@import "blocks/_about-data";
-@import "blocks/_skills";
-@import "blocks/_skill-section";
-@import "blocks/_skill";
-@import "blocks/_quote";
-@import "blocks/_navigation";
-@import "blocks/_contacts";
-@import "blocks/_greet-box";
-@import "blocks/_btn-authorize";
+@import "blocks/socials";
+@import "blocks/triangle";
+@import "blocks/title";
+@import "blocks/subtitle";
+@import "blocks/user";
+@import "blocks/hamburger";
+@import "blocks/user-about";
+@import "blocks/about-user-info";
+@import "blocks/about-data";
+@import "blocks/skills";
+@import "blocks/skill-section";
+@import "blocks/skill";
+@import "blocks/quote";
+@import "blocks/navigation";
+@import "blocks/contacts";
+@import "blocks/greet-box";
+@import "blocks/btn-authorize";
+@import "blocks/blog-menu";
+@import "blocks/article";
 
 /*--------------------------------------------------------------
 ## Hero
 --------------------------------------------------------------*/
-@import "hero/_hero";
-@import "hero/_section-title";
-@import "hero/_down-arrow";
+@import "hero/hero";
+@import "hero/section-title";
+@import "hero/down-arrow";
 
 /*--------------------------------------------------------------
 ## Triangles section
@@ -44,17 +46,17 @@
 /*--------------------------------------------------------------
 ## Welcome
 --------------------------------------------------------------*/
-@import "welcome/_welcome";
+@import "welcome/welcome";
 
 /*--------------------------------------------------------------
 ## About
 --------------------------------------------------------------*/
-@import "about/_about";
+@import "about/about";
 
 /*--------------------------------------------------------------
 ## Map
 --------------------------------------------------------------*/
-@import "map/_map";
+@import "map/map";
 
 /*--------------------------------------------------------------
 ## Footer

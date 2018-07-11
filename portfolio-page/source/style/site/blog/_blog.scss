@@ -1,13 +1,15 @@
 .blog{
+    @include background-grid($color: green);
+    @extend %clearfix;
     background-color: $white;
-    display: flex;
-    padding: 48px;
+    padding: 52px 13px 13px 13px;
     width: 100%;
     justify-content: center;
     &__left {
-        width: 40%;
+        text-align: right;
+        @include grid-span(3, 1);
     }
     &__right {
-        width: 60%;
+        @include grid-span(8, 5);
     }
 }

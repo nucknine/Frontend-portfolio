@@ -29,8 +29,8 @@ block content
     a(href="#").down-arrow
       //- img(src="assets/img/icons/arrow_down.svg")
       +icon('arrow_down')
-      //-подложка portfolio
     .hero__title
+      //-подложка portfolio
       img(src="assets/img/decor/porfolio-word.png" alt="").section-title
       //-миксин hero__user-block на блоке user (примесь добавляет особенности блоку в зависимости от
       //-местонахождения: section hero в данном случае)
@@ -132,23 +132,23 @@ block content
             +icon('map_marker')
           .contacts__text
             | Петрозаводск
-  footer.section.footer
+  footer.section.footer.footer_absolute
     .footer__top
       .footer__block
         | Сайт портфолио
       .footer__block
         nav.navigation
           .navigation__item
-            a.navigation__link(href="#")
+            a.navigation__link(href="./works.html")
               | Мои работы
           .navigation__item
-            a.navigation__link(href="#")
+            a.navigation__link(href="./about.html")
               | Обо мне
           .navigation__item
-            a.navigation__link(href="#")
+            a.navigation__link(href="./blog.html")
               | Блог
           .navigation__item
-            a.navigation__link(href="#")
+            a.navigation__link(href="./authorize.html")
               | Авторизация
         ul.socials.footer__socials
           each item in ['vk', 'github', 'in']
