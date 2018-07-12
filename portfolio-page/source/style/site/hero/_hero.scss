@@ -35,7 +35,10 @@
     @include centered('both');
   }
   &__blog-title {
-    @include centered('x');
+    color: $white;
+    margin-top: -48px;
+  }
+  &__works-title {
     color: $white;
     margin-top: -48px;
   }

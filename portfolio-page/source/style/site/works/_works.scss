@@ -1,0 +1,94 @@
+.works {
+    display: flex;
+    flex-wrap: wrap;
+    &__left {
+        display: flex;
+        justify-content: center;
+        height: 750px;
+        width: 50%;
+        background: rgba($green, .5);
+        background: $white;
+        @include adaptive('tablet') {
+            height: 530px;
+            width: 100%;
+        }
+    }
+    &__info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 65%;
+        height: 100%;
+    }
+    &__title {
+        text-align: center;
+    }
+    &__stack {
+        margin-top: 13px;
+        color: $green;
+    }
+    &__btn-show {
+        margin-top: 52px;
+        position: relative;
+    }
+    &__right {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        @include adaptive('tablet') {
+            width: 100%;
+            height: 485px;
+            flex-direction: column-reverse;
+        }
+    }
+    &__picture {
+        padding: 26px;
+        width: 100%;
+        height: 70%;
+        background: $beige;
+    }
+    &__img {
+        height: 100%;
+        background-image: url("/assets/img/works.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    &__buttons {
+        display: flex;
+        width: 100%;
+        height: 30%;
+    }
+    &__buttons-mask {
+        width: 100%;
+        height: 100%;
+        background: $green;
+        opacity: .4;
+        transition: opacity .2s ease-in;
+    }
+    &__btn-up, &__btn-down {
+        position: relative;
+        background-image: url("/assets/img/work1.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+        width: 50%;
+        &:hover .works__buttons-mask{
+            opacity: 0;
+        }
+        &:hover .works__up-arrow,
+        &:hover .works__down-arrow {
+            color: $green;
+        }
+    }
+    &__btn-down {
+        background-image: url("/assets/img/work2.png");
+    }
+    &__up-arrow, &__down-arrow {
+        display: inline-block;
+        color: $white;
+        @include centered('both');
+    }
+}

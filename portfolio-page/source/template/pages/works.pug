@@ -1,0 +1,100 @@
+extends ../_main-template
+
+block variables
+  - var title = 'Works'
+
+block content
+    section.section.hero
+        .hero__bg
+            //- img(src="assets/img/decor/blog-header.png" alt="").hero__img-bg
+        ul.socials.hero__socials
+            each item in ['vk', 'github', 'in']
+                li.socials__item
+                    a(href="#" class=`socials__link socials__link_${item}`)
+                        +icon(item)
+        a(href="#").hamburger.hero__hamburger
+            +icon('hamburger')
+        a(href="#").down-arrow
+            +icon('arrow_down')
+        .hero__title
+            //- подложка portfolio
+            img(src="assets/img/decor/works-header.png" alt="").section-title
+            //- миксин hero__user-block на блоке user (примесь добавляет особенности блоку в зависимости от
+            //- местонахождения: section hero в данном случае)
+            //- блок user остается переиспользуемым, а класс .hero__user-block добавляет абсолютное позиционирование
+            .user.hero__user-block
+                .user__photo
+                    .user__photo-avatar
+                        img(src="assets/img/user.png" alt="").user__photo-img
+                +title('Мои работы', '', 'hero__works-title')
+    section.section.tria
+        .tria__left
+            svg(
+                viewbox="0 0 1000 100"
+                preserveAspectRatio="none"
+                ).triangle.triangle_fill_white.tria__triangles
+                polygon(points="0,0 0,100 1000,100")
+        .tria__right
+            svg(
+                viewbox="0 0 1000 100"
+                preserveAspectRatio="none"
+                ).triangle.triangle_fill_white.tria__triangles
+                polygon(points="0,100 1000,0 1000,100")
+    section.section.works
+        .works__left
+            .works__info
+                .works__title.subtitle
+                    | сайт школы онлайн образования
+                h3.works__stack
+                    | html, css, js, wordpress
+                .works__btn-show
+                    button.btn-with-icon.btn-with-icon_fill_green
+                        | Посмотреть сайт
+                        .btn-with-icon__icon
+                            +icon('link')
+        .works__right
+            .works__picture
+                .works__img
+                //- img(src="assets/img/works.png" alt="").works__img
+            .works__buttons
+                a(href="#").works__btn-up
+                    .works__buttons-mask
+                    .works__up-arrow
+                        +icon('portf_arrow_up')
+                a(href="#").works__btn-down
+                    .works__buttons-mask
+                    .works__down-arrow
+                        +icon('portf_arrow_down')
+    footer.section.footer
+        .footer__top
+            .footer__block
+                | Сайт портфолио
+            .footer__block
+                nav.navigation
+                    .navigation__item
+                        a.navigation__link(href="./works.html")
+                            | Мои работы
+                    .navigation__item
+                        a.navigation__link(href="./about.html")
+                            | Обо мне
+                    .navigation__item
+                        a.navigation__link(href="./blog.html")
+                            | Блог
+                    .navigation__item
+                        a.navigation__link(href="./authorize.html")
+                            | Авторизация
+                    ul.socials.footer__socials
+                        each item in ['vk', 'github', 'in']
+                            li.socials__item
+                                a(href="#" class=`socials__link socials__link_${item}`)
+                                    +icon(item)
+            .footer__block
+                blockquote.quote
+                    | Пишите код так, как будто сопровождать его
+                    | будет склонный к насилию психопат,
+                    | который знает, где вы живёте
+                br
+                span.quote_style_bold
+                    | - Martin Golding
+        .footer__bottom
+            | Oleg Maximov | nucknine | 2018

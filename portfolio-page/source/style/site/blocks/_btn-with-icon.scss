@@ -1,0 +1,36 @@
+.btn-with-icon {
+    cursor: pointer;
+    outline: none;
+    color: $white;
+    border-radius: 26px;
+    background-color: transparent;
+    border: none;
+    padding: 11px 28px;
+    padding-left: 42px;
+    transition: all .1s ease-in;
+    &_fill {
+        &_green {
+            background-color: $green;
+        }
+    }
+    &__icon {
+        color: $white;
+        position: absolute;
+        top: 14px;
+        left: 14px;
+    }
+    &:hover,
+    &:active {
+        background-color: $white;
+        color: $green;
+    }
+    &:hover .btn-with-icon__icon {
+        color: $green;
+    }
+}
+
+.icon {
+    &-link {
+        font-size: 20px;
+    }
+}
