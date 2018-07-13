@@ -1,0 +1,61 @@
+.contact-form {
+    @include centered('both');
+    top: 40%;
+    padding: 26px 13px 0 13px;
+    height:auto;
+    border-radius: 7px;
+    background: rgba($gray, .3);
+    overflow: hidden;
+    &__title {
+        @include centered('x');
+        position: relative;
+        text-align: center;
+    }
+    &__body {
+        padding: 13px 0;
+    }
+    &__group {
+        margin-top: 13px;
+    }
+    &__control {
+        outline: none;
+        width: 100%;
+        border: none;
+        border-radius: 26px;
+        padding: 13px;
+        &::placeholder {
+            font-size: 16px;
+            font-weight: 300;
+        }
+    }
+    &__textarea {
+        height: 138px;
+        outline: none;
+        resize: none;
+    }
+    &__buttons {
+        display: flex;
+        background-color: $green;
+        height: 50px;
+        margin: 0 -13px;
+    }
+    &__btn {
+        cursor: pointer;
+        color: $white;
+        outline: none;
+        border: none;
+        background-color: transparent;
+        width: 50%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        border-right: 1px solid $white;
+        &:last-child {
+            border-right: none;
+        }
+        &:hover {
+            background-color: darken($green, 10%);
+        }
+    }
+}

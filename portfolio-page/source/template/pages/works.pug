@@ -65,7 +65,24 @@ block content
                     .works__buttons-mask
                     .works__down-arrow
                         +icon('portf_arrow_down')
-    footer.section.footer
+    section.section.contact
+        .contact-form
+            .contact-form__title.subtitle
+                | Связаться со мной
+            form(action='', method='GET').contact-form__form
+                .contact-form__body
+                    .contact-form__group
+                        input(type='text' placeholder='Имя' name='name').contact-form__control
+                    .contact-form__group
+                        input(type='text' placeholder='Email' name='email').contact-form__control
+                    .contact-form__group
+                        textarea(placeholder='Ваше сообщение' name='email').contact-form__control.contact-form__textarea
+                .contact-form__buttons
+                    button(type='submit').contact-form__btn.contact-form__btn_submit
+                        | Отправить
+                    button(type='reset').contact-form__btn.contact-form__btn_cancel
+                        | Очистить
+    footer.section.footer.footer_absolute
         .footer__top
             .footer__block
                 | Сайт портфолио

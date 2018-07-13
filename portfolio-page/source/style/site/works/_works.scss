@@ -1,13 +1,14 @@
 .works {
+    padding-top: 52px;
     display: flex;
     flex-wrap: wrap;
+    background: $white;
     &__left {
         display: flex;
         justify-content: center;
         height: 750px;
         width: 50%;
         background: rgba($green, .5);
-        background: $white;
         @include adaptive('tablet') {
             height: 530px;
             width: 100%;
