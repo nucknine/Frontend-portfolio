@@ -71,11 +71,11 @@ block content
                 | Связаться со мной
             form(action='', method='GET').contact-form__form
                 .contact-form__body
-                    .contact-form__group
+                    fieldset.contact-form__group
                         input(type='text' placeholder='Имя' name='name').contact-form__control
-                    .contact-form__group
+                    fieldset.contact-form__group
                         input(type='text' placeholder='Email' name='email').contact-form__control
-                    .contact-form__group
+                    fieldset.contact-form__group
                         textarea(placeholder='Ваше сообщение' name='email').contact-form__control.contact-form__textarea
                 .contact-form__buttons
                     button(type='submit').contact-form__btn.contact-form__btn_submit
@@ -100,11 +100,11 @@ block content
                     .navigation__item
                         a.navigation__link(href="./authorize.html")
                             | Авторизация
-                    ul.socials.footer__socials
-                        each item in ['vk', 'github', 'in']
-                            li.socials__item
-                                a(href="#" class=`socials__link socials__link_${item}`)
-                                    +icon(item)
+                ul.socials.footer__socials
+                    each item in ['vk', 'github', 'in']
+                        li.socials__item
+                            a(href="#" class=`socials__link socials__link_${item}`)
+                                +icon(item)
             .footer__block
                 blockquote.quote
                     | Пишите код так, как будто сопровождать его

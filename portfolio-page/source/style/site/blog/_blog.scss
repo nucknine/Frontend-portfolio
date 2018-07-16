@@ -8,8 +8,14 @@
     &__left {
         text-align: right;
         @include grid-span(3, 1);
+        @include adaptive('tablet') {
+            display: none;
+        }
     }
     &__right {
         @include grid-span(8, 5);
+        @include adaptive('tablet') {
+            @include grid-span(12, 1);
+        }
     }
 }

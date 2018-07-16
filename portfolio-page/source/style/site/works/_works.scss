@@ -8,7 +8,7 @@
         justify-content: center;
         height: 750px;
         width: 50%;
-        background: rgba($green, .5);
+        background: $lightgreen;
         @include adaptive('tablet') {
             height: 530px;
             width: 100%;
@@ -26,6 +26,7 @@
         text-align: center;
     }
     &__stack {
+        text-align: center;
         margin-top: 13px;
         color: $green;
     }
@@ -64,7 +65,7 @@
     &__buttons-mask {
         width: 100%;
         height: 100%;
-        background: $green;
+        background: $lightgreen;
         opacity: .4;
         transition: opacity .2s ease-in;
     }

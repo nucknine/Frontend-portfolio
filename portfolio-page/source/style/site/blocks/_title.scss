@@ -4,6 +4,7 @@
   @include sansus();
   font-size: 65px;
   text-transform: uppercase;
+  text-align: center;
   line-height: 1.25;
   padding: 52px 32px;
   display: inline-block;
@@ -11,6 +12,9 @@
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+  @include adaptive('smart') {
+    width: 100%;
+  }
 
   $margin: 7px;
 

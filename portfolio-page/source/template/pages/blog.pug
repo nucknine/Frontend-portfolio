@@ -90,11 +90,11 @@ block content
                     .navigation__item
                         a.navigation__link(href="./authorize.html")
                             | Авторизация
-                    ul.socials.footer__socials
-                        each item in ['vk', 'github', 'in']
-                            li.socials__item
-                                a(href="#" class=`socials__link socials__link_${item}`)
-                                    +icon(item)
+                ul.socials.footer__socials
+                    each item in ['vk', 'github', 'in']
+                        li.socials__item
+                            a(href="#" class=`socials__link socials__link_${item}`)
+                                +icon(item)
             .footer__block
                 blockquote.quote
                     | Пишите код так, как будто сопровождать его

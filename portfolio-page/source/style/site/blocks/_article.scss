@@ -2,6 +2,9 @@
     padding-bottom: 52px;
     margin-bottom: 52px;
     border-bottom: 4px solid $gray;
+    &:last-child {
+        border-bottom: none;
+    }
     &__title {
         font-weight: 500;
         margin-bottom: 13px;

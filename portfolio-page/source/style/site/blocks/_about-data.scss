@@ -6,6 +6,12 @@
     &__description {
         margin-bottom: 52px;
         width: 90%;
+        @include adaptive('tablet') {
+            width: 60%;
+        }
+        @include adaptive('smart') {
+            width: 90%;
+        }
     }
     &__content {
         width: 90%;

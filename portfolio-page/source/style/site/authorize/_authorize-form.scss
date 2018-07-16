@@ -1,0 +1,168 @@
+.authorize-form {
+    z-index: 5;
+    @include centered('both');
+    top: 40%;
+    padding: 26px 13px 0 13px;
+    height:auto;
+    border-radius: 7px;
+    background: rgba($gray, .3);
+    overflow: hidden;
+    &__title {
+        color: $white;
+        @include centered('x');
+        position: relative;
+        text-align: center;
+    }
+    &__body {
+        padding: 13px 0;
+    }
+    &__group {
+        position: relative;
+        text-align: center;
+        justify-content: center;
+        display: flex;
+        color: $white;
+        margin-top: 13px;
+        border: none;
+    }
+    &__control {
+        outline: none;
+        width: 100%;
+        border: none;
+        border-radius: 26px;
+        padding: 13px;
+        &_text {
+            padding-left: 39px;
+        }
+        &_half {
+            width: 50%;
+        }
+        &::placeholder {
+            font-size: 16px;
+            font-weight: 300;
+        }
+    }
+    &__input-icon {
+        position: absolute;
+        top: 5px;
+        left: 22px;
+        display: block;
+        background-color: $gray;
+        height: 51px;
+        width: 39px;
+    }
+    &__label-checkbox {
+        padding-left: 35px;
+        margin-bottom: 12px;
+        display: block;
+        position: relative;
+        cursor: pointer;
+        user-select: none;
+        &:hover .authorize-form__checkmark {
+            background-color: $gray;
+        }
+        & input:checked ~ .authorize-form__checkmark {
+            background-color: $green;
+        }
+        & input:checked ~ .authorize-form__checkmark:after {
+            display: block;
+        }
+    }
+    &__checkmark {
+        position: absolute;
+        top: 0;
+        left: 75px;
+        height: 25px;
+        width: 25px;
+        background-color: $white;
+        &:after {
+            display: none;
+            content: "";
+            position: absolute;
+            left: 9px;
+            top: 5px;
+            width: 5px;
+            height: 10px;
+            border: solid $white;
+            border-width: 0 3px 3px 0;
+            transform: rotate(45deg);
+        }
+    }
+    &__label-radio {
+        padding-left: 35px;
+        margin-bottom: 12px;
+        display: block;
+        position: relative;
+        cursor: pointer;
+        user-select: none;
+        &:hover .authorize-form__radiomark {
+            background-color: $gray;
+        }
+        & input:checked ~ .authorize-form__radiomark {
+            background-color: $green;
+        }
+        & input:checked ~ .authorize-form__radiomark:after {
+            display: block;
+        }
+    }
+    &__radiomark {
+        position: absolute;
+        top: 0;
+        left: 26px;
+        height: 25px;
+        width: 25px;
+        background-color: #eee;
+        border-radius: 50%;
+        &:after {
+            display: none;
+            content: "";
+            position: absolute;
+            left: 9px;
+            top: 9px;
+            width: 8px;
+            height: 8px;
+            background-color: $black;
+            border-radius: 50%;
+        }
+    }
+    &__checkbox,
+    &__radio {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
+    &__buttons {
+        display: flex;
+        background-color: $green;
+        height: 50px;
+        margin: 0 -13px;
+    }
+    &__btn {
+        cursor: pointer;
+        color: $white;
+        outline: none;
+        border: none;
+        background-color: transparent;
+        width: 50%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        border-right: 1px solid $white;
+        &:last-child {
+            border-right: none;
+        }
+        &:hover {
+            background-color: darken($green, 10%);
+        }
+    }
+}
+
+.icon {
+    &-password {
+        @include centered('both');
+    }
+    &-login {
+        @include centered('both');
+    }
+}

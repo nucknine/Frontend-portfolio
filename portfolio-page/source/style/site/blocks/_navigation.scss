@@ -5,6 +5,12 @@
     flex-wrap: wrap;
     align-items: baseline;
     line-height: 1;
+    @include adaptive('smart') {
+        justify-content: space-around;
+    }
+    &__item {
+        margin-right: 13px;
+    }
     &__link {
         display: flex;
         align-items: center;

@@ -2,7 +2,12 @@
     &_absolute {
         position: absolute;
         bottom: 0;
+        @include adaptive('smart') {
+            position: relative;
+            background-color: rgba($green, .85);
+        }
     }
+
     color: $gray;
     font-weight: 300;
     width: 100%;
@@ -21,12 +26,17 @@
         @include adaptive('tablet') {
             width: 50%;
         }
+        @include adaptive('smart') {
+            width: 100%;
+            text-align: center;
+            justify-content: center;
+        }
         &:last-child {
             @include adaptive('tablet') {
                 width: 100%;
             }
         }
-        &:nth-child(2):after, :nth-child(2):before {
+        &:nth-child(2):after, &:nth-child(2):before {
             position: absolute;
             top: 25px;
             left: 0;
@@ -35,6 +45,10 @@
             width: 1px;
             height: 90px;
             background-color: rgba($gray, .85);
+        }
+        &:nth-child(2):before {
+            left: initial;
+            right: 0;
         }
     }
     &__socials {

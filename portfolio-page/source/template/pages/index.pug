@@ -6,7 +6,7 @@ block variables
 block content
     section.section.welcome
         .welcome__bg
-            button.btn-authorize.welcome__btn-authorize
+            a(href="./authorize.html").btn-authorize.welcome__btn-authorize
                 | Авторизоваться
             .greet-box.welcome__greet-box
                 .greet-box__top
@@ -34,6 +34,6 @@ block content
                         .navigation__item.greet-box__item
                             a.navigation__link(href="./blog.html")
                                 | Блог
-    footer.section.footer
+    footer.section.footer.footer_absolute
         .footer__bottom.footer__bottom_fill_transparent
             | Oleg Maximov | nucknine | 2018

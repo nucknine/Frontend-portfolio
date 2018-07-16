@@ -25,6 +25,15 @@
   &__section-title {
     @include centered('x');
     top: -48px;
+    @include adaptive('tablet-landscape') {
+      width: 60%;
+    }
+    @include adaptive('tablet') {
+      width: 60%;
+    }
+    @include adaptive('smart') {
+      width: 90%;
+    }
   }
 
   &__right {

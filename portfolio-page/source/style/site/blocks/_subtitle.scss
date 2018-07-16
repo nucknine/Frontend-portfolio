@@ -4,12 +4,15 @@
     font-size: 33px;
     text-transform: uppercase;
     line-height: 1.25;
-    padding: 13px 39px;
-    display: inline-block;
+    padding: 13px 39px;    
+    // display: inline-block;
     position: relative;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     $margin: 7px;
 

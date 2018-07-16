@@ -1,12 +1,24 @@
 .map {
     position: relative;
     background: $green;
+    @include adaptive('smart') {
+        background-color: $white;
+    }
     &__contacts {
         z-index: 999;
         @include centered('both');
         top: 40%;
+        @include adaptive('smart') {
+            @include centered('x');
+            position: relative;
+            border-radius: 0%;
+            background-color: $white;
+        }
     }
     &__box{
         height: 960px;
+        @include adaptive('smart') {
+            height: 430px;
+        }
     }
 }
