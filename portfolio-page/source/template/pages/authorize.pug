@@ -12,13 +12,15 @@ block content
                 form(action='', method='GET').authorize-form__form
                     .authorize-form__body
                         fieldset.authorize-form__group
-                            input(type='text' placeholder='Логин' name='login').authorize-form__control.authorize-form__control_text
-                            .authorize-form__input-icon
-                                +icon('login')
+                            .authorize-form__input-container
+                                input(type='text' placeholder='Логин' name='login').authorize-form__control.authorize-form__control_text
+                                .authorize-form__input-icon
+                                    +icon('login')
                         fieldset.authorize-form__group
-                            input(type='password' placeholder='Пароль' name='pwd').authorize-form__control.authorize-form__control_text
-                            .authorize-form__input-icon
-                                +icon('password')
+                            .authorize-form__input-container
+                                input(type='password' placeholder='Пароль' name='pwd').authorize-form__control.authorize-form__control_text
+                                .authorize-form__input-icon
+                                    +icon('password')
                         fieldset.authorize-form__group
                             label.authorize-form__label-checkbox
                                 | Я человек
@@ -31,12 +33,12 @@ block content
                             .authorize-form__group
                                 .authorize-form__control.authorize-form__control_half
                                     label.authorize-form__label-radio
-                                        | да
+                                        | Да
                                         input(type='radio' name='human-radio' value='human-radio-true' id='human-radio-true').authorize-form__radio
                                         span.authorize-form__radiomark
                                 .authorize-form__control.authorize-form__control_half
                                     label.authorize-form__label-radio
-                                        | не уверен
+                                        | Не уверен
                                         input(type='radio' name='human-radio' value='human-radio-false' id='human-radio-false').authorize-form__radio
                                         span.authorize-form__radiomark
                     .authorize-form__buttons
