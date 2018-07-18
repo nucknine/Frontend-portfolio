@@ -2,6 +2,9 @@
 
 svg4everybody();
 
+/**
+ * google map initialization
+ */
 function initMap() {
     var myLatlng = new google.maps.LatLng(40.674, -73.945);
 
@@ -119,3 +122,36 @@ function initMap() {
 }
 
 initMap();
+
+/**
+ * scroll parallax
+ */
+
+var Parallax = function(){
+    var bg = document.querySelector('.hero__bg'),
+        user = document.querySelector('.hero__user-container-js'),
+        sectionText = document.querySelector('.section-title');
+
+        return {
+            move: function(block, windowScroll, strafeAmount) {
+                var strafe = windowScroll / -strafeAmount + '%';
+                var style = block.style;
+                var transformString = 'translate3d(0,' + strafe +', 0)';
+
+                style.transform = transformString;
+                style.webkitTransform = transformString;
+            },
+
+            init: function(wScroll) {
+                this.move(bg, wScroll, 45);
+                this.move(sectionText, wScroll, 10);
+                this.move(user, wScroll, 5);
+            }
+        }
+};
+
+window.onscroll = function () {
+    var wScroll = window.pageYOffset;
+    var paralax = new Parallax;
+    paralax.init(wScroll);
+}

@@ -18,7 +18,7 @@ block variables
 block content
   section.section.hero
     .hero__bg
-      //- img(src="assets/img/portfolio.jpg" alt="").hero__img-bg
+      img(src="assets/img/portfolio.jpg" alt="").hero__img-bg
     ul.socials.hero__socials
       each item in ['vk', 'github', 'in']
         li.socials__item
@@ -35,7 +35,8 @@ block content
       //-миксин hero__user-block на блоке user (примесь добавляет особенности блоку в зависимости от
       //-местонахождения: section hero в данном случае)
       //-блок user остается переиспользуемым, а класс .hero__user-block добавляет абсолютное позиционирование
-      .user.hero__user-block
+    .user.hero__user-block
+      .hero__user-container-js
         .user__photo
           .user__photo-avatar
             img(src="assets/img/user.png" alt="").user__photo-img

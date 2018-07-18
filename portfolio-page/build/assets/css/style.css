@@ -462,7 +462,7 @@ b {
     left: 0.4375rem; }
 
 .user {
-  width: 100%;
+  text-align: center;
   color: #efeee9; }
   .user__photo {
     margin-bottom: 0.625rem; }
@@ -835,20 +835,18 @@ b {
 ## Hero
 --------------------------------------------------------------*/
 .hero {
-  height: 37.5rem;
+  min-height: 37.5rem;
   overflow: hidden;
   position: relative; }
   .hero__bg {
-    background-image: url("/assets/img/portfolio.jpg");
-    height: 100%;
-    background-position-x: center;
-    background-position-y: top;
-    background-repeat: no-repeat;
-    background-size: cover; }
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
   .hero__img-bg {
-    width: 100%;
-    min-height: 55rem;
-    min-width: 112.5rem; }
+    display: block;
+    max-width: 290%; }
   .hero__socials {
     position: absolute;
     top: 2.1875rem;
