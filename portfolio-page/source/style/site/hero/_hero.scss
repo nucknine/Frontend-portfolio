@@ -4,14 +4,18 @@
   position: relative;
   &__bg {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    // top: 0;
+    // left: 0;
+    // right: 0;
+    // bottom: 0;
+  }
+  &__user-container-js {
+
   }
   &__img-bg {
     display: block;
     max-width: 290%;
+
     // min-height: 880px;
     // min-width: 1800px;
   }

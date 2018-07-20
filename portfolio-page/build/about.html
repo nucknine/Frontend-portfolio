@@ -18,7 +18,7 @@
   <body>
     <div class="wrapper">
       <section class="section hero">
-        <div class="hero__bg"><img class="hero__img-bg" src="assets/img/portfolio.jpg" alt=""></div>
+        <div class="hero__bg js-s-parallax"><img class="hero__img-bg" src="assets/img/portfolio.jpg" alt=""></div>
         <ul class="socials hero__socials">
           <li class="socials__item"><a class="socials__link socials__link_vk" href="#">
               <svg class="icon icon-vk ">
@@ -39,9 +39,9 @@
           <svg class="icon icon-arrow_down ">
             <use xlink:href="assets/img/sprites/sprite.svg#arrow_down"></use>
           </svg></a>
-        <div class="hero__title"><img class="section-title" src="assets/img/decor/porfolio-word.png" alt=""></div>
+        <div class="hero__title"><img class="section-title js-s-parallax" src="assets/img/decor/porfolio-word.png" alt=""></div>
         <div class="user hero__user-block">
-          <div class="hero__user-container-js">
+          <div class="js-s-parallax">
             <div class="user__photo">
               <div class="user__photo-avatar"><img class="user__photo-img" src="assets/img/user.png" alt=""></div>
             </div>
@@ -74,171 +74,173 @@
           <svg class="triangle triangle_fill_beige about__triangles" viewbox="0 0 1000 100" preserveAspectRatio="none">
             <polygon points="0,100 1000,0 1000,100"></polygon>
           </svg>
-          <div class="about-data">
-            <div class="about-data__description about-user-info">
-              <div class="about-user-info__title">
-                <div class="subtitle">Чем я могу быть вам полезен</div>
-              </div>
-              <div class="about-user-info__text">
-                <p>Больше всего меня привлекает Frontend разработка,</p>но я так же могу решать задачи и на Backend.
-                Но давайте по порядку.
-              </div>
+          <div class="about-data"></div>
+          <div class="about-data__description about-user-info">
+            <div class="about-user-info__title">
+              <div class="subtitle">Чем я могу быть вам полезен</div>
             </div>
-            <div class="about-data__content">
-              <ul class="skills">
-                <div class="skills__item">
-                  <div class="skill-section">
-                    <div class="skill-section__title">Frontend</div>
-                    <UL class="skill-section__list">
-                      <li class="skill-section__item">
-                        <div class="skill">
-                          <svg class="skill__circle" viewBox="0 0 110 110">
-                            <circle class="skill__layer" cx="55" cy="55" r="45"></circle>
-                            <circle class="skill__sector" cx="55" cy="55" r="45"></circle>
-                          </svg>
-                          <div class="skill__name">HTML5</div>
-                        </div>
-                      </li>
-                      <li class="skill-section__item">
-                        <div class="skill">
-                          <svg class="skill__circle" viewBox="0 0 110 110">
-                            <circle class="skill__layer" cx="55" cy="55" r="45"></circle>
-                            <circle class="skill__sector" cx="55" cy="55" r="45"></circle>
-                          </svg>
-                          <div class="skill__name">CSS3</div>
-                        </div>
-                      </li>
-                      <li class="skill-section__item">
-                        <div class="skill">
-                          <svg class="skill__circle" viewBox="0 0 110 110">
-                            <circle class="skill__layer" cx="55" cy="55" r="45"></circle>
-                            <circle class="skill__sector" cx="55" cy="55" r="45"></circle>
-                          </svg>
-                          <div class="skill__name">JS</div>
-                        </div>
-                      </li>
-                    </UL>
-                  </div>
+          </div>
+          <div class="about-user-info__text">
+            <p>
+              Больше всего меня привлекает Frontend разработка,
+              но я так же могу решать задачи и на Backend.
+              Но давайте по порядку.
+            </p>
+          </div>
+          <div class="about-data__content animate">
+            <ul class="skills">
+              <div class="skills__item">
+                <div class="skill-section">
+                  <div class="skill-section__title">Frontend</div>
+                  <UL class="skill-section__list">
+                    <li class="skill-section__item">
+                      <div class="skill">
+                        <svg class="skill__circle" viewBox="0 0 110 110">
+                          <circle class="skill__layer" cx="55" cy="55" r="45"></circle>
+                          <circle class="skill__sector" cx="55" cy="55" r="45"></circle>
+                        </svg>
+                        <div class="skill__name">HTML5</div>
+                      </div>
+                    </li>
+                    <li class="skill-section__item">
+                      <div class="skill">
+                        <svg class="skill__circle" viewBox="0 0 110 110">
+                          <circle class="skill__layer" cx="55" cy="55" r="45"></circle>
+                          <circle class="skill__sector" cx="55" cy="55" r="45"></circle>
+                        </svg>
+                        <div class="skill__name">CSS3</div>
+                      </div>
+                    </li>
+                    <li class="skill-section__item">
+                      <div class="skill">
+                        <svg class="skill__circle" viewBox="0 0 110 110">
+                          <circle class="skill__layer" cx="55" cy="55" r="45"></circle>
+                          <circle class="skill__sector" cx="55" cy="55" r="45"></circle>
+                        </svg>
+                        <div class="skill__name">JS</div>
+                      </div>
+                    </li>
+                  </UL>
                 </div>
-                <div class="skills__item">
-                  <div class="skill-section">
-                    <div class="skill-section__title">Backend</div>
-                    <UL class="skill-section__list">
-                      <li class="skill-section__item">
-                        <div class="skill">
-                          <svg class="skill__circle" viewBox="0 0 110 110">
-                            <circle class="skill__layer" cx="55" cy="55" r="45"></circle>
-                            <circle class="skill__sector" cx="55" cy="55" r="45"></circle>
-                          </svg>
-                          <div class="skill__name">PHP</div>
-                        </div>
-                      </li>
-                      <li class="skill-section__item">
-                        <div class="skill">
-                          <svg class="skill__circle" viewBox="0 0 110 110">
-                            <circle class="skill__layer" cx="55" cy="55" r="45"></circle>
-                            <circle class="skill__sector" cx="55" cy="55" r="45"></circle>
-                          </svg>
-                          <div class="skill__name">C#</div>
-                        </div>
-                      </li>
-                      <li class="skill-section__item">
-                        <div class="skill">
-                          <svg class="skill__circle" viewBox="0 0 110 110">
-                            <circle class="skill__layer" cx="55" cy="55" r="45"></circle>
-                            <circle class="skill__sector" cx="55" cy="55" r="45"></circle>
-                          </svg>
-                          <div class="skill__name">mySQL</div>
-                        </div>
-                      </li>
-                      <li class="skill-section__item">
-                        <div class="skill">
-                          <svg class="skill__circle" viewBox="0 0 110 110">
-                            <circle class="skill__layer" cx="55" cy="55" r="45"></circle>
-                            <circle class="skill__sector" cx="55" cy="55" r="45"></circle>
-                          </svg>
-                          <div class="skill__name">XML</div>
-                        </div>
-                      </li>
-                    </UL>
-                  </div>
+              </div>
+              <div class="skills__item">
+                <div class="skill-section">
+                  <div class="skill-section__title">Backend</div>
+                  <UL class="skill-section__list">
+                    <li class="skill-section__item">
+                      <div class="skill">
+                        <svg class="skill__circle" viewBox="0 0 110 110">
+                          <circle class="skill__layer" cx="55" cy="55" r="45"></circle>
+                          <circle class="skill__sector" cx="55" cy="55" r="45"></circle>
+                        </svg>
+                        <div class="skill__name">PHP</div>
+                      </div>
+                    </li>
+                    <li class="skill-section__item">
+                      <div class="skill">
+                        <svg class="skill__circle" viewBox="0 0 110 110">
+                          <circle class="skill__layer" cx="55" cy="55" r="45"></circle>
+                          <circle class="skill__sector" cx="55" cy="55" r="45"></circle>
+                        </svg>
+                        <div class="skill__name">C#</div>
+                      </div>
+                    </li>
+                    <li class="skill-section__item">
+                      <div class="skill">
+                        <svg class="skill__circle" viewBox="0 0 110 110">
+                          <circle class="skill__layer" cx="55" cy="55" r="45"></circle>
+                          <circle class="skill__sector" cx="55" cy="55" r="45"></circle>
+                        </svg>
+                        <div class="skill__name">mySQL</div>
+                      </div>
+                    </li>
+                    <li class="skill-section__item">
+                      <div class="skill">
+                        <svg class="skill__circle" viewBox="0 0 110 110">
+                          <circle class="skill__layer" cx="55" cy="55" r="45"></circle>
+                          <circle class="skill__sector" cx="55" cy="55" r="45"></circle>
+                        </svg>
+                        <div class="skill__name">XML</div>
+                      </div>
+                    </li>
+                  </UL>
                 </div>
-                <div class="skills__item">
-                  <div class="skill-section">
-                    <div class="skill-section__title">Workflow</div>
-                    <UL class="skill-section__list">
-                      <li class="skill-section__item">
-                        <div class="skill">
-                          <svg class="skill__circle" viewBox="0 0 110 110">
-                            <circle class="skill__layer" cx="55" cy="55" r="45"></circle>
-                            <circle class="skill__sector" cx="55" cy="55" r="45"></circle>
-                          </svg>
-                          <div class="skill__name">Git</div>
-                        </div>
-                      </li>
-                      <li class="skill-section__item">
-                        <div class="skill">
-                          <svg class="skill__circle" viewBox="0 0 110 110">
-                            <circle class="skill__layer" cx="55" cy="55" r="45"></circle>
-                            <circle class="skill__sector" cx="55" cy="55" r="45"></circle>
-                          </svg>
-                          <div class="skill__name">Gulp</div>
-                        </div>
-                      </li>
-                      <li class="skill-section__item">
-                        <div class="skill">
-                          <svg class="skill__circle" viewBox="0 0 110 110">
-                            <circle class="skill__layer" cx="55" cy="55" r="45"></circle>
-                            <circle class="skill__sector" cx="55" cy="55" r="45"></circle>
-                          </svg>
-                          <div class="skill__name">npm</div>
-                        </div>
-                      </li>
-                    </UL>
-                  </div>
+              </div>
+              <div class="skills__item">
+                <div class="skill-section">
+                  <div class="skill-section__title">Workflow</div>
+                  <UL class="skill-section__list">
+                    <li class="skill-section__item">
+                      <div class="skill">
+                        <svg class="skill__circle" viewBox="0 0 110 110">
+                          <circle class="skill__layer" cx="55" cy="55" r="45"></circle>
+                          <circle class="skill__sector" cx="55" cy="55" r="45"></circle>
+                        </svg>
+                        <div class="skill__name">Git</div>
+                      </div>
+                    </li>
+                    <li class="skill-section__item">
+                      <div class="skill">
+                        <svg class="skill__circle" viewBox="0 0 110 110">
+                          <circle class="skill__layer" cx="55" cy="55" r="45"></circle>
+                          <circle class="skill__sector" cx="55" cy="55" r="45"></circle>
+                        </svg>
+                        <div class="skill__name">Gulp</div>
+                      </div>
+                    </li>
+                    <li class="skill-section__item">
+                      <div class="skill">
+                        <svg class="skill__circle" viewBox="0 0 110 110">
+                          <circle class="skill__layer" cx="55" cy="55" r="45"></circle>
+                          <circle class="skill__sector" cx="55" cy="55" r="45"></circle>
+                        </svg>
+                        <div class="skill__name">npm</div>
+                      </div>
+                    </li>
+                  </UL>
                 </div>
-              </ul>
-            </div>
+              </div>
+            </ul>
           </div>
         </div>
       </section>
       <section class="section map">
         <div class="contacts map__contacts">
           <div class="subtitle contacts__title">контакты</div>
-          <div class="contacts__list">
-            <div class="contacts__item">
+          <ul class="contacts__list">
+            <li class="contacts__item">
               <div class="contacts__icon">
                 <svg class="icon icon-skype ">
                   <use xlink:href="assets/img/sprites/sprite.svg#skype"></use>
                 </svg>
               </div>
               <div class="contacts__text">kaptan4eg</div>
-            </div>
-            <div class="contacts__item">
+            </li>
+            <li class="contacts__item">
               <div class="contacts__icon">
                 <svg class="icon icon-envelope ">
                   <use xlink:href="assets/img/sprites/sprite.svg#envelope"></use>
                 </svg>
               </div>
               <div class="contacts__text">nucknine@gmail.com</div>
-            </div>
-            <div class="contacts__item">
+            </li>
+            <li class="contacts__item">
               <div class="contacts__icon">
                 <svg class="icon icon-phone ">
                   <use xlink:href="assets/img/sprites/sprite.svg#phone"></use>
                 </svg>
               </div>
               <div class="contacts__text">+7 999 504 5814</div>
-            </div>
-            <div class="contacts__item">
+            </li>
+            <li class="contacts__item">
               <div class="contacts__icon">
                 <svg class="icon icon-map_marker ">
                   <use xlink:href="assets/img/sprites/sprite.svg#map_marker"></use>
                 </svg>
               </div>
               <div class="contacts__text">Петрозаводск</div>
-            </div>
-          </div>
+            </li>
+          </ul>
         </div>
         <div class="map__box" id="map"></div>
       </section>
@@ -271,8 +273,8 @@
             <blockquote class="quote">
               Пишите код так, как будто сопровождать его
               будет склонный к насилию психопат,
-              который знает, где вы живёте<br><span class="quote_style_bold">- Martin Golding</span>
-            </blockquote>
+              который знает, где вы живёте<br>
+            </blockquote><span class="quote_style_bold">- Martin Golding</span>
           </div>
         </div>
         <div class="footer__bottom">Oleg Maximov | nucknine | 2018</div>

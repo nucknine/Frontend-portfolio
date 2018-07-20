@@ -29,14 +29,6 @@ clearfix миксин-плейсхолдер
 (scss-placeholder'ы используются вместо миксинов
 когда нет параметров (занимают меньше места чем миксины в коде))
 */
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,500,500i&amp;subset=cyrillic" rel="stylesheet"');
-.blog:after {
-  content: ".";
-  visibility: hidden;
-  display: block;
-  height: 0;
-  clear: both; }
-
 /*
 center element
 */
@@ -88,6 +80,7 @@ font-size
 для body задан - 0.8 т.е. 1rem и 1rem
 */
 /*шаблон по которому формирются стили для svg иконок*/
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,500,500i&amp;subset=cyrillic" rel="stylesheet"');
 .icon {
   display: inline-block;
   width: 1em;
@@ -839,11 +832,7 @@ b {
   overflow: hidden;
   position: relative; }
   .hero__bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0; }
+    position: absolute; }
   .hero__img-bg {
     display: block;
     max-width: 290%; }
@@ -919,22 +908,28 @@ b {
 ## Welcome
 --------------------------------------------------------------*/
 .welcome {
-  height: 100vh; }
+  height: 100vh;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
   .welcome__bg {
-    background-image: url("/assets/img/portfolio.jpg");
-    height: 100%;
-    background-position-x: center;
-    background-position-y: top;
-    background-repeat: no-repeat;
-    background-size: cover; }
-  .welcome__greet-box {
+    z-index: -1;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-    z-index: 3; }
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0; }
+  .welcome__img-bg {
+    display: block;
+    max-width: 290%;
+    min-height: 100%; }
   .welcome__btn-authorize {
     position: absolute;
     top: 1.625rem;
@@ -1108,35 +1103,26 @@ b {
 ## Blog
 --------------------------------------------------------------*/
 .blog {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   background-color: #efeee9;
   padding: 3.25rem 0.8125rem 0.8125rem 0.8125rem;
   width: 100%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center; }
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
   .blog__left {
-    text-align: right;
-    width: 22.91667%;
-    float: left;
-    margin-right: -100%;
-    margin-left: 1.04167%;
-    clear: none; }
+    width: 30%;
+    text-align: right; }
     @media only screen and (max-width: 48rem) {
       .blog__left {
         display: none; } }
   .blog__right {
-    width: 64.58333%;
-    float: right;
-    margin-left: 0;
-    margin-right: 1.04167%;
-    clear: none; }
+    width: 60%; }
     @media only screen and (max-width: 48rem) {
       .blog__right {
-        width: 97.91667%;
-        float: right;
-        margin-left: 0;
-        margin-right: 1.04167%;
-        clear: none; } }
+        width: 100%; } }
 
 /*--------------------------------------------------------------
 ## Works
@@ -1356,14 +1342,6 @@ b {
   position: relative; }
 
 .authorize-form {
-  z-index: 5;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  top: 40%;
   padding: 1.625rem 0.8125rem 0 0.8125rem;
   height: auto;
   border-radius: 0.4375rem;

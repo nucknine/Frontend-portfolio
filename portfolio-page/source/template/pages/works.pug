@@ -5,8 +5,8 @@ block variables
 
 block content
     section.section.hero
-        .hero__bg
-            //- img(src="assets/img/decor/blog-header.png" alt="").hero__img-bg
+        .hero__bg.js-s-parallax
+            img(src="assets/img/portfolio.jpg" alt="").hero__img-bg
         ul.socials.hero__socials
             each item in ['vk', 'github', 'in']
                 li.socials__item
@@ -15,6 +15,7 @@ block content
         a(href="#").hamburger.hero__hamburger
             +icon('hamburger')
         a(href="#").down-arrow
+            //- img(src="assets/img/icons/arrow_down.svg")
             +icon('arrow_down')
         .hero__title
             //- подложка portfolio
@@ -23,10 +24,11 @@ block content
             //- местонахождения: section hero в данном случае)
             //- блок user остается переиспользуемым, а класс .hero__user-block добавляет абсолютное позиционирование
             .user.hero__user-block
-                .user__photo
-                    .user__photo-avatar
-                        img(src="assets/img/user.png" alt="").user__photo-img
-                +title('Мои работы', '', 'hero__works-title')
+                .js-s-parallax
+                    .user__photo
+                        .user__photo-avatar
+                            img(src="assets/img/user.png" alt="").user__photo-img
+                    +title('Мои работы', '', 'hero__works-title')
     section.section.tria
         .tria__left
             svg(
