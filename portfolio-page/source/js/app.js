@@ -3,13 +3,17 @@ import { initMap } from './google-map.js';
 import { mouseParallax, scrollParallax } from './parallax.js';
 import { waypoint } from './waypoint-animation.js';
 
-svg4everybody();
+window.onload = () => {
 
-let mapBox = document.getElementById('map');
+    svg4everybody();
 
-if (mapBox) {
-    initMap(mapBox);
+    let mapBox = document.getElementById('map');
+
+    if (mapBox) {
+        initMap(mapBox);
+    }
+    waypoint();
+    window.addEventListener('mousemove', mouseParallax);
+    window.addEventListener('scroll', scrollParallax);
+
 }
-waypoint();
-window.addEventListener('mousemove', mouseParallax);
-window.addEventListener('scroll', scrollParallax);

@@ -1,23 +1,49 @@
+/**
+ * описание обьекта waypoint анимации
+ */
 var animateCss = () => {
-    var checkDistance = (scrollTop, elem) => {
-        let offset = elem.offsetTop,
-            windowMargin = Math.ceil(window.innerHeight / 3),
-            topBorder = offset - scrollTop - windowMargin,
-            bottomEdge = elem.offsetHeight + offset,
-            bottomBorder = scrollTop + windowMargin - bottomEdge;
+    /**
+     * виден ли элемент с учетом отступа windowMargin
+    */
+    var checkDistance = (elem) => {
+        let
+            offset = elem.getBoundingClientRect().top,
+            windowMargin = Math.ceil(window.innerHeight / 2),
+            topBorder = offset - windowMargin,
+            bottomBorder = offset + elem.offsetHeight - windowMargin;
 
-        console.log(topBorder, bottomBorder);
-        // console.log(offset, elem.offsetHeight);
+        return (topBorder <= 0 && bottomBorder >= 0);
+    }
 
+    /**
+     * типы анимаций
+    */
+    var animationsActions = {
+        toRight: function() {
+            this.classList.add('toRight');
+        },
+        fadeIn: function() {
+            this.classList.add('fadeIn');
+        }
     }
 
     return {
         init: function() {
             window.addEventListener('scroll', () => {
-                var scrollTop = window.scrollTop;
-                var elem = document.querySelector('.animate');
+                var collection = document.querySelectorAll('.animate'),
+                    elems = [].slice.call(collection);
+                /**
+                 * перебор всех элементов с классом animate
+                 * добавление класса с анимацией
+                 */
 
-                checkDistance(scrollTop, elem);
+                elems.forEach(element => {
+                    if (checkDistance(element)) {
+                        let animation = element.dataset.animate;
+
+                        animationsActions[animation].call(element);
+                    }
+                });
             })
         }
     }

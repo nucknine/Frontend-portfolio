@@ -57,7 +57,7 @@ block content
             //-для дополнительной стилизации .title
             +title('Обо мне', 'about-header.png', 'about__section-title')
             .user-about
-                .user-about__picture
+                .user-about__picture.animate(data-animate="fadeIn")
                     img(src="assets/img/user-photo.jpg" alt="").user-about__photo-img
                 //-позиционирование и отступы на классе user-about__title,
                 //-а оформление на .subtitle (переиспользуемый класс)
@@ -88,14 +88,14 @@ block content
                     | но я так же могу решать задачи и на Backend.
                     | Но давайте по порядку.
             //-блок скиллов
-            .about-data__content.animate
+            .about-data__content
                 ul.skills
                     //-Frontend, Backend, Workflow
                     each skill in skills
                         //-скиллы отдельной категории
                         each skillArr, skillName in skill
                             .skills__item
-                                .skill-section
+                                .skill-section.animate(data-animate="fadeIn")
                                     .skill-section__title= skillName
                                     UL.skill-section__list
                                         each skillTitle in skillArr
@@ -109,7 +109,7 @@ block content
                                                     .skill__name= skillTitle
 
     section.section.map
-        .contacts.map__contacts
+        .contacts.map__contacts.animate(data-animate="fadeIn")
             .subtitle.contacts__title
                 | контакты
             ul.contacts__list
