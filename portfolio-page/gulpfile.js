@@ -32,13 +32,13 @@ $.gulp.task('default', $.gulp.series(
     // 2ая задача внутри несколько параллельных
     $.gulp.parallel(
         'sass',
-        'pug',
         'js:foundation',
         'js:process',
         'copy:image',
         'css:foundation',
         'copy:fonts'
     ),
+    'nodemon',
     // 3ая задача внутри несколько параллельных
     $.gulp.parallel(
         'watch',

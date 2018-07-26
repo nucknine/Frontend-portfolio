@@ -3,11 +3,10 @@
 module.exports = function() {
     $.gulp.task('serve', function() {
         $.browserSync.init({
-            open: 'external',
-            port: 8080,
-            server: $.config.root
+            proxy: 'http://localhost:3000',
+            port: 4000
         });
 
-        $.browserSync.watch([$.config.root + '/**/*.*', '!**/*.css'], $.browserSync.reload);
+        // $.browserSync.watch([$.config.root + '/**/*.*', '!**/*.css'], $.browserSync.reload);
     });
 };
