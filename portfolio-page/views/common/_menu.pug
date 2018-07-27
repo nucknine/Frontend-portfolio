@@ -1,0 +1,6 @@
+.menu
+    ul.menu__container
+        each href, title in links
+            li.menu__row
+                a(href=`${href}`).menu__link
+                    span.menu__subtitle= title

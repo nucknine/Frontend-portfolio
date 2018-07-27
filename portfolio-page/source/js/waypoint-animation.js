@@ -37,6 +37,9 @@ var animateCss = () => {
                  * добавление класса с анимацией
                  */
 
+                if (elems.length == 0) {
+                    return;
+                }
                 elems.forEach(element => {
                     if (checkDistance(element)) {
                         let animation = element.dataset.animate;

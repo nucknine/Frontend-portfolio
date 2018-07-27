@@ -11,13 +11,14 @@ const server = http.createServer(app);
 
 const jsonfile = require('jsonfile');
 const fileVersionControl = 'version.json';
+// имя статики берем из конфига gulp т.е. './public'
 const currentStatic = require('./gulp/config').root;
 const config = require('./config');
 // получаем абсолютный путь к папке upload, в которую будут загружаться картинки
 // проектов
 const uploadDir = path.join(__dirname, config.upload);
-// view engine setup
 
+// view pug engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
@@ -25,11 +26,12 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+// подключаем статику
 app.use(express.static(path.join(__dirname, currentStatic)));
 
 app.use('/', require('./routes/index'));
 app.use('/contact', require('./routes/mail'));
-app.use('/login', require('./routes/login'));
+app.use('/authorize', require('./routes/authorize'));
 app.use('/admin', require('./routes/admin'));
 
 // 404 catch-all handler (middleware)

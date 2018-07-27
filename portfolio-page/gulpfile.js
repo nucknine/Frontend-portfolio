@@ -2,6 +2,7 @@
 
 // глобальный объект доступ к нему есть во всех файлах модулях
 global.$ = {
+    dev: false,
     package: require('./package.json'),
     config: require('./gulp/config'),
     // пути
@@ -36,7 +37,8 @@ $.gulp.task('default', $.gulp.series(
         'js:process',
         'copy:image',
         'css:foundation',
-        'copy:fonts'
+        'copy:fonts',
+        'create:version'
     ),
     'nodemon',
     // 3ая задача внутри несколько параллельных

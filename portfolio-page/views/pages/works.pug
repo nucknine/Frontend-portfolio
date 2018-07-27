@@ -1,8 +1,5 @@
 extends ../_main-template
 
-block variables
-  - var title = 'Works'
-
 block content
     section.section.hero
         .hero__bg.js-s-parallax
@@ -71,14 +68,15 @@ block content
         .contact-form
             .contact-form__title.subtitle
                 | Связаться со мной
-            form(action='', method='GET').contact-form__form
+            form#mail(action='/contact', method='POST').contact-form__form
+                #status.contact-form__status
                 .contact-form__body
                     fieldset.contact-form__group
                         input(type='text' placeholder='Имя' name='name').contact-form__control
                     fieldset.contact-form__group
                         input(type='text' placeholder='Email' name='email').contact-form__control
                     fieldset.contact-form__group
-                        textarea(placeholder='Ваше сообщение' name='email').contact-form__control.contact-form__textarea
+                        textarea(placeholder='Ваше сообщение' name='text').contact-form__control.contact-form__textarea
                 .contact-form__buttons
                     button(type='submit').contact-form__btn.contact-form__btn_submit
                         | Отправить
@@ -91,16 +89,16 @@ block content
             .footer__block
                 nav.navigation
                     .navigation__item
-                        a.navigation__link(href="./works.html")
+                        a.navigation__link(href="./works")
                             | Мои работы
                     .navigation__item
-                        a.navigation__link(href="./about.html")
+                        a.navigation__link(href="./about")
                             | Обо мне
                     .navigation__item
-                        a.navigation__link(href="./blog.html")
+                        a.navigation__link(href="./blog")
                             | Блог
                     .navigation__item
-                        a.navigation__link(href="./authorize.html")
+                        a.navigation__link(href="./authorize")
                             | Авторизация
                 ul.socials.footer__socials
                     each item in ['vk', 'github', 'in']

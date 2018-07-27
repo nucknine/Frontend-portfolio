@@ -8,7 +8,7 @@ module.exports = function() {
             .pipe($.gp.eslint.format())
             .pipe($.webpackStream($.webpackConfig))
             .pipe($.gp.uglify())
-            .pipe($.gp.rename({ suffix: '.min' }))
+            .pipe($.gp.if(!$.dev, $.gp.rename({ suffix: '.min' })))
             .pipe($.gulp.dest($.config.root + '/assets/js'));
     });
 };

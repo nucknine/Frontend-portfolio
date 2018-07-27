@@ -1330,6 +1330,8 @@ b {
             transform: translateX(-50%);
     position: relative;
     text-align: center; }
+  .contact-form__status {
+    text-align: center; }
   .contact-form__body {
     padding: 0.8125rem 0; }
   .contact-form__group {
@@ -1576,5 +1578,15 @@ b {
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%); }
+
+/*--------------------------------------------------------------
+## Admin
+--------------------------------------------------------------*/
+.row {
+  min-width: 53.125rem; }
+
+.col {
+  float: left;
+  width: 50%; }
 
 /*# sourceMappingURL=maps/style.css.map */

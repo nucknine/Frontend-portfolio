@@ -11,6 +11,7 @@ module.exports = function() {
                 rootSize: 16
             }))
             .pipe($.gp.sourcemaps.write('../../source/style/maps'))
+            .pipe($.gp.if(!$.dev, $.gp.rename({ suffix: '.min' })))
             .pipe($.gulp.dest($.config.root + '/assets/css'))
             .pipe($.browserSync.stream());
     })

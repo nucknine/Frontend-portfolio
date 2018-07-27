@@ -1,2 +1,10 @@
 mixin title(title, url, additionClass)
   .title(style=`background-image: url('assets/img/decor/${url}')` class=additionClass)= title
+
+-
+  var links = {
+      "Авторизация": "/authorize",
+      "Главная" : "/",
+      "Блог" : "/blog",
+      "Связаться со мной" : "/contact"
+  };
