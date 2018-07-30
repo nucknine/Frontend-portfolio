@@ -1,8 +1,11 @@
 import fileUpload from './upload';
+import prepareSend from './prepareSend';
 
 const formUpload = document.querySelector('#upload');
+const formBlog = document.querySelector('#blog');
 
 formUpload.addEventListener('submit', prepareSendFile);
+formBlog.addEventListener('submit', prepareSendPost);
 
 function prepareSendFile(e) {
     e.preventDefault();
@@ -23,4 +26,15 @@ function prepareSendFile(e) {
         resultContainer.innerHTML = data;
         formUpload.reset();
     });
+}
+
+function prepareSendPost(e) {
+    e.preventDefault();
+    let data = {
+        title: formBlog.title.value,
+        date: formBlog.date.value,
+        text: formBlog.text.value
+    };
+
+    prepareSend('/admin/addpost', formBlog, data);
 }

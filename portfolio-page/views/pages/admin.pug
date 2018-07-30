@@ -16,7 +16,7 @@ block content
                         input(name="" type="reset" value="Очистить").form__btn-reset
         .col
             .form-container
-                form.form#blog( method="POST")
+                form.form#blog(action='/admin/addpost' method="POST")
                     .form__subtitle Добавить запись в блог
                     .status
                     label.form__input-line

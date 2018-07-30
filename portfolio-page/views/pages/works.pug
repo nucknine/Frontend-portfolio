@@ -39,6 +39,13 @@ block content
                 preserveAspectRatio="none"
                 ).triangle.triangle_fill_white.tria__triangles
                 polygon(points="0,100 1000,0 1000,100")
+    section
+        ul
+            each index in items
+                figure
+                    p
+                        img(src=`${index.picture}`)
+                    figcaption= index.name
     section.section.works
         .works__left
             .works__info
