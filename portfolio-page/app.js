@@ -8,36 +8,39 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const app = express();
 const server = http.createServer(app);
-
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
 const jsonfile = require('jsonfile');
 const fileVersionControl = 'version.json';
 // имя статики берем из конфига gulp т.е. './public'
 const currentStatic = require('./gulp/config').root;
 const config = require('./config');
+const mongoose = require('mongoose');
+
 // получаем абсолютный путь к папке upload, в которую будут загружаться картинки
 // проектов
 const uploadDir = path.join(__dirname, config.upload);
 
-// подключаем модули
-const mongoose = require('mongoose');
-
 mongoose.Promise = global.Promise;
-// mlab.com
-// mongoose.connect('mongodb://root:12345@ds137191.mlab.com:37191/testing');
+
+// mongoose.connect('mongodb://admin:test1234@ds020228.mlab.com:20228/testing');
 mongoose
-    .connect(`mongodb://${config.db.host}:${config.db.port}/${config.db.name}`, {
-        user: config.db.user,
-        pass: config.db.password
-    })
-    .catch(e => {
-        console.error(e);
-        throw e;
-    });
+    .connect(`mongodb://${config.db.user}:${config.db.password}@${config.db.host}:${config.db.port}/${config.db.name}`);
+// mongoose
+//     .connect(`mongodb://${config.db.host}:${config.db.port}/${config.db.name}`, {
+//         user: config.db.user,
+//         pass: config.db.password
+//     })
+//     .catch(e => {
+//         console.error(e);
+//         throw e;
+//     });
 
 require('./models/db-close');
 // подключаем модели(сущности, описывающие коллекции базы данных)
 require('./models/blog');
 require('./models/pic');
+require('./models/user');
 
 // view pug engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -47,6 +50,19 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+app.use(session({
+    secret: 'secret',
+    key: 'keys',
+    cookie: {
+        path: '/',
+        httpOnly: true,
+        maxAge: null
+    },
+    saveUninitialized: false,
+    resave: false,
+    store: new MongoStore({ mongooseConnection: mongoose.connection })
+}));
 // подключаем статику
 app.use(express.static(path.join(__dirname, currentStatic)));
 

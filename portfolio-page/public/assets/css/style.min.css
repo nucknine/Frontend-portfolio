@@ -1408,6 +1408,9 @@ b {
             transform: translateX(-50%);
     position: relative;
     text-align: center; }
+  .authorize-form__status {
+    color: #efeee9;
+    text-align: center; }
   .authorize-form__body {
     padding: 0.8125rem 0; }
   .authorize-form__group {

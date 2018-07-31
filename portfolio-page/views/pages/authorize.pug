@@ -7,7 +7,8 @@ block content
         .authorize-form.welcome__authorize-form.js-m-parallax
             .authorize-form__title.subtitle
                 | Авторизуйтесь
-            form(action='', method='GET').authorize-form__form
+            form#login(action='/authorize', method='POST').authorize-form__form
+                #status.authorize-form__status
                 .authorize-form__body
                     fieldset.authorize-form__group
                         .authorize-form__input-container
