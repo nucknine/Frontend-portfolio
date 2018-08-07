@@ -39,50 +39,25 @@ block content
                 preserveAspectRatio="none"
                 ).triangle.triangle_fill_white.tria__triangles
                 polygon(points="0,100 1000,0 1000,100")
-    section
-        each index in items
-            li.article
-                .article__title= index.title
+    section.section.blog
+        aside.blog__left
+            ul.blog-menu
+                each item in items
+                    li.blog-menu__item
+                        a(href="#").blog-menu__link
+                            | #{item.title}
+        main.blog__right
+            article.article
+                each item in items
                     -
-                        var data = new Date(index.date).toLocaleDateString('ru', {
+                        var date = new Date(item.date).toLocaleDateString('ru', {
                                                                             year: 'numeric',
                                                                             month: '2-digit',
                                                                             day: '2-digit'
                                                                             })
-                .article__data= data
-                .article__text= index.body
-    section.section.blog
-        aside.blog__left
-            ul.blog-menu
-                li.blog-menu__item
-                    a(href="#").blog-menu__link
-                        | Самое важное в SASS
-                li.blog-menu__item
-                    a(href="#").blog-menu__link
-                        | Приемы верстки, без которых не обходиться
-                        | ни один сайт
-        main.blog__right
-            article.article
-                h3.article__title
-                    | Самое важное в SASS
-                .article__date
-                    | 11 июля 2018
-                .article__content
-                    p
-                        | In theory, @extend is great, but, in practice, there is just too much that can go wrong. I have seen stylesheets more-than-double in size; I have seen source order get destroyed; and I have seen clients plough right through their 4095 selector budget. It is always better to err on the side of caution and omit any features or tools that have the potential to cause so much trouble with little or no tangible gain. Having to shard your stylesheets into less-than-4096-selector-groups as a result of misusing a productivity tool is very, very counterintuitive.
-                    p
-                        | In theory, @extend is great, but, in practice, there is just too much that can go wrong. I have seen stylesheets more-than-double in size; I have seen source order get destroyed; and I have seen clients plough right through their 4095 selector budget. It is always better to err on the side of caution and omit any features or tools that have the potential to cause so much trouble with little or no tangible gain. Having to shard your stylesheets into less-than-4096-selector-groups as a result of misusing a productivity tool is very, very counterintuitive.
-            article.article
-                h3.article__title
-                    | Приемы верстки, без которых не обходиться
-                    | ни один сайт
-                .article__date
-                    | 11 июля 2018
-                .article__content
-                    p
-                        | In theory, @extend is great, but, in practice, there is just too much that can go wrong. I have seen stylesheets more-than-double in size; I have seen source order get destroyed; and I have seen clients plough right through their 4095 selector budget. It is always better to err on the side of caution and omit any features or tools that have the potential to cause so much trouble with little or no tangible gain. Having to shard your stylesheets into less-than-4096-selector-groups as a result of misusing a productivity tool is very, very counterintuitive.
-                    p
-                        | In theory, @extend is great, but, in practice, there is just too much that can go wrong. I have seen stylesheets more-than-double in size; I have seen source order get destroyed; and I have seen clients plough right through their 4095 selector budget. It is always better to err on the side of caution and omit any features or tools that have the potential to cause so much trouble with little or no tangible gain. Having to shard your stylesheets into less-than-4096-selector-groups as a result of misusing a productivity tool is very, very counterintuitive.
+                    h3.article__title= item.title
+                    .article__date= date
+                    .article__content= item.body
     footer.section.footer
         .footer__top
             .footer__block

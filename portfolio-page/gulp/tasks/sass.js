@@ -12,6 +12,7 @@ module.exports = function() {
             }))
             .pipe($.gp.sourcemaps.write('../../source/style/maps'))
             .pipe($.gp.if(!$.dev, $.gp.rename({ suffix: '.min' })))
+            // .pipe($.gp.rename({ suffix: '.min' }))
             .pipe($.gulp.dest($.config.root + '/assets/css'))
             .pipe($.browserSync.stream());
     })
