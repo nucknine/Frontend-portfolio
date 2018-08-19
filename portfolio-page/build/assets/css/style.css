@@ -29,14 +29,6 @@ clearfix миксин-плейсхолдер
 (scss-placeholder'ы используются вместо миксинов
 когда нет параметров (занимают меньше места чем миксины в коде))
 */
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,500,500i&amp;subset=cyrillic" rel="stylesheet"');
-.blog:after {
-  content: ".";
-  visibility: hidden;
-  display: block;
-  height: 0;
-  clear: both; }
-
 /*
 center element
 */
@@ -88,6 +80,7 @@ font-size
 для body задан - 0.8 т.е. 1rem и 1rem
 */
 /*шаблон по которому формирются стили для svg иконок*/
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,500,500i&amp;subset=cyrillic" rel="stylesheet"');
 .icon {
   display: inline-block;
   width: 1em;
@@ -462,7 +455,7 @@ b {
     left: 0.4375rem; }
 
 .user {
-  width: 100%;
+  text-align: center;
   color: #efeee9; }
   .user__photo {
     margin-bottom: 0.625rem; }
@@ -541,7 +534,7 @@ b {
   margin: 0 auto; }
 
 .about-user-info__text {
-  margin-top: 0.8125rem; }
+  width: 90%; }
 
 .about-data {
   display: -webkit-box;
@@ -557,7 +550,6 @@ b {
       -ms-flex-direction: row;
           flex-direction: row; }
   .about-data__description {
-    margin-bottom: 3.25rem;
     width: 90%; }
     @media only screen and (max-width: 48rem) {
       .about-data__description {
@@ -672,8 +664,6 @@ b {
     .navigation {
       -ms-flex-pack: distribute;
           justify-content: space-around; } }
-  .navigation__item {
-    margin-right: 0.8125rem; }
   .navigation__link {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -730,7 +720,7 @@ b {
   text-align: center;
   width: 23.75rem;
   border-radius: 0.4375rem;
-  background: rgba(0, 0, 0, 0.4); }
+  background: rgba(170, 173, 175, 0.3); }
   .greet-box__top {
     padding: 3rem 3rem 1.625rem 3rem; }
   .greet-box__socials {
@@ -834,23 +824,68 @@ b {
     margin-bottom: 0.8125rem; }
 
 /*--------------------------------------------------------------
+## Animations
+--------------------------------------------------------------*/
+.animate {
+  opacity: 0;
+  position: relative; }
+
+.toRight {
+  -webkit-animation: toRight .6s;
+          animation: toRight .6s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards; }
+
+.fadeIn {
+  -webkit-animation: fadeIn .6s;
+          animation: fadeIn .6s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards; }
+
+@-webkit-keyframes toRight {
+  from {
+    opacity: 0;
+    left: -12.5rem; }
+  to {
+    opacity: 1;
+    left: initial; } }
+
+@keyframes toRight {
+  from {
+    opacity: 0;
+    left: -12.5rem; }
+  to {
+    opacity: 1;
+    left: initial; } }
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  60% {
+    opacity: 0.5; }
+  100% {
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  60% {
+    opacity: 0.5; }
+  100% {
+    opacity: 1; } }
+
+/*--------------------------------------------------------------
 ## Hero
 --------------------------------------------------------------*/
 .hero {
-  height: 37.5rem;
+  min-height: 37.5rem;
   overflow: hidden;
   position: relative; }
   .hero__bg {
-    background-image: url("/assets/img/portfolio.jpg");
-    height: 100%;
-    background-position-x: center;
-    background-position-y: top;
-    background-repeat: no-repeat;
-    background-size: cover; }
+    position: absolute; }
   .hero__img-bg {
-    width: 100%;
-    min-height: 55rem;
-    min-width: 112.5rem; }
+    display: block;
+    max-width: 290%; }
   .hero__socials {
     position: absolute;
     top: 2.1875rem;
@@ -923,22 +958,28 @@ b {
 ## Welcome
 --------------------------------------------------------------*/
 .welcome {
-  height: 100vh; }
+  height: 100vh;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
   .welcome__bg {
-    background-image: url("/assets/img/portfolio.jpg");
-    height: 100%;
-    background-position-x: center;
-    background-position-y: top;
-    background-repeat: no-repeat;
-    background-size: cover; }
-  .welcome__greet-box {
+    z-index: -1;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-    z-index: 3; }
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0; }
+  .welcome__img-bg {
+    display: block;
+    max-width: 290%;
+    min-height: 100%; }
   .welcome__btn-authorize {
     position: absolute;
     top: 1.625rem;
@@ -1112,35 +1153,26 @@ b {
 ## Blog
 --------------------------------------------------------------*/
 .blog {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   background-color: #efeee9;
   padding: 3.25rem 0.8125rem 0.8125rem 0.8125rem;
   width: 100%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center; }
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
   .blog__left {
-    text-align: right;
-    width: 22.91667%;
-    float: left;
-    margin-right: -100%;
-    margin-left: 1.04167%;
-    clear: none; }
+    width: 30%;
+    text-align: right; }
     @media only screen and (max-width: 48rem) {
       .blog__left {
         display: none; } }
   .blog__right {
-    width: 64.58333%;
-    float: right;
-    margin-left: 0;
-    margin-right: 1.04167%;
-    clear: none; }
+    width: 60%; }
     @media only screen and (max-width: 48rem) {
       .blog__right {
-        width: 97.91667%;
-        float: right;
-        margin-left: 0;
-        margin-right: 1.04167%;
-        clear: none; } }
+        width: 100%; } }
 
 /*--------------------------------------------------------------
 ## Works
@@ -1360,14 +1392,6 @@ b {
   position: relative; }
 
 .authorize-form {
-  z-index: 5;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  top: 40%;
   padding: 1.625rem 0.8125rem 0 0.8125rem;
   height: auto;
   border-radius: 0.4375rem;
@@ -1394,18 +1418,21 @@ b {
     display: -ms-flexbox;
     display: flex;
     color: #efeee9;
-    margin-top: 0.8125rem;
+    margin-top: 0.25rem;
     border: none; }
   .authorize-form__control {
     outline: none;
     width: 100%;
     border: none;
     border-radius: 1.625rem;
-    padding: 0.8125rem; }
+    padding: 0.625rem; }
     .authorize-form__control_text {
-      padding-left: 2.4375rem; }
+      width: 21.25rem;
+      padding-left: 4rem; }
     .authorize-form__control_half {
-      width: 50%; }
+      padding: 0 1.25rem;
+      text-align: left;
+      width: auto; }
     .authorize-form__control::-webkit-input-placeholder {
       font-size: 1rem;
       font-weight: 300; }
@@ -1418,17 +1445,19 @@ b {
     .authorize-form__control::placeholder {
       font-size: 1rem;
       font-weight: 300; }
+  .authorize-form__input-container {
+    position: relative; }
   .authorize-form__input-icon {
     position: absolute;
-    top: 0.3125rem;
-    left: 1.375rem;
+    top: 0;
+    left: 0;
     display: block;
-    background-color: #aaadaf;
-    height: 3.1875rem;
-    width: 2.4375rem; }
+    background-color: rgba(170, 173, 175, 0.5);
+    height: 2.875rem;
+    width: 2.75rem;
+    border-radius: 1.625rem 0 0 1.625rem; }
   .authorize-form__label-checkbox {
-    padding-left: 2.1875rem;
-    margin-bottom: 0.75rem;
+    padding-left: 1.625rem;
     display: block;
     position: relative;
     cursor: pointer;
@@ -1445,16 +1474,16 @@ b {
   .authorize-form__checkmark {
     position: absolute;
     top: 0;
-    left: 4.6875rem;
-    height: 1.5625rem;
-    width: 1.5625rem;
+    left: 7.25rem;
+    height: 1.25rem;
+    width: 1.25rem;
     background-color: #efeee9; }
     .authorize-form__checkmark:after {
       display: none;
       content: "";
       position: absolute;
-      left: 0.5625rem;
-      top: 0.3125rem;
+      left: 0.375rem;
+      top: 0.125rem;
       width: 0.3125rem;
       height: 0.625rem;
       border: solid #efeee9;
@@ -1463,7 +1492,7 @@ b {
           -ms-transform: rotate(45deg);
               transform: rotate(45deg); }
   .authorize-form__label-radio {
-    padding-left: 2.1875rem;
+    padding-left: 3.375rem;
     margin-bottom: 0.75rem;
     display: block;
     position: relative;
@@ -1482,16 +1511,16 @@ b {
     position: absolute;
     top: 0;
     left: 1.625rem;
-    height: 1.5625rem;
-    width: 1.5625rem;
-    background-color: #eee;
+    height: 1.25rem;
+    width: 1.25rem;
+    background-color: #efeee9;
     border-radius: 50%; }
     .authorize-form__radiomark:after {
       display: none;
       content: "";
       position: absolute;
-      left: 0.5625rem;
-      top: 0.5625rem;
+      left: 0.375rem;
+      top: 0.375rem;
       width: 0.5rem;
       height: 0.5rem;
       background-color: #53595c;
@@ -1529,6 +1558,8 @@ b {
       background-color: #5d824f; }
 
 .icon-password {
+  font-size: 1rem;
+  color: #aaadaf;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1537,6 +1568,8 @@ b {
           transform: translate(-50%, -50%); }
 
 .icon-login {
+  font-size: 1rem;
+  color: #aaadaf;
   position: absolute;
   top: 50%;
   left: 50%;

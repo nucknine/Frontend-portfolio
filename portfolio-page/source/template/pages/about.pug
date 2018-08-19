@@ -16,152 +16,154 @@ block variables
     ]
 
 block content
-  section.section.hero
-    .hero__bg
-      //- img(src="assets/img/portfolio.jpg" alt="").hero__img-bg
-    ul.socials.hero__socials
-      each item in ['vk', 'github', 'in']
-        li.socials__item
-          a(href="#" class=`socials__link socials__link_${item}`)
-            +icon(item)
-    a(href="#").hamburger.hero__hamburger
-      +icon('hamburger')
-    a(href="#").down-arrow
-      //- img(src="assets/img/icons/arrow_down.svg")
-      +icon('arrow_down')
-    .hero__title
-      //-подложка portfolio
-      img(src="assets/img/decor/porfolio-word.png" alt="").section-title
-      //-миксин hero__user-block на блоке user (примесь добавляет особенности блоку в зависимости от
-      //-местонахождения: section hero в данном случае)
-      //-блок user остается переиспользуемым, а класс .hero__user-block добавляет абсолютное позиционирование
-      .user.hero__user-block
-        .user__photo
-          .user__photo-avatar
-            img(src="assets/img/user.png" alt="").user__photo-img
-        .user__name
-          | Олег Максимов
-        .user__description
-          | личный сайт разработчика
-  section.section.about
-    .about__left
-      svg(
-        viewbox="0 0 1000 100"
-        preserveAspectRatio="none"
-      ).triangle.triangle_fill_white.about__triangles
-        polygon(points="0,0 0,100 1000,100")
-      //-миксин title задает класс .title инлайновый стиль
-      //-background-image (для сменной подложки, например: "about" - about-heder.png)
-      //-и дополнительный класс-миксин about__section-title
-      //-для дополнительной стилизации .title
-      +title('Обо мне', 'about-header.png', 'about__section-title')
-      .user-about
-        .user-about__picture
-          img(src="assets/img/user-photo.jpg" alt="").user-about__photo-img
-        //-позиционирование и отступы на классе user-about__title,
-        //-а оформление на .subtitle (переиспользуемый класс)
-        .user-about__title
-          .subtitle
-            | Кто я
-        .user-about__text
-          p
-            | Я веб разработчик из Петрозаводска.
-            | Занимаюсь разработкой современных, отзывчивых веб-сайтов и приложений.
-            | Интересуюсь новыми технологиями и стандартами, постоянно совершенствую свои навыки.
-    .about__right
-      svg(
-        viewbox="0 0 1000 100"
-        preserveAspectRatio="none"
-      ).triangle.triangle_fill_beige.about__triangles
-        polygon(points="0,100 1000,0 1000,100")
-      .about-data
-        //-позиционирование и отступы на доп классе .about-data__description,
-        //-а стиль оформления на .about-user-info (переиспользуемый стиль)
-        .about-data__description.about-user-info
-          .about-user-info__title
-            .subtitle
-              | Чем я могу быть вам полезен
-          .about-user-info__text
-            p Больше всего меня привлекает Frontend разработка,
-            | но я так же могу решать задачи и на Backend.
-            | Но давайте по порядку.
-        //-блок скиллов
-        .about-data__content
-          ul.skills
-            //-Frontend, Backend, Workflow
-            each skill in skills
-              //-скиллы отдельной категории
-              each skillArr, skillName in skill
-                .skills__item
-                  .skill-section
-                    .skill-section__title= skillName
-                    UL.skill-section__list
-                      each skillTitle in skillArr
-                        li.skill-section__item
-                          .skill
-                            svg(
-                              viewBox="0 0 110 110"
-                            ).skill__circle
-                              circle(cx="55" cy="55" r="45" class="skill__layer")
-                              circle(cx="55" cy="55" r="45" class="skill__sector")
-                            .skill__name= skillTitle
+    section.section.hero
+        .hero__bg.js-s-parallax
+            img(src="assets/img/portfolio.jpg" alt="").hero__img-bg
+        ul.socials.hero__socials
+            each item in ['vk', 'github', 'in']
+                li.socials__item
+                    a(href="#" class=`socials__link socials__link_${item}`)
+                        +icon(item)
+        a(href="#").hamburger.hero__hamburger
+            +icon('hamburger')
+        a(href="#").down-arrow
+            //- img(src="assets/img/icons/arrow_down.svg")
+            +icon('arrow_down')
+        .hero__title
+            //-подложка portfolio
+            img(src="assets/img/decor/porfolio-word.png" alt="").section-title.js-s-parallax
+            //-миксин hero__user-block на блоке user (примесь добавляет особенности блоку в зависимости от
+            //-местонахождения: section hero в данном случае)
+            //-блок user остается переиспользуемым, а класс .hero__user-block добавляет абсолютное позиционирование
+        .user.hero__user-block
+            .js-s-parallax
+                .user__photo
+                    .user__photo-avatar
+                        img(src="assets/img/user.png" alt="").user__photo-img
+                .user__name
+                    | Олег Максимов
+                .user__description
+                    | личный сайт разработчика
+    section.section.about
+        .about__left
+            svg(
+                viewbox="0 0 1000 100"
+                preserveAspectRatio="none"
+            ).triangle.triangle_fill_white.about__triangles
+                polygon(points="0,0 0,100 1000,100")
+            //-миксин title задает класс .title инлайновый стиль
+            //-background-image (для сменной подложки, например: "about" - about-heder.png)
+            //-и дополнительный класс-миксин about__section-title
+            //-для дополнительной стилизации .title
+            +title('Обо мне', 'about-header.png', 'about__section-title')
+            .user-about
+                .user-about__picture.animate(data-animate="fadeIn")
+                    img(src="assets/img/user-photo.jpg" alt="").user-about__photo-img
+                //-позиционирование и отступы на классе user-about__title,
+                //-а оформление на .subtitle (переиспользуемый класс)
+                .user-about__title
+                    .subtitle
+                        | Кто я
+                .user-about__text
+                    p
+                        | Я веб разработчик из Петрозаводска.
+                        | Занимаюсь разработкой современных, отзывчивых веб-сайтов и приложений.
+                        | Интересуюсь новыми технологиями и стандартами, постоянно совершенствую свои навыки.
+        .about__right
+            svg(
+                viewbox="0 0 1000 100"
+                preserveAspectRatio="none"
+            ).triangle.triangle_fill_beige.about__triangles
+                polygon(points="0,100 1000,0 1000,100")
+            .about-data
+            //-позиционирование и отступы на доп классе .about-data__description,
+            //-а стиль оформления на .about-user-info (переиспользуемый стиль)
+            .about-data__description.about-user-info
+                .about-user-info__title
+                    .subtitle
+                        | Чем я могу быть вам полезен
+            .about-user-info__text
+                p
+                    | Больше всего меня привлекает Frontend разработка,
+                    | но я так же могу решать задачи и на Backend.
+                    | Но давайте по порядку.
+            //-блок скиллов
+            .about-data__content
+                ul.skills
+                    //-Frontend, Backend, Workflow
+                    each skill in skills
+                        //-скиллы отдельной категории
+                        each skillArr, skillName in skill
+                            .skills__item
+                                .skill-section.animate(data-animate="fadeIn")
+                                    .skill-section__title= skillName
+                                    UL.skill-section__list
+                                        each skillTitle in skillArr
+                                            li.skill-section__item
+                                                .skill
+                                                    svg(
+                                                        viewBox="0 0 110 110"
+                                                        ).skill__circle
+                                                        circle(cx="55" cy="55" r="45" class="skill__layer")
+                                                        circle(cx="55" cy="55" r="45" class="skill__sector")
+                                                    .skill__name= skillTitle
 
-  section.section.map
-    .contacts.map__contacts
-      .subtitle.contacts__title
-        | контакты
-      .contacts__list
-        .contacts__item
-          .contacts__icon
-            +icon('skype')
-          .contacts__text
-            | kaptan4eg
-        .contacts__item
-          .contacts__icon
-            +icon('envelope')
-          .contacts__text
-            | nucknine@gmail.com
-        .contacts__item
-          .contacts__icon
-            +icon('phone')
-          .contacts__text
-            | +7 999 504 5814
-        .contacts__item
-          .contacts__icon
-            +icon('map_marker')
-          .contacts__text
-            | Петрозаводск
-    .map__box(id="map")
-  footer.section.footer.footer_absolute
-    .footer__top
-      .footer__block
-        | Сайт портфолио
-      .footer__block
-        nav.navigation
-          .navigation__item
-            a.navigation__link(href="./works.html")
-              | Мои работы
-          .navigation__item
-            a.navigation__link(href="./about.html")
-              | Обо мне
-          .navigation__item
-            a.navigation__link(href="./blog.html")
-              | Блог
-          .navigation__item
-            a.navigation__link(href="./authorize.html")
-              | Авторизация
-        ul.socials.footer__socials
-          each item in ['vk', 'github', 'in']
-            li.socials__item
-              a(href="#" class=`socials__link socials__link_${item}`)
-                +icon(item)
-      .footer__block
-        blockquote.quote
-          | Пишите код так, как будто сопровождать его
-          | будет склонный к насилию психопат,
-          | который знает, где вы живёте
-          br
-          span.quote_style_bold
-              | - Martin Golding
-    .footer__bottom
-      | Oleg Maximov | nucknine | 2018
+    section.section.map
+        .contacts.map__contacts.animate(data-animate="fadeIn")
+            .subtitle.contacts__title
+                | контакты
+            ul.contacts__list
+                li.contacts__item
+                    .contacts__icon
+                        +icon('skype')
+                    .contacts__text
+                        | kaptan4eg
+                li.contacts__item
+                    .contacts__icon
+                        +icon('envelope')
+                    .contacts__text
+                        | nucknine@gmail.com
+                li.contacts__item
+                    .contacts__icon
+                        +icon('phone')
+                    .contacts__text
+                        | +7 999 504 5814
+                li.contacts__item
+                    .contacts__icon
+                        +icon('map_marker')
+                    .contacts__text
+                        | Петрозаводск
+        .map__box(id="map")
+    footer.section.footer.footer_absolute
+        .footer__top
+            .footer__block
+                | Сайт портфолио
+            .footer__block
+                nav.navigation
+                    .navigation__item
+                        a.navigation__link(href="./works.html")
+                            | Мои работы
+                    .navigation__item
+                        a.navigation__link(href="./about.html")
+                            | Обо мне
+                    .navigation__item
+                        a.navigation__link(href="./blog.html")
+                            | Блог
+                    .navigation__item
+                        a.navigation__link(href="./authorize.html")
+                            | Авторизация
+                ul.socials.footer__socials
+                    each item in ['vk', 'github', 'in']
+                        li.socials__item
+                            a(href="#" class=`socials__link socials__link_${item}`)
+                                +icon(item)
+            .footer__block
+                blockquote.quote
+                    | Пишите код так, как будто сопровождать его
+                    | будет склонный к насилию психопат,
+                    | который знает, где вы живёте
+                    br
+                span.quote_style_bold
+                    | - Martin Golding
+        .footer__bottom
+            | Oleg Maximov | nucknine | 2018

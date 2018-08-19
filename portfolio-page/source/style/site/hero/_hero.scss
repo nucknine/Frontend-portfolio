@@ -1,19 +1,23 @@
 .hero {
-  height: 600px;
+  min-height: 600px;
   overflow: hidden;
   position: relative;
   &__bg {
-    background-image: url("/assets/img/portfolio.jpg");
-    height: 100%;
-    background-position-x: center;
-    background-position-y: top;
-    background-repeat: no-repeat;
-    background-size: cover;
+    position: absolute;
+    // top: 0;
+    // left: 0;
+    // right: 0;
+    // bottom: 0;
+  }
+  &__user-container-js {
+
   }
   &__img-bg {
-    width: 100%;
-    min-height: 880px;
-    min-width: 1800px;
+    display: block;
+    max-width: 290%;
+
+    // min-height: 880px;
+    // min-width: 1800px;
   }
   &__socials{
     position: absolute;

@@ -1,21 +1,20 @@
 .blog{
-    @include background-grid($color: green);
-    @extend %clearfix;
+    display: flex;
     background-color: $white;
     padding: 52px 13px 13px 13px;
     width: 100%;
-    justify-content: center;
+    justify-content: space-between;
     &__left {
+        width: 30%;
         text-align: right;
-        @include grid-span(3, 1);
         @include adaptive('tablet') {
             display: none;
         }
     }
     &__right {
-        @include grid-span(8, 5);
+        width: 60%;
         @include adaptive('tablet') {
-            @include grid-span(12, 1);
+            width: 100%;
         }
     }
 }
