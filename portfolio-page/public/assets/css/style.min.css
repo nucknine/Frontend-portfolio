@@ -885,7 +885,7 @@ b {
     position: absolute; }
   .hero__img-bg {
     display: block;
-    max-width: 290%; }
+    max-width: 320%; }
   .hero__socials {
     position: absolute;
     top: 2.1875rem;
@@ -1021,16 +1021,23 @@ b {
     -webkit-transform: translateX(-50%);
         -ms-transform: translateX(-50%);
             transform: translateX(-50%);
-    top: -3rem; }
+    top: -3rem;
+    width: 70%; }
     @media only screen and (min-width: 48rem) and (max-width: 64rem) and (orientation: landscape) {
       .about__section-title {
-        width: 60%; } }
+        width: 75%; } }
     @media only screen and (max-width: 48rem) {
       .about__section-title {
-        width: 60%; } }
+        width: 70%; } }
     @media only screen and (max-width: 30rem) {
       .about__section-title {
         width: 90%; } }
+    @media only screen and (max-width: 75rem) {
+      .about__section-title {
+        width: 75%; } }
+    @media only screen and (min-width: 75rem) {
+      .about__section-title {
+        width: inherit; } }
   .about__right {
     background: #eeebdf; }
     @media only screen and (max-width: 48rem) {
