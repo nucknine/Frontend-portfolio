@@ -1,4 +1,5 @@
 // подключаем модули
+// добавление пользователя в бд
 const mongoose = require('mongoose');
 const readline = require('readline');
 const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
